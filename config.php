@@ -62,4 +62,5 @@ $HERO_START_PRICE        = "₹ 12,450 / sq. yd*";
 $ALL_IN_START_PRICE      = "₹ 14,950 / sq. yd*";
 $RESIDENTIAL_START_PRICE = "₹ 12,450 / sq. yd*";
 $COMMERCIAL_START_PRICE  = "₹ 5,500 / sq. yd*";
-$INDUSTRIAL_START_PRICE  = "₹ 3,200 / sq. yd*";
+$INDUSTRIAL_START_PRICE  = "₹ 9,750 / sq. yd*";
+$INDUSTRIAL_BASE_RATE    = 9750;

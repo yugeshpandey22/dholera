@@ -161,7 +161,7 @@ ob_start();
                 "description": "Heavy & light industrial plots in Dholera SIR manufacturing and logistics corridor near Dedicated Freight Corridor.",
                 "image": "<?php echo $CANONICAL_URL; ?>assets/images/dholera-industrial.jpg"
               },
-              "price": "3200",
+              "price": "9750",
               "priceCurrency": "INR"
             }
           ]
@@ -619,45 +619,63 @@ require_once __DIR__ . '/includes/header.php';
             </div>
           </article>
 
-          <!-- Industrial Plot Card -->
-          <article class="ref-plot-card" id="industrial-plots">
+          <!-- Industrial Plot Card (Formatted Luxury Layout like Mayur Signature 2) -->
+          <article class="ref-plot-card is-featured-card" id="industrial-plots">
             <div class="ref-plot-img-box">
-              <img src="assets/images/dholera-industrial.jpg" alt="Industrial Plots in Dholera" class="ref-plot-img" loading="lazy">
+              <img src="assets/images/dholera-industrial.jpg" alt="Industrial Plots in Dholera SIR near Tata Semiconductor Fab" class="ref-plot-img" loading="lazy">
+              <span class="ref-floating-flag"><i class="fa-solid fa-industry"></i> High Growth</span>
+              <span class="ref-floating-status"><span class="status-live-dot"></span> Booking Open</span>
             </div>
 
             <div class="ref-plot-content">
+              <span class="ref-project-pill"><i class="fa-solid fa-microchip"></i> Tata Fab &amp; DFC Corridor</span>
               <h3 class="ref-plot-title">Industrial Plots in Dholera</h3>
+              <div class="ref-project-loc">
+                <i class="fa-solid fa-location-dot"></i>
+                <span>Near Tata Semiconductor Fab &amp; DFC Rail, Dholera SIR</span>
+              </div>
 
               <ul class="ref-plot-checklist">
                 <li>
                   <span class="ref-dot-check"><i class="fa-solid fa-circle-check"></i></span>
-                  <span>Suitable for manufacturing & business</span>
+                  <span><strong>Approved Industrial Land:</strong> 1,000 Sq. Mtr to 50+ Acres</span>
                 </li>
                 <li>
                   <span class="ref-dot-check"><i class="fa-solid fa-circle-check"></i></span>
-                  <span>Strategic industrial zones</span>
+                  <span>Heavy 400kV Power Grid, High-Speed Gas &amp; Subsurface Ducts</span>
                 </li>
                 <li>
                   <span class="ref-dot-check"><i class="fa-solid fa-circle-check"></i></span>
-                  <span>Excellent connectivity (Road, Rail, Air, Sea)</span>
-                </li>
-                <li>
-                  <span class="ref-dot-check"><i class="fa-solid fa-circle-check"></i></span>
-                  <span>Ideal for MSME and large industries</span>
+                  <span>Registry: <strong>100% Clear Title &amp; NA Industrial NOC</strong> (Immediate Sale Deed)</span>
                 </li>
               </ul>
 
+              <!-- Compact Growth / High ROI Strip -->
+              <div class="ref-assured-compact">
+                <div class="assured-compact-row">
+                  <span class="assured-tag"><i class="fa-solid fa-chart-line"></i> High Capital Growth:</span>
+                  <strong class="assured-payout">35% YoY Appreciation</strong>
+                </div>
+                <div class="assured-compact-sub">
+                  Direct Multi-Modal Link: Western DFC Rail, Port &amp; 6-Lane Expressway
+                </div>
+              </div>
+
               <div class="ref-plot-price-strip">
-                <span>Plot Price: <strong>From <?php echo htmlspecialchars($INDUSTRIAL_START_PRICE); ?></strong></span>
-                <span class="ref-size-tag">1,000 Sq. Mtr to 50+ Acres</span>
+                <span>Plot Rate: <strong>From <?php echo htmlspecialchars($INDUSTRIAL_START_PRICE); ?></strong></span>
+                <span class="ref-size-tag">1,000 Mtr - 50+ Acres</span>
               </div>
 
               <a href="<?php echo $WHATSAPP_LINK; ?>" target="_blank" rel="noopener noreferrer" class="ref-btn-gold">
-                <span>View Industrial Plots</span>
+                <span>Inquire for Industrial Plots</span>
                 <i class="fa-solid fa-arrow-right"></i>
               </a>
 
-
+              <div class="ref-card-call-line">
+                <a href="<?php echo $PHONE_TEL; ?>">
+                  <i class="fa-solid fa-phone"></i> Instant Call: <strong><?php echo htmlspecialchars($PHONE_DISPLAY); ?></strong>
+                </a>
+              </div>
             </div>
           </article>
         </div>
@@ -1076,7 +1094,7 @@ require_once __DIR__ . '/includes/header.php';
                     <div class="cat-icon-badge industrial"><i class="fa-solid fa-industry"></i></div>
                     <div class="cat-info">
                       <span class="cat-name">Industrial</span>
-                      <span class="cat-rate">₹3,200 <small>/ sq.yd</small></span>
+                      <span class="cat-rate">₹9,750 <small>/ sq.yd</small></span>
                     </div>
                     <div class="cat-active-check"><i class="fa-solid fa-circle-check"></i></div>
                   </button>
@@ -1488,7 +1506,7 @@ require_once __DIR__ . '/includes/header.php';
                       </div>
                       <div class="faq-price-box">
                         <span class="p-type">Industrial Land</span>
-                        <span class="p-val">₹3,200 - ₹5,000 / sq. yd</span>
+                        <span class="p-val">₹ 9,750 / sq. yd</span>
                       </div>
                     </div>
                   </div>

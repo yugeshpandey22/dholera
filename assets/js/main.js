@@ -342,7 +342,7 @@ document.addEventListener('DOMContentLoaded', () => {
       devRate = 0;
       docCharges = 0;
     } else if (type === 'industrial') {
-      baseRate = 3200;
+      baseRate = 9750;
       devRate = 0;
       docCharges = 0;
     }
