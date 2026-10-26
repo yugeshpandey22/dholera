@@ -42,6 +42,16 @@
     </image:image>
   </url>
   <url>
+    <loc>https://dholera.adikka.com/swastik</loc>
+    <lastmod>2026-10-26</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://dholera.adikka.com/assets/images/dholera-hero-fresh.jpg</image:loc>
+      <image:title>Mayur Swastik II Residential Plots Kamiyala Dholera SIR</image:title>
+    </image:image>
+  </url>
+  <url>
     <loc>https://dholera.adikka.com/industrial-plots</loc>
     <lastmod>2026-10-26</lastmod>
     <changefreq>daily</changefreq>

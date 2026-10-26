@@ -129,40 +129,30 @@ ob_start();
           }
         },
         {
-          "@type": "OfferCatalog",
-          "name": "Dholera Smart City Land & Plots for Sale",
+          "@type": "ItemList",
+          "name": "Featured Dholera SIR Land & Plotted Projects",
+          "description": "Government approved NA clear-title residential and industrial plotted communities in Dholera SIR.",
+          "numberOfItems": 3,
           "itemListElement": [{
-              "@type": "Offer",
-              "itemOffered": {
-                "@type": "Product",
-                "name": "Residential Plots in Rojka, Dholera Smart City",
-                "description": "638 government approved residential plots in Rojka, Dholera Smart City. 121.20 to 724.21 sq. yds with 100% clear title & immediate registry.",
-                "image": "<?php echo $CANONICAL_URL; ?>assets/images/dholera-residential.jpg"
-              },
-              "price": "12450",
-              "priceCurrency": "INR"
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Mayur Signature 2 Residential Plots, Rojka",
+              "url": "<?php echo $CANONICAL_URL; ?>residential-plots",
+              "image": "<?php echo $CANONICAL_URL; ?>assets/images/dholera-residential.jpg"
             },
             {
-              "@type": "Offer",
-              "itemOffered": {
-                "@type": "Product",
-                "name": "Mayur Swastik II Residential Plots",
-                "description": "433 government approved residential plots in Kamiyala, Dholera Smart City. 123.78 to 403.76 sq. yds with 100% clear title & immediate registry.",
-                "image": "<?php echo $CANONICAL_URL; ?>assets/images/dholera-hero-fresh.jpg"
-              },
-              "price": "12450",
-              "priceCurrency": "INR"
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Mayur Swastik II Residential Plots, Kamiyala",
+              "url": "<?php echo $CANONICAL_URL; ?>swastik",
+              "image": "<?php echo $CANONICAL_URL; ?>assets/images/dholera-hero-fresh.jpg"
             },
             {
-              "@type": "Offer",
-              "itemOffered": {
-                "@type": "Product",
-                "name": "Dholera Industrial Plots",
-                "description": "Heavy & light industrial plots in Dholera SIR manufacturing and logistics corridor near Dedicated Freight Corridor.",
-                "image": "<?php echo $CANONICAL_URL; ?>assets/images/dholera-industrial.jpg"
-              },
-              "price": "9750",
-              "priceCurrency": "INR"
+              "@type": "ListItem",
+              "position": 3,
+              "name": "Mayur Business Park Industrial Land",
+              "url": "<?php echo $CANONICAL_URL; ?>industrial-plots",
+              "image": "<?php echo $CANONICAL_URL; ?>assets/images/dholera-industrial.jpg"
             }
           ]
         },
