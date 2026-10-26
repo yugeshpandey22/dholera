@@ -564,7 +564,7 @@ require_once __DIR__ . '/includes/header.php';
               </div>
 
               <div class="ref-plot-price-strip">
-                <span>Plot Rate: <strong>From <?php echo htmlspecialchars($PROJECT_BASE_RATE_TXT); ?>*</strong></span>
+                <span>Plot Rate: <strong><?php echo htmlspecialchars($PROJECT_BASE_RATE_TXT); ?>*</strong></span>
                 <span class="ref-size-tag">121 - 724 Sq. Yds</span>
               </div>
 
@@ -604,7 +604,7 @@ require_once __DIR__ . '/includes/header.php';
               </ul>
 
               <div class="ref-plot-price-strip">
-                <span>Plot Price: <strong>From <?php echo htmlspecialchars($COMMERCIAL_START_PRICE); ?></strong></span>
+                <span>Plot Price: <strong><?php echo htmlspecialchars($COMMERCIAL_START_PRICE); ?></strong></span>
                 <span class="ref-size-tag">300 to 5,000+ Sq. Yds</span>
               </div>
 
@@ -672,7 +672,7 @@ require_once __DIR__ . '/includes/header.php';
               </div>
 
               <div class="ref-plot-price-strip">
-                <span>Plot Rate: <strong>From <?php echo htmlspecialchars($IND_PROJECT_RATE_TXT); ?>*</strong></span>
+                <span>Plot Rate: <strong><?php echo htmlspecialchars($IND_PROJECT_RATE_TXT); ?>*</strong></span>
                 <span class="ref-size-tag">327 - 5,912 Sq. Yds</span>
               </div>
 
@@ -680,7 +680,7 @@ require_once __DIR__ . '/includes/header.php';
               $WHATSAPP_MAYUR_BP = "https://wa.me/" . $WHATSAPP_NUMBER . "?text=" . urlencode("Hi, I am interested in Mayur Business Park (Industrial Plots in Haripura, Dholera). Please share brochure, layout plan, and latest price details.");
               ?>
               <a href="<?php echo $WHATSAPP_MAYUR_BP; ?>" target="_blank" rel="noopener noreferrer" class="ref-btn-gold">
-                <span>Inquire for <?php echo htmlspecialchars($IND_PROJECT_NAME); ?></span>
+                <span>Inquire for <?php echo htmlspecialchars($IND_PROJECT_NAME); ?> (Industrial)</span>
                 <i class="fa-solid fa-arrow-right"></i>
               </a>
             </div>
