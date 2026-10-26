@@ -572,12 +572,6 @@ require_once __DIR__ . '/includes/header.php';
                 <span>Inquire for <?php echo htmlspecialchars($PROJECT_NAME); ?> (Residential)</span>
                 <i class="fa-solid fa-arrow-right"></i>
               </a>
-
-              <div class="ref-card-call-line">
-                <a href="<?php echo $PHONE_TEL; ?>">
-                  <i class="fa-solid fa-phone"></i> Instant Call: <strong><?php echo htmlspecialchars($PHONE_DISPLAY); ?></strong>
-                </a>
-              </div>
             </div>
           </article>
 
@@ -689,12 +683,6 @@ require_once __DIR__ . '/includes/header.php';
                 <span>Inquire for <?php echo htmlspecialchars($IND_PROJECT_NAME); ?></span>
                 <i class="fa-solid fa-arrow-right"></i>
               </a>
-
-              <div class="ref-card-call-line">
-                <a href="<?php echo $PHONE_TEL; ?>">
-                  <i class="fa-solid fa-phone"></i> Instant Call: <strong><?php echo htmlspecialchars($PHONE_DISPLAY); ?></strong>
-                </a>
-              </div>
             </div>
           </article>
         </div>
