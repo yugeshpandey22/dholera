@@ -360,15 +360,15 @@ require_once __DIR__ . '/includes/header.php';
             </div>
           </a>
 
-          <!-- Residential Card 2 -->
-          <a href="#residential-dholera" class="quick-card">
+          <!-- Mayur Swastik II Residential Card -->
+          <a href="#residential-swastik" class="quick-card">
             <div class="qc-left">
               <div class="qc-icon-box">
                 <i class="fa-solid fa-tree-city"></i>
               </div>
               <div>
-                <h3 class="qc-title">Residential Plots &amp; Villas</h3>
-                <p class="qc-subtitle">Clear title NA plots in TP-1 &amp; TP-2 activation zone with immediate registry</p>
+                <h3 class="qc-title">Mayur Swastik II</h3>
+                <p class="qc-subtitle">Kamiyala Road &bull; 433 NA Approved Gated Community Plots</p>
               </div>
             </div>
             <div class="qc-action-arrow">
@@ -575,38 +575,42 @@ require_once __DIR__ . '/includes/header.php';
             </div>
           </article>
 
-          <!-- Residential Plot Card 2: Residential Plots in Dholera SIR -->
-          <article class="ref-plot-card is-featured-card" id="residential-dholera">
+          <!-- Residential Plot Card 2: Mayur Swastik II Spotlight -->
+          <article class="ref-plot-card is-featured-card" id="residential-swastik">
             <div class="ref-plot-img-box">
-              <img src="assets/images/dholera-hero-fresh.jpg" alt="Residential Plots in Dholera SIR TP1 TP2" class="ref-plot-img" loading="lazy">
+              <img src="assets/images/dholera-hero-fresh.jpg" alt="Mayur Swastik II Residential Plots in Kamiyala Dholera Smart City" class="ref-plot-img" loading="lazy">
               <span class="ref-floating-flag"><i class="fa-solid fa-house-chimney"></i> Residential Project</span>
               <span class="ref-floating-status"><span class="status-live-dot"></span> Booking Open</span>
             </div>
 
             <div class="ref-plot-content">
-              <span class="ref-project-pill"><i class="fa-solid fa-house-chimney"></i> Residential Township</span>
-              <h3 class="ref-plot-title">Residential Plots in Dholera SIR <span style="display:inline-block; font-size: 0.6em; background: #fee2e2; color: #dc2626; padding: 3px 9px; border-radius: 6px; font-weight: 800; vertical-align: middle; border: 1px solid rgba(220,38,38,0.2);">Residential</span></h3>
+              <span class="ref-project-pill"><i class="fa-solid fa-house-chimney"></i> Featured: <?php echo htmlspecialchars($RES2_PROJECT_NAME); ?></span>
+              <h3 class="ref-plot-title"><?php echo htmlspecialchars($RES2_PROJECT_NAME); ?> <span style="display:inline-block; font-size: 0.6em; background: #fee2e2; color: #dc2626; padding: 3px 9px; border-radius: 6px; font-weight: 800; vertical-align: middle; border: 1px solid rgba(220,38,38,0.2);">Residential</span></h3>
               <div class="ref-project-loc">
                 <i class="fa-solid fa-location-dot"></i>
-                <span>TP-1 &amp; TP-2 Activation Zone, Dholera Smart City</span>
+                <span><?php echo htmlspecialchars($RES2_PROJECT_LOCATION); ?></span>
               </div>
 
               <ul class="ref-plot-checklist">
                 <li>
                   <span class="ref-dot-check"><i class="fa-solid fa-circle-check"></i></span>
-                  <span>Project Type: <strong>Residential Plots (Gated Community)</strong></span>
+                  <span>Project Type: <strong><?php echo htmlspecialchars($RES2_PROJECT_TYPE); ?></strong></span>
                 </li>
                 <li>
                   <span class="ref-dot-check"><i class="fa-solid fa-circle-check"></i></span>
-                  <span>Total Inventory: <strong>Premium Plots</strong> (<strong>121 to 1,000+ Sq. Yds</strong>)</span>
+                  <span>Total Units: <strong><?php echo htmlspecialchars($RES2_PROJECT_TOTAL); ?></strong> (Plot Size: <strong><?php echo htmlspecialchars($RES2_PROJECT_SIZES); ?></strong>)</span>
                 </li>
                 <li>
                   <span class="ref-dot-check"><i class="fa-solid fa-circle-check"></i></span>
-                  <span>Dev. Charges: <strong>₹ 1,003 / sq. yd (850 + 18% GST)</strong></span>
+                  <span>Legitimate: <strong><?php echo htmlspecialchars($RES2_PROJECT_APPROVALS); ?></strong></span>
                 </li>
                 <li>
                   <span class="ref-dot-check"><i class="fa-solid fa-circle-check"></i></span>
-                  <span>Registry: <strong>Male 5.9% | Female 4.9% &bull; Docs: ₹ 15,400 (Fixed)</strong></span>
+                  <span>Dev. Charges: <strong><?php echo htmlspecialchars($RES2_PROJECT_DEV_CHARGES); ?></strong></span>
+                </li>
+                <li>
+                  <span class="ref-dot-check"><i class="fa-solid fa-circle-check"></i></span>
+                  <span>Registry: <strong>Male <?php echo htmlspecialchars($RES2_PROJECT_REGISTRY_MALE); ?> | Female <?php echo htmlspecialchars($RES2_PROJECT_REGISTRY_FEMALE); ?></strong> &bull; Docs: <strong><?php echo htmlspecialchars($RES2_PROJECT_DOC_CHARGES); ?></strong></span>
                 </li>
               </ul>
 
@@ -614,23 +618,23 @@ require_once __DIR__ . '/includes/header.php';
               <div class="ref-assured-compact">
                 <div class="assured-compact-row">
                   <span class="assured-tag"><i class="fa-solid fa-shield-halved"></i> 3 Years Assured Return (1%)*:</span>
-                  <strong class="assured-payout">₹ 14,707 / month</strong>
+                  <strong class="assured-payout"><?php echo htmlspecialchars($RES2_PROJECT_ASSURED_MONTHLY); ?></strong>
                 </div>
                 <div class="assured-compact-sub">
-                  For Example: Total Return: <strong>₹ 5,29,470</strong> (3-Year Plan, 1% TDS) (on 124.35 Sq. Yds plot)
+                  For Example: Total Return: <strong><?php echo htmlspecialchars($RES2_PROJECT_ASSURED_TOTAL); ?></strong> (on <?php echo htmlspecialchars($RES2_PROJECT_SAMPLE_SIZE); ?> plot)
                 </div>
               </div>
 
               <div class="ref-plot-price-strip">
-                <span>Plot Rate: <strong><?php echo htmlspecialchars($PROJECT_BASE_RATE_TXT); ?>*</strong></span>
-                <span class="ref-size-tag">121 - 1,000+ Sq. Yds</span>
+                <span>Plot Rate: <strong><?php echo htmlspecialchars($RES2_PROJECT_BASE_RATE_TXT); ?>*</strong></span>
+                <span class="ref-size-tag">124 - 404 Sq. Yds</span>
               </div>
 
               <?php
-              $WHATSAPP_RESIDENTIAL_PLOTS = "https://wa.me/" . $WHATSAPP_NUMBER . "?text=" . urlencode("Hi, I am interested in Residential Plots in Dholera SIR (TP-1 & TP-2 Zone). Please share available layouts, brochure, and latest price details.");
+              $WHATSAPP_SWASTIK = "https://wa.me/" . $WHATSAPP_NUMBER . "?text=" . urlencode("Hi, I am interested in Mayur Swastik II (Residential Plots in Kamiyala, Dholera). Please share brochure, layout plan, and latest price details.");
               ?>
-              <a href="<?php echo $WHATSAPP_RESIDENTIAL_PLOTS; ?>" target="_blank" rel="noopener noreferrer" class="ref-btn-gold">
-                <span>Inquire for Residential Plots</span>
+              <a href="<?php echo $WHATSAPP_SWASTIK; ?>" target="_blank" rel="noopener noreferrer" class="ref-btn-gold">
+                <span>Inquire for <?php echo htmlspecialchars($RES2_PROJECT_NAME); ?> (Residential)</span>
                 <i class="fa-solid fa-arrow-right"></i>
               </a>
             </div>
@@ -1102,7 +1106,7 @@ require_once __DIR__ . '/includes/header.php';
                   <button type="button" class="calc-cat-card" data-type="commercial">
                     <div class="cat-icon-badge residential"><i class="fa-solid fa-tree-city"></i></div>
                     <div class="cat-info">
-                      <span class="cat-name">Residential Plots</span>
+                      <span class="cat-name"><?php echo htmlspecialchars($RES2_PROJECT_NAME); ?></span>
                       <span class="cat-rate">₹12,450 <small>/ sq.yd</small></span>
                     </div>
                     <div class="cat-active-check"><i class="fa-solid fa-circle-check"></i></div>
@@ -1519,7 +1523,7 @@ require_once __DIR__ . '/includes/header.php';
                         <span class="p-val">₹12,450 / sq. yd</span>
                       </div>
                       <div class="faq-price-box">
-                        <span class="p-type">Mayur Signature 2</span>
+                        <span class="p-type">Mayur Swastik II</span>
                         <span class="p-val">₹12,450 / sq. yd</span>
                       </div>
                       <div class="faq-price-box">

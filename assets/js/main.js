@@ -460,7 +460,7 @@ document.addEventListener('DOMContentLoaded', () => {
       } else if (type === 'industrial') {
         customMsg = `Hi, I checked Mayur Business Park (Industrial Plots in Haripura, Fedra-Dhandhuka Highway, Dholera) for ${displaySize}. Total package estimate is ${formatINR(estTotal)} (Rate: ₹ 9,750/yd, Dev: ₹ 1,003/yd, Fixed Docs: ₹ 15,400) with 3 Years Assured Return (1%)* Plan. Please share brochure, layout plan & available plot numbers.`;
       } else {
-        customMsg = `Hi, I checked Residential Plots in Dholera SIR for ${displaySize}. Total package estimate is ${formatINR(estTotal)} (Rate: ₹ 12,450/yd, Dev: ₹ 1,003/yd, Fixed Docs: ₹ 15,400) with 3 Years Assured Return (1%)* Plan. Please share available plot layouts, brochure & details.`;
+        customMsg = `Hi, I checked Mayur Swastik II (Residential Plots in Kamiyala, Dholera) for ${displaySize}. Total package estimate is ${formatINR(estTotal)} (Rate: ₹ 12,450/yd, Dev: ₹ 1,003/yd, Fixed Docs: ₹ 15,400) with 3 Years Assured Return (1%)* Plan. Please share brochure, layout plan & available plot numbers.`;
       }
       calcWhatsAppBtn.href = `https://wa.me/${CONFIG.whatsapp}?text=${encodeURIComponent(customMsg)}`;
     }

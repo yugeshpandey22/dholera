@@ -57,6 +57,23 @@ $PROJECT_ASSURED_MONTHLY = "₹ 14,707 / month";
 $PROJECT_ASSURED_TOTAL   = "₹ 5,29,470 (3-Year Plan, 1% TDS)";
 $PROJECT_SAMPLE_SIZE     = "124.35 Sq. Yds";
 
+// 🏡 Featured Residential Project 2: Mayur Swastik II
+$RES2_PROJECT_NAME            = "Mayur Swastik II";
+$RES2_PROJECT_LOCATION        = "Anandpur - Kamiyala Road, Kamiyala, Dholera Smart City";
+$RES2_PROJECT_TOTAL           = "433 Plots";
+$RES2_PROJECT_TYPE            = "Residential Project";
+$RES2_PROJECT_SIZES           = "123.78 to 403.76 Sq. Yds";
+$RES2_PROJECT_APPROVALS       = "NA, NOC, Title Clear & Unit Plan Pass";
+$RES2_PROJECT_BASE_RATE       = 12450;
+$RES2_PROJECT_BASE_RATE_TXT   = "₹ 12,450 / sq. yd";
+$RES2_PROJECT_DEV_CHARGES     = "₹ 1,003 / sq. yd (850 + 18% GST)";
+$RES2_PROJECT_REGISTRY_MALE   = "5.9%";
+$RES2_PROJECT_REGISTRY_FEMALE = "4.9%";
+$RES2_PROJECT_DOC_CHARGES     = "₹ 15,400 (Fixed)";
+$RES2_PROJECT_ASSURED_MONTHLY = "₹ 14,707 / month";
+$RES2_PROJECT_ASSURED_TOTAL   = "₹ 5,29,470 (3-Year Plan, 1% TDS)";
+$RES2_PROJECT_SAMPLE_SIZE     = "123.78 Sq. Yds";
+
 // 🏭 Featured Industrial Project
 $IND_PROJECT_NAME        = "Mayur Business Park";
 $IND_PROJECT_LOCATION    = "Haripura, Fedra-Dhandhuka State Highway, Dholera";
