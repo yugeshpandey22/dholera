@@ -55,7 +55,7 @@ $ROUTED_SECTIONS = [
   'pricing' => [
     'section' => 'pricing',
     'title' => 'Dholera Plots Price & ROI Estimator | Current Rates per Sq. Yard & Land Valuation',
-    'desc' => 'Calculate your estimated plot cost and projected 3-5 year ROI in Dholera SIR. Transparent verified plot pricing and assured return plans with zero brokerage.',
+    'desc' => 'Calculate your estimated plot cost and projected 3-5 year ROI in Dholera SIR. Transparent verified plot pricing and capital appreciation projections with zero brokerage.',
     'keywords' => 'Dholera plots price, Dholera land rate per sq yard, Dholera plot price calculator, Dholera property cost'
   ],
   'gallery' => [
@@ -136,7 +136,7 @@ ob_start();
               "itemOffered": {
                 "@type": "Product",
                 "name": "Residential Plots in Rojka, Dholera Smart City",
-                "description": "638 government approved residential plots in Rojka, Dholera Smart City. 121.20 to 724.21 sq. yds with 3-year assured return plan.",
+                "description": "638 government approved residential plots in Rojka, Dholera Smart City. 121.20 to 724.21 sq. yds with 100% clear title & immediate registry.",
                 "image": "<?php echo $CANONICAL_URL; ?>assets/images/dholera-residential.jpg"
               },
               "price": "12450",
@@ -181,7 +181,7 @@ ob_start();
               "name": "What are the details, sizes, and prices of residential plots in Rojka, Dholera?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "Our featured residential plotted community in Rojka, Dholera Smart City features 638 plots ranging from 121.20 to 724.21 sq. yds with a base rate of ₹12,450 per sq. yard, development charges of ₹1,003/yd, documentation ₹15,400, registry 5.9% male / 4.9% female, and a 3-Year Assured Return Plan offering ₹14,707/month (₹5,29,470 total on a 124.35 sq. yd plot)."
+                "text": "Our featured residential plotted community in Rojka, Dholera Smart City features 638 plots ranging from 121.20 to 724.21 sq. yds with a base rate of ₹12,450 per sq. yard, development charges of ₹1,003/yd, documentation ₹15,400, registry 5.9% male / 4.9% female, with 100% legal NA clear titles and immediate sale deed registry."
               }
             },
             {
@@ -330,7 +330,7 @@ require_once __DIR__ . '/includes/header.php';
               <div class="instant-price-tag">
                 <div class="price-tag-label"><?php echo htmlspecialchars($PROJECT_NAME); ?> • <?php echo htmlspecialchars($PROJECT_LOCATION); ?></div>
                 <div class="price-tag-value">Starting <?php echo htmlspecialchars($PROJECT_BASE_RATE_TXT); ?>*</div>
-                <div class="price-tag-sub">638 Plots (121 to 724 Yd) • 3-Yr Assured Return Plan</div>
+                <div class="price-tag-sub">638 Plots (121 to 724 Yd) • 100% NA Clear Title Registry</div>
               </div>
             </div>
           </div>
@@ -552,14 +552,14 @@ require_once __DIR__ . '/includes/header.php';
                 </li>
               </ul>
 
-              <!-- Compact Assured Return Box -->
+              <!-- 3 Years Assured Return Box -->
               <div class="ref-assured-compact">
                 <div class="assured-compact-row">
-                  <span class="assured-tag"><i class="fa-solid fa-shield-halved"></i> 3-Yr Assured Return (1% TDS):</span>
-                  <strong class="assured-payout"><?php echo htmlspecialchars($PROJECT_ASSURED_MONTHLY); ?></strong>
+                  <span class="assured-tag"><i class="fa-solid fa-shield-halved"></i> 3 Years Assured Return (1%)*:</span>
+                  <strong class="assured-payout">₹ 14,707 / month</strong>
                 </div>
                 <div class="assured-compact-sub">
-                  Total Return: <strong><?php echo htmlspecialchars($PROJECT_ASSURED_TOTAL); ?></strong> (on <?php echo htmlspecialchars($PROJECT_SAMPLE_SIZE); ?> plot)
+                  For Example: Total Return: <strong>₹ 5,29,470</strong> (3-Year Plan, 1% TDS) (on 124.35 Sq. Yds plot)
                 </div>
               </div>
 
@@ -650,6 +650,14 @@ require_once __DIR__ . '/includes/header.php';
                 </li>
                 <li>
                   <span class="ref-dot-check"><i class="fa-solid fa-circle-check"></i></span>
+                  <span>Dev. Charges: <strong>₹ 1,003 / sq. yd (850 + 18% GST)</strong></span>
+                </li>
+                <li>
+                  <span class="ref-dot-check"><i class="fa-solid fa-circle-check"></i></span>
+                  <span>Registry: <strong>Male 5.9% | Female 4.9% &bull; Docs: ₹ 15,400 (Fixed)</strong></span>
+                </li>
+                <li>
+                  <span class="ref-dot-check"><i class="fa-solid fa-circle-check"></i></span>
                   <span>Direct Frontage: <strong>0 KM 4-Lane State Highway</strong> &bull; <strong>20 KM to Airport</strong></span>
                 </li>
                 <li>
@@ -658,14 +666,14 @@ require_once __DIR__ . '/includes/header.php';
                 </li>
               </ul>
 
-              <!-- Strategic Corridor Highlight Strip -->
+              <!-- 3 Years Assured Return Box for Mayur Business Park -->
               <div class="ref-assured-compact">
                 <div class="assured-compact-row">
-                  <span class="assured-tag"><i class="fa-solid fa-route"></i> Prime Strategic Corridor:</span>
-                  <strong class="assured-payout">0 KM 4-Lane Highway</strong>
+                  <span class="assured-tag"><i class="fa-solid fa-shield-halved"></i> 3 Years Assured Return (1%)*:</span>
+                  <strong class="assured-payout"><?php echo htmlspecialchars($IND_PROJECT_ASSURED_MONTHLY); ?></strong>
                 </div>
                 <div class="assured-compact-sub">
-                  20 KM Airport &bull; 20 KM DSIR Boundary &bull; 8 KM Gallops Plaza &bull; 20 KM Pipli Jnc.
+                  For Example: Total Return: <strong><?php echo htmlspecialchars($IND_PROJECT_ASSURED_TOTAL); ?></strong> (on <?php echo htmlspecialchars($IND_PROJECT_SAMPLE_SIZE); ?> plot)
                 </div>
               </div>
 
@@ -1059,7 +1067,7 @@ require_once __DIR__ . '/includes/header.php';
           <span class="section-tag"><i class="fa-solid fa-calculator"></i> Transparent Land Pricing</span>
           <h2 class="section-title">Dholera Plots Price & Land Investment ROI Estimator</h2>
           <p class="section-desc">
-            Check current <strong>Dholera plots price</strong> per sq. yard, calculate your booking token, and project your 3-year assured returns for <strong>Dholera property for sale</strong>.
+            Check current <strong>Dholera plots price</strong> per sq. yard, calculate your booking token, and project your capital appreciation for <strong>Dholera property for sale</strong>.
           </p>
         </div>
 
@@ -1186,20 +1194,20 @@ require_once __DIR__ . '/includes/header.php';
                 <!-- ROI Projection / Assured Return Box -->
                 <div class="res-roi-card" id="calcRoiBox">
                   <div class="roi-card-header">
-                    <span class="roi-badge" id="calcRoiBadge"><i class="fa-solid fa-shield-check"></i> 3-Year Assured Return</span>
+                    <span class="roi-badge" id="calcRoiBadge"><i class="fa-solid fa-shield-halved"></i> 3 Years Assured Return (1%)*</span>
                     <span class="roi-timeline" id="calcRoiTimeline">1% TDS Payout Plan</span>
                   </div>
                   <div class="roi-future-val" id="calcProjRoiVal">₹ 14,707 / mo</div>
                   <div class="roi-growth-note" id="calcProjRoi">
-                    <i class="fa-solid fa-circle-check"></i> Total 3-Yr Return: <strong>₹ 5,29,470</strong>
+                    <i class="fa-solid fa-circle-check"></i> For Example: Total Return: <strong>₹ 5,29,470</strong> (on 124.35 Yd plot)
                   </div>
                 </div>
 
                 <!-- Feature Trust Badges -->
                 <div class="res-trust-list">
-                  <div class="trust-point"><i class="fa-solid fa-circle-check"></i> 100% NA / Title Clear Plots in Rojka</div>
-                  <div class="trust-point"><i class="fa-solid fa-circle-check"></i> Immediate Registry &amp; Mutation</div>
-                  <div class="trust-point"><i class="fa-solid fa-circle-check"></i> 3-Year Guaranteed Assured Return Scheme</div>
+                  <div class="trust-point"><i class="fa-solid fa-circle-check"></i> 100% NA / Title Clear Plots in Rojka &bull; Haripura</div>
+                  <div class="trust-point"><i class="fa-solid fa-circle-check"></i> Immediate Registry &amp; Revenue Mutation</div>
+                  <div class="trust-point"><i class="fa-solid fa-circle-check"></i> 3 Years Assured Return (1%)* Guarantee Scheme</div>
                 </div>
 
                 <!-- Direct Action CTAs -->
@@ -1477,7 +1485,7 @@ require_once __DIR__ . '/includes/header.php';
                       </div>
                     </div>
                     <p style="margin-top: 14px;">
-                      🌟 <strong>3-Year Assured Return Guarantee (1% TDS):</strong> Offers a guaranteed monthly rental return of <strong>₹ 14,707 / month</strong> and total return of <strong>₹ 5,29,470</strong> over 3 years on a standard 124.35 sq. yd plot. Plot sizes range from <strong>121.20 sq. yds to 724.21 sq. yds</strong>.
+                      🌟 <strong>100% Clear Title &amp; High Growth:</strong> Features complete Non-Agricultural (NA) government clearance, immediate registered sale deed with individual sub-plot demarcation, ready for construction or high-growth investment. Plot sizes range from <strong>121.20 sq. yds to 724.21 sq. yds</strong>.
                     </p>
                     <div class="faq-highlight-chips" style="margin-top: 10px;">
                       <span class="faq-chip"><i class="fa-solid fa-check"></i> 638 Approved Residential Plots</span>
@@ -1504,7 +1512,7 @@ require_once __DIR__ . '/includes/header.php';
                 <div class="faq-answer">
                   <div class="faq-answer-inner">
                     <p>
-                      Dholera residential plots are available at <strong>₹12,450 per sq. yard</strong> with clear NA titles, immediate registry, and 3-Year Assured Return benefits. Rates vary depending on the Town Planning scheme (TP-1, TP-2), proximity to the 6-lane Expressway, and internal road width.
+                      Dholera residential plots are available at <strong>₹12,450 per sq. yard</strong> with clear NA titles, immediate registry, and complete gated township amenities. Rates vary depending on the Town Planning scheme (TP-1, TP-2), proximity to the 6-lane Expressway, and internal road width.
                     </p>
                     <div class="faq-price-mini-grid">
                       <div class="faq-price-box">

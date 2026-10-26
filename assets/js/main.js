@@ -343,8 +343,8 @@ document.addEventListener('DOMContentLoaded', () => {
       docCharges = 0;
     } else if (type === 'industrial') {
       baseRate = 9750;
-      devRate = 0;
-      docCharges = 0;
+      devRate = 1003;
+      docCharges = 15400;
     }
 
     const landTotal = Math.round(size * baseRate);
@@ -395,13 +395,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const chargesInfo = document.getElementById('calcChargesInfo');
 
     if (type === 'residential') {
-      // Residential (Rojka) Assured Return calculation
-      // Notebook benchmark: 124.35 sq yd plot yields ₹ 14,707/month and ₹ 5,29,470 total over 3 years
-      const monthlyPayout = isSamplePlot ? 14707 : Math.round((size / 124.35) * 14707);
-      const totalPayout = isSamplePlot ? 529470 : (monthlyPayout * 36);
+      // Residential (Mayur Signature 2 in Rojka): 124.35 sq yd benchmark yields ₹ 14,707/mo & ₹ 5,29,470 total
+      const isSampleRes = Math.abs(size - 124.35) < 2;
+      const monthlyPayout = isSampleRes ? 14707 : Math.round((size / 124.35) * 14707);
+      const totalPayout = isSampleRes ? 529470 : (monthlyPayout * 36);
 
       if (roiBadge) {
-        roiBadge.innerHTML = '<i class="fa-solid fa-shield-check"></i> 3-Year Assured Return';
+        roiBadge.innerHTML = '<i class="fa-solid fa-shield-halved"></i> 3 Years Assured Return (1%)*';
       }
       if (roiTimeline) {
         roiTimeline.textContent = '1% TDS Payout Plan';
@@ -410,16 +410,35 @@ document.addEventListener('DOMContentLoaded', () => {
         projRoiVal.textContent = `${formatINR(monthlyPayout)} / mo`;
       }
       if (projRoiDisplay) {
-        projRoiDisplay.innerHTML = `<i class="fa-solid fa-circle-check"></i> Total 3-Yr Return: <strong>${formatINR(totalPayout)}</strong>`;
+        projRoiDisplay.innerHTML = `<i class="fa-solid fa-circle-check"></i> For Example: Total Return: <strong>${formatINR(totalPayout)}</strong>`;
+      }
+      if (chargesInfo) chargesInfo.style.display = 'flex';
+    } else if (type === 'industrial') {
+      // Industrial (Mayur Business Park in Haripura): 414.65 sq yd benchmark yields ₹ 36,638/mo & ₹ 1,354,997 total
+      const isSampleInd = Math.abs(size - 414.65) < 5;
+      const monthlyPayout = isSampleInd ? 36638 : Math.round((size / 414.65) * 36638);
+      const totalPayout = isSampleInd ? 1354997 : (monthlyPayout * 36);
+
+      if (roiBadge) {
+        roiBadge.innerHTML = '<i class="fa-solid fa-shield-halved"></i> 3 Years Assured Return (1%)*';
+      }
+      if (roiTimeline) {
+        roiTimeline.textContent = '1% TDS Payout Plan';
+      }
+      if (projRoiVal) {
+        projRoiVal.textContent = `${formatINR(monthlyPayout)} / mo`;
+      }
+      if (projRoiDisplay) {
+        projRoiDisplay.innerHTML = `<i class="fa-solid fa-circle-check"></i> For Example: Total Return: <strong>${formatINR(totalPayout)}</strong>`;
       }
       if (chargesInfo) chargesInfo.style.display = 'flex';
     } else {
-      // Commercial & Industrial: Appreciation model
-      const multiplier = type === 'commercial' ? 2.1 : 2.2;
+      // Commercial: Appreciation model
+      const multiplier = 2.1;
       const projectedValuation = Math.round(landTotal * multiplier);
 
       if (roiBadge) {
-        roiBadge.innerHTML = '<i class="fa-solid fa-arrow-trend-up"></i> Projected Growth';
+        roiBadge.innerHTML = '<i class="fa-solid fa-arrow-trend-up"></i> Projected Valuation';
       }
       if (roiTimeline) {
         roiTimeline.textContent = 'By 2029';
@@ -437,9 +456,9 @@ document.addEventListener('DOMContentLoaded', () => {
     if (calcWhatsAppBtn) {
       let customMsg = '';
       if (type === 'residential') {
-        customMsg = `Hi, I checked Residential Plots (Rojka, Dholera) for ${displaySize}. Total package estimate is ${formatINR(estTotal)} (Rate: ₹ 12,450/yd, Dev: ₹ 1,003/yd, Fixed Docs: ₹ 15,400) with 3-Year Assured Return Plan. Please share layout plan & available plot numbers.`;
+        customMsg = `Hi, I checked Mayur Signature 2 (Residential Plots in Rojka, Dholera) for ${displaySize}. Total package estimate is ${formatINR(estTotal)} (Rate: ₹ 12,450/yd, Dev: ₹ 1,003/yd, Fixed Docs: ₹ 15,400) with 3 Years Assured Return (1%)* Plan. Please share layout plan & available plot numbers.`;
       } else if (type === 'industrial') {
-        customMsg = `Hi, I checked Mayur Business Park (Industrial Plots in Haripura, Fedra-Dhandhuka Highway, Dholera) for ${displaySize}. Total estimated value is ${formatINR(estTotal)} (Rate: ₹ 9,750/yd). Please share brochure, layout plan & available plot numbers.`;
+        customMsg = `Hi, I checked Mayur Business Park (Industrial Plots in Haripura, Fedra-Dhandhuka Highway, Dholera) for ${displaySize}. Total package estimate is ${formatINR(estTotal)} (Rate: ₹ 9,750/yd, Dev: ₹ 1,003/yd, Fixed Docs: ₹ 15,400) with 3 Years Assured Return (1%)* Plan. Please share brochure, layout plan & available plot numbers.`;
       } else {
         customMsg = `Hi, I calculated an estimate for ${displaySize} Commercial Plot in Dholera SIR (${formatINR(estTotal)}). Please share the available plots, layout plan & special offers.`;
       }
