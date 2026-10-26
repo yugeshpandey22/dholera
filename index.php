@@ -636,7 +636,11 @@ require_once __DIR__ . '/includes/header.php';
               <ul class="ref-plot-checklist">
                 <li>
                   <span class="ref-dot-check"><i class="fa-solid fa-circle-check"></i></span>
-                  <span><strong><?php echo htmlspecialchars($IND_PROJECT_TOTAL); ?></strong> (<strong><?php echo htmlspecialchars($IND_PROJECT_SIZES); ?></strong>)</span>
+                  <span>Project Type: <strong><?php echo htmlspecialchars($IND_PROJECT_TYPE); ?></strong></span>
+                </li>
+                <li>
+                  <span class="ref-dot-check"><i class="fa-solid fa-circle-check"></i></span>
+                  <span>Total Inventory: <strong><?php echo htmlspecialchars($IND_PROJECT_TOTAL); ?></strong> (<strong><?php echo htmlspecialchars($IND_PROJECT_SIZES); ?></strong>)</span>
                 </li>
                 <li>
                   <span class="ref-dot-check"><i class="fa-solid fa-circle-check"></i></span>

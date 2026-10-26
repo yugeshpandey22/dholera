@@ -60,8 +60,8 @@ $PROJECT_SAMPLE_SIZE     = "124.35 Sq. Yds";
 // 🏭 Featured Industrial Project
 $IND_PROJECT_NAME        = "Mayur Business Park";
 $IND_PROJECT_LOCATION    = "Haripura, Fedra-Dhandhuka State Highway, Dholera";
-$IND_PROJECT_TOTAL       = "227 Industrial Plots";
-$IND_PROJECT_TYPE        = "Industrial Open Plots (Gated Project)";
+$IND_PROJECT_TOTAL       = "227 Plots";
+$IND_PROJECT_TYPE        = "Industrial Plots (Gated Community)";
 $IND_PROJECT_SIZES       = "327.49 to 5,912.09 Sq. Yds";
 $IND_PROJECT_APPROVALS   = "NA, NOC, Title Clear & Unit Plan Pass";
 $IND_PROJECT_HIGHWAY     = "0 KM on 4-Lane State Highway";
