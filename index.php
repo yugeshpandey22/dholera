@@ -276,62 +276,18 @@ require_once __DIR__ . '/includes/header.php';
                 <div class="hero-feat-text">High Capital Appreciation</div>
               </div>
             </div>
-          </div>
 
-          <!-- Hero Right: Direct Connect Action Card (Replaces Inquiry Form) -->
-          <div class="hero-action-box">
-            <div class="hero-connect-card">
-              <div class="connect-card-header">
-                <span class="card-top-tag">⚡ Direct Investor Desk</span>
-                <h2 class="connect-card-title">Get Project Details & Prices</h2>
-                <p class="connect-card-desc">No middleman. Connect directly with Dholera SIR investment specialists.</p>
-              </div>
-
-              <!-- Instant Direct Actions -->
-              <div class="direct-action-stack">
-                <a href="<?php echo $PHONE_TEL; ?>" class="btn btn-big-action btn-call pulse-animation">
-                  <i class="fa-solid fa-phone-volume fa-lg"></i>
-                  <div>
-                    <span>Call: <?php echo htmlspecialchars($PHONE_DISPLAY); ?></span>
-                    <span class="action-subtext">Tap to Call Specialist Directly</span>
-                  </div>
-                </a>
-
-                <a href="<?php echo $WHATSAPP_LINK; ?>" target="_blank" rel="noopener noreferrer" class="btn btn-big-action btn-whatsapp whatsapp-pulse">
-                  <i class="fa-brands fa-whatsapp fa-xl"></i>
-                  <div>
-                    <span>Instant WhatsApp Inquiry</span>
-                    <span class="action-subtext">Get Price List & Master Plan (PDF)</span>
-                  </div>
-                </a>
-              </div>
-
-              <!-- Trust Points -->
-              <div class="connect-benefits">
-                <div class="benefit-item">
-                  <i class="fa-solid fa-circle-check"></i>
-                  <span>Zero Brokerage</span>
-                </div>
-                <div class="benefit-item">
-                  <i class="fa-solid fa-circle-check"></i>
-                  <span>Instant Site Visit</span>
-                </div>
-                <div class="benefit-item">
-                  <i class="fa-solid fa-circle-check"></i>
-                  <span>Immediate Registry</span>
-                </div>
-                <div class="benefit-item">
-                  <i class="fa-solid fa-circle-check"></i>
-                  <span>Bank Loan Available</span>
-                </div>
-              </div>
-
-              <!-- Price Starting Box -->
-              <div class="instant-price-tag">
-                <div class="price-tag-label"><?php echo htmlspecialchars($PROJECT_NAME); ?> • <?php echo htmlspecialchars($PROJECT_LOCATION); ?></div>
-                <div class="price-tag-value">Starting <?php echo htmlspecialchars($PROJECT_BASE_RATE_TXT); ?>*</div>
-                <div class="price-tag-sub">638 Plots (121 to 724 Yd) • 100% NA Clear Title Registry</div>
-              </div>
+            <!-- Hero Action CTAs -->
+            <div class="hero-cta-group">
+              <a href="<?php echo $WHATSAPP_LINK; ?>" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp btn-lg whatsapp-pulse">
+                <i class="fa-brands fa-whatsapp fa-lg"></i> <span>Chat on WhatsApp</span>
+              </a>
+              <a href="<?php echo $PHONE_TEL; ?>" class="btn btn-call btn-lg pulse-animation">
+                <i class="fa-solid fa-phone"></i> <span>Direct Call: <?php echo htmlspecialchars($PHONE_DISPLAY); ?></span>
+              </a>
+              <a href="#plots" class="btn btn-gold btn-lg">
+                <i class="fa-solid fa-map-location-dot"></i> <span>Explore Verified Plots</span>
+              </a>
             </div>
           </div>
         </div>
