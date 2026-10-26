@@ -57,6 +57,18 @@ $PROJECT_ASSURED_MONTHLY = "₹ 14,707 / month";
 $PROJECT_ASSURED_TOTAL   = "₹ 5,29,470 (3-Year Plan, 1% TDS)";
 $PROJECT_SAMPLE_SIZE     = "124.35 Sq. Yds";
 
+// 🏭 Featured Industrial Project
+$IND_PROJECT_NAME        = "Mayur Business Park";
+$IND_PROJECT_LOCATION    = "Haripura, Fedra-Dhandhuka State Highway, Dholera";
+$IND_PROJECT_TOTAL       = "227 Industrial Plots";
+$IND_PROJECT_TYPE        = "Industrial Open Plots (Gated Project)";
+$IND_PROJECT_SIZES       = "327.49 to 5,912.09 Sq. Yds";
+$IND_PROJECT_APPROVALS   = "NA, NOC, Title Clear & Unit Plan Pass";
+$IND_PROJECT_HIGHWAY     = "0 KM on 4-Lane State Highway";
+$IND_PROJECT_AIRPORT     = "20 KM to Dholera Airport";
+$IND_PROJECT_RATE        = 9750;
+$IND_PROJECT_RATE_TXT    = "₹ 9,750 / sq. yd";
+
 // 📈 Quick Stats
 $HERO_START_PRICE        = "₹ 12,450 / sq. yd*";
 $ALL_IN_START_PRICE      = "₹ 14,950 / sq. yd*";

@@ -296,10 +296,10 @@ document.addEventListener('DOMContentLoaded', () => {
       plotSizeRange.step = '50';
       plotSizeRange.value = '500';
     } else if (selectedType === 'industrial') {
-      plotSizeRange.min = '1000';
-      plotSizeRange.max = '10000';
-      plotSizeRange.step = '100';
-      plotSizeRange.value = '2000';
+      plotSizeRange.min = '327';
+      plotSizeRange.max = '5912';
+      plotSizeRange.step = '25';
+      plotSizeRange.value = '500';
     }
     calculateEstimate();
   };
@@ -438,9 +438,10 @@ document.addEventListener('DOMContentLoaded', () => {
       let customMsg = '';
       if (type === 'residential') {
         customMsg = `Hi, I checked Residential Plots (Rojka, Dholera) for ${displaySize}. Total package estimate is ${formatINR(estTotal)} (Rate: ₹ 12,450/yd, Dev: ₹ 1,003/yd, Fixed Docs: ₹ 15,400) with 3-Year Assured Return Plan. Please share layout plan & available plot numbers.`;
+      } else if (type === 'industrial') {
+        customMsg = `Hi, I checked Mayur Business Park (Industrial Plots in Haripura, Fedra-Dhandhuka Highway, Dholera) for ${displaySize}. Total estimated value is ${formatINR(estTotal)} (Rate: ₹ 9,750/yd). Please share brochure, layout plan & available plot numbers.`;
       } else {
-        const typeName = type === 'commercial' ? 'Commercial Plot' : 'Industrial Plot';
-        customMsg = `Hi, I calculated an estimate for ${displaySize} ${typeName} in Dholera SIR (${formatINR(estTotal)}). Please share the available plots, layout plan & special offers.`;
+        customMsg = `Hi, I calculated an estimate for ${displaySize} Commercial Plot in Dholera SIR (${formatINR(estTotal)}). Please share the available plots, layout plan & special offers.`;
       }
       calcWhatsAppBtn.href = `https://wa.me/${CONFIG.whatsapp}?text=${encodeURIComponent(customMsg)}`;
     }

@@ -619,55 +619,62 @@ require_once __DIR__ . '/includes/header.php';
             </div>
           </article>
 
-          <!-- Industrial Plot Card (Formatted Luxury Layout like Mayur Signature 2) -->
+          <!-- Industrial Plot Card: Mayur Business Park Spotlight (Best-of-the-Best Points) -->
           <article class="ref-plot-card is-featured-card" id="industrial-plots">
             <div class="ref-plot-img-box">
-              <img src="assets/images/dholera-industrial.jpg" alt="Industrial Plots in Dholera SIR near Tata Semiconductor Fab" class="ref-plot-img" loading="lazy">
-              <span class="ref-floating-flag"><i class="fa-solid fa-industry"></i> High Growth</span>
+              <img src="assets/images/dholera-industrial.jpg" alt="Mayur Business Park Industrial Open Plots on Fedra-Dhandhuka Highway Dholera" class="ref-plot-img" loading="lazy">
+              <span class="ref-floating-flag"><i class="fa-solid fa-crown"></i> Featured Project</span>
               <span class="ref-floating-status"><span class="status-live-dot"></span> Booking Open</span>
             </div>
 
             <div class="ref-plot-content">
-              <span class="ref-project-pill"><i class="fa-solid fa-microchip"></i> Tata Fab &amp; DFC Corridor</span>
-              <h3 class="ref-plot-title">Industrial Plots in Dholera</h3>
+              <span class="ref-project-pill"><i class="fa-solid fa-star"></i> Featured: <?php echo htmlspecialchars($IND_PROJECT_NAME); ?></span>
+              <h3 class="ref-plot-title"><?php echo htmlspecialchars($IND_PROJECT_NAME); ?></h3>
               <div class="ref-project-loc">
                 <i class="fa-solid fa-location-dot"></i>
-                <span>Near Tata Semiconductor Fab &amp; DFC Rail, Dholera SIR</span>
+                <span>Haripura, Fedra-Dhandhuka State Highway, Dholera Smart City</span>
               </div>
 
               <ul class="ref-plot-checklist">
                 <li>
                   <span class="ref-dot-check"><i class="fa-solid fa-circle-check"></i></span>
-                  <span><strong>Approved Industrial Land:</strong> 1,000 Sq. Mtr to 50+ Acres</span>
+                  <span><strong><?php echo htmlspecialchars($IND_PROJECT_TOTAL); ?></strong> (<strong><?php echo htmlspecialchars($IND_PROJECT_SIZES); ?></strong>)</span>
                 </li>
                 <li>
                   <span class="ref-dot-check"><i class="fa-solid fa-circle-check"></i></span>
-                  <span>Heavy 400kV Power Grid, High-Speed Gas &amp; Subsurface Ducts</span>
+                  <span>Legitimate: <strong><?php echo htmlspecialchars($IND_PROJECT_APPROVALS); ?></strong></span>
                 </li>
                 <li>
                   <span class="ref-dot-check"><i class="fa-solid fa-circle-check"></i></span>
-                  <span>Registry: <strong>100% Clear Title &amp; NA Industrial NOC</strong> (Immediate Sale Deed)</span>
+                  <span>Direct Frontage: <strong>0 KM 4-Lane State Highway</strong> &bull; <strong>20 KM to Airport</strong></span>
+                </li>
+                <li>
+                  <span class="ref-dot-check"><i class="fa-solid fa-circle-check"></i></span>
+                  <span>Amenities: <strong>Gated Entry, Boundary Wall, Security, Power &amp; Water, Divine Temple, Garden Area</strong></span>
                 </li>
               </ul>
 
-              <!-- Compact Growth / High ROI Strip -->
+              <!-- Strategic Corridor Highlight Strip -->
               <div class="ref-assured-compact">
                 <div class="assured-compact-row">
-                  <span class="assured-tag"><i class="fa-solid fa-chart-line"></i> High Capital Growth:</span>
-                  <strong class="assured-payout">35% YoY Appreciation</strong>
+                  <span class="assured-tag"><i class="fa-solid fa-route"></i> Prime Strategic Corridor:</span>
+                  <strong class="assured-payout">0 KM 4-Lane Highway</strong>
                 </div>
                 <div class="assured-compact-sub">
-                  Direct Multi-Modal Link: Western DFC Rail, Port &amp; 6-Lane Expressway
+                  20 KM Airport &bull; 20 KM DSIR Boundary &bull; 8 KM Gallops Plaza &bull; 20 KM Pipli Jnc.
                 </div>
               </div>
 
               <div class="ref-plot-price-strip">
-                <span>Plot Rate: <strong>From <?php echo htmlspecialchars($INDUSTRIAL_START_PRICE); ?></strong></span>
-                <span class="ref-size-tag">1,000 Mtr - 50+ Acres</span>
+                <span>Plot Rate: <strong>From <?php echo htmlspecialchars($IND_PROJECT_RATE_TXT); ?>*</strong></span>
+                <span class="ref-size-tag">327 - 5,912 Sq. Yds</span>
               </div>
 
-              <a href="<?php echo $WHATSAPP_LINK; ?>" target="_blank" rel="noopener noreferrer" class="ref-btn-gold">
-                <span>Inquire for Industrial Plots</span>
+              <?php
+              $WHATSAPP_MAYUR_BP = "https://wa.me/" . $WHATSAPP_NUMBER . "?text=" . urlencode("Hi, I am interested in Mayur Business Park (Industrial Plots in Haripura, Dholera). Please share brochure, layout plan, and latest price details.");
+              ?>
+              <a href="<?php echo $WHATSAPP_MAYUR_BP; ?>" target="_blank" rel="noopener noreferrer" class="ref-btn-gold">
+                <span>Inquire for <?php echo htmlspecialchars($IND_PROJECT_NAME); ?></span>
                 <i class="fa-solid fa-arrow-right"></i>
               </a>
 
@@ -1093,7 +1100,7 @@ require_once __DIR__ . '/includes/header.php';
                   <button type="button" class="calc-cat-card" data-type="industrial">
                     <div class="cat-icon-badge industrial"><i class="fa-solid fa-industry"></i></div>
                     <div class="cat-info">
-                      <span class="cat-name">Industrial</span>
+                      <span class="cat-name"><?php echo htmlspecialchars($IND_PROJECT_NAME); ?></span>
                       <span class="cat-rate">₹9,750 <small>/ sq.yd</small></span>
                     </div>
                     <div class="cat-active-check"><i class="fa-solid fa-circle-check"></i></div>
@@ -1696,13 +1703,13 @@ require_once __DIR__ . '/includes/header.php';
           <!-- Card 2 -->
           <article class="seo-article-card">
             <span class="article-category-badge"><i class="fa-solid fa-industry"></i> Industrial Boom</span>
-            <h3 class="article-title">Industrial Boom: Dholera Industrial Plots & Semiconductor Ecosystem</h3>
+            <h3 class="article-title">Industrial Boom: Mayur Business Park &amp; Semiconductor Corridor</h3>
             <p class="article-text">
-              With the establishment of India's first commercial semiconductor fabrication facility by Tata Electronics in collaboration with Taiwan's PSMC (an investment exceeding ₹91,000 Crores), <strong>Dholera industrial plots</strong> have become the epicenter for ancillary electronics manufacturing, supply chains, logistics parks, and clean-tech enterprises.
+              With the establishment of India's first semiconductor fab by Tata Electronics (₹91,000 Cr+) and thoughtfully planned industrial projects like <strong>Mayur Business Park</strong> on the Fedra-Dhandhuka 4-Lane State Highway (227 NA unit-plan-passed plots from 327 to 5,912 sq. yds), <strong>Dholera industrial plots</strong> offer unparalleled connectivity, power, and logistics infrastructure.
             </p>
             <div class="article-highlight-pill">
               <i class="fa-solid fa-circle-check"></i>
-              <span>Heavy Power Grid & DFC Rail Access</span>
+              <span>0 KM 4-Lane State Highway &bull; 20 KM to Airport</span>
             </div>
           </article>
 
