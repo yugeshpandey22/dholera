@@ -602,10 +602,6 @@ require_once __DIR__ . '/includes/header.php';
                 </li>
                 <li>
                   <span class="ref-dot-check"><i class="fa-solid fa-circle-check"></i></span>
-                  <span>Legitimate: <strong><?php echo htmlspecialchars($RES2_PROJECT_APPROVALS); ?></strong></span>
-                </li>
-                <li>
-                  <span class="ref-dot-check"><i class="fa-solid fa-circle-check"></i></span>
                   <span>Dev. Charges: <strong><?php echo htmlspecialchars($RES2_PROJECT_DEV_CHARGES); ?></strong></span>
                 </li>
                 <li>
