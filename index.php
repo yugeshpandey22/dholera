@@ -509,10 +509,10 @@ require_once __DIR__ . '/includes/header.php';
     <section class="section-padding plots-section" id="plots">
       <div class="container">
         <div class="section-header">
-          <span class="section-tag">Our Plot Opportunities</span>
-          <h2 class="section-title">Choose the Right Opportunity for You</h2>
+          <span class="section-tag"><i class="fa-solid fa-layer-group"></i> Verified Land Opportunities</span>
+          <h2 class="section-title">Plots for Sale in Dholera: Residential, Commercial & Industrial Land</h2>
           <p class="section-desc">
-            Explore verified <strong>plots for sale in Dholera</strong> tailored for high appreciation and planned urban development.
+            Explore verified <strong>Dholera residential plots</strong>, prime commercial zones, and <strong>Dholera industrial plots</strong> for sale with 100% legal NA approvals and immediate registry.
           </p>
         </div>
 
@@ -670,10 +670,10 @@ require_once __DIR__ . '/includes/header.php';
     <section class="section-padding why-invest-section" id="why-invest">
       <div class="container">
         <div class="section-header text-center">
-          <span class="section-tag"><i class="fa-solid fa-gem"></i> Why Invest in Dholera SIR?</span>
-          <h2 class="section-title">6 High-Yield Reasons to Invest in Dholera Smart City Today</h2>
+          <span class="section-tag"><i class="fa-solid fa-gem"></i> Dholera Property Investment</span>
+          <h2 class="section-title">Why Dholera Land Investment & Property Offers High ROI</h2>
           <p class="section-desc">
-            India's most lucrative land investment corridor backed by the Central &amp; Gujarat Governments. Discover why visionary investors, NRIs, and institutional funds are acquiring <strong>Dholera SIR plots</strong> for exponential wealth creation.
+            India's most lucrative property corridor backed by the Central &amp; Gujarat Governments. Discover why smart investors looking to <strong>buy land in Dholera</strong> choose <strong>Dholera SIR plots</strong> for guaranteed 25-35% annual capital appreciation.
           </p>
         </div>
 
@@ -1028,9 +1028,9 @@ require_once __DIR__ . '/includes/header.php';
       <div class="container">
         <div class="section-header">
           <span class="section-tag"><i class="fa-solid fa-calculator"></i> Transparent Land Pricing</span>
-          <h2 class="section-title">Dholera Plots Price & ROI Estimator</h2>
+          <h2 class="section-title">Dholera Plots Price & Land Investment ROI Estimator</h2>
           <p class="section-desc">
-            Calculate your investment outlay, booking token, and projected 3-year capital appreciation in Dholera SIR.
+            Check current <strong>Dholera plots price</strong> per sq. yard, calculate your booking token, and project your 3-year assured returns for <strong>Dholera property for sale</strong>.
           </p>
         </div>
 
@@ -1467,7 +1467,7 @@ require_once __DIR__ . '/includes/header.php';
                     <span class="faq-q-num">03</span>
                     <div class="faq-q-text-wrap">
                       <span class="faq-q-badge"><i class="fa-solid fa-indian-rupee-sign"></i> Plot Rates &amp; Pricing</span>
-                      <span class="faq-q-title">What is the current price of plots in Dholera Smart City?</span>
+                      <span class="faq-q-title">What is the current Dholera plots price per sq. yard?</span>
                     </div>
                   </div>
                   <div class="faq-icon"><i class="fa-solid fa-chevron-down"></i></div>
@@ -1546,7 +1546,7 @@ require_once __DIR__ . '/includes/header.php';
                     <span class="faq-q-num">05</span>
                     <div class="faq-q-text-wrap">
                       <span class="faq-q-badge"><i class="fa-solid fa-certificate"></i> Legal &amp; Clear Title</span>
-                      <span class="faq-q-title">Are these plots Non-Agricultural (NA) and title clear?</span>
+                      <span class="faq-q-title">Are plots for sale in Dholera legal, NA-approved &amp; title clear?</span>
                     </div>
                   </div>
                   <div class="faq-icon"><i class="fa-solid fa-chevron-down"></i></div>
@@ -1573,7 +1573,7 @@ require_once __DIR__ . '/includes/header.php';
                     <span class="faq-q-num">06</span>
                     <div class="faq-q-text-wrap">
                       <span class="faq-q-badge"><i class="fa-solid fa-chart-line"></i> Safety &amp; Appreciation</span>
-                      <span class="faq-q-title">Is Dholera property investment safe for long-term wealth?</span>
+                      <span class="faq-q-title">Is Dholera property investment and land investment safe for high ROI?</span>
                     </div>
                   </div>
                   <div class="faq-icon"><i class="fa-solid fa-chevron-down"></i></div>
