@@ -473,7 +473,7 @@ require_once __DIR__ . '/includes/header.php';
         </div>
 
         <div class="ref-plots-grid">
-          <!-- Residential Plot Card: Mayur Signature 2 Spotlight (Prominent Residential Badges) -->
+          <!-- Residential Plot Card: Mayur Signature 2 Spotlight -->
           <article class="ref-plot-card is-featured-card" id="residential-plots">
             <div class="ref-plot-img-box">
               <img src="assets/images/dholera-residential.jpg" alt="Mayur Signature 2 Residential Plots in Rojka Dholera Smart City" class="ref-plot-img" loading="lazy">
@@ -482,8 +482,8 @@ require_once __DIR__ . '/includes/header.php';
             </div>
 
             <div class="ref-plot-content">
-              <span class="ref-project-pill"><i class="fa-solid fa-house-chimney"></i> Featured Residential Project</span>
-              <h3 class="ref-plot-title"><?php echo htmlspecialchars($PROJECT_NAME); ?> <span style="display:inline-block; font-size: 0.6em; background: #fee2e2; color: #dc2626; padding: 3px 9px; border-radius: 6px; font-weight: 800; vertical-align: middle; border: 1px solid rgba(220,38,38,0.2);">Residential</span></h3>
+              <span class="ref-project-pill"><i class="fa-solid fa-star"></i> Featured Residential Project</span>
+              <h3 class="ref-plot-title"><?php echo htmlspecialchars($PROJECT_NAME); ?></h3>
               <div class="ref-project-loc">
                 <i class="fa-solid fa-location-dot"></i>
                 <span><?php echo htmlspecialchars($PROJECT_LOCATION); ?> &bull; Gated Residential Zone</span>
@@ -508,26 +508,29 @@ require_once __DIR__ . '/includes/header.php';
                 </li>
               </ul>
 
-              <!-- 3 Years Assured Return Box -->
-              <div class="ref-assured-compact">
-                <div class="assured-compact-row">
-                  <span class="assured-tag"><i class="fa-solid fa-shield-halved"></i> 3 Years Assured Return (1%)*:</span>
-                  <strong class="assured-payout">₹ 14,707 / month</strong>
+              <!-- Card Bottom Group (Aligned to Card Bottom) -->
+              <div class="ref-plot-bottom">
+                <!-- 3 Years Assured Return Box -->
+                <div class="ref-assured-compact">
+                  <div class="assured-compact-row">
+                    <span class="assured-tag"><i class="fa-solid fa-shield-halved"></i> 3 Years Assured Return (1%)*:</span>
+                    <strong class="assured-payout">₹ 14,707 / month</strong>
+                  </div>
+                  <div class="assured-compact-sub">
+                    For Example: Total Return: <strong>₹ 5,29,470</strong> (3-Year Plan, 1% TDS) (on 124.35 Sq. Yds plot)
+                  </div>
                 </div>
-                <div class="assured-compact-sub">
-                  For Example: Total Return: <strong>₹ 5,29,470</strong> (3-Year Plan, 1% TDS) (on 124.35 Sq. Yds plot)
+
+                <div class="ref-plot-price-strip">
+                  <span>Plot Rate: <strong><?php echo htmlspecialchars($PROJECT_BASE_RATE_TXT); ?>*</strong></span>
+                  <span class="ref-size-tag">121 - 724 Sq. Yds</span>
                 </div>
-              </div>
 
-              <div class="ref-plot-price-strip">
-                <span>Plot Rate: <strong><?php echo htmlspecialchars($PROJECT_BASE_RATE_TXT); ?>*</strong></span>
-                <span class="ref-size-tag">121 - 724 Sq. Yds</span>
+                <a href="<?php echo $WHATSAPP_LINK; ?>" target="_blank" rel="noopener noreferrer" class="ref-btn-gold">
+                  <span>Inquire for <?php echo htmlspecialchars($PROJECT_NAME); ?></span>
+                  <i class="fa-solid fa-arrow-right"></i>
+                </a>
               </div>
-
-              <a href="<?php echo $WHATSAPP_LINK; ?>" target="_blank" rel="noopener noreferrer" class="ref-btn-gold">
-                <span>Inquire for <?php echo htmlspecialchars($PROJECT_NAME); ?> (Residential)</span>
-                <i class="fa-solid fa-arrow-right"></i>
-              </a>
             </div>
           </article>
 
@@ -540,8 +543,8 @@ require_once __DIR__ . '/includes/header.php';
             </div>
 
             <div class="ref-plot-content">
-              <span class="ref-project-pill"><i class="fa-solid fa-house-chimney"></i> Featured: <?php echo htmlspecialchars($RES2_PROJECT_NAME); ?></span>
-              <h3 class="ref-plot-title"><?php echo htmlspecialchars($RES2_PROJECT_NAME); ?> <span style="display:inline-block; font-size: 0.6em; background: #fee2e2; color: #dc2626; padding: 3px 9px; border-radius: 6px; font-weight: 800; vertical-align: middle; border: 1px solid rgba(220,38,38,0.2);">Residential</span></h3>
+              <span class="ref-project-pill"><i class="fa-solid fa-star"></i> Featured Residential Project</span>
+              <h3 class="ref-plot-title"><?php echo htmlspecialchars($RES2_PROJECT_NAME); ?></h3>
               <div class="ref-project-loc">
                 <i class="fa-solid fa-location-dot"></i>
                 <span><?php echo htmlspecialchars($RES2_PROJECT_LOCATION); ?></span>
@@ -550,11 +553,11 @@ require_once __DIR__ . '/includes/header.php';
               <ul class="ref-plot-checklist">
                 <li>
                   <span class="ref-dot-check"><i class="fa-solid fa-circle-check"></i></span>
-                  <span>Project Type: <strong><?php echo htmlspecialchars($RES2_PROJECT_TYPE); ?></strong></span>
+                  <span>Project Type: <strong>Residential Plots (Gated Community)</strong></span>
                 </li>
                 <li>
                   <span class="ref-dot-check"><i class="fa-solid fa-circle-check"></i></span>
-                  <span>Total Units: <strong><?php echo htmlspecialchars($RES2_PROJECT_TOTAL); ?></strong> (<strong><?php echo htmlspecialchars($RES2_PROJECT_SIZES); ?></strong>)</span>
+                  <span>Total Inventory: <strong><?php echo htmlspecialchars($RES2_PROJECT_TOTAL); ?></strong> (<strong><?php echo htmlspecialchars($RES2_PROJECT_SIZES); ?></strong>)</span>
                 </li>
                 <li>
                   <span class="ref-dot-check"><i class="fa-solid fa-circle-check"></i></span>
@@ -566,33 +569,36 @@ require_once __DIR__ . '/includes/header.php';
                 </li>
               </ul>
 
-              <!-- 3 Years Assured Return Box -->
-              <div class="ref-assured-compact">
-                <div class="assured-compact-row">
-                  <span class="assured-tag"><i class="fa-solid fa-shield-halved"></i> 3 Years Assured Return (1%)*:</span>
-                  <strong class="assured-payout"><?php echo htmlspecialchars($RES2_PROJECT_ASSURED_MONTHLY); ?></strong>
+              <!-- Card Bottom Group (Aligned to Card Bottom) -->
+              <div class="ref-plot-bottom">
+                <!-- 3 Years Assured Return Box -->
+                <div class="ref-assured-compact">
+                  <div class="assured-compact-row">
+                    <span class="assured-tag"><i class="fa-solid fa-shield-halved"></i> 3 Years Assured Return (1%)*:</span>
+                    <strong class="assured-payout"><?php echo htmlspecialchars($RES2_PROJECT_ASSURED_MONTHLY); ?></strong>
+                  </div>
+                  <div class="assured-compact-sub">
+                    For Example: Total Return: <strong><?php echo htmlspecialchars($RES2_PROJECT_ASSURED_TOTAL); ?></strong> (on <?php echo htmlspecialchars($RES2_PROJECT_SAMPLE_SIZE); ?> plot)
+                  </div>
                 </div>
-                <div class="assured-compact-sub">
-                  For Example: Total Return: <strong><?php echo htmlspecialchars($RES2_PROJECT_ASSURED_TOTAL); ?></strong> (on <?php echo htmlspecialchars($RES2_PROJECT_SAMPLE_SIZE); ?> plot)
+
+                <div class="ref-plot-price-strip">
+                  <span>Plot Rate: <strong><?php echo htmlspecialchars($RES2_PROJECT_BASE_RATE_TXT); ?>*</strong></span>
+                  <span class="ref-size-tag">124 - 404 Sq. Yds</span>
                 </div>
-              </div>
 
-              <div class="ref-plot-price-strip">
-                <span>Plot Rate: <strong><?php echo htmlspecialchars($RES2_PROJECT_BASE_RATE_TXT); ?>*</strong></span>
-                <span class="ref-size-tag">124 - 404 Sq. Yds</span>
+                <?php
+                $WHATSAPP_SWASTIK = "https://wa.me/" . $WHATSAPP_NUMBER . "?text=" . urlencode("Hi, I am interested in Mayur Swastik II (Residential Plots in Kamiyala, Dholera). Please share brochure, layout plan, and latest price details.");
+                ?>
+                <a href="<?php echo $WHATSAPP_SWASTIK; ?>" target="_blank" rel="noopener noreferrer" class="ref-btn-gold">
+                  <span>Inquire for <?php echo htmlspecialchars($RES2_PROJECT_NAME); ?></span>
+                  <i class="fa-solid fa-arrow-right"></i>
+                </a>
               </div>
-
-              <?php
-              $WHATSAPP_SWASTIK = "https://wa.me/" . $WHATSAPP_NUMBER . "?text=" . urlencode("Hi, I am interested in Mayur Swastik II (Residential Plots in Kamiyala, Dholera). Please share brochure, layout plan, and latest price details.");
-              ?>
-              <a href="<?php echo $WHATSAPP_SWASTIK; ?>" target="_blank" rel="noopener noreferrer" class="ref-btn-gold">
-                <span>Inquire for <?php echo htmlspecialchars($RES2_PROJECT_NAME); ?> (Residential)</span>
-                <i class="fa-solid fa-arrow-right"></i>
-              </a>
             </div>
           </article>
 
-          <!-- Industrial Plot Card: Mayur Business Park Spotlight (Best-of-the-Best Points) -->
+          <!-- Industrial Plot Card: Mayur Business Park Spotlight -->
           <article class="ref-plot-card is-featured-card" id="industrial-plots">
             <div class="ref-plot-img-box">
               <img src="assets/images/dholera-industrial.jpg" alt="Mayur Business Park Industrial Open Plots on Fedra-Dhandhuka Highway Dholera" class="ref-plot-img" loading="lazy">
@@ -601,8 +607,8 @@ require_once __DIR__ . '/includes/header.php';
             </div>
 
             <div class="ref-plot-content">
-              <span class="ref-project-pill"><i class="fa-solid fa-industry"></i> Industrial Featured Project</span>
-              <h3 class="ref-plot-title"><?php echo htmlspecialchars($IND_PROJECT_NAME); ?> <span style="display:inline-block; font-size: 0.6em; background: #fef3c7; color: #b45309; padding: 3px 9px; border-radius: 6px; font-weight: 800; vertical-align: middle; border: 1px solid rgba(180,83,9,0.2);">Industrial</span></h3>
+              <span class="ref-project-pill pill-industrial"><i class="fa-solid fa-star"></i> Featured Industrial Project</span>
+              <h3 class="ref-plot-title"><?php echo htmlspecialchars($IND_PROJECT_NAME); ?></h3>
               <div class="ref-project-loc">
                 <i class="fa-solid fa-location-dot"></i>
                 <span>Haripura, Fedra-Dhandhuka State Highway, Dholera Smart City</span>
@@ -627,29 +633,32 @@ require_once __DIR__ . '/includes/header.php';
                 </li>
               </ul>
 
-              <!-- 3 Years Assured Return Box for Mayur Business Park -->
-              <div class="ref-assured-compact">
-                <div class="assured-compact-row">
-                  <span class="assured-tag"><i class="fa-solid fa-shield-halved"></i> 3 Years Assured Return (1%)*:</span>
-                  <strong class="assured-payout"><?php echo htmlspecialchars($IND_PROJECT_ASSURED_MONTHLY); ?></strong>
+              <!-- Card Bottom Group (Aligned to Card Bottom) -->
+              <div class="ref-plot-bottom">
+                <!-- 3 Years Assured Return Box for Mayur Business Park -->
+                <div class="ref-assured-compact">
+                  <div class="assured-compact-row">
+                    <span class="assured-tag"><i class="fa-solid fa-shield-halved"></i> 3 Years Assured Return (1%)*:</span>
+                    <strong class="assured-payout"><?php echo htmlspecialchars($IND_PROJECT_ASSURED_MONTHLY); ?></strong>
+                  </div>
+                  <div class="assured-compact-sub">
+                    For Example: Total Return: <strong><?php echo htmlspecialchars($IND_PROJECT_ASSURED_TOTAL); ?></strong> (on <?php echo htmlspecialchars($IND_PROJECT_SAMPLE_SIZE); ?> plot)
+                  </div>
                 </div>
-                <div class="assured-compact-sub">
-                  For Example: Total Return: <strong><?php echo htmlspecialchars($IND_PROJECT_ASSURED_TOTAL); ?></strong> (on <?php echo htmlspecialchars($IND_PROJECT_SAMPLE_SIZE); ?> plot)
+
+                <div class="ref-plot-price-strip">
+                  <span>Plot Rate: <strong><?php echo htmlspecialchars($IND_PROJECT_RATE_TXT); ?>*</strong></span>
+                  <span class="ref-size-tag">327 - 5,912 Sq. Yds</span>
                 </div>
-              </div>
 
-              <div class="ref-plot-price-strip">
-                <span>Plot Rate: <strong><?php echo htmlspecialchars($IND_PROJECT_RATE_TXT); ?>*</strong></span>
-                <span class="ref-size-tag">327 - 5,912 Sq. Yds</span>
+                <?php
+                $WHATSAPP_MAYUR_BP = "https://wa.me/" . $WHATSAPP_NUMBER . "?text=" . urlencode("Hi, I am interested in Mayur Business Park (Industrial Plots in Haripura, Dholera). Please share brochure, layout plan, and latest price details.");
+                ?>
+                <a href="<?php echo $WHATSAPP_MAYUR_BP; ?>" target="_blank" rel="noopener noreferrer" class="ref-btn-gold">
+                  <span>Inquire for <?php echo htmlspecialchars($IND_PROJECT_NAME); ?></span>
+                  <i class="fa-solid fa-arrow-right"></i>
+                </a>
               </div>
-
-              <?php
-              $WHATSAPP_MAYUR_BP = "https://wa.me/" . $WHATSAPP_NUMBER . "?text=" . urlencode("Hi, I am interested in Mayur Business Park (Industrial Plots in Haripura, Dholera). Please share brochure, layout plan, and latest price details.");
-              ?>
-              <a href="<?php echo $WHATSAPP_MAYUR_BP; ?>" target="_blank" rel="noopener noreferrer" class="ref-btn-gold">
-                <span>Inquire for <?php echo htmlspecialchars($IND_PROJECT_NAME); ?> (Industrial)</span>
-                <i class="fa-solid fa-arrow-right"></i>
-              </a>
             </div>
           </article>
         </div>
