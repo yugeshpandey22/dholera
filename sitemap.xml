@@ -3,7 +3,7 @@
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://dholera.adikka.com/</loc>
-    <lastmod>2026-10-24</lastmod>
+    <lastmod>2026-10-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
     <image:image>
@@ -13,13 +13,13 @@
   </url>
   <url>
     <loc>https://dholera.adikka.com/about</loc>
-    <lastmod>2026-10-24</lastmod>
+    <lastmod>2026-10-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://dholera.adikka.com/plots</loc>
-    <lastmod>2026-10-24</lastmod>
+    <lastmod>2026-10-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.9</priority>
     <image:image>
@@ -36,14 +36,44 @@
     </image:image>
   </url>
   <url>
+    <loc>https://dholera.adikka.com/residential-plots</loc>
+    <lastmod>2026-10-26</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://dholera.adikka.com/assets/images/dholera-residential.jpg</image:loc>
+      <image:title>Dholera Residential Plots in Gated Townships TP1 and TP2</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://dholera.adikka.com/commercial-plots</loc>
+    <lastmod>2026-10-26</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://dholera.adikka.com/assets/images/dholera-commercial.jpg</image:loc>
+      <image:title>Dholera Commercial Plots on Central Expressway Corridor</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://dholera.adikka.com/industrial-plots</loc>
+    <lastmod>2026-10-26</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://dholera.adikka.com/assets/images/dholera-industrial.jpg</image:loc>
+      <image:title>Dholera Industrial Land near Tata Semiconductor Fab</image:title>
+    </image:image>
+  </url>
+  <url>
     <loc>https://dholera.adikka.com/why-invest</loc>
-    <lastmod>2026-10-24</lastmod>
+    <lastmod>2026-10-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://dholera.adikka.com/infrastructure</loc>
-    <lastmod>2026-10-24</lastmod>
+    <lastmod>2026-10-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -53,7 +83,7 @@
   </url>
   <url>
     <loc>https://dholera.adikka.com/dholera-international-airport</loc>
-    <lastmod>2026-10-24</lastmod>
+    <lastmod>2026-10-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <image:image>
@@ -63,7 +93,7 @@
   </url>
   <url>
     <loc>https://dholera.adikka.com/dholera-expressway</loc>
-    <lastmod>2026-10-24</lastmod>
+    <lastmod>2026-10-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <image:image>
@@ -73,7 +103,7 @@
   </url>
   <url>
     <loc>https://dholera.adikka.com/dholera-freight-corridor</loc>
-    <lastmod>2026-10-24</lastmod>
+    <lastmod>2026-10-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <image:image>
@@ -83,7 +113,7 @@
   </url>
   <url>
     <loc>https://dholera.adikka.com/dholera-seaport</loc>
-    <lastmod>2026-10-24</lastmod>
+    <lastmod>2026-10-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <image:image>
@@ -93,20 +123,26 @@
   </url>
   <url>
     <loc>https://dholera.adikka.com/pricing</loc>
-    <lastmod>2026-10-24</lastmod>
+    <lastmod>2026-10-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://dholera.adikka.com/gallery</loc>
-    <lastmod>2026-10-24</lastmod>
+    <lastmod>2026-10-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://dholera.adikka.com/faqs</loc>
-    <lastmod>2026-10-24</lastmod>
+    <lastmod>2026-10-26</lastmod>
     <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://dholera.adikka.com/contact</loc>
+    <lastmod>2026-10-26</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 </urlset>

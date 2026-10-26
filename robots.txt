@@ -2,3 +2,4 @@ User-agent: *
 Allow: /
 
 Sitemap: https://dholera.adikka.com/sitemap.xml
+Sitemap: http://dholera.adikka.com/sitemap.xml
