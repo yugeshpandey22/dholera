@@ -1465,6 +1465,7 @@ ul {
   gap: 24px;
   max-width: 1240px;
   margin: 0 auto;
+  align-items: start;
 }
 
 @media (min-width: 768px) and (max-width: 1023px) {
@@ -1573,8 +1574,8 @@ ul {
   border: 1px solid #e2e8f0;
   font-size: 0.85rem;
   color: #475569;
+  margin-top: 10px;
   margin-bottom: 12px;
-  margin-top: auto;
 }
 
 .ref-plot-price-strip strong {

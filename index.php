@@ -598,7 +598,7 @@ require_once __DIR__ . '/includes/header.php';
                 </li>
                 <li>
                   <span class="ref-dot-check"><i class="fa-solid fa-circle-check"></i></span>
-                  <span>Total Units: <strong><?php echo htmlspecialchars($RES2_PROJECT_TOTAL); ?></strong> (Plot Size: <strong><?php echo htmlspecialchars($RES2_PROJECT_SIZES); ?></strong>)</span>
+                  <span>Total Units: <strong><?php echo htmlspecialchars($RES2_PROJECT_TOTAL); ?></strong> (<strong><?php echo htmlspecialchars($RES2_PROJECT_SIZES); ?></strong>)</span>
                 </li>
                 <li>
                   <span class="ref-dot-check"><i class="fa-solid fa-circle-check"></i></span>
