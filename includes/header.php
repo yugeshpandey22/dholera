@@ -7,9 +7,9 @@ if (!isset($PHONE_RAW)) {
   require_once __DIR__ . '/../config.php';
 }
 
-$PAGE_TITLE       = $PAGE_TITLE ?? "Dholera Smart City Plots | Residential, Commercial & Industrial Plots in Dholera SIR";
-$PAGE_DESCRIPTION = $PAGE_DESCRIPTION ?? ($PAGE_DESC ?? "Explore prime Dholera Smart City plots for sale. Verified Dholera residential plots, commercial plots & industrial plots in Dholera SIR Gujarat.");
-$PAGE_KEYWORDS    = $PAGE_KEYWORDS ?? "Dholera Smart City plots, Dholera residential plots, Dholera commercial plots, Dholera industrial plots, Plots for sale in Dholera, Dholera SIR plots";
+$PAGE_TITLE       = $PAGE_TITLE ?? "Dholera Smart City Plots | Residential & Industrial Land in Dholera SIR";
+$PAGE_DESCRIPTION = $PAGE_DESCRIPTION ?? ($PAGE_DESC ?? "Explore prime Dholera Smart City plots for sale. Verified Dholera residential plots & industrial plots in Dholera SIR Gujarat.");
+$PAGE_KEYWORDS    = $PAGE_KEYWORDS ?? "Dholera Smart City plots, Dholera residential plots, Dholera industrial plots, Plots for sale in Dholera, Dholera SIR plots";
 $PAGE_CANONICAL   = $PAGE_CANONICAL ?? ($CANONICAL_URL . ($CURRENT_PAGE_SLUG ?? ''));
 $PAGE_IMAGE       = $PAGE_IMAGE ?? ($CANONICAL_URL . "assets/images/dholera-hero.jpg");
 $ACTIVE_NAV       = $ACTIVE_NAV ?? 'home';

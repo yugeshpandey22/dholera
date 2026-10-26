@@ -424,7 +424,7 @@ require_once dirname(__DIR__) . '/includes/header.php';
       <div class="cta-box-inner">
         <h2 class="cta-box-title">Acquire Prime Plots Along the Dholera Expressway Corridor</h2>
         <p class="cta-box-desc">
-          Clear-title residential villa plots and commercial parcels situated within 5 to 10 minutes of major expressway interchanges. Complete development, 100% legal registry, and proven high capital appreciation.
+          Clear-title residential villa plots and industrial parcels situated within 5 to 10 minutes of major expressway interchanges. Complete development, 100% legal registry, and proven high capital appreciation.
         </p>
         <div class="cta-buttons-row">
           <a href="<?php echo $PHONE_TEL; ?>" class="btn btn-call btn-lg pulse-animation">

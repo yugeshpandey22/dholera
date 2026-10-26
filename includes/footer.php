@@ -19,7 +19,7 @@ if (!isset($PHONE_RAW)) {
             <img src="assets/images/dholera-logo.svg" alt="Dholera Special Investment Region Logo" class="footer-logo-img">
           </a>
           <p class="footer-about-text">
-            Specializing in verified residential, commercial, and industrial plots for sale in Dholera Special Investment Region (SIR), Gujarat. Providing 100% legal title-clear land advisory with zero brokerage.
+            Specializing in verified residential and industrial plots for sale in Dholera Special Investment Region (SIR), Gujarat. Providing 100% legal title-clear land advisory with zero brokerage.
           </p>
           <div class="footer-trust-badge">
             <i class="fa-solid fa-shield-halved"></i>
@@ -33,7 +33,7 @@ if (!isset($PHONE_RAW)) {
           <div class="footer-links-list">
             <a href="<?php echo $BASE_URI; ?>" data-section="home"><i class="fa-solid fa-chevron-right"></i> Home Overview</a>
             <a href="<?php echo $BASE_URI; ?>about" data-section="about"><i class="fa-solid fa-chevron-right"></i> About Dholera SIR</a>
-            <a href="<?php echo $BASE_URI; ?>plots" data-section="plots"><i class="fa-solid fa-chevron-right"></i> Residential &amp; Commercial Plots</a>
+            <a href="<?php echo $BASE_URI; ?>plots" data-section="plots"><i class="fa-solid fa-chevron-right"></i> Residential &amp; Industrial Plots</a>
             <a href="<?php echo $BASE_URI; ?>why-invest" data-section="why-invest"><i class="fa-solid fa-chevron-right"></i> Why Invest in Dholera</a>
             <a href="<?php echo $BASE_URI; ?>dholera-international-airport"><i class="fa-solid fa-chevron-right"></i> International Airport (DIACL)</a>
             <a href="<?php echo $BASE_URI; ?>dholera-expressway"><i class="fa-solid fa-chevron-right"></i> 6-Lane Expressway (NH 751)</a>

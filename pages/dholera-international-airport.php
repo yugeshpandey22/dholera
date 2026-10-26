@@ -423,7 +423,7 @@ require_once dirname(__DIR__) . '/includes/header.php';
       <div class="cta-box-inner">
         <h2 class="cta-box-title">Acquire High-Value Plots Along the Dholera Airport Corridor</h2>
         <p class="cta-box-desc">
-          Verified clear-title residential and commercial plots within minutes of Dholera International Airport (DIACL). 100% legal registry, direct highway connectivity, and massive aerotropolis capital appreciation.
+          Verified clear-title residential and industrial plots within minutes of Dholera International Airport (DIACL). 100% legal registry, direct highway connectivity, and massive aerotropolis capital appreciation.
         </p>
         <div class="cta-buttons-row">
           <a href="<?php echo $PHONE_TEL; ?>" class="btn btn-call btn-lg pulse-animation">

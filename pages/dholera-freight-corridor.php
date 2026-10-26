@@ -394,7 +394,7 @@ require_once dirname(__DIR__) . '/includes/header.php';
             <div class="faq-answer">
               <div class="faq-answer-inner">
                 <p>
-                  Yes, verified clear-title industrial and commercial land parcels are available for investors and businesses in TP1 and TP2 zones, with full government single-window approvals and legal sale deed registry.
+                  Yes, verified clear-title industrial and residential land parcels are available for investors and businesses in TP1 and TP2 zones, with full government single-window approvals and legal sale deed registry.
                 </p>
               </div>
             </div>

@@ -290,16 +290,16 @@ document.addEventListener('DOMContentLoaded', () => {
       plotSizeRange.max = '724';
       plotSizeRange.step = '1';
       plotSizeRange.value = '124';
-    } else if (selectedType === 'commercial') {
-      plotSizeRange.min = '300';
-      plotSizeRange.max = '5000';
-      plotSizeRange.step = '50';
-      plotSizeRange.value = '500';
+    } else if (selectedType === 'swastik' || selectedType === 'commercial') {
+      plotSizeRange.min = '124';
+      plotSizeRange.max = '404';
+      plotSizeRange.step = '1';
+      plotSizeRange.value = '124';
     } else if (selectedType === 'industrial') {
       plotSizeRange.min = '327';
       plotSizeRange.max = '5912';
       plotSizeRange.step = '25';
-      plotSizeRange.value = '500';
+      plotSizeRange.value = '415';
     }
     calculateEstimate();
   };
@@ -337,12 +337,13 @@ document.addEventListener('DOMContentLoaded', () => {
     let devRate = 1003; // 850 + 18% GST
     let docCharges = 15400; // Fixed
     
-    if (type === 'commercial') {
-      baseRate = 12450;
+    if (type === 'industrial') {
+      baseRate = 9750;
       devRate = 1003;
       docCharges = 15400;
-    } else if (type === 'industrial') {
-      baseRate = 9750;
+    } else {
+      // residential or swastik
+      baseRate = 12450;
       devRate = 1003;
       docCharges = 15400;
     }
@@ -361,7 +362,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const min = parseFloat(plotSizeRange.min || '121');
     const max = parseFloat(plotSizeRange.max || '724');
     const percentage = Math.max(0, Math.min(100, ((size - min) / (max - min)) * 100));
-    const accentColor = type === 'commercial' ? '#2563eb' : (type === 'industrial' ? '#d97706' : '#dc2626');
+    const accentColor = type === 'industrial' ? '#d97706' : '#2563eb';
     plotSizeRange.style.background = `linear-gradient(to right, ${accentColor} 0%, ${accentColor} ${percentage}%, #e2e8f0 ${percentage}%, #e2e8f0 100%)`;
 
     // Sync preset chip active state if matching
@@ -394,26 +395,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const roiTimeline = document.getElementById('calcRoiTimeline');
     const chargesInfo = document.getElementById('calcChargesInfo');
 
-    if (type === 'residential' || type === 'commercial') {
-      // Residential (Mayur Signature 2 in Rojka & Dholera SIR Plots): 124.35 sq yd benchmark yields ₹ 14,707/mo & ₹ 5,29,470 total
-      const isSampleRes = Math.abs(size - 124.35) < 2;
-      const monthlyPayout = isSampleRes ? 14707 : Math.round((size / 124.35) * 14707);
-      const totalPayout = isSampleRes ? 529470 : (monthlyPayout * 36);
-
-      if (roiBadge) {
-        roiBadge.innerHTML = '<i class="fa-solid fa-shield-halved"></i> 3 Years Assured Return (1%)*';
-      }
-      if (roiTimeline) {
-        roiTimeline.textContent = '1% TDS Payout Plan';
-      }
-      if (projRoiVal) {
-        projRoiVal.textContent = `${formatINR(monthlyPayout)} / mo`;
-      }
-      if (projRoiDisplay) {
-        projRoiDisplay.innerHTML = `<i class="fa-solid fa-circle-check"></i> For Example: Total Return: <strong>${formatINR(totalPayout)}</strong>`;
-      }
-      if (chargesInfo) chargesInfo.style.display = 'flex';
-    } else if (type === 'industrial') {
+    if (type === 'industrial') {
       // Industrial (Mayur Business Park in Haripura): 414.65 sq yd benchmark yields ₹ 36,638/mo & ₹ 1,354,997 total
       const isSampleInd = Math.abs(size - 414.65) < 5;
       const monthlyPayout = isSampleInd ? 36638 : Math.round((size / 414.65) * 36638);
@@ -433,23 +415,24 @@ document.addEventListener('DOMContentLoaded', () => {
       }
       if (chargesInfo) chargesInfo.style.display = 'flex';
     } else {
-      // Commercial: Appreciation model
-      const multiplier = 2.1;
-      const projectedValuation = Math.round(landTotal * multiplier);
+      // Residential (Mayur Signature 2 in Rojka & Mayur Swastik II in Kamiyala): 124.35 sq yd benchmark yields ₹ 14,707/mo & ₹ 5,29,470 total
+      const isSampleRes = Math.abs(size - 124.35) < 2;
+      const monthlyPayout = isSampleRes ? 14707 : Math.round((size / 124.35) * 14707);
+      const totalPayout = isSampleRes ? 529470 : (monthlyPayout * 36);
 
       if (roiBadge) {
-        roiBadge.innerHTML = '<i class="fa-solid fa-arrow-trend-up"></i> Projected Valuation';
+        roiBadge.innerHTML = '<i class="fa-solid fa-shield-halved"></i> 3 Years Assured Return (1%)*';
       }
       if (roiTimeline) {
-        roiTimeline.textContent = 'By 2029';
+        roiTimeline.textContent = '1% TDS Payout Plan';
       }
       if (projRoiVal) {
-        projRoiVal.textContent = `${formatINR(projectedValuation)}*`;
+        projRoiVal.textContent = `${formatINR(monthlyPayout)} / mo`;
       }
       if (projRoiDisplay) {
-        projRoiDisplay.innerHTML = `<i class="fa-solid fa-chart-line"></i> High Growth Expressway Corridor`;
+        projRoiDisplay.innerHTML = `<i class="fa-solid fa-circle-check"></i> For Example: Total Return: <strong>${formatINR(totalPayout)}</strong>`;
       }
-      if (chargesInfo) chargesInfo.style.display = 'none';
+      if (chargesInfo) chargesInfo.style.display = 'flex';
     }
 
     // Update WhatsApp link with pre-filled details

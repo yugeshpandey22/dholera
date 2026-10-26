@@ -1,4 +1,5 @@
 <?php
+
 /**
  * ============================================================================
  * DHOLERA SMART CITY PLOTS - LANDING PAGE CONFIGURATION
@@ -24,9 +25,9 @@ $LIVE_DOMAIN      = "dholera.adikka.com";
 $HTTP_HOST        = $_SERVER['HTTP_HOST'] ?? $LIVE_DOMAIN;
 $IS_LOCAL         = (strpos($HTTP_HOST, 'localhost') !== false || strpos($HTTP_HOST, '127.0.0.1') !== false);
 $BASE_URI         = $IS_LOCAL ? '/smartcity/' : '/';
-$IS_HTTPS         = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off') 
-                    || (isset($_SERVER['SERVER_PORT']) && $_SERVER['SERVER_PORT'] == 443) 
-                    || (isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && $_SERVER['HTTP_X_FORWARDED_PROTO'] === 'https');
+$IS_HTTPS         = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off')
+    || (isset($_SERVER['SERVER_PORT']) && $_SERVER['SERVER_PORT'] == 443)
+    || (isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && $_SERVER['HTTP_X_FORWARDED_PROTO'] === 'https');
 $SCHEME           = $IS_HTTPS ? 'https' : 'http';
 $CANONICAL_URL    = $SCHEME . '://' . ($IS_LOCAL ? $HTTP_HOST : $LIVE_DOMAIN) . $BASE_URI;
 
@@ -64,8 +65,8 @@ $RES2_PROJECT_TOTAL           = "433 Plots";
 $RES2_PROJECT_TYPE            = "Residential Plots (Gated Community)";
 $RES2_PROJECT_SIZES           = "123.78 to 403.76 Sq. Yds";
 $RES2_PROJECT_APPROVALS       = "NA, NOC, Title Clear & Unit Plan Pass";
-$RES2_PROJECT_BASE_RATE       = 12450;
-$RES2_PROJECT_BASE_RATE_TXT   = "₹ 12,450 / sq. yd";
+$RES2_PROJECT_BASE_RATE       = 10750;
+$RES2_PROJECT_BASE_RATE_TXT   = "₹ 10,750 / sq. yd";
 $RES2_PROJECT_DEV_CHARGES     = "₹ 1,003 / sq. yd (850 + 18% GST)";
 $RES2_PROJECT_REGISTRY_MALE   = "5.9%";
 $RES2_PROJECT_REGISTRY_FEMALE = "4.9%";
@@ -99,6 +100,5 @@ $IND_PROJECT_SAMPLE_SIZE     = "414.65 Sq. Yds";
 $HERO_START_PRICE        = "₹ 12,450 / sq. yd*";
 $ALL_IN_START_PRICE      = "₹ 14,950 / sq. yd*";
 $RESIDENTIAL_START_PRICE = "₹ 12,450 / sq. yd*";
-$COMMERCIAL_START_PRICE  = "₹ 12,450 / sq. yd*";
 $INDUSTRIAL_START_PRICE  = "₹ 9,750 / sq. yd*";
 $INDUSTRIAL_BASE_RATE    = 9750;

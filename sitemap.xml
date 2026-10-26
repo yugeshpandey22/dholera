@@ -8,7 +8,7 @@
     <priority>1.0</priority>
     <image:image>
       <image:loc>https://dholera.adikka.com/assets/images/dholera-hero.jpg</image:loc>
-      <image:title>Dholera Smart City Plots - Residential, Commercial and Industrial Land</image:title>
+      <image:title>Dholera Smart City Plots - Residential and Industrial Land</image:title>
     </image:image>
   </url>
   <url>
@@ -27,10 +27,6 @@
       <image:title>Dholera Residential Plots in Greenfield Smart City</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://dholera.adikka.com/assets/images/dholera-commercial.jpg</image:loc>
-      <image:title>Dholera Commercial Plots and Retail Boulevard in Dholera SIR</image:title>
-    </image:image>
-    <image:image>
       <image:loc>https://dholera.adikka.com/assets/images/dholera-industrial.jpg</image:loc>
       <image:title>Dholera Industrial Plots and Manufacturing Zone</image:title>
     </image:image>
@@ -43,16 +39,6 @@
     <image:image>
       <image:loc>https://dholera.adikka.com/assets/images/dholera-residential.jpg</image:loc>
       <image:title>Dholera Residential Plots in Gated Townships TP1 and TP2</image:title>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://dholera.adikka.com/commercial-plots</loc>
-    <lastmod>2026-10-26</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.9</priority>
-    <image:image>
-      <image:loc>https://dholera.adikka.com/assets/images/dholera-commercial.jpg</image:loc>
-      <image:title>Dholera Commercial Plots on Central Expressway Corridor</image:title>
     </image:image>
   </url>
   <url>

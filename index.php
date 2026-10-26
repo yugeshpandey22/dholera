@@ -18,9 +18,9 @@ $ROUTED_SECTIONS = [
   ],
   'plots' => [
     'section' => 'plots',
-    'title' => 'Dholera Smart City Plots for Sale | Residential, Commercial & Industrial Land in SIR',
-    'desc' => 'Explore verified residential, commercial, and industrial plots in Dholera SIR. Clear title, NA approval, and ready for immediate sale deed registry with zero brokerage.',
-    'keywords' => 'Dholera Smart City plots, Dholera plots for sale, Dholera land for sale, Dholera residential plots, Dholera commercial plots, Dholera industrial plots'
+    'title' => 'Dholera Smart City Plots for Sale | Residential & Industrial Land in SIR',
+    'desc' => 'Explore verified residential and industrial plots in Dholera SIR. Clear title, NA approval, and ready for immediate sale deed registry with zero brokerage.',
+    'keywords' => 'Dholera Smart City plots, Dholera plots for sale, Dholera land for sale, Dholera residential plots, Dholera industrial plots'
   ],
   'residential-plots' => [
     'section' => 'plots',
@@ -30,9 +30,15 @@ $ROUTED_SECTIONS = [
   ],
   'commercial-plots' => [
     'section' => 'plots',
-    'title' => 'Dholera Commercial Plots for Sale | High-Footfall Commercial Land in Dholera SIR',
-    'desc' => 'Prime commercial plots in Dholera SIR on 55m and 70m central expressway roads. Ideal for corporate offices, retail hubs, banks, and hotels.',
-    'keywords' => 'Dholera commercial plots, commercial land Dholera SIR, corporate office space Dholera, commercial plots price Dholera'
+    'title' => 'Dholera Smart City Plots for Sale | Residential & Industrial Land in SIR',
+    'desc' => 'Explore verified residential and industrial plots in Dholera SIR. Clear title, NA approval, and ready for immediate sale deed registry with zero brokerage.',
+    'keywords' => 'Dholera Smart City plots, Dholera plots for sale, Dholera land for sale, Dholera residential plots, Dholera industrial plots'
+  ],
+  'swastik' => [
+    'section' => 'plots',
+    'title' => 'Mayur Swastik II Residential Plots | Kamiyala Road, Dholera SIR',
+    'desc' => 'Explore Mayur Swastik II residential plots on Kamiyala Road, Dholera. 433 NA approved gated township plots (124 to 404 sq. yds) with 3-year assured returns.',
+    'keywords' => 'Mayur Swastik II, Mayur Swastik 2 Dholera, Kamiyala residential plots Dholera, Dholera residential plots'
   ],
   'industrial-plots' => [
     'section' => 'plots',
@@ -87,9 +93,9 @@ if (!empty($routeParam) && isset($ROUTED_SECTIONS[$routeParam])) {
   $PAGE_KEYWORDS = $ROUTED_SECTIONS[$routeParam]['keywords'] . ', ' . $SITE_NAME;
   $PAGE_CANONICAL = rtrim($CANONICAL_URL, '/') . '/' . $routeParam;
 } else {
-  $PAGE_TITLE = "Dholera Smart City Plots | Residential, Commercial & Industrial Plots in Dholera SIR";
-  $PAGE_DESC = "Explore prime Dholera Smart City plots for sale. Verified Dholera residential plots, commercial plots & industrial plots in Dholera SIR Gujarat. Check latest Dholera plots price, high-ROI property investment & land for sale. Call/WhatsApp: " . $PHONE_DISPLAY . ".";
-  $PAGE_KEYWORDS = "Dholera Smart City plots, Dholera residential plots, Dholera commercial plots, Dholera industrial plots, Plots for sale in Dholera, Dholera SIR plots, Dholera property investment, Buy land in Dholera, Dholera plots price, Dholera land investment, Dholera property for sale, Dholera SIR smart city, Dholera international airport plots, Dholera expressway plots";
+  $PAGE_TITLE = "Dholera Smart City Plots | Residential & Industrial Land in Dholera SIR";
+  $PAGE_DESC = "Explore prime Dholera Smart City plots for sale. Verified Dholera residential plots & industrial plots in Dholera SIR Gujarat. Check latest Dholera plots price, high-ROI property investment & land for sale. Call/WhatsApp: " . $PHONE_DISPLAY . ".";
+  $PAGE_KEYWORDS = "Dholera Smart City plots, Dholera residential plots, Dholera industrial plots, Plots for sale in Dholera, Dholera SIR plots, Dholera property investment, Buy land in Dholera, Dholera plots price, Dholera land investment, Dholera property for sale, Dholera SIR smart city, Dholera international airport plots, Dholera expressway plots";
   $PAGE_CANONICAL = $CANONICAL_URL;
 }
 ob_start();
@@ -105,7 +111,7 @@ ob_start();
           "url": "<?php echo $CANONICAL_URL; ?>",
           "logo": "<?php echo $CANONICAL_URL; ?>assets/images/dholera-logo.jpg",
           "image": "<?php echo $CANONICAL_URL; ?>assets/images/dholera-hero.jpg",
-          "description": "Leading real estate advisory specializing in Dholera Smart City plots, Dholera residential plots, commercial spaces, and industrial land investments in Dholera SIR, Gujarat.",
+          "description": "Leading real estate advisory specializing in Dholera Smart City plots, Dholera residential plots, and industrial land investments in Dholera SIR, Gujarat.",
           "telephone": "<?php echo $PHONE_RAW; ?>",
           "priceRange": "₹₹",
           "address": {
@@ -146,11 +152,11 @@ ob_start();
               "@type": "Offer",
               "itemOffered": {
                 "@type": "Product",
-                "name": "Dholera Commercial Plots",
-                "description": "Prime high-street commercial plots in Dholera SIR smart city suited for retail complexes, office towers, and hospitality hubs.",
-                "image": "<?php echo $CANONICAL_URL; ?>assets/images/dholera-commercial.jpg"
+                "name": "Mayur Swastik II Residential Plots",
+                "description": "433 government approved residential plots in Kamiyala, Dholera Smart City. 123.78 to 403.76 sq. yds with 100% clear title & immediate registry.",
+                "image": "<?php echo $CANONICAL_URL; ?>assets/images/dholera-hero-fresh.jpg"
               },
-              "price": "5500",
+              "price": "12450",
               "priceCurrency": "INR"
             },
             {
@@ -243,7 +249,7 @@ require_once __DIR__ . '/includes/header.php';
             </div>
             <h1 class="hero-title">
               <span class="highlight-red">Dholera</span> Smart City Plots <br>
-              <span class="highlight-gold">Residential, Commercial & Industrial</span> Land for Sale
+              <span class="highlight-gold">Residential &amp; Industrial</span> Land for Sale
             </h1>
             <p class="hero-subtitle">
               Secure high-ROI <strong>Dholera SIR plots</strong> in India's first platinum-rated greenfield smart city. 100% legal, clear title, NA-approved plots with world-class expressway, airport & metro connectivity.
@@ -295,7 +301,7 @@ require_once __DIR__ . '/includes/header.php';
     </section>
 
     <!-- ======================================================================
-         4. QUICK CATEGORY BOXES (RESIDENTIAL, COMMERCIAL & INDUSTRIAL)
+         4. QUICK CATEGORY BOXES (RESIDENTIAL & INDUSTRIAL)
          ====================================================================== -->
     <section class="quick-cards-section">
       <div class="container">
@@ -460,7 +466,7 @@ require_once __DIR__ . '/includes/header.php';
     </section>
 
     <!-- ======================================================================
-         7. OUR PLOT OPTIONS (RESIDENTIAL, COMMERCIAL & INDUSTRIAL PLOTS)
+         7. OUR PLOT OPTIONS (RESIDENTIAL & INDUSTRIAL PLOTS)
          ====================================================================== -->
     <section class="section-padding plots-section" id="plots">
       <div class="container">
@@ -1048,9 +1054,9 @@ require_once __DIR__ . '/includes/header.php';
 
                 <!-- Hidden select for form compatibility -->
                 <select id="calcPlotType" class="calc-select-hidden">
-                  <option value="residential" selected>Residential Plot</option>
-                  <option value="commercial">Commercial Plot</option>
-                  <option value="industrial">Industrial Plot</option>
+                  <option value="residential" selected><?php echo htmlspecialchars($PROJECT_NAME); ?> (Residential)</option>
+                  <option value="swastik"><?php echo htmlspecialchars($RES2_PROJECT_NAME); ?> (Residential)</option>
+                  <option value="industrial"><?php echo htmlspecialchars($IND_PROJECT_NAME); ?> (Industrial)</option>
                 </select>
 
                 <!-- Visual Category Cards / Tabs -->
@@ -1064,7 +1070,7 @@ require_once __DIR__ . '/includes/header.php';
                     <div class="cat-active-check"><i class="fa-solid fa-circle-check"></i></div>
                   </button>
 
-                  <button type="button" class="calc-cat-card" data-type="commercial">
+                  <button type="button" class="calc-cat-card" data-type="swastik">
                     <div class="cat-icon-badge residential"><i class="fa-solid fa-tree-city"></i></div>
                     <div class="cat-info">
                       <span class="cat-name"><?php echo htmlspecialchars($RES2_PROJECT_NAME); ?></span>
@@ -1214,9 +1220,9 @@ require_once __DIR__ . '/includes/header.php';
           </div>
 
           <div class="gallery-item">
-            <img src="assets/images/dholera-commercial.jpg" alt="Commercial Retail Hub and Boulevard in Dholera SIR" loading="lazy">
+            <img src="assets/images/dholera-commercial.jpg" alt="Smart City Boulevard and Center in Dholera SIR" loading="lazy">
             <div class="gallery-overlay">
-              <span class="gallery-caption">Commercial Avenues & Retail Hub</span>
+              <span class="gallery-caption">Smart City Center Boulevard</span>
             </div>
           </div>
 
@@ -1517,22 +1523,22 @@ require_once __DIR__ . '/includes/header.php';
                       <div class="faq-size-card">
                         <div class="sc-icon"><i class="fa-solid fa-house"></i></div>
                         <div>
-                          <strong>Residential Plots:</strong>
-                          <span>121.20, 150, 200, 350 up to 724+ sq. yards (ideal for villas &amp; family land banks).</span>
+                          <strong>Mayur Signature 2 (Residential):</strong>
+                          <span>638 Plots (121.20 to 724.21 sq. yards) in Rojka, Dholera SIR.</span>
                         </div>
                       </div>
                       <div class="faq-size-card">
-                        <div class="sc-icon"><i class="fa-solid fa-building"></i></div>
+                        <div class="sc-icon"><i class="fa-solid fa-tree-city"></i></div>
                         <div>
-                          <strong>Commercial Plots:</strong>
-                          <span>300 to 5,000+ sq. yards (for retail complexes, corporate offices, hotels &amp; banks).</span>
+                          <strong>Mayur Swastik II (Residential):</strong>
+                          <span>433 Plots (123.78 to 403.76 sq. yards) on Anandpur-Kamiyala Road.</span>
                         </div>
                       </div>
                       <div class="faq-size-card">
                         <div class="sc-icon"><i class="fa-solid fa-industry"></i></div>
                         <div>
-                          <strong>Industrial Land:</strong>
-                          <span>1,000 sq. meters up to 50+ acres for large manufacturing units, logistics &amp; warehousing.</span>
+                          <strong>Mayur Business Park (Industrial):</strong>
+                          <span>227 Plots (327.49 to 5,912.09 sq. yards) on Fedra-Dhandhuka State Highway.</span>
                         </div>
                       </div>
                     </div>
@@ -1641,7 +1647,7 @@ require_once __DIR__ . '/includes/header.php';
             </span>
             <h2 class="seo-guide-title">Complete Guide to Dholera Property Investment & Plots for Sale</h2>
             <p class="seo-guide-desc">
-              Looking to <strong>buy land in Dholera</strong>? <strong>Dholera Smart City plots</strong> represent one of the most lucrative real estate investment opportunities in modern India. Located in the Ahmedabad district of Gujarat, the <strong>Dholera SIR plots</strong> region is envisioned as a global manufacturing and commercial hub larger than Singapore.
+              Looking to <strong>buy land in Dholera</strong>? <strong>Dholera Smart City plots</strong> represent one of the most lucrative real estate investment opportunities in modern India. Located in the Ahmedabad district of Gujarat, the <strong>Dholera SIR plots</strong> region is envisioned as a global manufacturing and smart industrial hub larger than Singapore.
             </p>
           </div>
 
