@@ -16,7 +16,7 @@ $PHONE_TEL        = "tel:+918800384461";
 
 // 💬 WhatsApp Details
 $WHATSAPP_NUMBER  = "918800384461";
-$WHATSAPP_MESSAGE = "Hi, I am interested in Dholera Smart City plots (Residential / Commercial / Industrial). Please share latest price list, brochure, and site visit details.";
+$WHATSAPP_MESSAGE = "Hi, I am interested in Dholera Smart City plots (Residential / Industrial). Please share latest price list, brochure, and site visit details.";
 $WHATSAPP_LINK    = "https://wa.me/" . $WHATSAPP_NUMBER . "?text=" . urlencode($WHATSAPP_MESSAGE);
 
 // 🌐 Website & Brand Info

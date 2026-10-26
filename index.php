@@ -28,12 +28,6 @@ $ROUTED_SECTIONS = [
     'desc' => 'Buy title-clear residential plots in Dholera SIR. Sizes from 150 to 1,000+ sq. yards in premium gated townships with complete underground utilities.',
     'keywords' => 'Dholera residential plots, residential plots in Dholera SIR, buy villa plots Dholera, TP1 residential plots, TP2 residential plots'
   ],
-  'commercial-plots' => [
-    'section' => 'plots',
-    'title' => 'Dholera Smart City Plots for Sale | Residential & Industrial Land in SIR',
-    'desc' => 'Explore verified residential and industrial plots in Dholera SIR. Clear title, NA approval, and ready for immediate sale deed registry with zero brokerage.',
-    'keywords' => 'Dholera Smart City plots, Dholera plots for sale, Dholera land for sale, Dholera residential plots, Dholera industrial plots'
-  ],
   'swastik' => [
     'section' => 'plots',
     'title' => 'Mayur Swastik II Residential Plots | Kamiyala Road, Dholera SIR',
@@ -733,7 +727,7 @@ require_once __DIR__ . '/includes/header.php';
               </li>
               <li>
                 <i class="fa-solid fa-circle-check"></i>
-                <span><strong>Complete Self-Sustaining City:</strong> Integrated commercial high-streets, sports zones, healthcare and education hubs.</span>
+                <span><strong>Complete Self-Sustaining City:</strong> Integrated shopping high-streets, sports zones, healthcare and education hubs.</span>
               </li>
             </ul>
             <div class="why-card-footer">
@@ -770,7 +764,7 @@ require_once __DIR__ . '/includes/header.php';
             </ul>
             <div class="why-card-footer">
               <i class="fa-solid fa-bolt"></i>
-              <span>India’s 1st Commercial Chip Ecosystem &bull; High Liquidity</span>
+              <span>India’s 1st Semiconductor Fab Ecosystem &bull; High Liquidity</span>
             </div>
           </div>
 
@@ -953,7 +947,7 @@ require_once __DIR__ . '/includes/header.php';
               <h3 class="infra-title"><a href="dholera-international-airport" style="color:inherit; text-decoration:none;">Dholera International Airport</a></h3>
               <span class="infra-status"><i class="fa-solid fa-bolt"></i> Under Development / Fast Track</span>
               <p class="infra-desc">
-                4,000-meter runways capable of handling wide-body commercial aircraft &amp; heavy air cargo. Located just 15 km from the city.
+                4,000-meter runways capable of handling wide-body passenger aircraft &amp; heavy air cargo. Located just 15 km from the city.
               </p>
               <a href="dholera-international-airport" class="infra-btn-link">
                 <span>View Full Airport Master Plan</span>

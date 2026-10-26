@@ -249,7 +249,7 @@ require_once dirname(__DIR__) . '/includes/header.php';
               <td>Via Dholka-Sanand High-Speed Connector</td>
             </tr>
             <tr>
-              <td><strong>Bhavnagar Commercial City Center</strong></td>
+              <td><strong>Bhavnagar Urban City Center</strong></td>
               <td><span class="dist-badge">60 Km</span></td>
               <td><strong>45 Mins</strong></td>
               <td>South Expressway Extension / Coastal Link</td>
@@ -288,8 +288,8 @@ require_once dirname(__DIR__) . '/includes/header.php';
 
         <div class="aero-card">
           <div class="aero-num">03</div>
-          <h4>Commercial &amp; Logistics Hub Surge</h4>
-          <p>Land parcels situated along expressway feeder corridors command premium commercial leasing rates for fuel plazas, corporate transit parks, warehousing clusters, and retail shopping hubs.</p>
+          <h4>Industrial &amp; Logistics Hub Surge</h4>
+          <p>Land parcels situated along expressway feeder corridors command premium leasing rates for fuel plazas, corporate transit parks, warehousing clusters, and retail shopping hubs.</p>
         </div>
       </div>
 
@@ -352,7 +352,7 @@ require_once dirname(__DIR__) . '/includes/header.php';
             <div class="faq-answer" style="display: block;">
               <div class="faq-answer-inner">
                 <p>
-                  The expressway is on an aggressive <strong>fast-track completion schedule by NHAI</strong>. Over 85% of physical civil works have been accomplished across all 4 construction packages. The corridor is slated to open for vehicular trials and commercial operations in <strong>2025</strong>, synchronizing with the launch of Dholera International Airport.
+                  The expressway is on an aggressive <strong>fast-track completion schedule by NHAI</strong>. Over 85% of physical civil works have been accomplished across all 4 construction packages. The corridor is slated to open for vehicular trials and full operational traffic in <strong>2025</strong>, synchronizing with the launch of Dholera International Airport.
                 </p>
               </div>
             </div>

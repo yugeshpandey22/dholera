@@ -150,7 +150,7 @@ require_once dirname(__DIR__) . '/includes/header.php';
           <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 10px; padding: 14px 18px; display: flex; gap: 14px; align-items: center;">
             <i class="fa-solid fa-shield-halved" style="color: #10b981; font-size: 1.6rem; flex-shrink: 0;"></i>
             <div style="font-size: 0.88rem; color: #334155;">
-              <strong>Strategic Govt. Priority:</strong> All environmental clearances, land acquisitions, and runway civil contracts have been fast-tracked for operational commercial flight readiness.
+              <strong>Strategic Govt. Priority:</strong> All environmental clearances, land acquisitions, and runway civil contracts have been fast-tracked for operational international flight readiness.
             </div>
           </div>
         </div>
@@ -242,7 +242,7 @@ require_once dirname(__DIR__) . '/includes/header.php';
               <td>109 Km 6-Lane Expressway (NH 751)</td>
             </tr>
             <tr>
-              <td><strong>Bhavnagar Commercial City Center</strong></td>
+              <td><strong>Bhavnagar Urban City Center</strong></td>
               <td><span class="dist-badge">60 Km</span></td>
               <td><strong>45 Mins</strong></td>
               <td>NH 751 Extension / Coastal Highway</td>
@@ -276,13 +276,13 @@ require_once dirname(__DIR__) . '/includes/header.php';
         <div class="aero-card">
           <div class="aero-num">01</div>
           <h4>The Airport Multiplier Effect</h4>
-          <p>Global aerotropolises like Bangalore (Devanahalli), Hyderabad (Shamshabad), and Noida (Jewar) saw agricultural and plotted land surge by <strong>300% to 700%</strong> between runway construction and first commercial flight operations.</p>
+          <p>Global aerotropolises like Bangalore (Devanahalli), Hyderabad (Shamshabad), and Noida (Jewar) saw agricultural and plotted land surge by <strong>300% to 700%</strong> between runway construction and first operational flight operations.</p>
         </div>
 
         <div class="aero-card">
           <div class="aero-num">02</div>
-          <h4>Massive Commercial &amp; Hotel Inflow</h4>
-          <p>Airport corridors generate unprecedented demand for international transit hotels, commercial corporate plazas, airline crew accommodation, and automated logistics warehouses, driving high rental yields.</p>
+          <h4>Corporate &amp; Hospitality Inflow</h4>
+          <p>Airport corridors generate unprecedented demand for international transit hotels, corporate office hubs, airline crew accommodation, and automated logistics warehouses, driving high rental yields.</p>
         </div>
 
         <div class="aero-card">
@@ -351,7 +351,7 @@ require_once dirname(__DIR__) . '/includes/header.php';
             <div class="faq-answer" style="display: block;">
               <div class="faq-answer-inner">
                 <p>
-                  Phase 1 of Dholera Greenfield International Airport is on a <strong>fast-track construction timeline</strong> with completion and commercial cargo and flight trials targeted for <strong>2025–2026</strong>. Runway civil works, terminal building foundation, and air traffic control (ATC) equipment tenders have been awarded by DIACL.
+                  Phase 1 of Dholera Greenfield International Airport is on a <strong>fast-track construction timeline</strong> with completion and international cargo and flight trials targeted for <strong>2025–2026</strong>. Runway civil works, terminal building foundation, and air traffic control (ATC) equipment tenders have been awarded by DIACL.
                 </p>
               </div>
             </div>
@@ -387,7 +387,7 @@ require_once dirname(__DIR__) . '/includes/header.php';
             <div class="faq-answer">
               <div class="faq-answer-inner">
                 <p>
-                  Dholera International Airport features dual runways: a primary <strong>4,000-meter Code 4E runway</strong> and a secondary <strong>3,200-meter runway</strong>. These are among the longest commercial runways in India, fully capable of operating wide-body passenger airliners like the <strong>Airbus A380, A350, Boeing 777-300ER</strong>, and heavy intercontinental cargo freighters without payload restrictions.
+                  Dholera International Airport features dual runways: a primary <strong>4,000-meter Code 4E runway</strong> and a secondary <strong>3,200-meter runway</strong>. These are among the longest runways in India, fully capable of operating wide-body passenger airliners like the <strong>Airbus A380, A350, Boeing 777-300ER</strong>, and heavy intercontinental cargo freighters without payload restrictions.
                 </p>
               </div>
             </div>

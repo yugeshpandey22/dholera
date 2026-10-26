@@ -290,7 +290,7 @@ document.addEventListener('DOMContentLoaded', () => {
       plotSizeRange.max = '724';
       plotSizeRange.step = '1';
       plotSizeRange.value = '124';
-    } else if (selectedType === 'swastik' || selectedType === 'commercial') {
+    } else if (selectedType === 'swastik') {
       plotSizeRange.min = '124';
       plotSizeRange.max = '404';
       plotSizeRange.step = '1';

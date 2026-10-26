@@ -237,7 +237,7 @@ require_once dirname(__DIR__) . '/includes/header.php';
               <td>Via Central Spine Arterial Road</td>
             </tr>
             <tr>
-              <td><strong>Bhavnagar Commercial Anchorage</strong></td>
+              <td><strong>Bhavnagar Maritime Anchorage</strong></td>
               <td><span class="dist-badge">45 Km</span></td>
               <td><strong>35 Mins</strong></td>
               <td>Direct Coastal Highway &amp; Maritime Channel</td>
@@ -265,13 +265,13 @@ require_once dirname(__DIR__) . '/includes/header.php';
         <div class="aero-card">
           <div class="aero-num">01</div>
           <h4>Exponential Land Appreciation</h4>
-          <p>Port-connected industrial and commercial zones typically appreciate by <strong>500% to 1,000%</strong> as international export factories, clearing agencies, and shipping corporations establish facilities.</p>
+          <p>Port-connected industrial and logistics zones typically appreciate by <strong>500% to 1,000%</strong> as international export factories, clearing agencies, and shipping corporations establish facilities.</p>
         </div>
 
         <div class="aero-card">
           <div class="aero-num">02</div>
           <h4>High Corporate Rental Yields</h4>
-          <p>Commercial land parcels command sustained high rental yields from global freight forwarders, container yards, banking institutions, and customs brokerage headquarters.</p>
+          <p>Industrial and logistics land parcels command sustained high rental yields from global freight forwarders, container yards, banking institutions, and customs brokerage headquarters.</p>
         </div>
 
         <div class="aero-card">
@@ -394,7 +394,7 @@ require_once dirname(__DIR__) . '/includes/header.php';
             <div class="faq-answer">
               <div class="faq-answer-inner">
                 <p>
-                  Port cities historically witness highest real estate valuations due to limited coastal land and booming industrial demand. Early investors securing clear-title plots in nearby gated communities benefit from immense commercial leasing demand and capital growth.
+                  Port cities historically witness highest real estate valuations due to limited coastal land and booming industrial demand. Early investors securing clear-title plots in nearby gated communities benefit from immense corporate leasing demand and capital growth.
                 </p>
               </div>
             </div>

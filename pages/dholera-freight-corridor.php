@@ -257,7 +257,7 @@ require_once dirname(__DIR__) . '/includes/header.php';
         <span class="section-tag"><i class="fa-solid fa-chart-line"></i> Industrial Plot Value</span>
         <h2 class="section-title">Why Logistics &amp; Industrial Plots in Dholera Are Premier Assets</h2>
         <p class="section-desc">
-          Properties adjoining the DFC rail terminal command the highest commercial rental yields and rapid capital gains.
+          Properties adjoining the DFC rail terminal command the highest industrial rental yields and rapid capital gains.
         </p>
       </div>
 
