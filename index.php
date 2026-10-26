@@ -638,7 +638,6 @@ require_once __DIR__ . '/includes/header.php';
                   <span class="ref-dot-check"><i class="fa-solid fa-circle-check"></i></span>
                   <span><strong><?php echo htmlspecialchars($IND_PROJECT_TOTAL); ?></strong> (<strong><?php echo htmlspecialchars($IND_PROJECT_SIZES); ?></strong>)</span>
                 </li>
-
                 <li>
                   <span class="ref-dot-check"><i class="fa-solid fa-circle-check"></i></span>
                   <span>Dev. Charges: <strong>₹ 1,003 / sq. yd (850 + 18% GST)</strong></span>
@@ -646,14 +645,6 @@ require_once __DIR__ . '/includes/header.php';
                 <li>
                   <span class="ref-dot-check"><i class="fa-solid fa-circle-check"></i></span>
                   <span>Registry: <strong>Male 5.9% | Female 4.9% &bull; Docs: ₹ 15,400 (Fixed)</strong></span>
-                </li>
-                <li>
-                  <span class="ref-dot-check"><i class="fa-solid fa-circle-check"></i></span>
-                  <span>Direct Frontage: <strong>0 KM 4-Lane State Highway</strong> &bull; <strong>20 KM to Airport</strong></span>
-                </li>
-                <li>
-                  <span class="ref-dot-check"><i class="fa-solid fa-circle-check"></i></span>
-                  <span>Amenities: <strong>Gated Entry, Boundary Wall, Security, Power &amp; Water, Divine Temple, Garden Area</strong></span>
                 </li>
               </ul>
 
