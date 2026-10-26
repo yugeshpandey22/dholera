@@ -1,0 +1,29 @@
+<IfModule mod_rewrite.c>
+RewriteEngine On
+DirectoryIndex index.php
+
+# Redirect any old .html requests to clean URLs
+RewriteCond %{THE_REQUEST} /([^?\s]+)\.html [NC]
+RewriteRule ^ %1 [R=301,L]
+
+# Allow direct access to real existing files and directories
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+
+# Clean URL Rewrites for Dedicated Infrastructure Pages in pages/ folder
+RewriteRule ^(dholera-international-airport|airport)/?$ pages/dholera-international-airport.php [L,QSA]
+RewriteRule ^(dholera-expressway|expressway)/?$ pages/dholera-expressway.php [L,QSA]
+RewriteRule ^(dholera-freight-corridor|freight-corridor|dfc)/?$ pages/dholera-freight-corridor.php [L,QSA]
+RewriteRule ^(dholera-seaport|seaport|port)/?$ pages/dholera-seaport.php [L,QSA]
+
+# Auto-route pages/ folder requests without .php extension
+RewriteRule ^pages/([^/]+)/?$ pages/$1.php [L,QSA]
+
+# Auto-route any existing root PHP page without extension
+RewriteCond %{REQUEST_FILENAME}.php -f
+RewriteRule ^([^/]+)/?$ $1.php [L,QSA]
+
+# Clean URL Routing for Section Pages
+RewriteRule ^([a-zA-Z0-9_-]+)/?$ index.php?route=$1 [QSA,L]
+</IfModule>

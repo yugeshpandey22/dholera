@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://dholera.adikka.com/</loc>
+    <lastmod>2026-10-24</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://dholera.adikka.com/assets/images/dholera-hero.jpg</image:loc>
+      <image:title>Dholera Smart City Plots - Residential, Commercial and Industrial Land</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://dholera.adikka.com/about</loc>
+    <lastmod>2026-10-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://dholera.adikka.com/plots</loc>
+    <lastmod>2026-10-24</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://dholera.adikka.com/assets/images/dholera-residential.jpg</image:loc>
+      <image:title>Dholera Residential Plots in Greenfield Smart City</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://dholera.adikka.com/assets/images/dholera-commercial.jpg</image:loc>
+      <image:title>Dholera Commercial Plots and Retail Boulevard in Dholera SIR</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://dholera.adikka.com/assets/images/dholera-industrial.jpg</image:loc>
+      <image:title>Dholera Industrial Plots and Manufacturing Zone</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://dholera.adikka.com/why-invest</loc>
+    <lastmod>2026-10-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://dholera.adikka.com/infrastructure</loc>
+    <lastmod>2026-10-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://dholera.adikka.com/assets/images/dholera-airport.jpg</image:loc>
+      <image:title>Dholera Greenfield International Airport and Expressway Link</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://dholera.adikka.com/dholera-international-airport</loc>
+    <lastmod>2026-10-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://dholera.adikka.com/assets/images/dholera-airport.jpg</image:loc>
+      <image:title>Dholera Greenfield International Airport Master Plan, Runway Specs &amp; Plot Proximity</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://dholera.adikka.com/dholera-expressway</loc>
+    <lastmod>2026-10-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://dholera.adikka.com/assets/images/dholera-expressway.jpg</image:loc>
+      <image:title>Ahmedabad-Dholera 6-Lane Expressway (NH 751) and High-Speed Metro Corridor</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://dholera.adikka.com/dholera-freight-corridor</loc>
+    <lastmod>2026-10-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://dholera.adikka.com/assets/images/dholera-freight.jpg</image:loc>
+      <image:title>Western Dedicated Freight Corridor (DFC) and Dholera SIR Multi-Modal Logistics</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://dholera.adikka.com/dholera-seaport</loc>
+    <lastmod>2026-10-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://dholera.adikka.com/assets/images/dholera-seaport.jpg</image:loc>
+      <image:title>Proposed Deep-Water Sea Port Terminal Gulf of Khambhat Dholera SIR</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://dholera.adikka.com/pricing</loc>
+    <lastmod>2026-10-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://dholera.adikka.com/gallery</loc>
+    <lastmod>2026-10-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://dholera.adikka.com/faqs</loc>
+    <lastmod>2026-10-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+</urlset>
