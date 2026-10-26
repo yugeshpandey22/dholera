@@ -638,10 +638,7 @@ require_once __DIR__ . '/includes/header.php';
                   <span class="ref-dot-check"><i class="fa-solid fa-circle-check"></i></span>
                   <span><strong><?php echo htmlspecialchars($IND_PROJECT_TOTAL); ?></strong> (<strong><?php echo htmlspecialchars($IND_PROJECT_SIZES); ?></strong>)</span>
                 </li>
-                <li>
-                  <span class="ref-dot-check"><i class="fa-solid fa-circle-check"></i></span>
-                  <span>Legitimate: <strong><?php echo htmlspecialchars($IND_PROJECT_APPROVALS); ?></strong></span>
-                </li>
+
                 <li>
                   <span class="ref-dot-check"><i class="fa-solid fa-circle-check"></i></span>
                   <span>Dev. Charges: <strong>₹ 1,003 / sq. yd (850 + 18% GST)</strong></span>
