@@ -338,9 +338,9 @@ document.addEventListener('DOMContentLoaded', () => {
     let docCharges = 15400; // Fixed
     
     if (type === 'commercial') {
-      baseRate = 5500;
-      devRate = 0;
-      docCharges = 0;
+      baseRate = 12450;
+      devRate = 1003;
+      docCharges = 15400;
     } else if (type === 'industrial') {
       baseRate = 9750;
       devRate = 1003;
@@ -394,8 +394,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const roiTimeline = document.getElementById('calcRoiTimeline');
     const chargesInfo = document.getElementById('calcChargesInfo');
 
-    if (type === 'residential') {
-      // Residential (Mayur Signature 2 in Rojka): 124.35 sq yd benchmark yields ₹ 14,707/mo & ₹ 5,29,470 total
+    if (type === 'residential' || type === 'commercial') {
+      // Residential (Mayur Signature 2 in Rojka & Dholera SIR Plots): 124.35 sq yd benchmark yields ₹ 14,707/mo & ₹ 5,29,470 total
       const isSampleRes = Math.abs(size - 124.35) < 2;
       const monthlyPayout = isSampleRes ? 14707 : Math.round((size / 124.35) * 14707);
       const totalPayout = isSampleRes ? 529470 : (monthlyPayout * 36);
@@ -460,7 +460,7 @@ document.addEventListener('DOMContentLoaded', () => {
       } else if (type === 'industrial') {
         customMsg = `Hi, I checked Mayur Business Park (Industrial Plots in Haripura, Fedra-Dhandhuka Highway, Dholera) for ${displaySize}. Total package estimate is ${formatINR(estTotal)} (Rate: ₹ 9,750/yd, Dev: ₹ 1,003/yd, Fixed Docs: ₹ 15,400) with 3 Years Assured Return (1%)* Plan. Please share brochure, layout plan & available plot numbers.`;
       } else {
-        customMsg = `Hi, I calculated an estimate for ${displaySize} Commercial Plot in Dholera SIR (${formatINR(estTotal)}). Please share the available plots, layout plan & special offers.`;
+        customMsg = `Hi, I checked Residential Plots in Dholera SIR for ${displaySize}. Total package estimate is ${formatINR(estTotal)} (Rate: ₹ 12,450/yd, Dev: ₹ 1,003/yd, Fixed Docs: ₹ 15,400) with 3 Years Assured Return (1%)* Plan. Please share available plot layouts, brochure & details.`;
       }
       calcWhatsAppBtn.href = `https://wa.me/${CONFIG.whatsapp}?text=${encodeURIComponent(customMsg)}`;
     }
