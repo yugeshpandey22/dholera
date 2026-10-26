@@ -517,26 +517,30 @@ require_once __DIR__ . '/includes/header.php';
         </div>
 
         <div class="ref-plots-grid">
-          <!-- Residential Plot Card: Mayur Signature 2 Spotlight (Compact Luxury Card) -->
+          <!-- Residential Plot Card: Mayur Signature 2 Spotlight (Prominent Residential Badges) -->
           <article class="ref-plot-card is-featured-card" id="residential-plots">
             <div class="ref-plot-img-box">
               <img src="assets/images/dholera-residential.jpg" alt="Mayur Signature 2 Residential Plots in Rojka Dholera Smart City" class="ref-plot-img" loading="lazy">
-              <span class="ref-floating-flag"><i class="fa-solid fa-crown"></i> Featured</span>
+              <span class="ref-floating-flag"><i class="fa-solid fa-house-chimney"></i> Residential Project</span>
               <span class="ref-floating-status"><span class="status-live-dot"></span> Booking Open</span>
             </div>
 
             <div class="ref-plot-content">
-              <span class="ref-project-pill"><i class="fa-solid fa-star"></i> Featured: <?php echo htmlspecialchars($PROJECT_NAME); ?></span>
-              <h3 class="ref-plot-title"><?php echo htmlspecialchars($PROJECT_NAME); ?></h3>
+              <span class="ref-project-pill"><i class="fa-solid fa-house-chimney"></i> Featured Residential Project</span>
+              <h3 class="ref-plot-title"><?php echo htmlspecialchars($PROJECT_NAME); ?> <span style="display:inline-block; font-size: 0.6em; background: #fee2e2; color: #dc2626; padding: 3px 9px; border-radius: 6px; font-weight: 800; vertical-align: middle; border: 1px solid rgba(220,38,38,0.2);">Residential</span></h3>
               <div class="ref-project-loc">
                 <i class="fa-solid fa-location-dot"></i>
-                <span><?php echo htmlspecialchars($PROJECT_LOCATION); ?></span>
+                <span><?php echo htmlspecialchars($PROJECT_LOCATION); ?> &bull; Gated Residential Zone</span>
               </div>
 
               <ul class="ref-plot-checklist">
                 <li>
                   <span class="ref-dot-check"><i class="fa-solid fa-circle-check"></i></span>
-                  <span><strong><?php echo htmlspecialchars($PROJECT_TOTAL_PLOTS); ?></strong> Approved Gated Community (<strong><?php echo htmlspecialchars($PROJECT_SIZES); ?></strong>)</span>
+                  <span>Project Type: <strong>Residential Plots (Gated Community)</strong></span>
+                </li>
+                <li>
+                  <span class="ref-dot-check"><i class="fa-solid fa-circle-check"></i></span>
+                  <span>Total Inventory: <strong><?php echo htmlspecialchars($PROJECT_TOTAL_PLOTS); ?></strong> (<strong><?php echo htmlspecialchars($PROJECT_SIZES); ?></strong>)</span>
                 </li>
                 <li>
                   <span class="ref-dot-check"><i class="fa-solid fa-circle-check"></i></span>
@@ -565,7 +569,7 @@ require_once __DIR__ . '/includes/header.php';
               </div>
 
               <a href="<?php echo $WHATSAPP_LINK; ?>" target="_blank" rel="noopener noreferrer" class="ref-btn-gold">
-                <span>Inquire for <?php echo htmlspecialchars($PROJECT_NAME); ?></span>
+                <span>Inquire for <?php echo htmlspecialchars($PROJECT_NAME); ?> (Residential)</span>
                 <i class="fa-solid fa-arrow-right"></i>
               </a>
 
