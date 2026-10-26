@@ -621,13 +621,13 @@ require_once __DIR__ . '/includes/header.php';
           <article class="ref-plot-card is-featured-card" id="industrial-plots">
             <div class="ref-plot-img-box">
               <img src="assets/images/dholera-industrial.jpg" alt="Mayur Business Park Industrial Open Plots on Fedra-Dhandhuka Highway Dholera" class="ref-plot-img" loading="lazy">
-              <span class="ref-floating-flag"><i class="fa-solid fa-crown"></i> Featured Project</span>
+              <span class="ref-floating-flag"><i class="fa-solid fa-industry"></i> Industrial Featured</span>
               <span class="ref-floating-status"><span class="status-live-dot"></span> Booking Open</span>
             </div>
 
             <div class="ref-plot-content">
-              <span class="ref-project-pill"><i class="fa-solid fa-star"></i> Featured: <?php echo htmlspecialchars($IND_PROJECT_NAME); ?></span>
-              <h3 class="ref-plot-title"><?php echo htmlspecialchars($IND_PROJECT_NAME); ?></h3>
+              <span class="ref-project-pill"><i class="fa-solid fa-industry"></i> Industrial Featured Project</span>
+              <h3 class="ref-plot-title"><?php echo htmlspecialchars($IND_PROJECT_NAME); ?> <span style="display:inline-block; font-size: 0.6em; background: #fef3c7; color: #b45309; padding: 3px 9px; border-radius: 6px; font-weight: 800; vertical-align: middle; border: 1px solid rgba(180,83,9,0.2);">Industrial</span></h3>
               <div class="ref-project-loc">
                 <i class="fa-solid fa-location-dot"></i>
                 <span>Haripura, Fedra-Dhandhuka State Highway, Dholera Smart City</span>
