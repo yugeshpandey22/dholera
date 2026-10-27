@@ -230,7 +230,7 @@ require_once __DIR__ . '/includes/header.php';
         <!-- FIRST CAROUSEL ITEM: VIDEO ONLY SHOWCASE -->
         <div class="carousel-item active">
           <div class="hero-carousel-video-wrap">
-            <video id="heroVideoPlayer" class="d-block w-100 hero-carousel-video" autoplay muted playsinline preload="auto" poster="assets/images/dholera-hero-fresh.jpg">
+            <video id="heroVideoPlayer" class="d-block w-100 hero-carousel-video" autoplay playsinline preload="auto" poster="assets/images/dholera-hero-fresh.jpg">
               <source src="assets/images/video.mp4" type="video/mp4">
             </video>
           </div>

@@ -643,25 +643,46 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     }
 
-    // Video Playback & Auto-transition on End
+    // Video Playback & Voice Control & Auto-transition on End
     if (heroVideo) {
-      heroVideo.muted = true;
-      heroVideo.play().catch(() => {});
+      heroVideo.volume = 1.0;
+
+      // Try playing with voice/sound immediately
+      heroVideo.muted = false;
+      const playPromise = heroVideo.play();
+      if (playPromise !== undefined) {
+        playPromise.catch(() => {
+          // If browser policy prevents unmuted autoplay on cold start,
+          // temporarily mute so the video rolls smoothly
+          heroVideo.muted = true;
+          heroVideo.play().catch(() => {});
+        });
+      }
+
+      // Voice unlocker: fires as soon as the user touches or clicks anywhere
+      function unlockVoice() {
+        if (heroVideo) {
+          heroVideo.muted = false;
+          heroVideo.volume = 1.0;
+          heroVideo.play().catch(() => {});
+        }
+      }
+
+      ['click', 'touchstart', 'pointerdown'].forEach((evt) => {
+        window.addEventListener(evt, unlockVoice, { once: true, passive: true });
+        document.addEventListener(evt, unlockVoice, { once: true, passive: true });
+      });
+
+      // Tapping anywhere on video guarantees voice is ON
+      heroVideo.addEventListener('click', () => {
+        heroVideo.muted = false;
+        heroVideo.volume = 1.0;
+        heroVideo.play().catch(() => {});
+      });
 
       // Auto-slide to Banner when Video Ends (30s)
       heroVideo.addEventListener('ended', () => {
         goToBanner();
-      });
-
-      // Tapping anywhere on video toggles unmute/mute seamlessly without any overlay UI
-      heroVideo.addEventListener('click', () => {
-        if (heroVideo.muted || heroVideo.volume === 0) {
-          heroVideo.muted = false;
-          heroVideo.volume = 1.0;
-          heroVideo.play().catch(() => {});
-        } else {
-          heroVideo.muted = true;
-        }
       });
     }
   }
