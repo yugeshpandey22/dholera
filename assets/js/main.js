@@ -538,31 +538,138 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // 6. Hero Standalone Video Autoplay & Sound Toggle
-  const heroVideo = document.getElementById('heroVideoPlayer') || document.querySelector('.hero-standalone-video');
-  const soundBtn = document.getElementById('videoSoundBtn');
+  // 6. Hero Slider Controller (Slide 1: Video, Slide 2: Banner)
+  const heroSlider = document.querySelector('.hero-slider-section');
+  if (heroSlider) {
+    const slides = heroSlider.querySelectorAll('.hero-slide');
+    const dots = heroSlider.querySelectorAll('.slider-dot');
+    const prevBtn = document.getElementById('heroPrevBtn');
+    const nextBtn = document.getElementById('heroNextBtn');
+    const heroVideo = document.getElementById('heroVideoPlayer');
+    const soundBtn = document.getElementById('heroVideoSoundBtn');
+    let currentIndex = 0;
+    let autoSlideTimer = null;
 
-  if (heroVideo) {
-    heroVideo.muted = true;
-    const playPromise = heroVideo.play();
-    if (playPromise !== undefined) {
-      playPromise.catch(() => {
-        // Autoplay policy prevented playback, poster image remains visible
+    function goToSlide(index) {
+      if (index < 0) index = slides.length - 1;
+      if (index >= slides.length) index = 0;
+      currentIndex = index;
+
+      slides.forEach((slide, i) => {
+        if (i === currentIndex) {
+          slide.classList.add('active');
+        } else {
+          slide.classList.remove('active');
+        }
+      });
+
+      dots.forEach((dot, i) => {
+        if (i === currentIndex) {
+          dot.classList.add('active');
+        } else {
+          dot.classList.remove('active');
+        }
+      });
+
+      // Handle video play on Slide 1
+      if (heroVideo) {
+        if (currentIndex === 0) {
+          heroVideo.play().catch(() => {});
+        }
+      }
+    }
+
+    if (prevBtn) {
+      prevBtn.addEventListener('click', () => {
+        goToSlide(currentIndex - 1);
+        stopAutoSlide();
       });
     }
 
-    if (soundBtn) {
-      soundBtn.addEventListener('click', () => {
-        if (heroVideo.muted) {
-          heroVideo.muted = false;
-          soundBtn.innerHTML = '<i class="fa-solid fa-volume-high"></i> <span>Mute</span>';
-          soundBtn.style.background = 'var(--accent-red)';
-        } else {
-          heroVideo.muted = true;
-          soundBtn.innerHTML = '<i class="fa-solid fa-volume-xmark"></i> <span>Unmute</span>';
-          soundBtn.style.background = '';
+    if (nextBtn) {
+      nextBtn.addEventListener('click', () => {
+        goToSlide(currentIndex + 1);
+        stopAutoSlide();
+      });
+    }
+
+    dots.forEach((dot) => {
+      dot.addEventListener('click', () => {
+        const slideIndex = parseInt(dot.getAttribute('data-slide'), 10);
+        if (!isNaN(slideIndex)) {
+          goToSlide(slideIndex);
+          stopAutoSlide();
         }
       });
+    });
+
+    // Touch swipe support for mobile
+    let touchStartX = 0;
+    let touchEndX = 0;
+    heroSlider.addEventListener('touchstart', (e) => {
+      touchStartX = e.changedTouches[0].screenX;
+    }, { passive: true });
+
+    heroSlider.addEventListener('touchend', (e) => {
+      touchEndX = e.changedTouches[0].screenX;
+      const diff = touchStartX - touchEndX;
+      if (Math.abs(diff) > 45) {
+        if (diff > 0) {
+          goToSlide(currentIndex + 1);
+        } else {
+          goToSlide(currentIndex - 1);
+        }
+        stopAutoSlide();
+      }
+    }, { passive: true });
+
+    function stopAutoSlide() {
+      if (autoSlideTimer) {
+        clearInterval(autoSlideTimer);
+        autoSlideTimer = null;
+      }
+    }
+
+    // Video Audio / Voice Control
+    if (heroVideo) {
+      heroVideo.muted = true;
+      heroVideo.play().catch(() => {});
+
+      function syncSoundUI() {
+        if (!soundBtn) return;
+        if (!heroVideo.muted && heroVideo.volume > 0) {
+          soundBtn.innerHTML = '<i class="fa-solid fa-volume-high"></i> <span>Sound ON (Click to Mute)</span>';
+          soundBtn.classList.add('sound-active');
+        } else {
+          soundBtn.innerHTML = '<i class="fa-solid fa-volume-xmark"></i> <span>Click for Voice / Sound</span>';
+          soundBtn.classList.remove('sound-active');
+        }
+      }
+
+      if (soundBtn) {
+        soundBtn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          if (heroVideo.muted || heroVideo.volume === 0) {
+            heroVideo.muted = false;
+            heroVideo.volume = 1.0;
+            heroVideo.play().catch(() => {});
+          } else {
+            heroVideo.muted = true;
+          }
+          syncSoundUI();
+        });
+      }
+
+      // Also allow clicking directly on video to unmute and hear voice
+      heroVideo.addEventListener('click', () => {
+        if (heroVideo.muted || heroVideo.volume === 0) {
+          heroVideo.muted = false;
+          heroVideo.volume = 1.0;
+          syncSoundUI();
+        }
+      });
+
+      heroVideo.addEventListener('volumechange', syncSoundUI);
     }
   }
 });

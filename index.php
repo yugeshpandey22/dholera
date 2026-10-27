@@ -221,80 +221,99 @@ require_once __DIR__ . '/includes/header.php';
 
 <main>
   <!-- ======================================================================
-         3A. FIRST SECTION: FULL VIDEO SHOWCASE (ONLY VIDEO)
+         3. HERO SLIDER SECTION (SLIDE 1: VIDEO ONLY, SLIDE 2: BANNER WITH TEXT)
          ====================================================================== -->
-  <section class="hero-video-section" id="hero-video">
-    <div class="hero-video-wrapper">
-      <video id="heroVideoPlayer" class="hero-standalone-video" autoplay muted loop playsinline preload="auto" poster="assets/images/dholera-hero-fresh.jpg">
-        <source src="assets/images/video.mp4" type="video/mp4">
-      </video>
-      <!-- Sleek Floating Sound Toggle -->
-      <button type="button" class="video-sound-toggle" id="videoSoundBtn" aria-label="Toggle Video Sound">
-        <i class="fa-solid fa-volume-xmark"></i> <span>Unmute</span>
-      </button>
-    </div>
-  </section>
+  <section class="hero-slider-section" id="home">
+    <div class="hero-slider-container">
+      <div class="hero-slider-track">
 
-  <!-- ======================================================================
-         3B. SECOND SECTION: HERO BANNER (TEXT & ACTIONS)
-         ====================================================================== -->
-  <section class="hero-section" id="home">
-    <div class="container">
-      <div class="hero-grid">
-        <!-- Hero Left Content -->
-        <div class="hero-content">
-          <div class="hero-badge">
-            <i class="fa-solid fa-city"></i> Invest Today In Tomorrow's Smart City
-          </div>
-          <h1 class="hero-title">
-            <span class="highlight-red">Dholera</span> Smart City Plots <br>
-            <span class="highlight-gold">Residential &amp; Industrial</span> Land for Sale
-          </h1>
-          <p class="hero-subtitle">
-            Secure high-ROI <strong>Dholera SIR plots</strong> in India's first platinum-rated greenfield smart city. 100% legal, clear title, NA-approved plots with world-class expressway, airport & metro connectivity.
-          </p>
-
-          <!-- Feature Badges -->
-          <div class="hero-features-row">
-            <div class="hero-feat-item">
-              <div class="hero-feat-icon"><i class="fa-solid fa-landmark"></i></div>
-              <div class="hero-feat-text">Govt. Planned Greenfield City</div>
-            </div>
-            <div class="hero-feat-item">
-              <div class="hero-feat-icon"><i class="fa-solid fa-plane-departure"></i></div>
-              <div class="hero-feat-text">International Airport Zone</div>
-            </div>
-            <div class="hero-feat-item">
-              <div class="hero-feat-icon"><i class="fa-solid fa-microchip"></i></div>
-              <div class="hero-feat-text">Tata Semiconductor Hub</div>
-            </div>
-            <div class="hero-feat-item">
-              <div class="hero-feat-icon"><i class="fa-solid fa-road"></i></div>
-              <div class="hero-feat-text">6-Lane Expressway & Metro</div>
-            </div>
-            <div class="hero-feat-item">
-              <div class="hero-feat-icon"><i class="fa-solid fa-file-shield"></i></div>
-              <div class="hero-feat-text">100% Clear Title & NA Plots</div>
-            </div>
-            <div class="hero-feat-item">
-              <div class="hero-feat-icon"><i class="fa-solid fa-chart-line"></i></div>
-              <div class="hero-feat-text">High Capital Appreciation</div>
-            </div>
-          </div>
-
-          <!-- Hero Action CTAs -->
-          <div class="hero-cta-group">
-            <a href="<?php echo $WHATSAPP_LINK; ?>" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp btn-lg whatsapp-pulse">
-              <i class="fa-brands fa-whatsapp fa-lg"></i> <span>Chat on WhatsApp</span>
-            </a>
-            <a href="<?php echo $PHONE_TEL; ?>" class="btn btn-call btn-lg pulse-animation">
-              <i class="fa-solid fa-phone"></i> <span>Direct Call: <?php echo htmlspecialchars($PHONE_DISPLAY); ?></span>
-            </a>
-            <a href="#plots" class="btn btn-gold btn-lg">
-              <i class="fa-solid fa-map-location-dot"></i> <span>Explore Verified Plots</span>
-            </a>
+        <!-- SLIDE 1: VIDEO ONLY SHOWCASE -->
+        <div class="hero-slide hero-slide-video active" data-slide-index="0">
+          <div class="hero-slide-video-wrap">
+            <video id="heroVideoPlayer" class="hero-slider-video" autoplay muted loop playsinline controls preload="auto" poster="assets/images/dholera-hero-fresh.jpg">
+              <source src="assets/images/video.mp4" type="video/mp4">
+            </video>
+            <!-- Prominent Floating Sound Toggle Button -->
+            <button type="button" class="hero-video-sound-btn" id="heroVideoSoundBtn" aria-label="Toggle Video Sound">
+              <i class="fa-solid fa-volume-xmark"></i> <span>Click for Voice / Sound</span>
+            </button>
           </div>
         </div>
+
+        <!-- SLIDE 2: BANNER WITH TEXT & CTAs -->
+        <div class="hero-slide hero-slide-banner" data-slide-index="1">
+          <div class="hero-banner-bg"></div>
+          <div class="container hero-banner-container">
+            <div class="hero-content">
+              <div class="hero-badge">
+                <i class="fa-solid fa-city"></i> Invest Today In Tomorrow's Smart City
+              </div>
+              <h1 class="hero-title">
+                <span class="highlight-red">Dholera</span> Smart City Plots <br>
+                <span class="highlight-gold">Residential &amp; Industrial</span> Land for Sale
+              </h1>
+              <p class="hero-subtitle">
+                Secure high-ROI <strong>Dholera SIR plots</strong> in India's first platinum-rated greenfield smart city. 100% legal, clear title, NA-approved plots with world-class expressway, airport &amp; metro connectivity.
+              </p>
+
+              <!-- Feature Badges -->
+              <div class="hero-features-row">
+                <div class="hero-feat-item">
+                  <div class="hero-feat-icon"><i class="fa-solid fa-landmark"></i></div>
+                  <div class="hero-feat-text">Govt. Planned Greenfield City</div>
+                </div>
+                <div class="hero-feat-item">
+                  <div class="hero-feat-icon"><i class="fa-solid fa-plane-departure"></i></div>
+                  <div class="hero-feat-text">International Airport Zone</div>
+                </div>
+                <div class="hero-feat-item">
+                  <div class="hero-feat-icon"><i class="fa-solid fa-microchip"></i></div>
+                  <div class="hero-feat-text">Tata Semiconductor Hub</div>
+                </div>
+                <div class="hero-feat-item">
+                  <div class="hero-feat-icon"><i class="fa-solid fa-road"></i></div>
+                  <div class="hero-feat-text">6-Lane Expressway &amp; Metro</div>
+                </div>
+                <div class="hero-feat-item">
+                  <div class="hero-feat-icon"><i class="fa-solid fa-file-shield"></i></div>
+                  <div class="hero-feat-text">100% Clear Title &amp; NA Plots</div>
+                </div>
+                <div class="hero-feat-item">
+                  <div class="hero-feat-icon"><i class="fa-solid fa-chart-line"></i></div>
+                  <div class="hero-feat-text">High Capital Appreciation</div>
+                </div>
+              </div>
+
+              <!-- Hero Action CTAs -->
+              <div class="hero-cta-group">
+                <a href="<?php echo $WHATSAPP_LINK; ?>" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp btn-lg whatsapp-pulse">
+                  <i class="fa-brands fa-whatsapp fa-lg"></i> <span>Chat on WhatsApp</span>
+                </a>
+                <a href="<?php echo $PHONE_TEL; ?>" class="btn btn-call btn-lg pulse-animation">
+                  <i class="fa-solid fa-phone"></i> <span>Direct Call: <?php echo htmlspecialchars($PHONE_DISPLAY); ?></span>
+                </a>
+                <a href="#plots" class="btn btn-gold btn-lg">
+                  <i class="fa-solid fa-map-location-dot"></i> <span>Explore Verified Plots</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Navigation Arrows -->
+      <button type="button" class="hero-slider-nav hero-slider-prev" id="heroPrevBtn" aria-label="Previous Slide">
+        <i class="fa-solid fa-chevron-left"></i>
+      </button>
+      <button type="button" class="hero-slider-nav hero-slider-next" id="heroNextBtn" aria-label="Next Slide">
+        <i class="fa-solid fa-chevron-right"></i>
+      </button>
+
+      <!-- Slider Dots / Indicators -->
+      <div class="hero-slider-dots" id="heroSliderDots">
+        <button type="button" class="slider-dot active" data-slide="0" aria-label="Slide 1: Video"><span class="dot-inner"><i class="fa-solid fa-play"></i> Video</span></button>
+        <button type="button" class="slider-dot" data-slide="1" aria-label="Slide 2: Banner"><span class="dot-inner"><i class="fa-solid fa-image"></i> Overview</span></button>
       </div>
     </div>
   </section>
