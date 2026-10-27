@@ -528,11 +528,25 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // 5. Header Box Shadow on Scroll
   const header = document.querySelector('.header');
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 40) {
-      header.style.boxShadow = '0 6px 20px rgba(0, 0, 0, 0.1)';
-    } else {
-      header.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.06)';
+  if (header) {
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 40) {
+        header.style.boxShadow = '0 6px 20px rgba(0, 0, 0, 0.1)';
+      } else {
+        header.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.06)';
+      }
+    });
+  }
+
+  // 6. Hero Background Video Autoplay Assurance
+  const heroVideo = document.querySelector('.hero-bg-video');
+  if (heroVideo) {
+    heroVideo.muted = true;
+    const playPromise = heroVideo.play();
+    if (playPromise !== undefined) {
+      playPromise.catch(() => {
+        // Autoplay policy prevented playback, poster image remains visible
+      });
     }
-  });
+  }
 });
