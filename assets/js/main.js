@@ -745,4 +745,42 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     }
   }
+
+  // 7. About Section Video Controller
+  const aboutVideo = document.getElementById('aboutVideoPlayer');
+  const aboutSoundBtn = document.getElementById('aboutSoundToggleBtn');
+
+  if (aboutVideo) {
+    function toggleAboutSound() {
+      if (aboutVideo.muted || aboutVideo.volume === 0) {
+        aboutVideo.muted = false;
+        aboutVideo.volume = 1.0;
+        if (aboutVideo.paused) {
+          aboutVideo.play().catch(() => {});
+        }
+        if (aboutSoundBtn) {
+          aboutSoundBtn.classList.add('is-unmuted');
+          aboutSoundBtn.innerHTML = '<i class="fa-solid fa-volume-high"></i>';
+        }
+      } else {
+        aboutVideo.muted = true;
+        if (aboutSoundBtn) {
+          aboutSoundBtn.classList.remove('is-unmuted');
+          aboutSoundBtn.innerHTML = '<i class="fa-solid fa-volume-xmark"></i>';
+        }
+      }
+    }
+
+    if (aboutSoundBtn) {
+      aboutSoundBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        toggleAboutSound();
+      });
+    }
+
+    aboutVideo.addEventListener('click', () => {
+      toggleAboutSound();
+    });
+  }
 });

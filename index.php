@@ -430,10 +430,18 @@ require_once __DIR__ . '/includes/header.php';
     <div class="container">
       <!-- 1. Top Balanced Two-Column Section (Equal Heights, No Left Gap) -->
       <div class="about-grid">
-        <!-- Left Column: Image Box & Key Stats -->
+        <!-- Left Column: Video Box & Key Stats -->
         <div class="about-left-col">
-          <div class="about-img-box">
-            <img src="assets/images/dholera-hero.jpg" alt="Dholera SIR Greenfield Smart City Master Plan Overview" loading="lazy">
+          <div class="about-img-box about-video-box">
+            <video id="aboutVideoPlayer" class="about-video" autoplay muted loop playsinline preload="auto" poster="assets/images/dholera-hero.jpg">
+              <source src="assets/images/video.mp4" type="video/mp4">
+            </video>
+
+            <!-- Sound toggle button for About video -->
+            <button type="button" class="about-sound-toggle-btn" id="aboutSoundToggleBtn" aria-label="Toggle Video Sound" title="Toggle Sound">
+              <i class="fa-solid fa-volume-xmark"></i>
+            </button>
+
             <div class="about-img-badge">
               <div class="aib-title">India's First Greenfield Smart City</div>
               <div class="aib-desc">Total Area: 920 Sq. Km | Platinum Rated by IGBC</div>
