@@ -760,26 +760,95 @@ ul {
   flex-shrink: 0;
 }
 
-/* Hero Section - Clean, Sharp & Vibrant Video & Showcase */
+/* ==========================================================================
+   1. STANDALONE HERO VIDEO SHOWCASE (ONLY VIDEO - FIRST SECTION)
+   ========================================================================== */
+.hero-video-section {
+  position: relative;
+  width: 100%;
+  background-color: #080f1e;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.hero-video-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  line-height: 0;
+  display: block;
+}
+
+.hero-standalone-video {
+  width: 100%;
+  height: auto;
+  max-height: 78vh;
+  min-height: 240px;
+  object-fit: cover;
+  display: block;
+  background: #080f1e;
+}
+
+@media (min-width: 1400px) {
+  .hero-standalone-video {
+    max-height: 640px;
+  }
+}
+
+@media (max-width: 767px) {
+  .hero-standalone-video {
+    min-height: 200px;
+    max-height: 48vh;
+  }
+}
+
+.video-sound-toggle {
+  position: absolute;
+  bottom: 20px;
+  right: 24px;
+  background: rgba(11, 21, 40, 0.78);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 999px;
+  padding: 8px 16px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  z-index: 10;
+  line-height: 1;
+}
+
+.video-sound-toggle:hover {
+  background: var(--accent-red);
+  border-color: var(--accent-red);
+  transform: scale(1.05);
+}
+
+@media (max-width: 575px) {
+  .video-sound-toggle {
+    bottom: 12px;
+    right: 14px;
+    padding: 6px 12px;
+    font-size: 0.78rem;
+  }
+}
+
+/* ==========================================================================
+   2. HERO BANNER WITH TEXT & ACTIONS (SECOND SECTION)
+   ========================================================================== */
 .hero-section {
   position: relative;
   color: var(--text-white);
   padding: 55px 0 65px;
   overflow: hidden;
   z-index: 1;
-  background-color: #080f1e;
-}
-
-.hero-bg-video {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-  z-index: -2;
-  pointer-events: none;
 }
 
 .hero-section::before {
@@ -794,7 +863,7 @@ ul {
   background-size: cover;
   background-repeat: no-repeat;
   filter: brightness(0.96) contrast(1.06) saturate(1.12);
-  z-index: -3;
+  z-index: -2;
 }
 
 .hero-section::after {
@@ -807,15 +876,15 @@ ul {
   background: 
     linear-gradient(
       90deg, 
-      rgba(8, 15, 30, 0.85) 0%, 
-      rgba(8, 15, 30, 0.65) 48%, 
-      rgba(8, 15, 30, 0.35) 100%
+      rgba(8, 15, 30, 0.80) 0%, 
+      rgba(8, 15, 30, 0.54) 48%, 
+      rgba(8, 15, 30, 0.25) 100%
     ),
     linear-gradient(
       180deg, 
-      rgba(8, 15, 30, 0.35) 0%, 
+      rgba(8, 15, 30, 0.30) 0%, 
       transparent 35%, 
-      rgba(8, 15, 30, 0.6) 100%
+      rgba(8, 15, 30, 0.48) 100%
     );
   z-index: -1;
   pointer-events: none;
@@ -825,9 +894,9 @@ ul {
   .hero-section::after {
     background: linear-gradient(
       180deg, 
-      rgba(8, 15, 30, 0.88) 0%, 
-      rgba(8, 15, 30, 0.65) 45%, 
-      rgba(8, 15, 30, 0.88) 100%
+      rgba(8, 15, 30, 0.84) 0%, 
+      rgba(8, 15, 30, 0.55) 45%, 
+      rgba(8, 15, 30, 0.80) 100%
     );
   }
 }

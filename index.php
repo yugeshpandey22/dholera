@@ -221,13 +221,24 @@ require_once __DIR__ . '/includes/header.php';
 
 <main>
   <!-- ======================================================================
-         3. HERO SECTION - ULTRA HIGH IMPACT WITH DIRECT CONNECT (NO FORMS)
+         3A. FIRST SECTION: FULL VIDEO SHOWCASE (ONLY VIDEO)
+         ====================================================================== -->
+  <section class="hero-video-section" id="hero-video">
+    <div class="hero-video-wrapper">
+      <video id="heroVideoPlayer" class="hero-standalone-video" autoplay muted loop playsinline preload="auto" poster="assets/images/dholera-hero-fresh.jpg">
+        <source src="assets/images/video.mp4" type="video/mp4">
+      </video>
+      <!-- Sleek Floating Sound Toggle -->
+      <button type="button" class="video-sound-toggle" id="videoSoundBtn" aria-label="Toggle Video Sound">
+        <i class="fa-solid fa-volume-xmark"></i> <span>Unmute</span>
+      </button>
+    </div>
+  </section>
+
+  <!-- ======================================================================
+         3B. SECOND SECTION: HERO BANNER (TEXT & ACTIONS)
          ====================================================================== -->
   <section class="hero-section" id="home">
-    <!-- Background Video with Fallback Poster -->
-    <video class="hero-bg-video" autoplay muted loop playsinline preload="auto" poster="assets/images/dholera-hero-fresh.jpg">
-      <source src="assets/images/video.mp4" type="video/mp4">
-    </video>
     <div class="container">
       <div class="hero-grid">
         <!-- Hero Left Content -->

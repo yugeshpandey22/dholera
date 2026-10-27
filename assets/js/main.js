@@ -538,14 +538,30 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // 6. Hero Background Video Autoplay Assurance
-  const heroVideo = document.querySelector('.hero-bg-video');
+  // 6. Hero Standalone Video Autoplay & Sound Toggle
+  const heroVideo = document.getElementById('heroVideoPlayer') || document.querySelector('.hero-standalone-video');
+  const soundBtn = document.getElementById('videoSoundBtn');
+
   if (heroVideo) {
     heroVideo.muted = true;
     const playPromise = heroVideo.play();
     if (playPromise !== undefined) {
       playPromise.catch(() => {
         // Autoplay policy prevented playback, poster image remains visible
+      });
+    }
+
+    if (soundBtn) {
+      soundBtn.addEventListener('click', () => {
+        if (heroVideo.muted) {
+          heroVideo.muted = false;
+          soundBtn.innerHTML = '<i class="fa-solid fa-volume-high"></i> <span>Mute</span>';
+          soundBtn.style.background = 'var(--accent-red)';
+        } else {
+          heroVideo.muted = true;
+          soundBtn.innerHTML = '<i class="fa-solid fa-volume-xmark"></i> <span>Unmute</span>';
+          soundBtn.style.background = '';
+        }
       });
     }
   }
