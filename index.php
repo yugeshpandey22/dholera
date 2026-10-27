@@ -430,63 +430,55 @@ require_once __DIR__ . '/includes/header.php';
         <!-- Right Column: Content Box -->
         <div class="about-content-box">
           <span class="section-tag"><i class="fa-solid fa-city"></i> About Dholera SIR</span>
-          <h2 class="section-title">Discover India’s Next-Generation Smart City &amp; Emerging Investment Destination</h2>
+          <h2 class="section-title">A New Destination for Smart Living &amp; Future Property Investment</h2>
 
           <p class="about-text">
-            <strong>Dholera Special Investment Region (SIR)</strong> is a major greenfield industrial city being developed in Gujarat under the Delhi–Mumbai Industrial Corridor (DMIC). Planned across approximately <strong>920 square kilometres</strong>, Dholera is envisioned as a modern, sustainable urban and industrial hub designed to support advanced manufacturing, business growth and future urban development. The project is supported by the Government of India and the Government of Gujarat. <a href="https://nicdc.in/projects/4-projects-developed/dholera-special-investment-region-gujarat" target="_blank" rel="noopener noreferrer" class="about-official-link"><i class="fa-solid fa-arrow-up-right-from-square"></i> Official project details</a>.
+            <strong>Dholera Special Investment Region (SIR)</strong> is one of India's major planned greenfield industrial and smart city developments, located in Gujarat under the Delhi–Mumbai Industrial Corridor (DMIC). Spread across approximately <strong>920 square kilometres</strong>, Dholera is envisioned as a modern urban and industrial hub with planned infrastructure, advanced utilities and opportunities for long-term economic growth.
           </p>
           <p class="about-text">
-            With its planned infrastructure, industrial ecosystem and regional connectivity, <strong>Dholera Smart City</strong> is attracting attention from property buyers, land investors and businesses looking at Gujarat’s long-term development potential.
+            With its strategic location, industrial development plans and evolving connectivity, <strong>Dholera Smart City is emerging as a destination of interest for property buyers and real estate investors</strong> seeking to explore Gujarat's future development potential.
           </p>
           <p class="about-text">
-            Whether you are exploring land investment in Dholera, residential plots, or property opportunities near Dholera SIR, understanding the location, development plans, land-use regulations and infrastructure progress is essential before making an investment decision.
+            Whether you are planning to <strong>buy land in Dholera, explore residential plots or evaluate Dholera property investment opportunities</strong>, understanding the location, land-use permissions and development progress can help you make a more informed decision.
           </p>
 
-          <!-- Why Explore Dholera SIR? -->
+          <!-- Why Consider Dholera SIR? -->
           <div class="about-sub-block">
-            <h3 class="about-sub-title"><i class="fa-solid fa-compass"></i> Why Explore Dholera SIR?</h3>
+            <h3 class="about-sub-title"><i class="fa-solid fa-compass"></i> Why Consider Dholera SIR?</h3>
             <ul class="about-features-list">
               <li>
                 <div class="afl-icon"><i class="fa-solid fa-location-dot"></i></div>
-                <div class="afl-text"><strong>Strategic Location:</strong> Situated approximately 100 km southwest of Ahmedabad, with planned regional connectivity.</div>
+                <div class="afl-text"><strong>Strategic Location:</strong> Located approximately 100 km southwest of Ahmedabad, Gujarat.</div>
               </li>
               <li>
                 <div class="afl-icon"><i class="fa-solid fa-network-wired"></i></div>
-                <div class="afl-text"><strong>Smart Infrastructure:</strong> Planned utility corridors, road networks, water infrastructure, power systems and digital connectivity.</div>
+                <div class="afl-text"><strong>Planned Smart Infrastructure:</strong> Designed with integrated utility networks, modern roads, water management and digital infrastructure.</div>
               </li>
               <li>
-                <div class="afl-icon"><i class="fa-solid fa-microchip"></i></div>
-                <div class="afl-text"><strong>Industrial Growth Potential:</strong> Focus sectors include semiconductors, aerospace and defence, solar manufacturing, green hydrogen and heavy engineering.</div>
-              </li>
-              <li>
-                <div class="afl-icon"><i class="fa-solid fa-building-user"></i></div>
-                <div class="afl-text"><strong>Future Urban Development:</strong> A planned environment intended to integrate industrial activity, employment and urban services.</div>
+                <div class="afl-icon"><i class="fa-solid fa-industry"></i></div>
+                <div class="afl-text"><strong>Industrial Development:</strong> Planned focus sectors include semiconductors, aerospace and defence, renewable energy, pharmaceuticals and advanced manufacturing.</div>
               </li>
               <li>
                 <div class="afl-icon"><i class="fa-solid fa-chart-line"></i></div>
-                <div class="afl-text"><strong>Long-Term Property Opportunities:</strong> Investors can explore eligible land parcels and projects based on location, development status, legal documentation and intended use.</div>
+                <div class="afl-text"><strong>Future Growth Potential:</strong> Industrial investment and infrastructure development may create opportunities over time.</div>
+              </li>
+              <li>
+                <div class="afl-icon"><i class="fa-solid fa-file-shield"></i></div>
+                <div class="afl-text"><strong>Property Investment Options:</strong> Explore suitable land parcels and projects after verifying ownership, approvals, location and permitted land use.</div>
               </li>
             </ul>
           </div>
 
-          <!-- Explore Property Investment Opportunities in Dholera -->
+          <!-- Explore Land Investment Opportunities in Dholera -->
           <div class="about-sub-block">
-            <h3 class="about-sub-title"><i class="fa-solid fa-shield-halved"></i> Explore Property Investment Opportunities in Dholera</h3>
+            <h3 class="about-sub-title"><i class="fa-solid fa-shield-halved"></i> Explore Land Investment Opportunities in Dholera</h3>
             <p class="about-text">
-              Looking to <strong>buy land in Dholera SIR</strong>? Choose properties carefully by checking ownership records, title clarity, applicable town planning schemes, land-use permissions, approvals and current infrastructure access.
+              Looking for <strong>land in Dholera SIR</strong>? Before investing, check the property's title, approved layout, applicable town planning scheme, development permissions and actual infrastructure connectivity.
             </p>
             <div class="about-disclaimer-box">
               <i class="fa-solid fa-circle-exclamation"></i>
-              <span>Dholera offers a significant long-term development vision, but property appreciation and investment returns are not guaranteed. Conduct independent legal and financial due diligence before purchasing any land or property.</span>
+              <span>Dholera's development vision creates opportunities worth exploring, but returns and future appreciation are not guaranteed. Always conduct independent legal and financial due diligence before making a property purchase.</span>
             </div>
-          </div>
-
-          <!-- Plan Your Dholera Investment with Confidence -->
-          <div class="about-sub-block">
-            <h3 class="about-sub-title"><i class="fa-solid fa-handshake"></i> Plan Your Dholera Investment with Confidence</h3>
-            <p class="about-text">
-              Explore available property options, understand the development landscape and make an informed decision about your next real estate investment in Dholera, Gujarat.
-            </p>
           </div>
 
           <!-- Action Buttons -->
