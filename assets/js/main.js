@@ -645,69 +645,69 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Video Playback & Voice Control & Auto-transition on End
     if (heroVideo) {
-      heroVideo.volume = 1.0;
+      const soundBtn = document.getElementById('heroSoundToggleBtn');
 
-      // 1. Ensure video starts playing IMMEDIATELY without freezing
-      heroVideo.muted = true;
-      const startPromise = heroVideo.play();
-      if (startPromise !== undefined) {
-        startPromise.then(() => {
-          // Video is playing! Try to immediately enable voice without user interaction
-          try {
-            heroVideo.muted = false;
-            heroVideo.volume = 1.0;
-            setTimeout(() => {
-              if (heroVideo.paused) {
-                // If browser paused video because of sound, resume playback muted
-                heroVideo.muted = true;
-                heroVideo.play().catch(() => {});
-              }
-            }, 150);
-          } catch (e) {
-            heroVideo.muted = true;
+      function updateSoundUI(muted) {
+        if (!soundBtn) return;
+        if (muted) {
+          soundBtn.classList.remove('is-unmuted');
+          soundBtn.classList.add('is-muted');
+          soundBtn.innerHTML = '<i class="fa-solid fa-volume-xmark"></i> <span>Tap for Sound</span>';
+        } else {
+          soundBtn.classList.remove('is-muted');
+          soundBtn.classList.add('is-unmuted');
+          soundBtn.innerHTML = '<i class="fa-solid fa-volume-high"></i> <span>Sound ON (Mute)</span>';
+        }
+      }
+
+      function enableSound() {
+        if (heroVideo) {
+          heroVideo.muted = false;
+          heroVideo.volume = 1.0;
+          if (heroVideo.paused) {
             heroVideo.play().catch(() => {});
           }
-        }).catch(() => {
+          updateSoundUI(false);
+        }
+      }
+
+      function muteSound() {
+        if (heroVideo) {
           heroVideo.muted = true;
-          heroVideo.play().catch(() => {});
-        });
-      }
-
-      // 2. Voice unlocker: Unmutes voice automatically on ANY visitor activity (scroll, touch, move, click)
-      let voiceUnlocked = false;
-      function unlockVoice() {
-        if (voiceUnlocked || !heroVideo) return;
-        heroVideo.muted = false;
-        heroVideo.volume = 1.0;
-        if (heroVideo.paused) {
-          heroVideo.play().catch(() => {});
-        }
-        if (!heroVideo.muted) {
-          voiceUnlocked = true;
-          cleanupVoiceListeners();
+          updateSoundUI(true);
         }
       }
 
-      const interactionEvents = ['click', 'touchstart', 'touchend', 'pointerdown', 'scroll', 'wheel', 'keydown', 'mousemove'];
-      function cleanupVoiceListeners() {
-        interactionEvents.forEach((evt) => {
-          window.removeEventListener(evt, unlockVoice);
-          document.removeEventListener(evt, unlockVoice);
+      // Ensure video starts playing IMMEDIATELY without freezing
+      heroVideo.muted = true;
+      heroVideo.volume = 1.0;
+      updateSoundUI(true);
+      heroVideo.play().catch(() => {});
+
+      // Sound button click toggle
+      if (soundBtn) {
+        soundBtn.addEventListener('click', (e) => {
+          e.preventDefault();
+          e.stopPropagation();
+          if (heroVideo.muted || heroVideo.volume === 0) {
+            enableSound();
+          } else {
+            muteSound();
+          }
         });
       }
 
-      interactionEvents.forEach((evt) => {
-        window.addEventListener(evt, unlockVoice, { passive: true });
-        document.addEventListener(evt, unlockVoice, { passive: true });
+      // Tapping anywhere on video also toggles sound
+      heroVideo.addEventListener('click', () => {
+        if (heroVideo.muted || heroVideo.volume === 0) {
+          enableSound();
+        } else {
+          muteSound();
+        }
       });
 
-      // Clicking directly on video also guarantees voice is ON
-      heroVideo.addEventListener('click', () => {
-        heroVideo.muted = false;
-        heroVideo.volume = 1.0;
-        if (heroVideo.paused) {
-          heroVideo.play().catch(() => {});
-        }
+      heroVideo.addEventListener('volumechange', () => {
+        updateSoundUI(heroVideo.muted || heroVideo.volume === 0);
       });
 
       // Auto-slide to Banner when Video Ends (30s)

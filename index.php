@@ -233,6 +233,11 @@ require_once __DIR__ . '/includes/header.php';
             <video id="heroVideoPlayer" class="d-block w-100 hero-carousel-video" autoplay muted playsinline preload="auto" poster="assets/images/dholera-hero-fresh.jpg">
               <source src="assets/images/video.mp4" type="video/mp4">
             </video>
+
+            <!-- Sleek Mute / Sound Button -->
+            <button type="button" class="hero-sound-toggle-btn is-muted" id="heroSoundToggleBtn" aria-label="Toggle Sound">
+              <i class="fa-solid fa-volume-xmark"></i> <span>Tap for Sound</span>
+            </button>
           </div>
         </div>
 
