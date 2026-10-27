@@ -652,11 +652,11 @@ document.addEventListener('DOMContentLoaded', () => {
         if (muted) {
           soundBtn.classList.remove('is-unmuted');
           soundBtn.classList.add('is-muted');
-          soundBtn.innerHTML = '<i class="fa-solid fa-volume-xmark"></i> <span>Tap for Sound</span>';
+          soundBtn.innerHTML = '<i class="fa-solid fa-volume-xmark"></i> <span>Sound: OFF (Click for Audio)</span>';
         } else {
           soundBtn.classList.remove('is-muted');
           soundBtn.classList.add('is-unmuted');
-          soundBtn.innerHTML = '<i class="fa-solid fa-volume-high"></i> <span>Sound ON (Mute)</span>';
+          soundBtn.innerHTML = '<i class="fa-solid fa-volume-high"></i> <span>Sound: ON</span>';
         }
       }
 
