@@ -569,7 +569,7 @@ require_once __DIR__ . '/includes/header.php';
               </div>
 
               <div class="ref-plot-price-strip">
-                <span>Plot Rate: <strong><?php echo htmlspecialchars($PROJECT_BASE_RATE_TXT); ?>*</strong></span>
+                <span class="ref-price-val">Plot Rate: <strong><?php echo htmlspecialchars($PROJECT_BASE_RATE_TXT); ?>*</strong></span>
                 <span class="ref-size-tag">121 - 724 Sq. Yds</span>
               </div>
 
@@ -630,7 +630,7 @@ require_once __DIR__ . '/includes/header.php';
               </div>
 
               <div class="ref-plot-price-strip">
-                <span>Plot Rate: <strong><?php echo htmlspecialchars($RES2_PROJECT_BASE_RATE_TXT); ?>*</strong></span>
+                <span class="ref-price-val">Plot Rate: <strong><?php echo htmlspecialchars($RES2_PROJECT_BASE_RATE_TXT); ?>*</strong></span>
                 <span class="ref-size-tag">124 - 404 Sq. Yds</span>
               </div>
 
@@ -694,7 +694,7 @@ require_once __DIR__ . '/includes/header.php';
               </div>
 
               <div class="ref-plot-price-strip">
-                <span>Plot Rate: <strong><?php echo htmlspecialchars($IND_PROJECT_RATE_TXT); ?>*</strong></span>
+                <span class="ref-price-val">Plot Rate: <strong><?php echo htmlspecialchars($IND_PROJECT_RATE_TXT); ?>*</strong></span>
                 <span class="ref-size-tag">327 - 5,912 Sq. Yds</span>
               </div>
 

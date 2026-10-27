@@ -1655,30 +1655,43 @@ ul {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 9px 12px;
+  flex-wrap: wrap;
+  gap: 6px 8px;
+  padding: 8px 10px;
   background: #f8fafc;
   border-radius: 10px;
   border: 1px solid #e2e8f0;
-  font-size: 0.84rem;
+  font-size: 0.81rem;
   color: #475569;
   margin-bottom: 14px;
+}
+
+.ref-plot-price-strip .ref-price-val {
+  white-space: nowrap;
+  display: inline-flex;
+  align-items: baseline;
+  gap: 4px;
+  flex-shrink: 0;
 }
 
 .ref-plot-price-strip strong {
   color: #b45309;
   font-weight: 800;
-  font-size: 0.98rem;
+  font-size: 0.93rem;
+  white-space: nowrap;
+  letter-spacing: -0.01em;
 }
 
 .ref-size-tag {
   background: #0f172a;
   color: #ffffff;
-  padding: 3px 9px;
+  padding: 3px 8px;
   border-radius: 6px;
-  font-size: 0.72rem;
+  font-size: 0.70rem;
   font-weight: 700;
   letter-spacing: 0.02em;
   white-space: nowrap;
+  flex-shrink: 0;
 }
 
 .ref-btn-gold {
