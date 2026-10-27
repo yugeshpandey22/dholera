@@ -95,7 +95,7 @@ if (!isset($PHONE_RAW)) {
 
       <!-- Bottom Bar with Mineib Creative Technology Credit -->
       <div class="footer-bottom">
-        <div>&copy; <?php echo date('Y'); ?> Dholera Smart City Plots. All Rights Reserved. &bull; Verified Title-Clear Plots Advisory</div>
+        <div>&copy; <?php echo date('Y'); ?> Realty Rangers. All Rights Reserved.</div>
         <div class="footer-credit">
           <span>Designed &amp; Developed by</span>
           <a href="https://mineib.com/" target="_blank" rel="noopener noreferrer" class="credit-link" title="Mineib Creative Technology - Digital Agency &amp; Web Solutions">
