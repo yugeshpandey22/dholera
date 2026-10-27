@@ -1280,13 +1280,21 @@ ul {
   display: grid;
   grid-template-columns: 1fr;
   gap: 40px;
-  align-items: center;
+  align-items: start;
 }
 
 @media (min-width: 992px) {
   .about-grid {
     grid-template-columns: 1fr 1fr;
   }
+}
+
+.about-sticky-side {
+  position: sticky;
+  top: 90px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
 .about-img-box {
@@ -1342,14 +1350,107 @@ ul {
   font-size: 0.98rem;
   color: #475569;
   line-height: 1.7;
-  margin-bottom: 24px;
+  margin-bottom: 18px;
+}
+
+.about-official-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--accent-red);
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: color 0.2s ease;
+}
+
+.about-official-link:hover {
+  color: #991b1b;
+}
+
+.about-sub-block {
+  margin-top: 24px;
+  padding-top: 20px;
+  border-top: 1px solid #e2e8f0;
+}
+
+.about-sub-title {
+  font-size: 1.22rem;
+  font-weight: 800;
+  color: var(--primary);
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.about-sub-title i {
+  color: var(--accent-red);
+  font-size: 1.1rem;
+}
+
+.about-features-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 16px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.about-features-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 0.94rem;
+  color: #475569;
+  line-height: 1.6;
+}
+
+.about-features-list .afl-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background: #fee2e2;
+  color: var(--accent-red);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.about-features-list li strong {
+  color: #0f172a;
+}
+
+.about-disclaimer-box {
+  background: #fffbeb;
+  border: 1px solid #fef3c7;
+  border-left: 4px solid var(--accent-gold, #f59e0b);
+  border-radius: 8px;
+  padding: 14px 16px;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 0.88rem;
+  color: #78350f;
+  line-height: 1.6;
+  margin-top: 14px;
+}
+
+.about-disclaimer-box i {
+  color: #d97706;
+  font-size: 1.15rem;
+  margin-top: 2px;
+  flex-shrink: 0;
 }
 
 .about-stats-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 16px;
-  margin-bottom: 28px;
+  gap: 14px;
 }
 
 .about-stat-card {
@@ -1357,10 +1458,17 @@ ul {
   border: 1px solid #e2e8f0;
   padding: 14px 16px;
   border-radius: var(--radius-md);
+  transition: var(--transition);
+}
+
+.about-stat-card:hover {
+  background: #ffffff;
+  box-shadow: var(--shadow-sm);
+  border-color: #cbd5e1;
 }
 
 .asc-num {
-  font-size: 1.6rem;
+  font-size: 1.5rem;
   font-weight: 800;
   color: var(--accent-red);
   line-height: 1.1;
@@ -1368,15 +1476,17 @@ ul {
 }
 
 .asc-label {
-  font-size: 0.8rem;
+  font-size: 0.78rem;
   font-weight: 600;
   color: #64748b;
+  line-height: 1.35;
 }
 
 .about-cta-row {
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
+  margin-top: 24px;
 }
 
 /* Clean Reference-Identical Plot Options Section */

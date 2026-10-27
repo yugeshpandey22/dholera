@@ -396,46 +396,100 @@ require_once __DIR__ . '/includes/header.php';
   <section class="section-padding about-section" id="about">
     <div class="container">
       <div class="about-grid">
-        <!-- Image Box with Badge -->
-        <div class="about-img-box">
-          <img src="assets/images/dholera-hero.jpg" alt="Dholera SIR Greenfield Smart City Master Plan Overview" loading="lazy">
-          <div class="about-img-badge">
-            <div class="aib-title">India's First Greenfield Smart City</div>
-            <div class="aib-desc">Total Area: 920 Sq. Km | Platinum Rated by IGBC</div>
+        <!-- Left Column: Image Box & Key Infrastructure Stats (Sticky Side) -->
+        <div class="about-sticky-side">
+          <div class="about-img-box">
+            <img src="assets/images/dholera-hero.jpg" alt="Dholera SIR Greenfield Smart City Master Plan Overview" loading="lazy">
+            <div class="about-img-badge">
+              <div class="aib-title">India's First Greenfield Smart City</div>
+              <div class="aib-desc">Total Area: 920 Sq. Km | Platinum Rated by IGBC</div>
+            </div>
           </div>
-        </div>
 
-        <!-- Content Box -->
-        <div class="about-content-box">
-          <span class="section-tag">About Dholera SIR</span>
-          <h2 class="section-title">The Future of Urban Living & High-Yield Property Investment</h2>
-          <p class="about-text">
-            <strong>Dholera Special Investment Region (SIR)</strong> is India’s flagship greenfield smart city project being developed under the Delhi-Mumbai Industrial Corridor (DMIC). Spanning over 920 sq. km (larger than Singapore), Dholera is engineered with subterranean ICT-enabled utilities, automated waste management, recycled water networks, and smart power grids.
-          </p>
-          <p class="about-text">
-            Whether you are looking to <strong>buy land in Dholera</strong> for family living or looking for an exponential <strong>Dholera property investment</strong>, this mega city promises unparalleled return on investment backed by the Central and Gujarat Governments.
-          </p>
-
-          <!-- Stats Grid -->
+          <!-- Quick Stat Cards -->
           <div class="about-stats-grid">
             <div class="about-stat-card">
-              <div class="asc-num">920+</div>
-              <div class="asc-label">Sq. Km Total Area</div>
+              <div class="asc-num">920 <small style="font-size:0.95rem; font-weight:700;">Sq. Km</small></div>
+              <div class="asc-label">Planned Smart City Area</div>
             </div>
             <div class="about-stat-card">
-              <div class="asc-num">₹ 91,000 Cr+</div>
+              <div class="asc-num">~100 <small style="font-size:0.95rem; font-weight:700;">Km</small></div>
+              <div class="asc-label">SW of Ahmedabad (Expressway)</div>
+            </div>
+            <div class="about-stat-card">
+              <div class="asc-num">₹ 91,000 <small style="font-size:0.95rem; font-weight:700;">Cr+</small></div>
               <div class="asc-label">Tata Semiconductor Fab</div>
             </div>
             <div class="about-stat-card">
-              <div class="asc-num">22.5</div>
-              <div class="asc-label">Sq. Km Activation Zone</div>
-            </div>
-            <div class="about-stat-card">
               <div class="asc-num">100%</div>
-              <div class="asc-label">Underground Utilities</div>
+              <div class="asc-label">Underground Smart Utilities</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Column: Content Box -->
+        <div class="about-content-box">
+          <span class="section-tag"><i class="fa-solid fa-city"></i> About Dholera SIR</span>
+          <h2 class="section-title">Discover India’s Next-Generation Smart City &amp; Emerging Investment Destination</h2>
+
+          <p class="about-text">
+            <strong>Dholera Special Investment Region (SIR)</strong> is a major greenfield industrial city being developed in Gujarat under the Delhi–Mumbai Industrial Corridor (DMIC). Planned across approximately <strong>920 square kilometres</strong>, Dholera is envisioned as a modern, sustainable urban and industrial hub designed to support advanced manufacturing, business growth and future urban development. The project is supported by the Government of India and the Government of Gujarat. <a href="https://nicdc.in/projects/4-projects-developed/dholera-special-investment-region-gujarat" target="_blank" rel="noopener noreferrer" class="about-official-link"><i class="fa-solid fa-arrow-up-right-from-square"></i> Official project details</a>.
+          </p>
+          <p class="about-text">
+            With its planned infrastructure, industrial ecosystem and regional connectivity, <strong>Dholera Smart City</strong> is attracting attention from property buyers, land investors and businesses looking at Gujarat’s long-term development potential.
+          </p>
+          <p class="about-text">
+            Whether you are exploring land investment in Dholera, residential plots, or property opportunities near Dholera SIR, understanding the location, development plans, land-use regulations and infrastructure progress is essential before making an investment decision.
+          </p>
+
+          <!-- Why Explore Dholera SIR? -->
+          <div class="about-sub-block">
+            <h3 class="about-sub-title"><i class="fa-solid fa-compass"></i> Why Explore Dholera SIR?</h3>
+            <ul class="about-features-list">
+              <li>
+                <div class="afl-icon"><i class="fa-solid fa-location-dot"></i></div>
+                <div class="afl-text"><strong>Strategic Location:</strong> Situated approximately 100 km southwest of Ahmedabad, with planned regional connectivity.</div>
+              </li>
+              <li>
+                <div class="afl-icon"><i class="fa-solid fa-network-wired"></i></div>
+                <div class="afl-text"><strong>Smart Infrastructure:</strong> Planned utility corridors, road networks, water infrastructure, power systems and digital connectivity.</div>
+              </li>
+              <li>
+                <div class="afl-icon"><i class="fa-solid fa-microchip"></i></div>
+                <div class="afl-text"><strong>Industrial Growth Potential:</strong> Focus sectors include semiconductors, aerospace and defence, solar manufacturing, green hydrogen and heavy engineering.</div>
+              </li>
+              <li>
+                <div class="afl-icon"><i class="fa-solid fa-building-user"></i></div>
+                <div class="afl-text"><strong>Future Urban Development:</strong> A planned environment intended to integrate industrial activity, employment and urban services.</div>
+              </li>
+              <li>
+                <div class="afl-icon"><i class="fa-solid fa-chart-line"></i></div>
+                <div class="afl-text"><strong>Long-Term Property Opportunities:</strong> Investors can explore eligible land parcels and projects based on location, development status, legal documentation and intended use.</div>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Explore Property Investment Opportunities in Dholera -->
+          <div class="about-sub-block">
+            <h3 class="about-sub-title"><i class="fa-solid fa-shield-halved"></i> Explore Property Investment Opportunities in Dholera</h3>
+            <p class="about-text">
+              Looking to <strong>buy land in Dholera SIR</strong>? Choose properties carefully by checking ownership records, title clarity, applicable town planning schemes, land-use permissions, approvals and current infrastructure access.
+            </p>
+            <div class="about-disclaimer-box">
+              <i class="fa-solid fa-circle-exclamation"></i>
+              <span>Dholera offers a significant long-term development vision, but property appreciation and investment returns are not guaranteed. Conduct independent legal and financial due diligence before purchasing any land or property.</span>
             </div>
           </div>
 
+          <!-- Plan Your Dholera Investment with Confidence -->
+          <div class="about-sub-block">
+            <h3 class="about-sub-title"><i class="fa-solid fa-handshake"></i> Plan Your Dholera Investment with Confidence</h3>
+            <p class="about-text">
+              Explore available property options, understand the development landscape and make an informed decision about your next real estate investment in Dholera, Gujarat.
+            </p>
+          </div>
+
+          <!-- Action Buttons -->
           <div class="about-cta-row">
             <a href="<?php echo $PHONE_TEL; ?>" class="btn btn-call">
               <i class="fa-solid fa-phone"></i> Call for Site Visit
