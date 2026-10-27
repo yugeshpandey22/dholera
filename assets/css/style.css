@@ -918,112 +918,19 @@ ul {
 .d-block { display: block !important; }
 .w-100 { width: 100% !important; }
 
-/* Hero Section Container */
-.hero-carousel-section {
+/* ==========================================================================
+   HERO SECTION (BANNER WITH TEXT, BADGES & CTAs)
+   ========================================================================== */
+.hero-section {
   position: relative;
   width: 100%;
   background: #080f1e;
-  overflow: hidden;
-}
-
-/* SLIDE 1: VIDEO SHOWCASE */
-.hero-carousel-video-wrap {
-  position: relative;
-  width: 100%;
-  max-width: 100%;
-  margin: 0 auto;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: #000000;
-  min-height: 360px;
-}
-
-.hero-carousel-video {
-  width: 100%;
-  height: auto;
-  max-height: 75vh;
-  min-height: 300px;
-  object-fit: cover;
-  display: block;
-  cursor: pointer;
-}
-
-@media (min-width: 1400px) {
-  .hero-carousel-video {
-    max-height: 640px;
-  }
-}
-
-@media (max-width: 767px) {
-  .hero-carousel-video {
-    min-height: 240px;
-    max-height: 55vh;
-  }
-}
-
-/* Clean Minimalist Sound / Voice Button (Positioned on Left Side) */
-.hero-sound-toggle-btn {
-  position: absolute;
-  bottom: 22px;
-  left: 24px;
-  right: auto;
-  z-index: 26;
-  background: rgba(11, 21, 40, 0.76);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.35);
-  color: #ffffff;
-  border-radius: 999px;
-  padding: 8px 18px;
-  font-size: 0.84rem;
-  font-weight: 600;
-  letter-spacing: 0.3px;
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  cursor: pointer;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
-  transition: all 0.25s ease;
-  line-height: 1;
-}
-
-.hero-sound-toggle-btn:hover {
-  background: rgba(11, 21, 40, 0.94);
-  border-color: rgba(255, 255, 255, 0.7);
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
-}
-
-.hero-sound-toggle-btn i {
-  font-size: 0.95rem;
-  color: #4ade80;
-  transition: color 0.2s ease;
-}
-
-.hero-sound-toggle-btn.is-muted i {
-  color: var(--accent-gold, #f59e0b);
-}
-
-@media (max-width: 575px) {
-  .hero-sound-toggle-btn {
-    bottom: 14px;
-    left: 14px;
-    right: auto;
-    padding: 7px 13px;
-    font-size: 0.76rem;
-    gap: 6px;
-  }
-}
-
-/* SLIDE 2: BANNER WITH TEXT (KEPT COMPLETELY INTACT) */
-.hero-carousel-banner-wrap {
   color: var(--text-white);
-  padding: 55px 0 65px;
-  position: relative;
+  padding: 60px 0 70px;
   display: flex;
   align-items: center;
-  min-height: 480px;
+  min-height: 520px;
+  overflow: hidden;
 }
 
 .hero-banner-bg {

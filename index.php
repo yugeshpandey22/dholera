@@ -221,99 +221,64 @@ require_once __DIR__ . '/includes/header.php';
 
 <main>
   <!-- ======================================================================
-         3. HERO BOOTSTRAP CAROUSEL (FIRST: VIDEO, SECOND: BANNER)
+         3. HERO SECTION (BANNER WITH TEXT, BADGES & CTAs)
          ====================================================================== -->
-  <section class="hero-carousel-section" id="home">
-    <div id="carouselExampleControlsNoTouching" class="carousel slide" data-bs-touch="false" data-bs-interval="false">
-      <div class="carousel-inner">
+  <section class="hero-section" id="home">
+    <div class="hero-banner-bg"></div>
+    <div class="container hero-banner-container">
+      <div class="hero-content">
+        <div class="hero-badge">
+          <i class="fa-solid fa-city"></i> Invest Today In Tomorrow's Smart City
+        </div>
+        <h1 class="hero-title">
+          <span class="highlight-red">Dholera</span> Smart City Plots <br>
+          <span class="highlight-gold">Residential &amp; Industrial</span> Land for Sale
+        </h1>
+        <p class="hero-subtitle">
+          Secure high-ROI <strong>Dholera SIR plots</strong> in India's first platinum-rated greenfield smart city. 100% legal, clear title, NA-approved plots with world-class expressway, airport &amp; metro connectivity.
+        </p>
 
-        <!-- FIRST CAROUSEL ITEM: VIDEO ONLY SHOWCASE -->
-        <div class="carousel-item active">
-          <div class="hero-carousel-video-wrap">
-            <video id="heroVideoPlayer" class="d-block w-100 hero-carousel-video" autoplay muted playsinline preload="auto" poster="assets/images/dholera-hero-fresh.jpg">
-              <source src="assets/images/video.mp4" type="video/mp4">
-            </video>
-
-            <!-- Clean Minimalist Sound / Voice Button (Left Side, Sound ON by default) -->
-            <button type="button" class="hero-sound-toggle-btn is-unmuted" id="heroSoundToggleBtn" aria-label="Toggle Sound">
-              <i class="fa-solid fa-volume-high"></i> <span>Sound: ON</span>
-            </button>
+        <!-- Feature Badges -->
+        <div class="hero-features-row">
+          <div class="hero-feat-item">
+            <div class="hero-feat-icon"><i class="fa-solid fa-landmark"></i></div>
+            <div class="hero-feat-text">Govt. Planned Greenfield City</div>
+          </div>
+          <div class="hero-feat-item">
+            <div class="hero-feat-icon"><i class="fa-solid fa-plane-departure"></i></div>
+            <div class="hero-feat-text">International Airport Zone</div>
+          </div>
+          <div class="hero-feat-item">
+            <div class="hero-feat-icon"><i class="fa-solid fa-microchip"></i></div>
+            <div class="hero-feat-text">Tata Semiconductor Hub</div>
+          </div>
+          <div class="hero-feat-item">
+            <div class="hero-feat-icon"><i class="fa-solid fa-road"></i></div>
+            <div class="hero-feat-text">6-Lane Expressway &amp; Metro</div>
+          </div>
+          <div class="hero-feat-item">
+            <div class="hero-feat-icon"><i class="fa-solid fa-file-shield"></i></div>
+            <div class="hero-feat-text">100% Clear Title &amp; NA Plots</div>
+          </div>
+          <div class="hero-feat-item">
+            <div class="hero-feat-icon"><i class="fa-solid fa-chart-line"></i></div>
+            <div class="hero-feat-text">High Capital Appreciation</div>
           </div>
         </div>
 
-        <!-- SECOND CAROUSEL ITEM: BANNER WITH TEXT & CTAs -->
-        <div class="carousel-item">
-          <div class="hero-carousel-banner-wrap">
-            <div class="hero-banner-bg"></div>
-            <div class="container hero-banner-container">
-              <div class="hero-content">
-                <div class="hero-badge">
-                  <i class="fa-solid fa-city"></i> Invest Today In Tomorrow's Smart City
-                </div>
-                <h1 class="hero-title">
-                  <span class="highlight-red">Dholera</span> Smart City Plots <br>
-                  <span class="highlight-gold">Residential &amp; Industrial</span> Land for Sale
-                </h1>
-                <p class="hero-subtitle">
-                  Secure high-ROI <strong>Dholera SIR plots</strong> in India's first platinum-rated greenfield smart city. 100% legal, clear title, NA-approved plots with world-class expressway, airport &amp; metro connectivity.
-                </p>
-
-                <!-- Feature Badges -->
-                <div class="hero-features-row">
-                  <div class="hero-feat-item">
-                    <div class="hero-feat-icon"><i class="fa-solid fa-landmark"></i></div>
-                    <div class="hero-feat-text">Govt. Planned Greenfield City</div>
-                  </div>
-                  <div class="hero-feat-item">
-                    <div class="hero-feat-icon"><i class="fa-solid fa-plane-departure"></i></div>
-                    <div class="hero-feat-text">International Airport Zone</div>
-                  </div>
-                  <div class="hero-feat-item">
-                    <div class="hero-feat-icon"><i class="fa-solid fa-microchip"></i></div>
-                    <div class="hero-feat-text">Tata Semiconductor Hub</div>
-                  </div>
-                  <div class="hero-feat-item">
-                    <div class="hero-feat-icon"><i class="fa-solid fa-road"></i></div>
-                    <div class="hero-feat-text">6-Lane Expressway &amp; Metro</div>
-                  </div>
-                  <div class="hero-feat-item">
-                    <div class="hero-feat-icon"><i class="fa-solid fa-file-shield"></i></div>
-                    <div class="hero-feat-text">100% Clear Title &amp; NA Plots</div>
-                  </div>
-                  <div class="hero-feat-item">
-                    <div class="hero-feat-icon"><i class="fa-solid fa-chart-line"></i></div>
-                    <div class="hero-feat-text">High Capital Appreciation</div>
-                  </div>
-                </div>
-
-                <!-- Hero Action CTAs -->
-                <div class="hero-cta-group">
-                  <a href="<?php echo $WHATSAPP_LINK; ?>" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp btn-lg whatsapp-pulse">
-                    <i class="fa-brands fa-whatsapp fa-lg"></i> <span>Chat on WhatsApp</span>
-                  </a>
-                  <a href="<?php echo $PHONE_TEL; ?>" class="btn btn-call btn-lg pulse-animation">
-                    <i class="fa-solid fa-phone"></i> <span>Direct Call: <?php echo htmlspecialchars($PHONE_DISPLAY); ?></span>
-                  </a>
-                  <a href="#plots" class="btn btn-gold btn-lg">
-                    <i class="fa-solid fa-map-location-dot"></i> <span>Explore Verified Plots</span>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
+        <!-- Hero Action CTAs -->
+        <div class="hero-cta-group">
+          <a href="<?php echo $WHATSAPP_LINK; ?>" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp btn-lg whatsapp-pulse">
+            <i class="fa-brands fa-whatsapp fa-lg"></i> <span>Chat on WhatsApp</span>
+          </a>
+          <a href="<?php echo $PHONE_TEL; ?>" class="btn btn-call btn-lg pulse-animation">
+            <i class="fa-solid fa-phone"></i> <span>Direct Call: <?php echo htmlspecialchars($PHONE_DISPLAY); ?></span>
+          </a>
+          <a href="#plots" class="btn btn-gold btn-lg">
+            <i class="fa-solid fa-map-location-dot"></i> <span>Explore Verified Plots</span>
+          </a>
         </div>
-
       </div>
-
-      <!-- Carousel Navigation Controls -->
-      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControlsNoTouching" data-bs-slide="prev" aria-label="Previous">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-      </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControlsNoTouching" data-bs-slide="next" aria-label="Next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-      </button>
     </div>
   </section>
 
