@@ -1447,6 +1447,41 @@ ul {
   flex-shrink: 0;
 }
 
+.about-tagline-box {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-left: 4px solid var(--accent-red, #dc2626);
+  border-radius: 8px;
+  padding: 14px 18px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 0.96rem;
+  color: var(--primary, #0b1528);
+  margin: 16px 0 12px;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.04);
+}
+
+.about-tagline-box i {
+  color: var(--accent-red);
+  font-size: 1.2rem;
+  flex-shrink: 0;
+}
+
+.about-contact-note {
+  font-size: 0.92rem;
+  color: #475569;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.about-contact-note i {
+  color: var(--accent-gold);
+}
+
 .about-stats-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);

@@ -429,56 +429,67 @@ require_once __DIR__ . '/includes/header.php';
 
         <!-- Right Column: Content Box -->
         <div class="about-content-box">
-          <span class="section-tag"><i class="fa-solid fa-city"></i> About Dholera SIR</span>
-          <h2 class="section-title">A New Destination for Smart Living &amp; Future Property Investment</h2>
+          <span class="section-tag"><i class="fa-solid fa-handshake"></i> About Dholera SIR</span>
+          <h2 class="section-title">Your Trusted Partner for Dholera Smart City Property Investment</h2>
 
           <p class="about-text">
-            <strong>Dholera Special Investment Region (SIR)</strong> is one of India's major planned greenfield industrial and smart city developments, located in Gujarat under the Delhi–Mumbai Industrial Corridor (DMIC). Spread across approximately <strong>920 square kilometres</strong>, Dholera is envisioned as a modern urban and industrial hub with planned infrastructure, advanced utilities and opportunities for long-term economic growth.
+            At <strong>Dholera Smart City Plots</strong>, we help property buyers and investors explore residential and industrial land opportunities in Dholera Special Investment Region (SIR), Gujarat. Our goal is to make your property search simpler by providing project information, plot details, location insights and assistance throughout the buying journey.
           </p>
           <p class="about-text">
-            With its strategic location, industrial development plans and evolving connectivity, <strong>Dholera Smart City is emerging as a destination of interest for property buyers and real estate investors</strong> seeking to explore Gujarat's future development potential.
-          </p>
-          <p class="about-text">
-            Whether you are planning to <strong>buy land in Dholera, explore residential plots or evaluate Dholera property investment opportunities</strong>, understanding the location, land-use permissions and development progress can help you make a more informed decision.
+            <strong>Dholera SIR</strong> is a planned greenfield smart city being developed under the Delhi–Mumbai Industrial Corridor (DMIC). With its long-term industrial vision, planned infrastructure and emerging business ecosystem, Dholera is attracting attention from individuals and businesses exploring real estate opportunities in Gujarat.
           </p>
 
-          <!-- Why Consider Dholera SIR? -->
+          <!-- Our Mission -->
           <div class="about-sub-block">
-            <h3 class="about-sub-title"><i class="fa-solid fa-compass"></i> Why Consider Dholera SIR?</h3>
+            <h3 class="about-sub-title"><i class="fa-solid fa-bullseye"></i> Our Mission</h3>
+            <p class="about-text">
+              Our mission is to connect buyers with suitable property opportunities through transparent communication, reliable project information and customer-focused guidance. From understanding plot locations to arranging site visits and explaining the purchase process, we aim to help you make informed property decisions.
+            </p>
+          </div>
+
+          <!-- Why Choose Us? -->
+          <div class="about-sub-block">
+            <h3 class="about-sub-title"><i class="fa-solid fa-circle-check"></i> Why Choose Us?</h3>
             <ul class="about-features-list">
               <li>
-                <div class="afl-icon"><i class="fa-solid fa-location-dot"></i></div>
-                <div class="afl-text"><strong>Strategic Location:</strong> Located approximately 100 km southwest of Ahmedabad, Gujarat.</div>
+                <div class="afl-icon"><i class="fa-solid fa-house-chimney"></i></div>
+                <div class="afl-text"><strong>Residential &amp; Industrial Plots:</strong> Explore land options suited to different requirements and budgets.</div>
               </li>
               <li>
-                <div class="afl-icon"><i class="fa-solid fa-network-wired"></i></div>
-                <div class="afl-text"><strong>Planned Smart Infrastructure:</strong> Designed with integrated utility networks, modern roads, water management and digital infrastructure.</div>
+                <div class="afl-icon"><i class="fa-solid fa-circle-info"></i></div>
+                <div class="afl-text"><strong>Project Information:</strong> Understand plot sizes, locations, pricing and available development details.</div>
               </li>
               <li>
-                <div class="afl-icon"><i class="fa-solid fa-industry"></i></div>
-                <div class="afl-text"><strong>Industrial Development:</strong> Planned focus sectors include semiconductors, aerospace and defence, renewable energy, pharmaceuticals and advanced manufacturing.</div>
+                <div class="afl-icon"><i class="fa-solid fa-file-contract"></i></div>
+                <div class="afl-text"><strong>Documentation Guidance:</strong> Get assistance understanding land records, title documents, applicable approvals and registration requirements.</div>
               </li>
               <li>
-                <div class="afl-icon"><i class="fa-solid fa-chart-line"></i></div>
-                <div class="afl-text"><strong>Future Growth Potential:</strong> Industrial investment and infrastructure development may create opportunities over time.</div>
+                <div class="afl-icon"><i class="fa-solid fa-car-side"></i></div>
+                <div class="afl-text"><strong>Site Visit Assistance:</strong> Visit selected locations and evaluate the property's surroundings and actual development status.</div>
               </li>
               <li>
-                <div class="afl-icon"><i class="fa-solid fa-file-shield"></i></div>
-                <div class="afl-text"><strong>Property Investment Options:</strong> Explore suitable land parcels and projects after verifying ownership, approvals, location and permitted land use.</div>
+                <div class="afl-icon"><i class="fa-solid fa-headset"></i></div>
+                <div class="afl-text"><strong>Customer-Focused Support:</strong> Receive personalised assistance while comparing properties and understanding the buying process.</div>
               </li>
             </ul>
           </div>
 
-          <!-- Explore Land Investment Opportunities in Dholera -->
+          <!-- Explore Dholera Property Opportunities -->
           <div class="about-sub-block">
-            <h3 class="about-sub-title"><i class="fa-solid fa-shield-halved"></i> Explore Land Investment Opportunities in Dholera</h3>
+            <h3 class="about-sub-title"><i class="fa-solid fa-map-location-dot"></i> Explore Dholera Property Opportunities</h3>
             <p class="about-text">
-              Looking for <strong>land in Dholera SIR</strong>? Before investing, check the property's title, approved layout, applicable town planning scheme, development permissions and actual infrastructure connectivity.
+              Whether you are searching for residential plots, industrial land or long-term real estate opportunities, we are here to help you explore available options with greater clarity and confidence.
             </p>
-            <div class="about-disclaimer-box">
-              <i class="fa-solid fa-circle-exclamation"></i>
-              <span>Dholera's development vision creates opportunities worth exploring, but returns and future appreciation are not guaranteed. Always conduct independent legal and financial due diligence before making a property purchase.</span>
+            <p class="about-text">
+              We believe every property decision should begin with accurate information, proper due diligence and a clear understanding of the investment.
+            </p>
+            <div class="about-tagline-box">
+              <i class="fa-solid fa-compass"></i>
+              <span><strong>Explore Dholera. Understand Your Options. Make an Informed Property Decision.</strong></span>
             </div>
+            <p class="about-contact-note">
+              <i class="fa-solid fa-phone-volume"></i> Contact our team to learn more about available plots and arrange a site visit.
+            </p>
           </div>
 
           <!-- Action Buttons -->
@@ -487,7 +498,7 @@ require_once __DIR__ . '/includes/header.php';
               <i class="fa-solid fa-phone"></i> Call for Site Visit
             </a>
             <a href="<?php echo $WHATSAPP_LINK; ?>" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp">
-              <i class="fa-brands fa-whatsapp"></i> Download Master Plan (PDF)
+              <i class="fa-brands fa-whatsapp"></i> Chat on WhatsApp / Arrange Visit
             </a>
           </div>
         </div>
