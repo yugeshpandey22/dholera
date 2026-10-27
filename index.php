@@ -395,54 +395,143 @@ require_once __DIR__ . '/includes/header.php';
          ====================================================================== -->
   <section class="section-padding about-section" id="about">
     <div class="container">
+      <!-- 1. Top Balanced Two-Column Section (Equal Heights, No Left Gap) -->
       <div class="about-grid">
-        <!-- Image Box with Badge -->
-        <div class="about-img-box">
-          <img src="assets/images/dholera-hero.jpg" alt="Dholera SIR Greenfield Smart City Master Plan Overview" loading="lazy">
-          <div class="about-img-badge">
-            <div class="aib-title">India's First Greenfield Smart City</div>
-            <div class="aib-desc">Total Area: 920 Sq. Km | Platinum Rated by IGBC</div>
+        <!-- Left Column: Image Box & Key Stats -->
+        <div class="about-left-col">
+          <div class="about-img-box">
+            <img src="assets/images/dholera-hero.jpg" alt="Dholera SIR Greenfield Smart City Master Plan Overview" loading="lazy">
+            <div class="about-img-badge">
+              <div class="aib-title">India's First Greenfield Smart City</div>
+              <div class="aib-desc">Total Area: 920 Sq. Km | Platinum Rated by IGBC</div>
+            </div>
           </div>
-        </div>
 
-        <!-- Content Box -->
-        <div class="about-content-box">
-          <span class="section-tag">About Dholera SIR</span>
-          <h2 class="section-title">The Future of Urban Living &amp; High-Yield Property Investment</h2>
-          <p class="about-text">
-            <strong>Dholera Special Investment Region (SIR)</strong> is India’s flagship greenfield smart city project being developed under the Delhi-Mumbai Industrial Corridor (DMIC). Spanning over 920 sq. km (larger than Singapore), Dholera is engineered with subterranean ICT-enabled utilities, automated waste management, recycled water networks, and smart power grids.
-          </p>
-          <p class="about-text">
-            Whether you are looking to <strong>buy land in Dholera</strong> for family living or looking for an exponential <strong>Dholera property investment</strong>, this mega city promises unparalleled return on investment backed by the Central and Gujarat Governments.
-          </p>
-
-          <!-- Stats Grid -->
+          <!-- Quick Stat Cards -->
           <div class="about-stats-grid">
             <div class="about-stat-card">
-              <div class="asc-num">920+</div>
-              <div class="asc-label">Sq. Km Total Area</div>
+              <div class="asc-num">920 <small style="font-size:0.95rem; font-weight:700;">Sq. Km</small></div>
+              <div class="asc-label">Planned Smart City Area</div>
             </div>
             <div class="about-stat-card">
-              <div class="asc-num">₹ 91,000 Cr+</div>
+              <div class="asc-num">~100 <small style="font-size:0.95rem; font-weight:700;">Km</small></div>
+              <div class="asc-label">SW of Ahmedabad (Expressway)</div>
+            </div>
+            <div class="about-stat-card">
+              <div class="asc-num">₹ 91,000 <small style="font-size:0.95rem; font-weight:700;">Cr+</small></div>
               <div class="asc-label">Tata Semiconductor Fab</div>
             </div>
             <div class="about-stat-card">
-              <div class="asc-num">22.5</div>
-              <div class="asc-label">Sq. Km Activation Zone</div>
-            </div>
-            <div class="about-stat-card">
               <div class="asc-num">100%</div>
-              <div class="asc-label">Underground Utilities</div>
+              <div class="asc-label">Underground Smart Utilities</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Column: Content Box & Mission -->
+        <div class="about-content-box">
+          <span class="section-tag"><i class="fa-solid fa-handshake"></i> About Dholera SIR</span>
+          <h2 class="section-title">Your Trusted Partner for Dholera Smart City Property Investment</h2>
+
+          <p class="about-text">
+            At <strong>Dholera Smart City Plots</strong>, we help property buyers and investors explore residential and industrial land opportunities in Dholera Special Investment Region (SIR), Gujarat. Our goal is to make your property search simpler by providing project information, plot details, location insights and assistance throughout the buying journey.
+          </p>
+          <p class="about-text">
+            <strong>Dholera SIR</strong> is a planned greenfield smart city being developed under the Delhi–Mumbai Industrial Corridor (DMIC). With its long-term industrial vision, planned infrastructure and emerging business ecosystem, Dholera is attracting attention from individuals and businesses exploring real estate opportunities in Gujarat.
+          </p>
+
+          <!-- Our Mission Card -->
+          <div class="about-mission-card">
+            <div class="amc-icon"><i class="fa-solid fa-bullseye"></i></div>
+            <div class="amc-content">
+              <h3 class="amc-title">Our Mission</h3>
+              <p class="amc-text">
+                Our mission is to connect buyers with suitable property opportunities through transparent communication, reliable project information and customer-focused guidance. From understanding plot locations to arranging site visits and explaining the purchase process, we aim to help you make informed property decisions.
+              </p>
             </div>
           </div>
 
+          <!-- Top CTA Buttons -->
           <div class="about-cta-row">
             <a href="<?php echo $PHONE_TEL; ?>" class="btn btn-call">
               <i class="fa-solid fa-phone"></i> Call for Site Visit
             </a>
             <a href="<?php echo $WHATSAPP_LINK; ?>" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp">
-              <i class="fa-brands fa-whatsapp"></i> Download Master Plan (PDF)
+              <i class="fa-brands fa-whatsapp"></i> Chat on WhatsApp / Arrange Visit
             </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2. Why Choose Us? Full-Width Feature Cards Grid (Zero Left Gap!) -->
+      <div class="about-why-choose-wrap">
+        <div class="section-header text-center" style="margin-bottom: 30px;">
+          <span class="section-tag"><i class="fa-solid fa-circle-check"></i> Transparent &amp; Verified Guidance</span>
+          <h3 class="section-title" style="font-size: 1.9rem; margin-bottom: 8px;">Why Choose Us?</h3>
+          <p class="section-desc" style="max-width: 680px; margin: 0 auto;">
+            We simplify your Dholera land investment journey with end-to-end transparency, verified records, and dedicated ground support.
+          </p>
+        </div>
+
+        <div class="about-choose-grid">
+          <div class="choose-card">
+            <div class="choose-icon-box"><i class="fa-solid fa-house-chimney"></i></div>
+            <h4 class="choose-title">Residential &amp; Industrial Plots</h4>
+            <p class="choose-desc">Explore land options suited to different requirements and budgets.</p>
+          </div>
+
+          <div class="choose-card">
+            <div class="choose-icon-box"><i class="fa-solid fa-circle-info"></i></div>
+            <h4 class="choose-title">Project Information</h4>
+            <p class="choose-desc">Understand plot sizes, locations, pricing and available development details.</p>
+          </div>
+
+          <div class="choose-card">
+            <div class="choose-icon-box"><i class="fa-solid fa-file-contract"></i></div>
+            <h4 class="choose-title">Documentation Guidance</h4>
+            <p class="choose-desc">Get assistance understanding land records, title documents, applicable approvals and registration requirements.</p>
+          </div>
+
+          <div class="choose-card">
+            <div class="choose-icon-box"><i class="fa-solid fa-car-side"></i></div>
+            <h4 class="choose-title">Site Visit Assistance</h4>
+            <p class="choose-desc">Visit selected locations and evaluate the property's surroundings and actual development status.</p>
+          </div>
+
+          <div class="choose-card">
+            <div class="choose-icon-box"><i class="fa-solid fa-headset"></i></div>
+            <h4 class="choose-title">Customer-Focused Support</h4>
+            <p class="choose-desc">Receive personalised assistance while comparing properties and understanding the buying process.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3. Explore Dholera Property Opportunities Full-Width Callout -->
+      <div class="about-explore-callout">
+        <div class="aec-inner">
+          <span class="aec-badge"><i class="fa-solid fa-map-location-dot"></i> Investor Advisory</span>
+          <h3 class="aec-title">Explore Dholera Property Opportunities</h3>
+          <p class="aec-desc">
+            Whether you are searching for residential plots, industrial land or long-term real estate opportunities, we are here to help you explore available options with greater clarity and confidence. We believe every property decision should begin with accurate information, proper due diligence and a clear understanding of the investment.
+          </p>
+
+          <div class="aec-tagline-strip">
+            <i class="fa-solid fa-compass"></i>
+            <span><strong>Explore Dholera. Understand Your Options. Make an Informed Property Decision.</strong></span>
+          </div>
+
+          <div class="aec-footer">
+            <p class="aec-contact-text">
+              <i class="fa-solid fa-phone-volume"></i> Contact our team to learn more about available plots and arrange a site visit.
+            </p>
+            <div class="aec-buttons">
+              <a href="<?php echo $PHONE_TEL; ?>" class="btn btn-call btn-sm">
+                <i class="fa-solid fa-phone"></i> Call Now
+              </a>
+              <a href="<?php echo $WHATSAPP_LINK; ?>" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp btn-sm">
+                <i class="fa-brands fa-whatsapp"></i> Chat on WhatsApp
+              </a>
+            </div>
           </div>
         </div>
       </div>
