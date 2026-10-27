@@ -547,8 +547,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const nextBtn = document.getElementById('heroNextBtn');
     const heroVideo = document.getElementById('heroVideoPlayer');
     const soundBtn = document.getElementById('heroVideoSoundBtn');
-    let currentIndex = 0;
-    let autoSlideTimer = null;
+    const centerPlay = document.getElementById('heroCenterPlay');
+    const skipBtn = document.getElementById('heroSkipToBannerBtn');
 
     function goToSlide(index) {
       if (index < 0) index = slides.length - 1;
@@ -571,10 +571,15 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       });
 
-      // Handle video play on Slide 1
+      // Handle video playback
       if (heroVideo) {
         if (currentIndex === 0) {
+          if (heroVideo.ended) {
+            heroVideo.currentTime = 0;
+          }
           heroVideo.play().catch(() => {});
+        } else {
+          heroVideo.pause();
         }
       }
     }
@@ -589,6 +594,14 @@ document.addEventListener('DOMContentLoaded', () => {
     if (nextBtn) {
       nextBtn.addEventListener('click', () => {
         goToSlide(currentIndex + 1);
+        stopAutoSlide();
+      });
+    }
+
+    if (skipBtn) {
+      skipBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        goToSlide(1);
         stopAutoSlide();
       });
     }
@@ -630,42 +643,59 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     }
 
-    // Video Audio / Voice Control
+    // Video Audio / Voice Control & Auto-transition on End
     if (heroVideo) {
       heroVideo.muted = true;
       heroVideo.play().catch(() => {});
 
+      // Auto-slide to Banner when Video Ends
+      heroVideo.addEventListener('ended', () => {
+        goToSlide(1);
+      });
+
       function syncSoundUI() {
         if (!soundBtn) return;
         if (!heroVideo.muted && heroVideo.volume > 0) {
-          soundBtn.innerHTML = '<i class="fa-solid fa-volume-high"></i> <span>Sound ON (Click to Mute)</span>';
+          soundBtn.innerHTML = '<i class="fa-solid fa-volume-high"></i> <span>Sound ON (Mute)</span>';
           soundBtn.classList.add('sound-active');
+          if (centerPlay) centerPlay.classList.add('hidden');
         } else {
           soundBtn.innerHTML = '<i class="fa-solid fa-volume-xmark"></i> <span>Click for Voice / Sound</span>';
           soundBtn.classList.remove('sound-active');
         }
       }
 
+      function enableVoice() {
+        heroVideo.muted = false;
+        heroVideo.volume = 1.0;
+        heroVideo.play().catch(() => {});
+        if (centerPlay) centerPlay.classList.add('hidden');
+        syncSoundUI();
+      }
+
       if (soundBtn) {
         soundBtn.addEventListener('click', (e) => {
           e.stopPropagation();
           if (heroVideo.muted || heroVideo.volume === 0) {
-            heroVideo.muted = false;
-            heroVideo.volume = 1.0;
-            heroVideo.play().catch(() => {});
+            enableVoice();
           } else {
             heroVideo.muted = true;
+            syncSoundUI();
           }
-          syncSoundUI();
+        });
+      }
+
+      if (centerPlay) {
+        centerPlay.addEventListener('click', (e) => {
+          e.stopPropagation();
+          enableVoice();
         });
       }
 
       // Also allow clicking directly on video to unmute and hear voice
       heroVideo.addEventListener('click', () => {
         if (heroVideo.muted || heroVideo.volume === 0) {
-          heroVideo.muted = false;
-          heroVideo.volume = 1.0;
-          syncSoundUI();
+          enableVoice();
         }
       });
 

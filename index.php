@@ -230,13 +230,27 @@ require_once __DIR__ . '/includes/header.php';
         <!-- SLIDE 1: VIDEO ONLY SHOWCASE -->
         <div class="hero-slide hero-slide-video active" data-slide-index="0">
           <div class="hero-slide-video-wrap">
-            <video id="heroVideoPlayer" class="hero-slider-video" autoplay muted loop playsinline controls preload="auto" poster="assets/images/dholera-hero-fresh.jpg">
+            <video id="heroVideoPlayer" class="hero-slider-video" autoplay muted playsinline controls preload="auto" poster="assets/images/dholera-hero-fresh.jpg">
               <source src="assets/images/video.mp4" type="video/mp4">
             </video>
-            <!-- Prominent Floating Sound Toggle Button -->
-            <button type="button" class="hero-video-sound-btn" id="heroVideoSoundBtn" aria-label="Toggle Video Sound">
-              <i class="fa-solid fa-volume-xmark"></i> <span>Click for Voice / Sound</span>
-            </button>
+            
+            <!-- Video Top Actions (Sound & Skip) -->
+            <div class="hero-video-top-bar">
+              <button type="button" class="hero-video-action-btn hero-sound-btn" id="heroVideoSoundBtn" aria-label="Toggle Sound">
+                <i class="fa-solid fa-volume-xmark"></i> <span>Click for Voice / Sound</span>
+              </button>
+              <button type="button" class="hero-video-action-btn hero-skip-btn" id="heroSkipToBannerBtn" aria-label="Skip to Banner">
+                <span>View Project Details</span> <i class="fa-solid fa-arrow-right"></i>
+              </button>
+            </div>
+
+            <!-- Big Center Play / Unmute Button -->
+            <div class="hero-video-center-play" id="heroCenterPlay">
+              <button type="button" class="center-play-btn" aria-label="Watch with Sound">
+                <i class="fa-solid fa-volume-high"></i>
+                <span>Tap to Watch with Sound</span>
+              </button>
+            </div>
           </div>
         </div>
 

@@ -783,35 +783,33 @@ ul {
 }
 
 .hero-slide {
-  position: absolute;
-  inset: 0;
+  display: none;
   width: 100%;
-  height: 100%;
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.5s ease;
-  z-index: 1;
+  position: relative;
 }
 
 .hero-slide.active {
-  position: relative;
-  opacity: 1;
-  visibility: visible;
-  z-index: 2;
+  display: block;
+  animation: heroSlideFade 0.45s ease forwards;
+}
+
+@keyframes heroSlideFade {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
 /* Slide 1: Video Showcase */
 .hero-slide-video {
-  background: #000000;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  background: #080f1e;
+  position: relative;
+  min-height: 420px;
 }
 
 .hero-slide-video-wrap {
   position: relative;
   width: 100%;
-  height: 100%;
+  max-width: 100%;
+  margin: 0 auto;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -821,8 +819,8 @@ ul {
 .hero-slider-video {
   width: 100%;
   height: auto;
-  max-height: 78vh;
-  min-height: 260px;
+  max-height: 75vh;
+  min-height: 300px;
   object-fit: cover;
   display: block;
   cursor: pointer;
@@ -836,32 +834,62 @@ ul {
 
 @media (max-width: 767px) {
   .hero-slider-video {
-    min-height: 220px;
-    max-height: 52vh;
+    min-height: 240px;
+    max-height: 55vh;
   }
 }
 
-/* Sound Button on Video Slide */
-.hero-video-sound-btn {
+/* Video Top Floating Bar */
+.hero-video-top-bar {
   position: absolute;
-  top: 20px;
-  right: 24px;
-  background: var(--accent-red);
+  top: 18px;
+  left: 20px;
+  right: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  z-index: 25;
+  pointer-events: none;
+}
+
+.hero-video-action-btn {
+  pointer-events: auto;
+  background: rgba(11, 21, 40, 0.85);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   color: #ffffff;
-  border: 2px solid #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.3);
   border-radius: 999px;
-  padding: 10px 20px;
-  font-size: 0.9rem;
-  font-weight: 800;
+  padding: 9px 18px;
+  font-size: 0.86rem;
+  font-weight: 700;
   display: inline-flex;
   align-items: center;
   gap: 8px;
   cursor: pointer;
-  box-shadow: 0 4px 20px rgba(220, 38, 38, 0.5);
-  animation: pulse-sound 2s infinite;
   transition: all 0.25s ease;
-  z-index: 25;
   line-height: 1;
+}
+
+.hero-sound-btn {
+  background: var(--accent-red);
+  border-color: #ffffff;
+  box-shadow: 0 4px 18px rgba(220, 38, 38, 0.5);
+  animation: pulse-sound 2s infinite;
+}
+
+.hero-sound-btn.sound-active {
+  background: #16a34a;
+  border-color: #ffffff;
+  box-shadow: 0 4px 14px rgba(22, 163, 74, 0.4);
+  animation: none;
+}
+
+.hero-skip-btn:hover {
+  background: rgba(255, 255, 255, 0.25);
+  border-color: #ffffff;
+  transform: translateX(3px);
 }
 
 @keyframes pulse-sound {
@@ -870,23 +898,78 @@ ul {
   100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(220, 38, 38, 0); }
 }
 
-.hero-video-sound-btn.sound-active {
-  background: #16a34a;
-  border-color: #ffffff;
-  box-shadow: 0 4px 14px rgba(22, 163, 74, 0.4);
-  animation: none;
+@media (max-width: 575px) {
+  .hero-video-top-bar {
+    top: 10px;
+    left: 10px;
+    right: 10px;
+  }
+  .hero-video-action-btn {
+    padding: 7px 12px;
+    font-size: 0.75rem;
+  }
 }
 
-.hero-video-sound-btn:hover {
-  transform: scale(1.06);
+/* Center Play / Unmute Button */
+.hero-video-center-play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 24;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.hero-video-center-play.hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.center-play-btn {
+  background: rgba(11, 21, 40, 0.92);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 2px solid var(--accent-gold);
+  color: #ffffff;
+  border-radius: 999px;
+  padding: 14px 28px;
+  font-size: 1rem;
+  font-weight: 800;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.6), 0 0 20px rgba(245, 158, 11, 0.4);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  animation: centerPulse 2.4s infinite;
+}
+
+.center-play-btn i {
+  color: var(--accent-gold);
+  font-size: 1.25rem;
+}
+
+.center-play-btn:hover {
+  transform: scale(1.08);
+  background: var(--accent-red);
+  border-color: #ffffff;
+}
+
+.center-play-btn:hover i {
+  color: #ffffff;
+}
+
+@keyframes centerPulse {
+  0% { transform: scale(1); box-shadow: 0 8px 30px rgba(0, 0, 0, 0.6), 0 0 0 0 rgba(245, 158, 11, 0.6); }
+  70% { transform: scale(1.04); box-shadow: 0 8px 30px rgba(0, 0, 0, 0.6), 0 0 0 16px rgba(245, 158, 11, 0); }
+  100% { transform: scale(1); box-shadow: 0 8px 30px rgba(0, 0, 0, 0.6), 0 0 0 0 rgba(245, 158, 11, 0); }
 }
 
 @media (max-width: 575px) {
-  .hero-video-sound-btn {
-    top: 12px;
-    right: 12px;
-    padding: 7px 14px;
-    font-size: 0.78rem;
+  .center-play-btn {
+    padding: 10px 18px;
+    font-size: 0.82rem;
   }
 }
 
