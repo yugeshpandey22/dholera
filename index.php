@@ -505,36 +505,6 @@ require_once __DIR__ . '/includes/header.php';
           </div>
         </div>
       </div>
-
-      <!-- 3. Explore Dholera Property Opportunities Full-Width Callout -->
-      <div class="about-explore-callout">
-        <div class="aec-inner">
-          <span class="aec-badge"><i class="fa-solid fa-map-location-dot"></i> Investor Advisory</span>
-          <h3 class="aec-title">Explore Dholera Property Opportunities</h3>
-          <p class="aec-desc">
-            Whether you are searching for residential plots, industrial land or long-term real estate opportunities, we are here to help you explore available options with greater clarity and confidence. We believe every property decision should begin with accurate information, proper due diligence and a clear understanding of the investment.
-          </p>
-
-          <div class="aec-tagline-strip">
-            <i class="fa-solid fa-compass"></i>
-            <span><strong>Explore Dholera. Understand Your Options. Make an Informed Property Decision.</strong></span>
-          </div>
-
-          <div class="aec-footer">
-            <p class="aec-contact-text">
-              <i class="fa-solid fa-phone-volume"></i> Contact our team to learn more about available plots and arrange a site visit.
-            </p>
-            <div class="aec-buttons">
-              <a href="<?php echo $PHONE_TEL; ?>" class="btn btn-call btn-sm">
-                <i class="fa-solid fa-phone"></i> Call Now
-              </a>
-              <a href="<?php echo $WHATSAPP_LINK; ?>" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp btn-sm">
-                <i class="fa-brands fa-whatsapp"></i> Chat on WhatsApp
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
   </section>
 
