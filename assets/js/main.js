@@ -646,13 +646,14 @@ document.addEventListener('DOMContentLoaded', () => {
     // Video Playback & Voice Control & Auto-transition on End
     if (heroVideo) {
       const soundBtn = document.getElementById('heroSoundToggleBtn');
+      let isUserMuted = false;
 
       function updateSoundUI(muted) {
         if (!soundBtn) return;
         if (muted) {
           soundBtn.classList.remove('is-unmuted');
           soundBtn.classList.add('is-muted');
-          soundBtn.innerHTML = '<i class="fa-solid fa-volume-xmark"></i> <span>Sound: OFF (Click for Audio)</span>';
+          soundBtn.innerHTML = '<i class="fa-solid fa-volume-xmark"></i> <span>Sound: OFF</span>';
         } else {
           soundBtn.classList.remove('is-muted');
           soundBtn.classList.add('is-unmuted');
@@ -678,20 +679,46 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       }
 
-      // Ensure video starts playing IMMEDIATELY without freezing
-      heroVideo.muted = true;
+      // 1. SOUND ON BY DEFAULT
       heroVideo.volume = 1.0;
-      updateSoundUI(true);
-      heroVideo.play().catch(() => {});
+      heroVideo.muted = false;
+      updateSoundUI(false);
 
-      // Sound button click toggle
+      const playPromise = heroVideo.play();
+      if (playPromise !== undefined) {
+        playPromise.catch(() => {
+          // If browser policy blocks unmuted autoplay on initial visit without user gesture:
+          // play muted so video starts, but auto-unmute on first visitor touch/click/scroll
+          heroVideo.muted = true;
+          heroVideo.play().catch(() => {});
+
+          function autoUnmuteOnGesture() {
+            if (!isUserMuted) {
+              enableSound();
+            }
+            ['click', 'touchstart', 'pointerdown', 'scroll', 'keydown'].forEach((evt) => {
+              window.removeEventListener(evt, autoUnmuteOnGesture);
+              document.removeEventListener(evt, autoUnmuteOnGesture);
+            });
+          }
+
+          ['click', 'touchstart', 'pointerdown', 'scroll', 'keydown'].forEach((evt) => {
+            window.addEventListener(evt, autoUnmuteOnGesture, { once: true, passive: true });
+            document.addEventListener(evt, autoUnmuteOnGesture, { once: true, passive: true });
+          });
+        });
+      }
+
+      // Sound button click toggle (only turns off when user manually clicks to mute)
       if (soundBtn) {
         soundBtn.addEventListener('click', (e) => {
           e.preventDefault();
           e.stopPropagation();
           if (heroVideo.muted || heroVideo.volume === 0) {
+            isUserMuted = false;
             enableSound();
           } else {
+            isUserMuted = true;
             muteSound();
           }
         });
@@ -700,8 +727,10 @@ document.addEventListener('DOMContentLoaded', () => {
       // Tapping anywhere on video also toggles sound
       heroVideo.addEventListener('click', () => {
         if (heroVideo.muted || heroVideo.volume === 0) {
+          isUserMuted = false;
           enableSound();
         } else {
+          isUserMuted = true;
           muteSound();
         }
       });

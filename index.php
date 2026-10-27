@@ -234,9 +234,9 @@ require_once __DIR__ . '/includes/header.php';
               <source src="assets/images/video.mp4" type="video/mp4">
             </video>
 
-            <!-- Clean Minimalist Sound / Voice Button -->
-            <button type="button" class="hero-sound-toggle-btn is-muted" id="heroSoundToggleBtn" aria-label="Toggle Sound">
-              <i class="fa-solid fa-volume-xmark"></i> <span>Sound: OFF (Click for Audio)</span>
+            <!-- Clean Minimalist Sound / Voice Button (Left Side, Sound ON by default) -->
+            <button type="button" class="hero-sound-toggle-btn is-unmuted" id="heroSoundToggleBtn" aria-label="Toggle Sound">
+              <i class="fa-solid fa-volume-high"></i> <span>Sound: ON</span>
             </button>
           </div>
         </div>

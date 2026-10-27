@@ -962,13 +962,14 @@ ul {
   }
 }
 
-/* Clean Minimalist Sound / Voice Button */
+/* Clean Minimalist Sound / Voice Button (Positioned on Left Side) */
 .hero-sound-toggle-btn {
   position: absolute;
   bottom: 22px;
-  right: 22px;
+  left: 24px;
+  right: auto;
   z-index: 26;
-  background: rgba(11, 21, 40, 0.72);
+  background: rgba(11, 21, 40, 0.76);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.35);
@@ -988,7 +989,7 @@ ul {
 }
 
 .hero-sound-toggle-btn:hover {
-  background: rgba(11, 21, 40, 0.92);
+  background: rgba(11, 21, 40, 0.94);
   border-color: rgba(255, 255, 255, 0.7);
   transform: translateY(-2px);
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
@@ -996,18 +997,19 @@ ul {
 
 .hero-sound-toggle-btn i {
   font-size: 0.95rem;
-  color: var(--accent-gold, #f59e0b);
+  color: #4ade80;
   transition: color 0.2s ease;
 }
 
-.hero-sound-toggle-btn.is-unmuted i {
-  color: #4ade80;
+.hero-sound-toggle-btn.is-muted i {
+  color: var(--accent-gold, #f59e0b);
 }
 
 @media (max-width: 575px) {
   .hero-sound-toggle-btn {
     bottom: 14px;
-    right: 14px;
+    left: 14px;
+    right: auto;
     padding: 7px 13px;
     font-size: 0.76rem;
     gap: 6px;
