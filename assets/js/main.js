@@ -647,37 +647,67 @@ document.addEventListener('DOMContentLoaded', () => {
     if (heroVideo) {
       heroVideo.volume = 1.0;
 
-      // Try playing with voice/sound immediately
-      heroVideo.muted = false;
-      const playPromise = heroVideo.play();
-      if (playPromise !== undefined) {
-        playPromise.catch(() => {
-          // If browser policy prevents unmuted autoplay on cold start,
-          // temporarily mute so the video rolls smoothly
+      // 1. Ensure video starts playing IMMEDIATELY without freezing
+      heroVideo.muted = true;
+      const startPromise = heroVideo.play();
+      if (startPromise !== undefined) {
+        startPromise.then(() => {
+          // Video is playing! Try to immediately enable voice without user interaction
+          try {
+            heroVideo.muted = false;
+            heroVideo.volume = 1.0;
+            setTimeout(() => {
+              if (heroVideo.paused) {
+                // If browser paused video because of sound, resume playback muted
+                heroVideo.muted = true;
+                heroVideo.play().catch(() => {});
+              }
+            }, 150);
+          } catch (e) {
+            heroVideo.muted = true;
+            heroVideo.play().catch(() => {});
+          }
+        }).catch(() => {
           heroVideo.muted = true;
           heroVideo.play().catch(() => {});
         });
       }
 
-      // Voice unlocker: fires as soon as the user touches or clicks anywhere
+      // 2. Voice unlocker: Unmutes voice automatically on ANY visitor activity (scroll, touch, move, click)
+      let voiceUnlocked = false;
       function unlockVoice() {
-        if (heroVideo) {
-          heroVideo.muted = false;
-          heroVideo.volume = 1.0;
+        if (voiceUnlocked || !heroVideo) return;
+        heroVideo.muted = false;
+        heroVideo.volume = 1.0;
+        if (heroVideo.paused) {
           heroVideo.play().catch(() => {});
+        }
+        if (!heroVideo.muted) {
+          voiceUnlocked = true;
+          cleanupVoiceListeners();
         }
       }
 
-      ['click', 'touchstart', 'pointerdown'].forEach((evt) => {
-        window.addEventListener(evt, unlockVoice, { once: true, passive: true });
-        document.addEventListener(evt, unlockVoice, { once: true, passive: true });
+      const interactionEvents = ['click', 'touchstart', 'touchend', 'pointerdown', 'scroll', 'wheel', 'keydown', 'mousemove'];
+      function cleanupVoiceListeners() {
+        interactionEvents.forEach((evt) => {
+          window.removeEventListener(evt, unlockVoice);
+          document.removeEventListener(evt, unlockVoice);
+        });
+      }
+
+      interactionEvents.forEach((evt) => {
+        window.addEventListener(evt, unlockVoice, { passive: true });
+        document.addEventListener(evt, unlockVoice, { passive: true });
       });
 
-      // Tapping anywhere on video guarantees voice is ON
+      // Clicking directly on video also guarantees voice is ON
       heroVideo.addEventListener('click', () => {
         heroVideo.muted = false;
         heroVideo.volume = 1.0;
-        heroVideo.play().catch(() => {});
+        if (heroVideo.paused) {
+          heroVideo.play().catch(() => {});
+        }
       });
 
       // Auto-slide to Banner when Video Ends (30s)
