@@ -395,9 +395,10 @@ require_once __DIR__ . '/includes/header.php';
          ====================================================================== -->
   <section class="section-padding about-section" id="about">
     <div class="container">
+      <!-- 1. Top Balanced Two-Column Section (Equal Heights, No Left Gap) -->
       <div class="about-grid">
-        <!-- Left Column: Image Box & Key Infrastructure Stats (Sticky Side) -->
-        <div class="about-sticky-side">
+        <!-- Left Column: Image Box & Key Stats -->
+        <div class="about-left-col">
           <div class="about-img-box">
             <img src="assets/images/dholera-hero.jpg" alt="Dholera SIR Greenfield Smart City Master Plan Overview" loading="lazy">
             <div class="about-img-badge">
@@ -427,7 +428,7 @@ require_once __DIR__ . '/includes/header.php';
           </div>
         </div>
 
-        <!-- Right Column: Content Box -->
+        <!-- Right Column: Content Box & Mission -->
         <div class="about-content-box">
           <span class="section-tag"><i class="fa-solid fa-handshake"></i> About Dholera SIR</span>
           <h2 class="section-title">Your Trusted Partner for Dholera Smart City Property Investment</h2>
@@ -439,60 +440,18 @@ require_once __DIR__ . '/includes/header.php';
             <strong>Dholera SIR</strong> is a planned greenfield smart city being developed under the Delhi–Mumbai Industrial Corridor (DMIC). With its long-term industrial vision, planned infrastructure and emerging business ecosystem, Dholera is attracting attention from individuals and businesses exploring real estate opportunities in Gujarat.
           </p>
 
-          <!-- Our Mission -->
-          <div class="about-sub-block">
-            <h3 class="about-sub-title"><i class="fa-solid fa-bullseye"></i> Our Mission</h3>
-            <p class="about-text">
-              Our mission is to connect buyers with suitable property opportunities through transparent communication, reliable project information and customer-focused guidance. From understanding plot locations to arranging site visits and explaining the purchase process, we aim to help you make informed property decisions.
-            </p>
-          </div>
-
-          <!-- Why Choose Us? -->
-          <div class="about-sub-block">
-            <h3 class="about-sub-title"><i class="fa-solid fa-circle-check"></i> Why Choose Us?</h3>
-            <ul class="about-features-list">
-              <li>
-                <div class="afl-icon"><i class="fa-solid fa-house-chimney"></i></div>
-                <div class="afl-text"><strong>Residential &amp; Industrial Plots:</strong> Explore land options suited to different requirements and budgets.</div>
-              </li>
-              <li>
-                <div class="afl-icon"><i class="fa-solid fa-circle-info"></i></div>
-                <div class="afl-text"><strong>Project Information:</strong> Understand plot sizes, locations, pricing and available development details.</div>
-              </li>
-              <li>
-                <div class="afl-icon"><i class="fa-solid fa-file-contract"></i></div>
-                <div class="afl-text"><strong>Documentation Guidance:</strong> Get assistance understanding land records, title documents, applicable approvals and registration requirements.</div>
-              </li>
-              <li>
-                <div class="afl-icon"><i class="fa-solid fa-car-side"></i></div>
-                <div class="afl-text"><strong>Site Visit Assistance:</strong> Visit selected locations and evaluate the property's surroundings and actual development status.</div>
-              </li>
-              <li>
-                <div class="afl-icon"><i class="fa-solid fa-headset"></i></div>
-                <div class="afl-text"><strong>Customer-Focused Support:</strong> Receive personalised assistance while comparing properties and understanding the buying process.</div>
-              </li>
-            </ul>
-          </div>
-
-          <!-- Explore Dholera Property Opportunities -->
-          <div class="about-sub-block">
-            <h3 class="about-sub-title"><i class="fa-solid fa-map-location-dot"></i> Explore Dholera Property Opportunities</h3>
-            <p class="about-text">
-              Whether you are searching for residential plots, industrial land or long-term real estate opportunities, we are here to help you explore available options with greater clarity and confidence.
-            </p>
-            <p class="about-text">
-              We believe every property decision should begin with accurate information, proper due diligence and a clear understanding of the investment.
-            </p>
-            <div class="about-tagline-box">
-              <i class="fa-solid fa-compass"></i>
-              <span><strong>Explore Dholera. Understand Your Options. Make an Informed Property Decision.</strong></span>
+          <!-- Our Mission Card -->
+          <div class="about-mission-card">
+            <div class="amc-icon"><i class="fa-solid fa-bullseye"></i></div>
+            <div class="amc-content">
+              <h3 class="amc-title">Our Mission</h3>
+              <p class="amc-text">
+                Our mission is to connect buyers with suitable property opportunities through transparent communication, reliable project information and customer-focused guidance. From understanding plot locations to arranging site visits and explaining the purchase process, we aim to help you make informed property decisions.
+              </p>
             </div>
-            <p class="about-contact-note">
-              <i class="fa-solid fa-phone-volume"></i> Contact our team to learn more about available plots and arrange a site visit.
-            </p>
           </div>
 
-          <!-- Action Buttons -->
+          <!-- Top CTA Buttons -->
           <div class="about-cta-row">
             <a href="<?php echo $PHONE_TEL; ?>" class="btn btn-call">
               <i class="fa-solid fa-phone"></i> Call for Site Visit
@@ -500,6 +459,79 @@ require_once __DIR__ . '/includes/header.php';
             <a href="<?php echo $WHATSAPP_LINK; ?>" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp">
               <i class="fa-brands fa-whatsapp"></i> Chat on WhatsApp / Arrange Visit
             </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2. Why Choose Us? Full-Width Feature Cards Grid (Zero Left Gap!) -->
+      <div class="about-why-choose-wrap">
+        <div class="section-header text-center" style="margin-bottom: 30px;">
+          <span class="section-tag"><i class="fa-solid fa-circle-check"></i> Transparent &amp; Verified Guidance</span>
+          <h3 class="section-title" style="font-size: 1.9rem; margin-bottom: 8px;">Why Choose Us?</h3>
+          <p class="section-desc" style="max-width: 680px; margin: 0 auto;">
+            We simplify your Dholera land investment journey with end-to-end transparency, verified records, and dedicated ground support.
+          </p>
+        </div>
+
+        <div class="about-choose-grid">
+          <div class="choose-card">
+            <div class="choose-icon-box"><i class="fa-solid fa-house-chimney"></i></div>
+            <h4 class="choose-title">Residential &amp; Industrial Plots</h4>
+            <p class="choose-desc">Explore land options suited to different requirements and budgets.</p>
+          </div>
+
+          <div class="choose-card">
+            <div class="choose-icon-box"><i class="fa-solid fa-circle-info"></i></div>
+            <h4 class="choose-title">Project Information</h4>
+            <p class="choose-desc">Understand plot sizes, locations, pricing and available development details.</p>
+          </div>
+
+          <div class="choose-card">
+            <div class="choose-icon-box"><i class="fa-solid fa-file-contract"></i></div>
+            <h4 class="choose-title">Documentation Guidance</h4>
+            <p class="choose-desc">Get assistance understanding land records, title documents, applicable approvals and registration requirements.</p>
+          </div>
+
+          <div class="choose-card">
+            <div class="choose-icon-box"><i class="fa-solid fa-car-side"></i></div>
+            <h4 class="choose-title">Site Visit Assistance</h4>
+            <p class="choose-desc">Visit selected locations and evaluate the property's surroundings and actual development status.</p>
+          </div>
+
+          <div class="choose-card">
+            <div class="choose-icon-box"><i class="fa-solid fa-headset"></i></div>
+            <h4 class="choose-title">Customer-Focused Support</h4>
+            <p class="choose-desc">Receive personalised assistance while comparing properties and understanding the buying process.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3. Explore Dholera Property Opportunities Full-Width Callout -->
+      <div class="about-explore-callout">
+        <div class="aec-inner">
+          <span class="aec-badge"><i class="fa-solid fa-map-location-dot"></i> Investor Advisory</span>
+          <h3 class="aec-title">Explore Dholera Property Opportunities</h3>
+          <p class="aec-desc">
+            Whether you are searching for residential plots, industrial land or long-term real estate opportunities, we are here to help you explore available options with greater clarity and confidence. We believe every property decision should begin with accurate information, proper due diligence and a clear understanding of the investment.
+          </p>
+
+          <div class="aec-tagline-strip">
+            <i class="fa-solid fa-compass"></i>
+            <span><strong>Explore Dholera. Understand Your Options. Make an Informed Property Decision.</strong></span>
+          </div>
+
+          <div class="aec-footer">
+            <p class="aec-contact-text">
+              <i class="fa-solid fa-phone-volume"></i> Contact our team to learn more about available plots and arrange a site visit.
+            </p>
+            <div class="aec-buttons">
+              <a href="<?php echo $PHONE_TEL; ?>" class="btn btn-call btn-sm">
+                <i class="fa-solid fa-phone"></i> Call Now
+              </a>
+              <a href="<?php echo $WHATSAPP_LINK; ?>" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp btn-sm">
+                <i class="fa-brands fa-whatsapp"></i> Chat on WhatsApp
+              </a>
+            </div>
           </div>
         </div>
       </div>
