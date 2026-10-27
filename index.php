@@ -230,27 +230,9 @@ require_once __DIR__ . '/includes/header.php';
         <!-- FIRST CAROUSEL ITEM: VIDEO ONLY SHOWCASE -->
         <div class="carousel-item active">
           <div class="hero-carousel-video-wrap">
-            <video id="heroVideoPlayer" class="d-block w-100 hero-carousel-video" autoplay muted playsinline controls preload="auto" poster="assets/images/dholera-hero-fresh.jpg">
+            <video id="heroVideoPlayer" class="d-block w-100 hero-carousel-video" autoplay muted playsinline preload="auto" poster="assets/images/dholera-hero-fresh.jpg">
               <source src="assets/images/video.mp4" type="video/mp4">
             </video>
-
-            <!-- Video Top Actions (Sound & Skip) -->
-            <div class="hero-video-top-bar">
-              <button type="button" class="hero-video-action-btn hero-sound-btn" id="heroVideoSoundBtn" aria-label="Toggle Sound">
-                <i class="fa-solid fa-volume-xmark"></i> <span>Click for Voice / Sound</span>
-              </button>
-              <button type="button" class="hero-video-action-btn hero-skip-btn" id="heroSkipToBannerBtn" aria-label="Skip to Banner" data-bs-target="#carouselExampleControlsNoTouching" data-bs-slide="next">
-                <span>View Project Details</span> <i class="fa-solid fa-arrow-right"></i>
-              </button>
-            </div>
-
-            <!-- Big Center Play / Unmute Button -->
-            <div class="hero-video-center-play" id="heroCenterPlay">
-              <button type="button" class="center-play-btn" aria-label="Watch with Sound">
-                <i class="fa-solid fa-volume-high"></i>
-                <span>Tap to Watch with Sound</span>
-              </button>
-            </div>
           </div>
         </div>
 

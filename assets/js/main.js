@@ -553,9 +553,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     const heroVideo = document.getElementById('heroVideoPlayer');
-    const soundBtn = document.getElementById('heroVideoSoundBtn');
-    const centerPlay = document.getElementById('heroCenterPlay');
-    const skipBtn = document.getElementById('heroSkipToBannerBtn');
 
     function goToBanner() {
       if (bsCarousel) {
@@ -588,15 +585,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         heroVideo.play().catch(() => {});
       }
-    }
-
-    // Skip to Banner Button
-    if (skipBtn) {
-      skipBtn.addEventListener('click', (e) => {
-        e.preventDefault();
-        e.stopPropagation();
-        goToBanner();
-      });
     }
 
     // Carousel Slide Change Event
@@ -655,7 +643,7 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     }
 
-    // Video Audio / Voice Control & Auto-transition on End
+    // Video Playback & Auto-transition on End
     if (heroVideo) {
       heroVideo.muted = true;
       heroVideo.play().catch(() => {});
@@ -665,53 +653,16 @@ document.addEventListener('DOMContentLoaded', () => {
         goToBanner();
       });
 
-      function syncSoundUI() {
-        if (!soundBtn) return;
-        if (!heroVideo.muted && heroVideo.volume > 0) {
-          soundBtn.innerHTML = '<i class="fa-solid fa-volume-high"></i> <span>Sound ON (Mute)</span>';
-          soundBtn.classList.add('sound-active');
-          if (centerPlay) centerPlay.classList.add('hidden');
-        } else {
-          soundBtn.innerHTML = '<i class="fa-solid fa-volume-xmark"></i> <span>Click for Voice / Sound</span>';
-          soundBtn.classList.remove('sound-active');
-        }
-      }
-
-      function enableVoice() {
-        heroVideo.muted = false;
-        heroVideo.volume = 1.0;
-        heroVideo.play().catch(() => {});
-        if (centerPlay) centerPlay.classList.add('hidden');
-        syncSoundUI();
-      }
-
-      if (soundBtn) {
-        soundBtn.addEventListener('click', (e) => {
-          e.stopPropagation();
-          if (heroVideo.muted || heroVideo.volume === 0) {
-            enableVoice();
-          } else {
-            heroVideo.muted = true;
-            syncSoundUI();
-          }
-        });
-      }
-
-      if (centerPlay) {
-        centerPlay.addEventListener('click', (e) => {
-          e.stopPropagation();
-          enableVoice();
-        });
-      }
-
-      // Also allow clicking directly on video to unmute and hear voice
+      // Tapping anywhere on video toggles unmute/mute seamlessly without any overlay UI
       heroVideo.addEventListener('click', () => {
         if (heroVideo.muted || heroVideo.volume === 0) {
-          enableVoice();
+          heroVideo.muted = false;
+          heroVideo.volume = 1.0;
+          heroVideo.play().catch(() => {});
+        } else {
+          heroVideo.muted = true;
         }
       });
-
-      heroVideo.addEventListener('volumechange', syncSoundUI);
     }
   }
 });
