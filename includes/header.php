@@ -106,19 +106,28 @@ $SHOW_TOPBAR      = $SHOW_TOPBAR ?? true;
           <span class="top-bar-badge">
             <i class="fa-solid fa-building-shield"></i> GOVT. APPROVED SMART CITY
           </span>
-          <span class="top-bar-trust-text">
-            <span><i class="fa-solid fa-flag" style="color: #fbbf24;"></i> India's 1st Greenfield Smart City</span>
-            <span class="top-sep">•</span>
-            <span>100% Clear Title Registry Plots</span>
-            <span class="top-sep">•</span>
-            <span class="top-highlight-gold">Near Tata Semiconductor Plant</span>
-          </span>
+          <div class="top-bar-ticker" aria-label="Smart City Highlights">
+            <div class="top-bar-ticker-track">
+              <span class="ticker-item"><i class="fa-solid fa-flag" style="color: #fbbf24;"></i> India's 1st Greenfield Smart City</span>
+              <span class="top-sep">•</span>
+              <span class="ticker-item"><i class="fa-solid fa-certificate" style="color: #38bdf8;"></i> 100% Clear Title Registry Plots</span>
+              <span class="top-sep">•</span>
+              <span class="ticker-item top-highlight-gold"><i class="fa-solid fa-microchip" style="color: #fbbf24;"></i> Near Tata Semiconductor Plant</span>
+              <!-- Ticker clone items for smooth infinite loop on mobile devices -->
+              <span class="top-sep ticker-clone">•</span>
+              <span class="ticker-item ticker-clone"><i class="fa-solid fa-flag" style="color: #fbbf24;"></i> India's 1st Greenfield Smart City</span>
+              <span class="top-sep ticker-clone">•</span>
+              <span class="ticker-item ticker-clone"><i class="fa-solid fa-certificate" style="color: #38bdf8;"></i> 100% Clear Title Registry Plots</span>
+              <span class="top-sep ticker-clone">•</span>
+              <span class="ticker-item top-highlight-gold ticker-clone"><i class="fa-solid fa-microchip" style="color: #fbbf24;"></i> Near Tata Semiconductor Plant</span>
+            </div>
+          </div>
         </div>
 
         <!-- Right: Direct Contact Actions -->
         <div class="top-bar-contact">
           <a href="<?php echo $PHONE_TEL; ?>" class="top-bar-link top-call-link" title="Direct Phone Call">
-            <i class="fa-solid fa-phone-volume"></i> <span>Direct Call: <strong><?php echo htmlspecialchars($PHONE_DISPLAY); ?></strong></span>
+            <i class="fa-solid fa-phone-volume"></i> <span><span class="call-prefix">Direct Call: </span><strong><?php echo htmlspecialchars($PHONE_DISPLAY); ?></strong></span>
           </a>
           <a href="<?php echo $WHATSAPP_LINK; ?>" target="_blank" rel="noopener noreferrer" class="top-bar-link top-wa-link" title="Chat on WhatsApp">
             <i class="fa-brands fa-whatsapp"></i> <span>Instant WhatsApp <span class="wa-dot-badge">Live</span></span>
