@@ -538,109 +538,121 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // 6. Hero Slider Controller (Slide 1: Video, Slide 2: Banner)
-  const heroSlider = document.querySelector('.hero-slider-section');
-  if (heroSlider) {
-    const slides = heroSlider.querySelectorAll('.hero-slide');
-    const dots = heroSlider.querySelectorAll('.slider-dot');
-    const prevBtn = document.getElementById('heroPrevBtn');
-    const nextBtn = document.getElementById('heroNextBtn');
+  // 6. Bootstrap Carousel Controller (Slide 1: Video Showcase, Slide 2: Project Banner)
+  const carouselEl = document.getElementById('carouselExampleControlsNoTouching');
+  if (carouselEl) {
+    let bsCarousel = null;
+
+    // Initialize Bootstrap Carousel if Bootstrap JS is available
+    if (window.bootstrap && window.bootstrap.Carousel) {
+      bsCarousel = bootstrap.Carousel.getOrCreateInstance(carouselEl, {
+        touch: false,
+        interval: false,
+        wrap: true
+      });
+    }
+
     const heroVideo = document.getElementById('heroVideoPlayer');
     const soundBtn = document.getElementById('heroVideoSoundBtn');
     const centerPlay = document.getElementById('heroCenterPlay');
     const skipBtn = document.getElementById('heroSkipToBannerBtn');
 
-    function goToSlide(index) {
-      if (index < 0) index = slides.length - 1;
-      if (index >= slides.length) index = 0;
-      currentIndex = index;
-
-      slides.forEach((slide, i) => {
-        if (i === currentIndex) {
-          slide.classList.add('active');
-        } else {
-          slide.classList.remove('active');
+    function goToBanner() {
+      if (bsCarousel) {
+        bsCarousel.to(1);
+      } else {
+        const items = carouselEl.querySelectorAll('.carousel-item');
+        if (items.length >= 2) {
+          items[0].classList.remove('active');
+          items[1].classList.add('active');
         }
-      });
-
-      dots.forEach((dot, i) => {
-        if (i === currentIndex) {
-          dot.classList.add('active');
-        } else {
-          dot.classList.remove('active');
-        }
-      });
-
-      // Handle video playback
+      }
       if (heroVideo) {
-        if (currentIndex === 0) {
+        heroVideo.pause();
+      }
+    }
+
+    function goToVideo() {
+      if (bsCarousel) {
+        bsCarousel.to(0);
+      } else {
+        const items = carouselEl.querySelectorAll('.carousel-item');
+        if (items.length >= 2) {
+          items[1].classList.remove('active');
+          items[0].classList.add('active');
+        }
+      }
+      if (heroVideo) {
+        if (heroVideo.ended) {
+          heroVideo.currentTime = 0;
+        }
+        heroVideo.play().catch(() => {});
+      }
+    }
+
+    // Skip to Banner Button
+    if (skipBtn) {
+      skipBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        goToBanner();
+      });
+    }
+
+    // Carousel Slide Change Event
+    carouselEl.addEventListener('slide.bs.carousel', (e) => {
+      if (e.to === 0) {
+        if (heroVideo) {
           if (heroVideo.ended) {
             heroVideo.currentTime = 0;
           }
           heroVideo.play().catch(() => {});
-        } else {
+        }
+      } else {
+        if (heroVideo) {
           heroVideo.pause();
         }
       }
-    }
+    });
+
+    // Fallback click handlers for prev/next buttons
+    const prevBtn = carouselEl.querySelector('.carousel-control-prev');
+    const nextBtn = carouselEl.querySelector('.carousel-control-next');
 
     if (prevBtn) {
-      prevBtn.addEventListener('click', () => {
-        goToSlide(currentIndex - 1);
-        stopAutoSlide();
+      prevBtn.addEventListener('click', (e) => {
+        if (!bsCarousel && window.bootstrap && window.bootstrap.Carousel) {
+          bsCarousel = bootstrap.Carousel.getOrCreateInstance(carouselEl);
+        }
+        if (!bsCarousel) {
+          const items = carouselEl.querySelectorAll('.carousel-item');
+          if (items.length >= 2) {
+            if (items[0].classList.contains('active')) {
+              goToBanner();
+            } else {
+              goToVideo();
+            }
+          }
+        }
       });
     }
 
     if (nextBtn) {
-      nextBtn.addEventListener('click', () => {
-        goToSlide(currentIndex + 1);
-        stopAutoSlide();
-      });
-    }
-
-    if (skipBtn) {
-      skipBtn.addEventListener('click', (e) => {
-        e.stopPropagation();
-        goToSlide(1);
-        stopAutoSlide();
-      });
-    }
-
-    dots.forEach((dot) => {
-      dot.addEventListener('click', () => {
-        const slideIndex = parseInt(dot.getAttribute('data-slide'), 10);
-        if (!isNaN(slideIndex)) {
-          goToSlide(slideIndex);
-          stopAutoSlide();
+      nextBtn.addEventListener('click', (e) => {
+        if (!bsCarousel && window.bootstrap && window.bootstrap.Carousel) {
+          bsCarousel = bootstrap.Carousel.getOrCreateInstance(carouselEl);
+        }
+        if (!bsCarousel) {
+          const items = carouselEl.querySelectorAll('.carousel-item');
+          if (items.length >= 2) {
+            if (items[0].classList.contains('active')) {
+              goToBanner();
+            } else {
+              goToVideo();
+            }
+          }
         }
       });
-    });
-
-    // Touch swipe support for mobile
-    let touchStartX = 0;
-    let touchEndX = 0;
-    heroSlider.addEventListener('touchstart', (e) => {
-      touchStartX = e.changedTouches[0].screenX;
-    }, { passive: true });
-
-    heroSlider.addEventListener('touchend', (e) => {
-      touchEndX = e.changedTouches[0].screenX;
-      const diff = touchStartX - touchEndX;
-      if (Math.abs(diff) > 45) {
-        if (diff > 0) {
-          goToSlide(currentIndex + 1);
-        } else {
-          goToSlide(currentIndex - 1);
-        }
-        stopAutoSlide();
-      }
-    }, { passive: true });
-
-    function stopAutoSlide() {
-      if (autoSlideTimer) {
-        clearInterval(autoSlideTimer);
-        autoSlideTimer = null;
-      }
     }
 
     // Video Audio / Voice Control & Auto-transition on End
@@ -648,9 +660,9 @@ document.addEventListener('DOMContentLoaded', () => {
       heroVideo.muted = true;
       heroVideo.play().catch(() => {});
 
-      // Auto-slide to Banner when Video Ends
+      // Auto-slide to Banner when Video Ends (30s)
       heroVideo.addEventListener('ended', () => {
-        goToSlide(1);
+        goToBanner();
       });
 
       function syncSoundUI() {

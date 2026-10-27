@@ -221,25 +221,25 @@ require_once __DIR__ . '/includes/header.php';
 
 <main>
   <!-- ======================================================================
-         3. HERO SLIDER SECTION (SLIDE 1: VIDEO ONLY, SLIDE 2: BANNER WITH TEXT)
+         3. HERO BOOTSTRAP CAROUSEL (FIRST: VIDEO, SECOND: BANNER)
          ====================================================================== -->
-  <section class="hero-slider-section" id="home">
-    <div class="hero-slider-container">
-      <div class="hero-slider-track">
+  <section class="hero-carousel-section" id="home">
+    <div id="carouselExampleControlsNoTouching" class="carousel slide" data-bs-touch="false" data-bs-interval="false">
+      <div class="carousel-inner">
 
-        <!-- SLIDE 1: VIDEO ONLY SHOWCASE -->
-        <div class="hero-slide hero-slide-video active" data-slide-index="0">
-          <div class="hero-slide-video-wrap">
-            <video id="heroVideoPlayer" class="hero-slider-video" autoplay muted playsinline controls preload="auto" poster="assets/images/dholera-hero-fresh.jpg">
+        <!-- FIRST CAROUSEL ITEM: VIDEO ONLY SHOWCASE -->
+        <div class="carousel-item active">
+          <div class="hero-carousel-video-wrap">
+            <video id="heroVideoPlayer" class="d-block w-100 hero-carousel-video" autoplay muted playsinline controls preload="auto" poster="assets/images/dholera-hero-fresh.jpg">
               <source src="assets/images/video.mp4" type="video/mp4">
             </video>
-            
+
             <!-- Video Top Actions (Sound & Skip) -->
             <div class="hero-video-top-bar">
               <button type="button" class="hero-video-action-btn hero-sound-btn" id="heroVideoSoundBtn" aria-label="Toggle Sound">
                 <i class="fa-solid fa-volume-xmark"></i> <span>Click for Voice / Sound</span>
               </button>
-              <button type="button" class="hero-video-action-btn hero-skip-btn" id="heroSkipToBannerBtn" aria-label="Skip to Banner">
+              <button type="button" class="hero-video-action-btn hero-skip-btn" id="heroSkipToBannerBtn" aria-label="Skip to Banner" data-bs-target="#carouselExampleControlsNoTouching" data-bs-slide="next">
                 <span>View Project Details</span> <i class="fa-solid fa-arrow-right"></i>
               </button>
             </div>
@@ -254,61 +254,63 @@ require_once __DIR__ . '/includes/header.php';
           </div>
         </div>
 
-        <!-- SLIDE 2: BANNER WITH TEXT & CTAs -->
-        <div class="hero-slide hero-slide-banner" data-slide-index="1">
-          <div class="hero-banner-bg"></div>
-          <div class="container hero-banner-container">
-            <div class="hero-content">
-              <div class="hero-badge">
-                <i class="fa-solid fa-city"></i> Invest Today In Tomorrow's Smart City
-              </div>
-              <h1 class="hero-title">
-                <span class="highlight-red">Dholera</span> Smart City Plots <br>
-                <span class="highlight-gold">Residential &amp; Industrial</span> Land for Sale
-              </h1>
-              <p class="hero-subtitle">
-                Secure high-ROI <strong>Dholera SIR plots</strong> in India's first platinum-rated greenfield smart city. 100% legal, clear title, NA-approved plots with world-class expressway, airport &amp; metro connectivity.
-              </p>
+        <!-- SECOND CAROUSEL ITEM: BANNER WITH TEXT & CTAs -->
+        <div class="carousel-item">
+          <div class="hero-carousel-banner-wrap">
+            <div class="hero-banner-bg"></div>
+            <div class="container hero-banner-container">
+              <div class="hero-content">
+                <div class="hero-badge">
+                  <i class="fa-solid fa-city"></i> Invest Today In Tomorrow's Smart City
+                </div>
+                <h1 class="hero-title">
+                  <span class="highlight-red">Dholera</span> Smart City Plots <br>
+                  <span class="highlight-gold">Residential &amp; Industrial</span> Land for Sale
+                </h1>
+                <p class="hero-subtitle">
+                  Secure high-ROI <strong>Dholera SIR plots</strong> in India's first platinum-rated greenfield smart city. 100% legal, clear title, NA-approved plots with world-class expressway, airport &amp; metro connectivity.
+                </p>
 
-              <!-- Feature Badges -->
-              <div class="hero-features-row">
-                <div class="hero-feat-item">
-                  <div class="hero-feat-icon"><i class="fa-solid fa-landmark"></i></div>
-                  <div class="hero-feat-text">Govt. Planned Greenfield City</div>
+                <!-- Feature Badges -->
+                <div class="hero-features-row">
+                  <div class="hero-feat-item">
+                    <div class="hero-feat-icon"><i class="fa-solid fa-landmark"></i></div>
+                    <div class="hero-feat-text">Govt. Planned Greenfield City</div>
+                  </div>
+                  <div class="hero-feat-item">
+                    <div class="hero-feat-icon"><i class="fa-solid fa-plane-departure"></i></div>
+                    <div class="hero-feat-text">International Airport Zone</div>
+                  </div>
+                  <div class="hero-feat-item">
+                    <div class="hero-feat-icon"><i class="fa-solid fa-microchip"></i></div>
+                    <div class="hero-feat-text">Tata Semiconductor Hub</div>
+                  </div>
+                  <div class="hero-feat-item">
+                    <div class="hero-feat-icon"><i class="fa-solid fa-road"></i></div>
+                    <div class="hero-feat-text">6-Lane Expressway &amp; Metro</div>
+                  </div>
+                  <div class="hero-feat-item">
+                    <div class="hero-feat-icon"><i class="fa-solid fa-file-shield"></i></div>
+                    <div class="hero-feat-text">100% Clear Title &amp; NA Plots</div>
+                  </div>
+                  <div class="hero-feat-item">
+                    <div class="hero-feat-icon"><i class="fa-solid fa-chart-line"></i></div>
+                    <div class="hero-feat-text">High Capital Appreciation</div>
+                  </div>
                 </div>
-                <div class="hero-feat-item">
-                  <div class="hero-feat-icon"><i class="fa-solid fa-plane-departure"></i></div>
-                  <div class="hero-feat-text">International Airport Zone</div>
-                </div>
-                <div class="hero-feat-item">
-                  <div class="hero-feat-icon"><i class="fa-solid fa-microchip"></i></div>
-                  <div class="hero-feat-text">Tata Semiconductor Hub</div>
-                </div>
-                <div class="hero-feat-item">
-                  <div class="hero-feat-icon"><i class="fa-solid fa-road"></i></div>
-                  <div class="hero-feat-text">6-Lane Expressway &amp; Metro</div>
-                </div>
-                <div class="hero-feat-item">
-                  <div class="hero-feat-icon"><i class="fa-solid fa-file-shield"></i></div>
-                  <div class="hero-feat-text">100% Clear Title &amp; NA Plots</div>
-                </div>
-                <div class="hero-feat-item">
-                  <div class="hero-feat-icon"><i class="fa-solid fa-chart-line"></i></div>
-                  <div class="hero-feat-text">High Capital Appreciation</div>
-                </div>
-              </div>
 
-              <!-- Hero Action CTAs -->
-              <div class="hero-cta-group">
-                <a href="<?php echo $WHATSAPP_LINK; ?>" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp btn-lg whatsapp-pulse">
-                  <i class="fa-brands fa-whatsapp fa-lg"></i> <span>Chat on WhatsApp</span>
-                </a>
-                <a href="<?php echo $PHONE_TEL; ?>" class="btn btn-call btn-lg pulse-animation">
-                  <i class="fa-solid fa-phone"></i> <span>Direct Call: <?php echo htmlspecialchars($PHONE_DISPLAY); ?></span>
-                </a>
-                <a href="#plots" class="btn btn-gold btn-lg">
-                  <i class="fa-solid fa-map-location-dot"></i> <span>Explore Verified Plots</span>
-                </a>
+                <!-- Hero Action CTAs -->
+                <div class="hero-cta-group">
+                  <a href="<?php echo $WHATSAPP_LINK; ?>" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp btn-lg whatsapp-pulse">
+                    <i class="fa-brands fa-whatsapp fa-lg"></i> <span>Chat on WhatsApp</span>
+                  </a>
+                  <a href="<?php echo $PHONE_TEL; ?>" class="btn btn-call btn-lg pulse-animation">
+                    <i class="fa-solid fa-phone"></i> <span>Direct Call: <?php echo htmlspecialchars($PHONE_DISPLAY); ?></span>
+                  </a>
+                  <a href="#plots" class="btn btn-gold btn-lg">
+                    <i class="fa-solid fa-map-location-dot"></i> <span>Explore Verified Plots</span>
+                  </a>
+                </div>
               </div>
             </div>
           </div>
@@ -316,19 +318,15 @@ require_once __DIR__ . '/includes/header.php';
 
       </div>
 
-      <!-- Navigation Arrows -->
-      <button type="button" class="hero-slider-nav hero-slider-prev" id="heroPrevBtn" aria-label="Previous Slide">
-        <i class="fa-solid fa-chevron-left"></i>
+      <!-- Carousel Navigation Controls -->
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControlsNoTouching" data-bs-slide="prev" aria-label="Previous">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
       </button>
-      <button type="button" class="hero-slider-nav hero-slider-next" id="heroNextBtn" aria-label="Next Slide">
-        <i class="fa-solid fa-chevron-right"></i>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControlsNoTouching" data-bs-slide="next" aria-label="Next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
       </button>
-
-      <!-- Slider Dots / Indicators -->
-      <div class="hero-slider-dots" id="heroSliderDots">
-        <button type="button" class="slider-dot active" data-slide="0" aria-label="Slide 1: Video"><span class="dot-inner"><i class="fa-solid fa-play"></i> Video</span></button>
-        <button type="button" class="slider-dot" data-slide="1" aria-label="Slide 2: Banner"><span class="dot-inner"><i class="fa-solid fa-image"></i> Overview</span></button>
-      </div>
     </div>
   </section>
 
