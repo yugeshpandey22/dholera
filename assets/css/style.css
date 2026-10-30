@@ -1089,7 +1089,7 @@ ul {
   background-position: center 30%;
   background-size: cover;
   background-repeat: no-repeat;
-  filter: brightness(0.96) contrast(1.06) saturate(1.12);
+  filter: brightness(1.04) contrast(1.05) saturate(1.08);
   z-index: 0;
 }
 
@@ -1100,15 +1100,15 @@ ul {
   background: 
     linear-gradient(
       90deg, 
-      rgba(8, 15, 30, 0.82) 0%, 
-      rgba(8, 15, 30, 0.58) 48%, 
-      rgba(8, 15, 30, 0.28) 100%
+      rgba(6, 12, 26, 0.72) 0%, 
+      rgba(6, 12, 26, 0.46) 52%, 
+      rgba(6, 12, 26, 0.16) 100%
     ),
     linear-gradient(
       180deg, 
-      rgba(8, 15, 30, 0.32) 0%, 
-      transparent 35%, 
-      rgba(8, 15, 30, 0.52) 100%
+      rgba(6, 12, 26, 0.22) 0%, 
+      transparent 38%, 
+      rgba(6, 12, 26, 0.38) 100%
     );
   pointer-events: none;
 }
@@ -1117,9 +1117,9 @@ ul {
   .hero-banner-bg::after {
     background: linear-gradient(
       180deg, 
-      rgba(8, 15, 30, 0.86) 0%, 
-      rgba(8, 15, 30, 0.58) 45%, 
-      rgba(8, 15, 30, 0.82) 100%
+      rgba(6, 12, 26, 0.76) 0%, 
+      rgba(6, 12, 26, 0.48) 50%, 
+      rgba(6, 12, 26, 0.72) 100%
     );
   }
 }
