@@ -151,6 +151,14 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!sectionId) return;
     const target = document.getElementById(sectionId);
     if (target) {
+      // Immediately pause video if navigating away from about section
+      if (sectionId !== 'about') {
+        const vPlayer = document.getElementById('aboutVideoPlayer');
+        if (vPlayer && !vPlayer.paused) {
+          vPlayer.pause();
+        }
+      }
+
       const headerOffset = 76;
       const elementPosition = target.getBoundingClientRect().top;
       const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
@@ -540,9 +548,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-  // 7. About Section Video Controller
+  // 7. About Section Video Controller & Auto-Pause On Other Sections / Out of View
   const aboutVideo = document.getElementById('aboutVideoPlayer');
   const aboutSoundBtn = document.getElementById('aboutSoundToggleBtn');
+  const aboutSectionEl = document.getElementById('about');
 
   if (aboutVideo) {
     function toggleAboutSound() {
@@ -575,6 +584,49 @@ document.addEventListener('DOMContentLoaded', () => {
 
     aboutVideo.addEventListener('click', () => {
       toggleAboutSound();
+    });
+
+    // Auto pause video when user moves away from About section (Scroll or Intersection)
+    if ('IntersectionObserver' in window) {
+      const videoTarget = aboutSectionEl || aboutVideo;
+      const videoObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) {
+            // User scrolled away to another section -> pause video automatically
+            if (!aboutVideo.paused) {
+              aboutVideo.pause();
+            }
+          } else {
+            // User came back to About section -> resume video if needed
+            if (aboutVideo.paused) {
+              aboutVideo.play().catch(() => {});
+            }
+          }
+        });
+      }, {
+        threshold: 0.15 // Triggers as soon as About section leaves viewport
+      });
+
+      videoObserver.observe(videoTarget);
+    } else {
+      // Fallback for older browsers using scroll event
+      window.addEventListener('scroll', () => {
+        if (!aboutSectionEl) return;
+        const rect = aboutSectionEl.getBoundingClientRect();
+        const inView = (rect.top < window.innerHeight && rect.bottom > 0);
+        if (!inView && !aboutVideo.paused) {
+          aboutVideo.pause();
+        } else if (inView && aboutVideo.paused) {
+          aboutVideo.play().catch(() => {});
+        }
+      }, { passive: true });
+    }
+
+    // Auto pause video when user switches browser tab
+    document.addEventListener('visibilitychange', () => {
+      if (document.hidden && !aboutVideo.paused) {
+        aboutVideo.pause();
+      }
     });
   }
 });
