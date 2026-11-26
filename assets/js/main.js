@@ -62,9 +62,9 @@
 document.addEventListener('DOMContentLoaded', () => {
   // Config reference
   const CONFIG = window.DHOLERA_CONFIG || {
-    phone: '8800384461',
-    phoneFormatted: '+91 8800384461',
-    whatsapp: '918800384461',
+    phone: '8950591781',
+    phoneFormatted: '+91 8950591781',
+    whatsapp: '918950591781',
     defaultMsg: 'Hi, I am interested in Dholera Smart City plots. Please share details.'
   };
 

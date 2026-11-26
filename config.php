@@ -10,12 +10,12 @@
  */
 
 // 📞 Primary Contact Number (Change here anytime!)
-$PHONE_RAW        = "8800384461";
-$PHONE_DISPLAY    = "+91 8800384461";
-$PHONE_TEL        = "tel:+918800384461";
+$PHONE_RAW        = "8950591781";
+$PHONE_DISPLAY    = "+91 8950591781";
+$PHONE_TEL        = "tel:+918950591781";
 
 // 💬 WhatsApp Details
-$WHATSAPP_NUMBER  = "918800384461";
+$WHATSAPP_NUMBER  = "918950591781";
 $WHATSAPP_MESSAGE = "Hi, I am interested in Dholera Smart City plots (Residential / Industrial). Please share latest price list, brochure, and site visit details.";
 $WHATSAPP_LINK    = "https://wa.me/" . $WHATSAPP_NUMBER . "?text=" . urlencode($WHATSAPP_MESSAGE);
 
