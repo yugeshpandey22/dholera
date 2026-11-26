@@ -629,4 +629,62 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   }
+
+  // 8. Mirrikh Group Special Offer Modal / Popup (Center Over Hero)
+  const promoModal = document.getElementById('promoOfferModal');
+  const promoCloseBtn = document.getElementById('promoModalCloseBtn');
+  const promoOverlay = document.getElementById('promoModalOverlay');
+  const promoOpenBtn = document.getElementById('heroOpenPromoBtn');
+
+  if (promoModal) {
+    const openPromo = () => {
+      promoModal.style.display = 'flex';
+      requestAnimationFrame(() => {
+        promoModal.classList.add('is-visible');
+        document.body.classList.add('promo-modal-open');
+      });
+    };
+
+    const closePromo = () => {
+      promoModal.classList.remove('is-visible');
+      document.body.classList.remove('promo-modal-open');
+      setTimeout(() => {
+        promoModal.style.display = 'none';
+      }, 300);
+      try {
+        sessionStorage.setItem('mirrikhOfferDismissed', 'true');
+      } catch (e) {}
+    };
+
+    if (promoCloseBtn) promoCloseBtn.addEventListener('click', closePromo);
+    if (promoOverlay) promoOverlay.addEventListener('click', closePromo);
+
+    if (promoOpenBtn) {
+      promoOpenBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        openPromo();
+      });
+    }
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && promoModal.classList.contains('is-visible')) {
+        closePromo();
+      }
+    });
+
+    // Auto open promo on load if not dismissed in current session
+    const isDismissed = (function() {
+      try {
+        return sessionStorage.getItem('mirrikhOfferDismissed') === 'true';
+      } catch (e) {
+        return false;
+      }
+    })();
+
+    if (!isDismissed) {
+      setTimeout(() => {
+        openPromo();
+      }, 700);
+    }
+  }
 });

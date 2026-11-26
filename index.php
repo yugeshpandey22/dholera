@@ -227,8 +227,15 @@ require_once __DIR__ . '/includes/header.php';
     <div class="hero-banner-bg"></div>
     <div class="container hero-banner-container">
       <div class="hero-content">
-        <div class="hero-badge">
-          <i class="fa-solid fa-city"></i> Invest Today In Tomorrow's Smart City
+        <div class="hero-badge-wrap">
+          <div class="hero-badge">
+            <i class="fa-solid fa-city"></i> Invest Today In Tomorrow's Smart City
+          </div>
+          <button type="button" class="hero-offer-badge" id="heroOpenPromoBtn" title="View Exclusive Industrial Plot Offer">
+            <span class="offer-pulse-dot"></span>
+            <i class="fa-solid fa-bullhorn"></i> <span>Special Offer: Mirrikh Industrial Plots @ ₹8,950/yd</span>
+            <i class="fa-solid fa-angle-right"></i>
+          </button>
         </div>
         <h1 class="hero-title">
           <span class="highlight-red">Dholera</span> Smart City Plots <br>
@@ -281,6 +288,31 @@ require_once __DIR__ . '/includes/header.php';
       </div>
     </div>
   </section>
+
+  <!-- ======================================================================
+         MIRRIKH GROUP SPECIAL OFFER POPUP MODAL (CENTER OVERLAY)
+         ====================================================================== -->
+  <div class="promo-modal-backdrop" id="promoOfferModal" role="dialog" aria-modal="true" aria-label="Mirrikh Group Industrial Plots Special Offer" style="display: none;">
+    <div class="promo-modal-overlay" id="promoModalOverlay"></div>
+    <div class="promo-modal-dialog">
+      <button type="button" class="promo-modal-close" id="promoModalCloseBtn" aria-label="Close Special Offer" title="Close / Hatao">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+      <div class="promo-modal-content">
+        <div class="promo-modal-img-wrap">
+          <img src="assets/images/mirrakh.jpeg" alt="Mirrikh Group Industrial Plots in Dholera for Sale @ ₹8,950 per sq yd with 1% Assured Return" class="promo-modal-img" loading="eager">
+        </div>
+        <div class="promo-modal-actions">
+          <a href="https://wa.me/<?php echo $WHATSAPP_NUMBER; ?>?text=<?php echo urlencode('Hi, I saw the Mirrikh Group Industrial Plots offer in Dholera (@ ₹8,950/yd with 1% Assured Return for 36 Months). Please share brochure, layout plan & site visit details.'); ?>" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp btn-promo-action">
+            <i class="fa-brands fa-whatsapp fa-lg"></i> <span>Claim on WhatsApp</span>
+          </a>
+          <a href="<?php echo $PHONE_TEL; ?>" class="btn btn-call btn-promo-action">
+            <i class="fa-solid fa-phone"></i> <span>Call: <?php echo htmlspecialchars($PHONE_RAW); ?></span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <!-- ======================================================================
          4. QUICK CATEGORY BOXES (RESIDENTIAL & INDUSTRIAL)
