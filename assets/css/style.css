@@ -5408,81 +5408,25 @@ ul {
 /* ==========================================================================
    MIRRIKH GROUP SPECIAL OFFER POPUP MODAL (CENTER OVER HERO)
    ========================================================================== */
-.hero-badge-wrap {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin-bottom: 16px;
-}
-
-.hero-offer-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  background: linear-gradient(135deg, rgba(245, 158, 11, 0.22) 0%, rgba(217, 119, 6, 0.3) 100%);
-  border: 1px solid rgba(251, 191, 36, 0.75);
-  color: #fde047;
-  padding: 6px 14px;
-  border-radius: var(--radius-full);
-  font-size: 0.8rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
-  cursor: pointer;
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  transition: all 0.25s ease;
-  box-shadow: 0 4px 14px rgba(245, 158, 11, 0.25);
-}
-
-.hero-offer-badge:hover {
-  background: linear-gradient(135deg, rgba(245, 158, 11, 0.38) 0%, rgba(217, 119, 6, 0.5) 100%);
-  border-color: #fef08a;
-  color: #ffffff;
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(245, 158, 11, 0.4);
-}
-
-.offer-pulse-dot {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: #22c55e;
-  box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7);
-  animation: offerDotPulse 1.8s infinite;
-}
-
-@keyframes offerDotPulse {
-  0% {
-    box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7);
-  }
-  70% {
-    box-shadow: 0 0 0 8px rgba(34, 197, 94, 0);
-  }
-  100% {
-    box-shadow: 0 0 0 0 rgba(34, 197, 94, 0);
-  }
-}
-
 .promo-modal-backdrop {
   position: fixed;
   inset: 0;
-  z-index: 99999;
+  z-index: 999999;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 14px;
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 0.28s ease, visibility 0.28s ease;
-}
-
-.promo-modal-backdrop.is-visible {
   opacity: 1;
   visibility: visible;
+  transition: opacity 0.25s ease, visibility 0.25s ease;
+}
+
+.promo-modal-backdrop.is-hidden {
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
 }
 
 .promo-modal-overlay {
@@ -5501,12 +5445,12 @@ ul {
   margin: auto;
   display: flex;
   flex-direction: column;
-  transform: scale(0.92) translateY(20px);
-  transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+  transform: scale(1) translateY(0);
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.promo-modal-backdrop.is-visible .promo-modal-dialog {
-  transform: scale(1) translateY(0);
+.promo-modal-backdrop.is-hidden .promo-modal-dialog {
+  transform: scale(0.9) translateY(20px);
 }
 
 .promo-modal-close {
@@ -5667,20 +5611,9 @@ body.promo-modal-open {
     padding: 8px 10px;
   }
 
-  .hero-badge-wrap {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 8px;
-    margin-bottom: 12px;
-    width: 100%;
-  }
-
-  .hero-badge,
-  .hero-offer-badge {
+  .hero-badge {
     font-size: 0.72rem;
     padding: 5px 10px;
-    width: 100%;
-    justify-content: center;
   }
 }
 

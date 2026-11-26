@@ -635,45 +635,24 @@ document.addEventListener('DOMContentLoaded', () => {
   const promoCloseBtn = document.getElementById('promoModalCloseBtn');
   const promoSkipBtn = document.getElementById('promoModalSkipBtn');
   const promoOverlay = document.getElementById('promoModalOverlay');
-  const promoOpenBtn = document.getElementById('heroOpenPromoBtn');
 
   if (promoModal) {
-    const openPromo = () => {
-      promoModal.style.display = 'flex';
-      requestAnimationFrame(() => {
-        promoModal.classList.add('is-visible');
-        document.body.classList.add('promo-modal-open');
-      });
-    };
-
     const closePromo = () => {
-      promoModal.classList.remove('is-visible');
+      promoModal.classList.add('is-hidden');
       document.body.classList.remove('promo-modal-open');
       setTimeout(() => {
         promoModal.style.display = 'none';
-      }, 300);
+      }, 250);
     };
 
     if (promoCloseBtn) promoCloseBtn.addEventListener('click', closePromo);
     if (promoSkipBtn) promoSkipBtn.addEventListener('click', closePromo);
     if (promoOverlay) promoOverlay.addEventListener('click', closePromo);
 
-    if (promoOpenBtn) {
-      promoOpenBtn.addEventListener('click', (e) => {
-        e.preventDefault();
-        openPromo();
-      });
-    }
-
     document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && promoModal.classList.contains('is-visible')) {
+      if (e.key === 'Escape' && !promoModal.classList.contains('is-hidden')) {
         closePromo();
       }
     });
-
-    // Auto open promo on every page load & refresh
-    setTimeout(() => {
-      openPromo();
-    }, 600);
   }
 });

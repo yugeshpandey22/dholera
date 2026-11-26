@@ -227,15 +227,8 @@ require_once __DIR__ . '/includes/header.php';
     <div class="hero-banner-bg"></div>
     <div class="container hero-banner-container">
       <div class="hero-content">
-        <div class="hero-badge-wrap">
-          <div class="hero-badge">
-            <i class="fa-solid fa-city"></i> Invest Today In Tomorrow's Smart City
-          </div>
-          <button type="button" class="hero-offer-badge" id="heroOpenPromoBtn" title="View Exclusive Industrial Plot Offer">
-            <span class="offer-pulse-dot"></span>
-            <i class="fa-solid fa-bullhorn"></i> <span>Special Offer: Mirrikh Industrial Plots @ ₹8,950/yd</span>
-            <i class="fa-solid fa-angle-right"></i>
-          </button>
+        <div class="hero-badge">
+          <i class="fa-solid fa-city"></i> Invest Today In Tomorrow's Smart City
         </div>
         <h1 class="hero-title">
           <span class="highlight-red">Dholera</span> Smart City Plots <br>
@@ -292,10 +285,10 @@ require_once __DIR__ . '/includes/header.php';
   <!-- ======================================================================
          MIRRIKH GROUP SPECIAL OFFER POPUP MODAL (CENTER OVERLAY)
          ====================================================================== -->
-  <div class="promo-modal-backdrop" id="promoOfferModal" role="dialog" aria-modal="true" aria-label="Mirrikh Group Industrial Plots Special Offer" style="display: none;">
-    <div class="promo-modal-overlay" id="promoModalOverlay"></div>
+  <div class="promo-modal-backdrop" id="promoOfferModal" role="dialog" aria-modal="true" aria-label="Mirrikh Group Industrial Plots Special Offer">
+    <div class="promo-modal-overlay" id="promoModalOverlay" onclick="var m=document.getElementById('promoOfferModal'); if(m){ m.classList.add('is-hidden'); setTimeout(function(){ m.style.display='none'; }, 220); } document.body.classList.remove('promo-modal-open');"></div>
     <div class="promo-modal-dialog">
-      <button type="button" class="promo-modal-close" id="promoModalCloseBtn" aria-label="Close Special Offer" title="Close / Hatao">
+      <button type="button" class="promo-modal-close" id="promoModalCloseBtn" onclick="var m=document.getElementById('promoOfferModal'); if(m){ m.classList.add('is-hidden'); setTimeout(function(){ m.style.display='none'; }, 220); } document.body.classList.remove('promo-modal-open');" aria-label="Close Special Offer" title="Close">
         <i class="fa-solid fa-xmark"></i>
       </button>
       <div class="promo-modal-content">
@@ -310,7 +303,7 @@ require_once __DIR__ . '/includes/header.php';
             <i class="fa-solid fa-phone"></i> <span>Call: <?php echo htmlspecialchars($PHONE_RAW); ?></span>
           </a>
         </div>
-        <button type="button" class="promo-modal-skip-btn" id="promoModalSkipBtn" aria-label="Skip Offer and Continue to Website">
+        <button type="button" class="promo-modal-skip-btn" id="promoModalSkipBtn" onclick="var m=document.getElementById('promoOfferModal'); if(m){ m.classList.add('is-hidden'); setTimeout(function(){ m.style.display='none'; }, 220); } document.body.classList.remove('promo-modal-open');" aria-label="Skip Offer and Continue to Website">
           <span>✕ Close &amp; Continue to Website</span>
         </button>
       </div>
