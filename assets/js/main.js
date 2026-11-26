@@ -651,9 +651,6 @@ document.addEventListener('DOMContentLoaded', () => {
       setTimeout(() => {
         promoModal.style.display = 'none';
       }, 300);
-      try {
-        sessionStorage.setItem('mirrikhOfferDismissed', 'true');
-      } catch (e) {}
     };
 
     if (promoCloseBtn) promoCloseBtn.addEventListener('click', closePromo);
@@ -672,19 +669,9 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
 
-    // Auto open promo on load if not dismissed in current session
-    const isDismissed = (function() {
-      try {
-        return sessionStorage.getItem('mirrikhOfferDismissed') === 'true';
-      } catch (e) {
-        return false;
-      }
-    })();
-
-    if (!isDismissed) {
-      setTimeout(() => {
-        openPromo();
-      }, 700);
-    }
+    // Auto open promo on every page load & refresh
+    setTimeout(() => {
+      openPromo();
+    }, 600);
   }
 });
