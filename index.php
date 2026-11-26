@@ -310,6 +310,9 @@ require_once __DIR__ . '/includes/header.php';
             <i class="fa-solid fa-phone"></i> <span>Call: <?php echo htmlspecialchars($PHONE_RAW); ?></span>
           </a>
         </div>
+        <button type="button" class="promo-modal-skip-btn" id="promoModalSkipBtn" aria-label="Skip Offer and Continue to Website">
+          <span>✕ Close &amp; Continue to Website</span>
+        </button>
       </div>
     </div>
   </div>

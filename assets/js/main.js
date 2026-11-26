@@ -633,6 +633,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // 8. Mirrikh Group Special Offer Modal / Popup (Center Over Hero)
   const promoModal = document.getElementById('promoOfferModal');
   const promoCloseBtn = document.getElementById('promoModalCloseBtn');
+  const promoSkipBtn = document.getElementById('promoModalSkipBtn');
   const promoOverlay = document.getElementById('promoModalOverlay');
   const promoOpenBtn = document.getElementById('heroOpenPromoBtn');
 
@@ -654,6 +655,7 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     if (promoCloseBtn) promoCloseBtn.addEventListener('click', closePromo);
+    if (promoSkipBtn) promoSkipBtn.addEventListener('click', closePromo);
     if (promoOverlay) promoOverlay.addEventListener('click', closePromo);
 
     if (promoOpenBtn) {

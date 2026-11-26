@@ -5472,10 +5472,12 @@ ul {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 16px;
+  padding: 14px;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
   opacity: 0;
   visibility: hidden;
-  transition: opacity 0.3s ease, visibility 0.3s ease;
+  transition: opacity 0.28s ease, visibility 0.28s ease;
 }
 
 .promo-modal-backdrop.is-visible {
@@ -5484,9 +5486,9 @@ ul {
 }
 
 .promo-modal-overlay {
-  position: absolute;
+  position: fixed;
   inset: 0;
-  background: rgba(3, 7, 18, 0.82);
+  background: rgba(3, 7, 18, 0.85);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
 }
@@ -5495,12 +5497,12 @@ ul {
   position: relative;
   z-index: 2;
   width: 100%;
-  max-width: 460px;
-  max-height: 90vh;
+  max-width: 440px;
+  margin: auto;
   display: flex;
   flex-direction: column;
-  transform: scale(0.9) translateY(24px);
-  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  transform: scale(0.92) translateY(20px);
+  transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .promo-modal-backdrop.is-visible .promo-modal-dialog {
@@ -5512,8 +5514,8 @@ ul {
   top: -14px;
   right: -14px;
   z-index: 10;
-  width: 38px;
-  height: 38px;
+  width: 42px;
+  height: 42px;
   border-radius: 50%;
   background: #091124;
   border: 2px solid #fbbf24;
@@ -5521,17 +5523,19 @@ ul {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 16px;
+  font-size: 18px;
   cursor: pointer;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
   transition: all 0.2s ease;
+  touch-action: manipulation;
 }
 
-.promo-modal-close:hover {
+.promo-modal-close:hover,
+.promo-modal-close:active {
   background: #ef4444;
   border-color: #ef4444;
   color: #ffffff;
-  transform: scale(1.1) rotate(90deg);
+  transform: scale(1.08) rotate(90deg);
 }
 
 .promo-modal-content {
@@ -5554,13 +5558,13 @@ ul {
 .promo-modal-img {
   width: 100%;
   height: auto;
-  aspect-ratio: 1 / 1;
-  object-fit: cover;
+  max-height: min(58vh, 420px);
+  object-fit: contain;
   display: block;
 }
 
 .promo-modal-actions {
-  padding: 12px 14px 14px;
+  padding: 12px 14px;
   background: linear-gradient(180deg, #070d1d 0%, #0d172e 100%);
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -5570,6 +5574,7 @@ ul {
 
 .btn-promo-action {
   padding: 10px 12px;
+  min-height: 44px;
   font-size: 0.82rem;
   font-weight: 700;
   border-radius: 10px;
@@ -5587,33 +5592,110 @@ ul {
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
 }
 
+.promo-modal-skip-btn {
+  background: #070d1d;
+  border: none;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  color: #94a3b8;
+  font-size: 0.78rem;
+  font-weight: 600;
+  padding: 9px 14px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  transition: all 0.2s ease;
+  width: 100%;
+}
+
+.promo-modal-skip-btn:hover,
+.promo-modal-skip-btn:active {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.05);
+}
+
 body.promo-modal-open {
   overflow: hidden;
 }
 
+/* Specific Phone Screen Adaptations */
 @media (max-width: 576px) {
+  .promo-modal-backdrop {
+    padding: 12px 10px 18px;
+    align-items: center;
+  }
+
   .promo-modal-dialog {
-    max-width: 360px;
+    max-width: 350px;
+    width: 95vw;
   }
+
+  .promo-modal-content {
+    border-radius: 16px;
+    border-width: 1.5px;
+  }
+
+  .promo-modal-img {
+    max-height: min(52vh, 320px);
+  }
+
   .promo-modal-close {
-    top: 8px;
-    right: 8px;
-    width: 34px;
-    height: 34px;
-    font-size: 15px;
+    top: 6px;
+    right: 6px;
+    width: 38px;
+    height: 38px;
+    font-size: 16px;
+    background: rgba(9, 17, 36, 0.95);
+    border-width: 1.5px;
   }
+
   .promo-modal-actions {
     grid-template-columns: 1fr;
     gap: 8px;
-    padding: 10px 12px 12px;
+    padding: 10px 12px 10px;
   }
+
   .btn-promo-action {
     padding: 9px 10px;
-    font-size: 0.8rem;
+    min-height: 42px;
+    font-size: 0.82rem;
   }
+
+  .promo-modal-skip-btn {
+    font-size: 0.75rem;
+    padding: 8px 10px;
+  }
+
+  .hero-badge-wrap {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    margin-bottom: 12px;
+    width: 100%;
+  }
+
+  .hero-badge,
   .hero-offer-badge {
     font-size: 0.72rem;
     padding: 5px 10px;
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 380px) {
+  .promo-modal-dialog {
+    max-width: 310px;
+  }
+
+  .promo-modal-img {
+    max-height: 48vh;
+  }
+
+  .btn-promo-action {
+    font-size: 0.78rem;
+    min-height: 40px;
   }
 }
 
