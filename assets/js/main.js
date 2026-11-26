@@ -637,6 +637,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const promoOverlay = document.getElementById('promoModalOverlay');
 
   if (promoModal) {
+    document.body.classList.add('promo-modal-open');
     const closePromo = () => {
       promoModal.classList.add('is-hidden');
       document.body.classList.remove('promo-modal-open');

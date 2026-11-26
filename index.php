@@ -291,11 +291,11 @@ require_once __DIR__ . '/includes/header.php';
       <button type="button" class="promo-modal-close" id="promoModalCloseBtn" onclick="var m=document.getElementById('promoOfferModal'); if(m){ m.classList.add('is-hidden'); setTimeout(function(){ m.style.display='none'; }, 220); } document.body.classList.remove('promo-modal-open');" aria-label="Close Special Offer" title="Close">
         <i class="fa-solid fa-xmark"></i>
       </button>
-      <div class="promo-modal-content">
-        <div class="promo-modal-img-wrap">
-          <img src="assets/images/mirrakh.jpeg" alt="Mirrikh Group Industrial Plots in Dholera for Sale @ ₹8,950 per sq yd with 1% Assured Return" class="promo-modal-img" loading="eager">
+      <div class="promo-modal-content" style="background: #ffffff; border-radius: 18px;">
+        <div class="promo-modal-img-wrap" style="background: #ffffff;">
+          <img src="assets/images/mirrakh.jpeg?v=<?php echo time(); ?>" alt="Mirrikh Group Industrial Plots in Dholera for Sale @ ₹8,950 per sq yd with 1% Assured Return" class="promo-modal-img" loading="eager" style="background: #ffffff;">
         </div>
-        <div class="promo-modal-actions">
+        <div class="promo-modal-actions" style="background: #ffffff;">
           <a href="https://wa.me/<?php echo $WHATSAPP_NUMBER; ?>?text=<?php echo urlencode('Hi, I saw the Mirrikh Group Industrial Plots offer in Dholera (@ ₹8,950/yd with 1% Assured Return for 36 Months). Please share brochure, layout plan & site visit details.'); ?>" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp btn-promo-action">
             <i class="fa-brands fa-whatsapp fa-lg"></i> <span>Claim on WhatsApp</span>
           </a>

@@ -5406,7 +5406,7 @@ ul {
 }
 
 /* ==========================================================================
-   MIRRIKH GROUP SPECIAL OFFER POPUP MODAL (CENTER OVER HERO)
+   MIRRIKH GROUP SPECIAL OFFER POPUP MODAL (LIGHT THEME - CENTER OVER HERO)
    ========================================================================== */
 .promo-modal-backdrop {
   position: fixed;
@@ -5432,9 +5432,9 @@ ul {
 .promo-modal-overlay {
   position: fixed;
   inset: 0;
-  background: rgba(3, 7, 18, 0.85);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+  background: rgba(15, 23, 42, 0.52);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
 }
 
 .promo-modal-dialog {
@@ -5455,21 +5455,21 @@ ul {
 
 .promo-modal-close {
   position: absolute;
-  top: -14px;
-  right: -14px;
+  top: -12px;
+  right: -12px;
   z-index: 10;
-  width: 42px;
-  height: 42px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
-  background: #091124;
-  border: 2px solid #fbbf24;
-  color: #ffffff;
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  color: #0f172a;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 18px;
   cursor: pointer;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
   transition: all 0.2s ease;
   touch-action: manipulation;
 }
@@ -5483,18 +5483,18 @@ ul {
 }
 
 .promo-modal-content {
-  background: #070d1d;
-  border: 2px solid rgba(251, 191, 36, 0.5);
-  border-radius: 20px;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 18px;
   overflow: hidden;
-  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.85), 0 0 35px rgba(251, 191, 36, 0.25);
+  box-shadow: 0 25px 60px -10px rgba(0, 0, 0, 0.35), 0 0 0 1px rgba(0, 0, 0, 0.05);
   display: flex;
   flex-direction: column;
 }
 
 .promo-modal-img-wrap {
   width: 100%;
-  background: #030712;
+  background: #ffffff;
   line-height: 0;
   position: relative;
 }
@@ -5505,21 +5505,22 @@ ul {
   max-height: min(58vh, 420px);
   object-fit: contain;
   display: block;
+  background: #ffffff;
 }
 
 .promo-modal-actions {
   padding: 12px 14px;
-  background: linear-gradient(180deg, #070d1d 0%, #0d172e 100%);
+  background: #ffffff;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 10px;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-top: 1px solid #f1f5f9;
 }
 
 .btn-promo-action {
   padding: 10px 12px;
   min-height: 44px;
-  font-size: 0.82rem;
+  font-size: 0.85rem;
   font-weight: 700;
   border-radius: 10px;
   display: inline-flex;
@@ -5533,17 +5534,17 @@ ul {
 
 .btn-promo-action:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
 }
 
 .promo-modal-skip-btn {
-  background: #070d1d;
+  background: #f8fafc;
   border: none;
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
-  color: #94a3b8;
-  font-size: 0.78rem;
+  border-top: 1px solid #e2e8f0;
+  color: #64748b;
+  font-size: 0.82rem;
   font-weight: 600;
-  padding: 9px 14px;
+  padding: 10px 14px;
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -5555,8 +5556,8 @@ ul {
 
 .promo-modal-skip-btn:hover,
 .promo-modal-skip-btn:active {
-  color: #ffffff;
-  background: rgba(255, 255, 255, 0.05);
+  color: #0f172a;
+  background: #f1f5f9;
 }
 
 body.promo-modal-open {
@@ -5577,7 +5578,6 @@ body.promo-modal-open {
 
   .promo-modal-content {
     border-radius: 16px;
-    border-width: 1.5px;
   }
 
   .promo-modal-img {
@@ -5590,8 +5590,9 @@ body.promo-modal-open {
     width: 38px;
     height: 38px;
     font-size: 16px;
-    background: rgba(9, 17, 36, 0.95);
-    border-width: 1.5px;
+    background: #ffffff;
+    border: 1px solid #cbd5e1;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
   }
 
   .promo-modal-actions {
@@ -5607,8 +5608,8 @@ body.promo-modal-open {
   }
 
   .promo-modal-skip-btn {
-    font-size: 0.75rem;
-    padding: 8px 10px;
+    font-size: 0.78rem;
+    padding: 9px 10px;
   }
 
   .hero-badge {
