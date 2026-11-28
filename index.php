@@ -1952,11 +1952,17 @@ require_once __DIR__ . '/includes/header.php';
   <section class="dedicated-contact-section" id="contact">
     <div class="container">
       <div class="section-header text-center">
-        <span class="section-tag"><i class="fa-solid fa-headset"></i> DIRECT INVESTOR DESK</span>
-        <h2 class="section-title">Connect with Our Dholera SIR Advisory Team</h2>
+        <span class="contact-fresh-tag"><i class="fa-solid fa-headset"></i> DIRECT INVESTOR ADVISORY DESK</span>
+        <h2 class="section-title">Connect with Our <span class="text-gold-gradient">Dholera SIR Experts</span></h2>
         <p class="section-subtitle">
-          Get verified plot availability, latest government NA rate sheets, legal title deed documentation, or book your free guided on-ground site visit directly with our senior property advisors.
+          Get <strong>100% verified plot availability</strong>, latest <strong>2026 government NA rate sheets</strong>, and complete legal title deeds — or <strong>book your free guided on-ground site visit</strong> directly with our senior property advisors.
         </p>
+        <div class="contact-header-pills">
+          <span class="ch-pill"><i class="fa-solid fa-bolt text-gold"></i> 15-Min Instant Callback</span>
+          <span class="ch-pill"><i class="fa-solid fa-file-circle-check text-emerald"></i> Official 2026 NA Rates</span>
+          <span class="ch-pill"><i class="fa-solid fa-car-side text-blue"></i> Free Guided Site Visit</span>
+          <span class="ch-pill"><i class="fa-solid fa-shield-halved text-purple"></i> 100% Clear Legal Titles</span>
+        </div>
       </div>
 
       <div class="contact-section-grid">
