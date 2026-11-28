@@ -763,4 +763,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
     return false;
   };
+
+  // 10. Hero Carousel Smooth Auto-Rotation & Touch Swipe
+  const heroCarouselEl = document.getElementById('heroCarousel');
+  if (heroCarouselEl && typeof bootstrap !== 'undefined' && bootstrap.Carousel) {
+    const heroCarousel = bootstrap.Carousel.getOrCreateInstance(heroCarouselEl, {
+      interval: 5500,
+      ride: 'carousel',
+      pause: 'hover',
+      wrap: true,
+      touch: true
+    });
+    heroCarousel.cycle();
+  }
 });

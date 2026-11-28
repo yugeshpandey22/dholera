@@ -221,64 +221,149 @@ require_once __DIR__ . '/includes/header.php';
 
 <main>
   <!-- ======================================================================
-         3. HERO SECTION (BANNER WITH TEXT, BADGES & CTAs)
+         3. HERO SECTION (INTERACTIVE SLIDER WITH BANNER2.PNG & BEST COPY)
          ====================================================================== -->
   <section class="hero-section" id="home">
-    <div class="hero-banner-bg"></div>
-    <div class="container hero-banner-container">
-      <div class="hero-content">
-        <div class="hero-badge">
-          <i class="fa-solid fa-city"></i> Invest Today In Tomorrow's Smart City
-        </div>
-        <h1 class="hero-title">
-          <span class="highlight-red">Dholera</span> Smart City Plots <br>
-          <span class="highlight-gold">Residential &amp; Industrial</span> Land for Sale
-        </h1>
-        <p class="hero-subtitle">
-          Secure high-ROI <strong>Dholera SIR plots</strong> in India's first platinum-rated greenfield smart city. 100% legal, clear title, NA-approved plots with world-class expressway, airport &amp; metro connectivity.
-        </p>
+    <div id="heroCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="5500" data-bs-pause="hover">
+      <!-- Carousel Indicators -->
+      <div class="carousel-indicators hero-carousel-indicators">
+        <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1 - Dholera Smart City Plots"></button>
+        <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1" aria-label="Slide 2 - Future-Ready Investment Corridor"></button>
+      </div>
 
-        <!-- Feature Badges -->
-        <div class="hero-features-row">
-          <div class="hero-feat-item">
-            <div class="hero-feat-icon"><i class="fa-solid fa-landmark"></i></div>
-            <div class="hero-feat-text">Govt. Planned Greenfield City</div>
-          </div>
-          <div class="hero-feat-item">
-            <div class="hero-feat-icon"><i class="fa-solid fa-plane-departure"></i></div>
-            <div class="hero-feat-text">International Airport Zone</div>
-          </div>
-          <div class="hero-feat-item">
-            <div class="hero-feat-icon"><i class="fa-solid fa-microchip"></i></div>
-            <div class="hero-feat-text">Tata Semiconductor Hub</div>
-          </div>
-          <div class="hero-feat-item">
-            <div class="hero-feat-icon"><i class="fa-solid fa-road"></i></div>
-            <div class="hero-feat-text">6-Lane Expressway &amp; Metro</div>
-          </div>
-          <div class="hero-feat-item">
-            <div class="hero-feat-icon"><i class="fa-solid fa-file-shield"></i></div>
-            <div class="hero-feat-text">100% Clear Title &amp; NA Plots</div>
-          </div>
-          <div class="hero-feat-item">
-            <div class="hero-feat-icon"><i class="fa-solid fa-chart-line"></i></div>
-            <div class="hero-feat-text">High Capital Appreciation</div>
+      <div class="carousel-inner">
+        <!-- ==================== SLIDE 1 ==================== -->
+        <div class="carousel-item active">
+          <div class="hero-slide-wrapper">
+            <div class="hero-banner-bg hero-bg-1"></div>
+            <div class="container hero-banner-container">
+              <div class="hero-content">
+                <div class="hero-badge">
+                  <i class="fa-solid fa-city"></i> Invest Today In Tomorrow's Smart City
+                </div>
+                <h1 class="hero-title">
+                  <span class="highlight-red">Dholera</span> Smart City Plots <br>
+                  <span class="highlight-gold">Residential &amp; Industrial</span> Land for Sale
+                </h1>
+                <p class="hero-subtitle">
+                  Secure high-ROI <strong>Dholera SIR plots</strong> in India's first platinum-rated greenfield smart city. 100% legal, clear title, NA-approved plots with world-class expressway, airport &amp; metro connectivity.
+                </p>
+
+                <!-- Feature Badges -->
+                <div class="hero-features-row">
+                  <div class="hero-feat-item">
+                    <div class="hero-feat-icon"><i class="fa-solid fa-landmark"></i></div>
+                    <div class="hero-feat-text">Govt. Planned Greenfield City</div>
+                  </div>
+                  <div class="hero-feat-item">
+                    <div class="hero-feat-icon"><i class="fa-solid fa-plane-departure"></i></div>
+                    <div class="hero-feat-text">International Airport Zone</div>
+                  </div>
+                  <div class="hero-feat-item">
+                    <div class="hero-feat-icon"><i class="fa-solid fa-microchip"></i></div>
+                    <div class="hero-feat-text">Tata Semiconductor Hub</div>
+                  </div>
+                  <div class="hero-feat-item">
+                    <div class="hero-feat-icon"><i class="fa-solid fa-road"></i></div>
+                    <div class="hero-feat-text">6-Lane Expressway &amp; Metro</div>
+                  </div>
+                  <div class="hero-feat-item">
+                    <div class="hero-feat-icon"><i class="fa-solid fa-file-shield"></i></div>
+                    <div class="hero-feat-text">100% Clear Title &amp; NA Plots</div>
+                  </div>
+                  <div class="hero-feat-item">
+                    <div class="hero-feat-icon"><i class="fa-solid fa-chart-line"></i></div>
+                    <div class="hero-feat-text">High Capital Appreciation</div>
+                  </div>
+                </div>
+
+                <!-- Hero Action CTAs -->
+                <div class="hero-cta-group">
+                  <a href="<?php echo $WHATSAPP_LINK; ?>" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp btn-lg whatsapp-pulse">
+                    <i class="fa-brands fa-whatsapp fa-lg"></i> <span>Chat on WhatsApp</span>
+                  </a>
+                  <a href="<?php echo $PHONE_TEL; ?>" class="btn btn-call btn-lg pulse-animation">
+                    <i class="fa-solid fa-phone"></i> <span>Direct Call: <?php echo htmlspecialchars($PHONE_DISPLAY); ?></span>
+                  </a>
+                  <a href="#plots" class="btn btn-gold btn-lg">
+                    <i class="fa-solid fa-map-location-dot"></i> <span>Explore Verified Plots</span>
+                  </a>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
-        <!-- Hero Action CTAs -->
-        <div class="hero-cta-group">
-          <a href="<?php echo $WHATSAPP_LINK; ?>" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp btn-lg whatsapp-pulse">
-            <i class="fa-brands fa-whatsapp fa-lg"></i> <span>Chat on WhatsApp</span>
-          </a>
-          <a href="<?php echo $PHONE_TEL; ?>" class="btn btn-call btn-lg pulse-animation">
-            <i class="fa-solid fa-phone"></i> <span>Direct Call: <?php echo htmlspecialchars($PHONE_DISPLAY); ?></span>
-          </a>
-          <a href="#plots" class="btn btn-gold btn-lg">
-            <i class="fa-solid fa-map-location-dot"></i> <span>Explore Verified Plots</span>
-          </a>
+        <!-- ==================== SLIDE 2 (BANNER2.PNG) ==================== -->
+        <div class="carousel-item">
+          <div class="hero-slide-wrapper">
+            <div class="hero-banner-bg hero-bg-2"></div>
+            <div class="container hero-banner-container">
+              <div class="hero-content">
+                <div class="hero-badge">
+                  <i class="fa-solid fa-train-subway"></i> Express Metro &amp; Airport Corridor Investment
+                </div>
+                <h2 class="hero-title">
+                  <span class="highlight-gold">Future-Ready</span> Dholera SIR <br>
+                  <span class="highlight-red">Prime Commercial &amp; Villa Plots</span> Near Airport
+                </h2>
+                <p class="hero-subtitle">
+                  Step into India's fastest-growing economic corridor. Premium NA-approved plots inside TP-1 &amp; TP-2 activation zone with immediate registry, 100% clear titles &amp; exponential capital growth.
+                </p>
+
+                <!-- Feature Badges for Slide 2 -->
+                <div class="hero-features-row">
+                  <div class="hero-feat-item">
+                    <div class="hero-feat-icon"><i class="fa-solid fa-train"></i></div>
+                    <div class="hero-feat-text">Express Metro &amp; Monorail Hub</div>
+                  </div>
+                  <div class="hero-feat-item">
+                    <div class="hero-feat-icon"><i class="fa-solid fa-industry"></i></div>
+                    <div class="hero-feat-text">Tata &amp; Micron Tech Anchor</div>
+                  </div>
+                  <div class="hero-feat-item">
+                    <div class="hero-feat-icon"><i class="fa-solid fa-stamp"></i></div>
+                    <div class="hero-feat-text">RERA Approved &amp; Legal NA</div>
+                  </div>
+                  <div class="hero-feat-item">
+                    <div class="hero-feat-icon"><i class="fa-solid fa-handshake"></i></div>
+                    <div class="hero-feat-text">Zero Brokerage &amp; Direct Deal</div>
+                  </div>
+                  <div class="hero-feat-item">
+                    <div class="hero-feat-icon"><i class="fa-solid fa-key"></i></div>
+                    <div class="hero-feat-text">Instant Sale Deed Registry</div>
+                  </div>
+                  <div class="hero-feat-item">
+                    <div class="hero-feat-icon"><i class="fa-solid fa-van-shuttle"></i></div>
+                    <div class="hero-feat-text">Free Ahmedabad Site Visits</div>
+                  </div>
+                </div>
+
+                <!-- Hero Action CTAs -->
+                <div class="hero-cta-group">
+                  <a href="<?php echo $WHATSAPP_LINK; ?>" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp btn-lg whatsapp-pulse">
+                    <i class="fa-brands fa-whatsapp fa-lg"></i> <span>Get Project Master Plan</span>
+                  </a>
+                  <a href="<?php echo $PHONE_TEL; ?>" class="btn btn-call btn-lg pulse-animation">
+                    <i class="fa-solid fa-phone"></i> <span>Direct Call: <?php echo htmlspecialchars($PHONE_DISPLAY); ?></span>
+                  </a>
+                  <a href="#contact" class="btn btn-gold btn-lg">
+                    <i class="fa-solid fa-car-side"></i> <span>Book Free Site Visit</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
+
+      <!-- Carousel Navigation Arrows -->
+      <button class="carousel-control-prev hero-carousel-control hero-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev" aria-label="Previous Slide">
+        <i class="fa-solid fa-chevron-left"></i>
+      </button>
+      <button class="carousel-control-next hero-carousel-control hero-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next" aria-label="Next Slide">
+        <i class="fa-solid fa-chevron-right"></i>
+      </button>
     </div>
   </section>
 
