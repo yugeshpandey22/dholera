@@ -21,7 +21,7 @@ $WHATSAPP_LINK    = "https://api.whatsapp.com/send?phone=" . $WHATSAPP_NUMBER . 
 
 // 🌐 Website & Brand Info
 $SITE_NAME        = "Dholera Smart City Plots | Dholera SIR Gujarat";
-$LIVE_DOMAIN      = "dholera.adikka.com";
+$LIVE_DOMAIN      = "dholera.top";
 $HTTP_HOST        = $_SERVER['HTTP_HOST'] ?? $LIVE_DOMAIN;
 $IS_LOCAL         = (strpos($HTTP_HOST, 'localhost') !== false || strpos($HTTP_HOST, '127.0.0.1') !== false);
 $BASE_URI         = $IS_LOCAL ? '/smartcity/' : '/';
