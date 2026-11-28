@@ -6889,6 +6889,42 @@ body.promo-modal-open {
   border-right: 1px solid rgba(255, 255, 255, 0.15);
 }
 
+/* Phone Live Validation Feedback UI */
+.phone-feedback {
+  font-size: 0.78rem;
+  font-weight: 600;
+  margin-top: 6px;
+  min-height: 18px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.2s ease;
+}
+
+.phone-feedback.hint {
+  color: #94a3b8;
+}
+
+.phone-feedback.success {
+  color: #22c55e !important;
+}
+
+.phone-feedback.error {
+  color: #ef4444 !important;
+}
+
+.phone-input-wrap.phone-valid,
+.promo-input-box.phone-valid {
+  border-color: #22c55e !important;
+  box-shadow: 0 0 10px rgba(34, 197, 94, 0.35) !important;
+}
+
+.phone-input-wrap.phone-invalid,
+.promo-input-box.phone-invalid {
+  border-color: #ef4444 !important;
+  box-shadow: 0 0 10px rgba(239, 68, 68, 0.35) !important;
+}
+
 .dedicated-contact-form .phone-ctrl {
   border: none !important;
   background: transparent !important;

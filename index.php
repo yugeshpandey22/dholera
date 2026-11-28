@@ -406,11 +406,12 @@ require_once __DIR__ . '/includes/header.php';
 
             <!-- Phone Input -->
             <div class="promo-input-group">
-              <label for="promoPhone" class="promo-input-label">WhatsApp / Mobile Number</label>
+              <label for="promoPhone" class="promo-input-label">WhatsApp / Mobile Number <span style="color:#ef4444;">*</span></label>
               <div class="promo-input-box">
                 <span class="promo-phone-prefix">+91</span>
                 <input type="tel" id="promoPhone" name="phone" class="promo-input-field" placeholder="10-digit Mobile (Starts 6-9)" pattern="[6-9][0-9]{9}" maxlength="10" required autocomplete="tel" title="Please enter a valid 10-digit Indian mobile number starting with 6, 7, 8 or 9">
               </div>
+              <div class="phone-feedback" id="promoPhoneFeedback"></div>
             </div>
 
             <!-- Interest Selection (Radio Chips) -->
@@ -2042,11 +2043,12 @@ require_once __DIR__ . '/includes/header.php';
                   <input type="text" id="dName" name="name" class="form-ctrl" placeholder="e.g. Ramesh Patel" required autocomplete="name">
                 </div>
                 <div class="form-group">
-                  <label for="dPhone"><i class="fa-solid fa-phone"></i> WhatsApp Mobile <span class="req">*</span></label>
+                  <label for="dPhone"><i class="fa-solid fa-phone"></i> WhatsApp Mobile (+91) <span class="req">*</span></label>
                   <div class="phone-input-wrap">
                     <span class="country-prefix">+91</span>
                     <input type="tel" id="dPhone" name="phone" class="form-ctrl phone-ctrl" placeholder="10-digit Number (Starts 6-9)" pattern="[6-9][0-9]{9}" maxlength="10" required autocomplete="tel" title="Please enter a valid 10-digit Indian mobile number starting with 6, 7, 8 or 9">
                   </div>
+                  <div class="phone-feedback" id="dPhoneFeedback"></div>
                 </div>
               </div>
 

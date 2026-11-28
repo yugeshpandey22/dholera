@@ -656,15 +656,65 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
 
+    // Comprehensive Indian Mobile Number Validator (Matching strict backend rules)
+    function validateIndianMobileNumber(raw) {
+      let clean = (raw || '').replace(/\D/g, '');
+      if (clean.length > 10 && (clean.startsWith('91') || clean.startsWith('0'))) {
+        clean = clean.replace(/^(91|0)/, '');
+      }
+      clean = clean.slice(0, 10);
+
+      if (clean.length < 10) {
+        return { valid: false, clean, message: `${10 - clean.length} more digit${10 - clean.length > 1 ? 's' : ''} required` };
+      }
+      if (!/^[6-9]/.test(clean)) {
+        return { valid: false, clean, message: 'Must start with 6, 7, 8 or 9 (Indian Mobile)' };
+      }
+      // Reject identical 10 digits (9999999999, 8888888888)
+      if (/^(\d)\1{9}$/.test(clean)) {
+        return { valid: false, clean, message: 'Please enter genuine mobile number (repeated digits)' };
+      }
+      // Reject 6 or more consecutive identical digits (9999991234, 9000000123)
+      if (/(\d)\1{5,}/.test(clean)) {
+        return { valid: false, clean, message: 'Please enter valid mobile number (unrealistic repetition)' };
+      }
+      // Reject repetitive 2-digit patterns (9898989898, 9797979797, 9191919191)
+      if (/^(\d{2})\1{4}$/.test(clean)) {
+        return { valid: false, clean, message: 'Please enter genuine mobile number (pattern detected)' };
+      }
+      // Reject repetitive 3-digit patterns (9879879879)
+      if (/^(\d{3})\1{2}\d$/.test(clean)) {
+        return { valid: false, clean, message: 'Please enter genuine mobile number (pattern detected)' };
+      }
+      // Reject 7 or more trailing zeros
+      if (/^[6-9]0{7,}$/.test(clean)) {
+        return { valid: false, clean, message: 'Please enter genuine mobile number' };
+      }
+      // Blacklisted dummy sequences
+      const blacklisted = [
+        '1234567890', '0123456789', '9876543210', '8765432109', '7654321098',
+        '6789012345', '9123456789', '9898989898', '9797979797', '9090909090',
+        '8989898989', '7878787878', '6767676767', '9999988888', '8888899999',
+        '9876500000', '9876598765', '9988776655', '9012345678'
+      ];
+      if (blacklisted.includes(clean)) {
+        return { valid: false, clean, message: 'Please enter genuine 10-digit mobile number' };
+      }
+
+      return { valid: true, clean, message: '✓ Sahi 10-digit Indian Mobile Verified' };
+    }
+
     // Lead Inquiry Form Submission Handler
     window.handlePromoFormSubmit = function(e) {
       if (e) e.preventDefault();
       const nameInput = document.getElementById('promoName');
       const phoneInput = document.getElementById('promoPhone');
+      const feedbackEl = document.getElementById('promoPhoneFeedback');
+      const wrapEl = phoneInput ? phoneInput.closest('.promo-input-box') : null;
       const interestInput = document.querySelector('input[name="plot_interest"]:checked');
 
       const name = nameInput ? nameInput.value.trim() : '';
-      let phone = phoneInput ? phoneInput.value.trim().replace(/\D/g, '') : '';
+      const rawPhone = phoneInput ? phoneInput.value.trim() : '';
       const interest = interestInput ? interestInput.value : 'Mirrikh Industrial Plots @ ₹8,950/yd';
 
       if (!name) {
@@ -673,18 +723,22 @@ document.addEventListener('DOMContentLoaded', () => {
         return false;
       }
 
-      if (phone.length > 10 && (phone.startsWith('91') || phone.startsWith('0'))) {
-        phone = phone.slice(-10);
-      }
-
-      const phoneRegex = /^[6-9]\d{9}$/;
-      const isDummy = /^(\d)\1{9}$/.test(phone) || ['1234567890', '0123456789', '9876543210', '9898989898'].includes(phone);
-
-      if (!phoneRegex.test(phone) || isDummy) {
-        alert('Kripya sahi 10-digit mobile number dalein (6, 7, 8 ya 9 se shuru hone wala).\nPlease enter a valid 10-digit Indian mobile number.');
+      const check = validateIndianMobileNumber(rawPhone);
+      if (!check.valid) {
+        if (feedbackEl) {
+          feedbackEl.className = 'phone-feedback error';
+          feedbackEl.innerHTML = '<i class="fa-solid fa-circle-xmark"></i> ' + check.message;
+        }
+        if (wrapEl) {
+          wrapEl.classList.add('phone-invalid');
+          wrapEl.classList.remove('phone-valid');
+        }
+        alert('Kripya apna sahi 10-digit mobile number dalein.\n' + check.message);
         if (phoneInput) phoneInput.focus();
         return false;
       }
+
+      const phone = check.clean;
 
       // Success UI state
       const successBox = document.getElementById('promoFormSuccess');
@@ -818,12 +872,14 @@ document.addEventListener('DOMContentLoaded', () => {
     if (e) e.preventDefault();
     const nameInput = document.getElementById('dName');
     const phoneInput = document.getElementById('dPhone');
+    const feedbackEl = document.getElementById('dPhoneFeedback');
+    const wrapEl = phoneInput ? phoneInput.closest('.phone-input-wrap') : null;
     const emailInput = document.getElementById('dEmail');
     const interestInput = document.getElementById('dInterest');
     const messageInput = document.getElementById('dMessage');
 
     const name = nameInput ? nameInput.value.trim() : '';
-    let phone = phoneInput ? phoneInput.value.trim().replace(/\D/g, '') : '';
+    const rawPhone = phoneInput ? phoneInput.value.trim() : '';
     const email = emailInput ? emailInput.value.trim() : '';
     const interest = interestInput ? interestInput.value : 'Residential Plots (Mayur Signature 2 @ Rojka)';
     const message = messageInput ? messageInput.value.trim() : '';
@@ -834,18 +890,22 @@ document.addEventListener('DOMContentLoaded', () => {
       return false;
     }
 
-    if (phone.length > 10 && (phone.startsWith('91') || phone.startsWith('0'))) {
-      phone = phone.slice(-10);
-    }
-
-    const phoneRegex = /^[6-9]\d{9}$/;
-    const isDummy = /^(\d)\1{9}$/.test(phone) || ['1234567890', '0123456789', '9876543210', '9898989898'].includes(phone);
-
-    if (!phoneRegex.test(phone) || isDummy) {
-      alert('Kripya sahi 10-digit Indian mobile number dalein (6, 7, 8 ya 9 se shuru hone wala).\nPlease enter a valid 10-digit mobile number.');
+    const check = validateIndianMobileNumber(rawPhone);
+    if (!check.valid) {
+      if (feedbackEl) {
+        feedbackEl.className = 'phone-feedback error';
+        feedbackEl.innerHTML = '<i class="fa-solid fa-circle-xmark"></i> ' + check.message;
+      }
+      if (wrapEl) {
+        wrapEl.classList.add('phone-invalid');
+        wrapEl.classList.remove('phone-valid');
+      }
+      alert('Kripya apna sahi 10-digit mobile number dalein.\n' + check.message);
       if (phoneInput) phoneInput.focus();
       return false;
     }
+
+    const phone = check.clean;
 
     const successBox = document.getElementById('dFormSuccess');
     const submitBtn = document.getElementById('dSubmitBtn');
@@ -898,12 +958,76 @@ document.addEventListener('DOMContentLoaded', () => {
     return false;
   };
 
-  // Real-time Phone Inputs Sanitizer (Allows only digits, max 10)
-  ['promoPhone', 'contactPhone', 'dPhone'].forEach(id => {
-    const el = document.getElementById(id);
+  // Real-time Phone Inputs Sanitizer & Live Validation UI (Strict Indian 10-digits starting 6-9)
+  [
+    { inputId: 'promoPhone', feedbackId: 'promoPhoneFeedback' },
+    { inputId: 'dPhone', feedbackId: 'dPhoneFeedback' },
+    { inputId: 'contactPhone', feedbackId: 'contactPhoneFeedback' }
+  ].forEach(pair => {
+    const el = document.getElementById(pair.inputId);
+    const fb = document.getElementById(pair.feedbackId);
+    const wrap = el ? el.closest('.phone-input-wrap, .promo-input-box') : null;
+
     if (el) {
       el.addEventListener('input', function() {
-        this.value = this.value.replace(/\D/g, '').slice(0, 10);
+        // Strip non-digits
+        let val = this.value.replace(/\D/g, '');
+
+        // If user typed leading 0 or 91 with full number, strip prefix
+        if (val.length > 10 && (val.startsWith('91') || val.startsWith('0'))) {
+          val = val.replace(/^(91|0)/, '');
+        }
+
+        // Real-time block non-6-9 first digit
+        if (val.length > 0 && !/^[6-9]/.test(val)) {
+          this.value = '';
+          if (fb) {
+            fb.className = 'phone-feedback error';
+            fb.innerHTML = '<i class="fa-solid fa-circle-xmark"></i> Indian mobile must start with 6, 7, 8 or 9';
+          }
+          if (wrap) {
+            wrap.classList.add('phone-invalid');
+            wrap.classList.remove('phone-valid');
+          }
+          return;
+        }
+
+        // Limit to 10 digits
+        val = val.slice(0, 10);
+        this.value = val;
+
+        const check = validateIndianMobileNumber(val);
+        if (val.length === 0) {
+          if (fb) {
+            fb.className = 'phone-feedback';
+            fb.innerHTML = '';
+          }
+          if (wrap) wrap.classList.remove('phone-valid', 'phone-invalid');
+        } else if (check.valid) {
+          if (fb) {
+            fb.className = 'phone-feedback success';
+            fb.innerHTML = '<i class="fa-solid fa-circle-check"></i> ' + check.message;
+          }
+          if (wrap) {
+            wrap.classList.add('phone-valid');
+            wrap.classList.remove('phone-invalid');
+          }
+        } else if (val.length === 10) {
+          if (fb) {
+            fb.className = 'phone-feedback error';
+            fb.innerHTML = '<i class="fa-solid fa-circle-xmark"></i> ' + check.message;
+          }
+          if (wrap) {
+            wrap.classList.add('phone-invalid');
+            wrap.classList.remove('phone-valid');
+          }
+        } else {
+          if (fb) {
+            fb.className = 'phone-feedback hint';
+            fb.innerHTML = '<i class="fa-solid fa-circle-info"></i> ' + check.message;
+          }
+          if (wrap) wrap.classList.remove('phone-valid', 'phone-invalid');
+        }
       });
     }
   });
