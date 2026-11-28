@@ -278,34 +278,141 @@ require_once __DIR__ . '/includes/header.php';
             <i class="fa-solid fa-map-location-dot"></i> <span>Explore Verified Plots</span>
           </a>
         </div>
+
+        <!-- Instant Hero Lead Capture Card (High Converting for Google & Meta Ads) -->
+        <div class="hero-quick-form-card">
+          <div class="hq-header">
+            <span class="hq-badge"><i class="fa-solid fa-bolt"></i> 2026 UPDATED PRICE SHEET</span>
+            <h3 class="hq-title">Download Dholera Plots Brochure &amp; Rate List</h3>
+            <p class="hq-desc">Enter details to get verified plot availability, payment plans &amp; free guided site visit pass.</p>
+          </div>
+          <form class="hq-form" onsubmit="return handleHeroLeadSubmit(event);">
+            <div class="hq-inputs-row">
+              <div class="hq-input-box">
+                <i class="fa-solid fa-user hq-icon"></i>
+                <input type="text" id="heroLeadName" class="hq-input" placeholder="Your Full Name" required autocomplete="name">
+              </div>
+              <div class="hq-input-box">
+                <span class="hq-prefix">+91</span>
+                <input type="tel" id="heroLeadPhone" class="hq-input" placeholder="10-digit WhatsApp Number" pattern="[0-9]{10}" maxlength="10" required autocomplete="tel">
+              </div>
+              <button type="submit" class="btn btn-hq-submit" id="heroLeadSubmitBtn">
+                <i class="fa-brands fa-whatsapp fa-lg"></i>
+                <span>Get Instant Brochure on WhatsApp</span>
+              </button>
+            </div>
+            <div class="hq-form-success" id="heroLeadSuccess" style="display: none;">
+              <i class="fa-solid fa-circle-check"></i>
+              <span>Connecting to WhatsApp with Price Sheet &amp; Brochure...</span>
+            </div>
+            <div class="hq-trust-row">
+              <span><i class="fa-solid fa-shield-halved"></i> 100% Privacy</span>
+              <span><i class="fa-solid fa-certificate"></i> Govt. NA Clear Titles</span>
+              <span><i class="fa-solid fa-phone"></i> Direct Call: <strong>+91 <?php echo htmlspecialchars($PHONE_RAW); ?></strong></span>
+            </div>
+          </form>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- ======================================================================
-         MIRRIKH GROUP SPECIAL OFFER POPUP MODAL (CENTER OVERLAY)
+         MIRRIKH GROUP SPECIAL OFFER POPUP WITH LEAD INQUIRY FORM (BEST WAY)
          ====================================================================== -->
-  <div class="promo-modal-backdrop" id="promoOfferModal" role="dialog" aria-modal="true" aria-label="Mirrikh Group Industrial Plots Special Offer">
+  <div class="promo-modal-backdrop" id="promoOfferModal" role="dialog" aria-modal="true" aria-label="Mirrikh Group Industrial Plots Special Offer with Inquiry Form">
     <div class="promo-modal-overlay" id="promoModalOverlay" onclick="var m=document.getElementById('promoOfferModal'); if(m){ m.classList.add('is-hidden'); setTimeout(function(){ m.style.display='none'; }, 220); } document.body.classList.remove('promo-modal-open');"></div>
     <div class="promo-modal-dialog">
       <button type="button" class="promo-modal-close" id="promoModalCloseBtn" onclick="var m=document.getElementById('promoOfferModal'); if(m){ m.classList.add('is-hidden'); setTimeout(function(){ m.style.display='none'; }, 220); } document.body.classList.remove('promo-modal-open');" aria-label="Close Special Offer" title="Close">
         <i class="fa-solid fa-xmark"></i>
       </button>
-      <div class="promo-modal-content" style="background: #ffffff; border-radius: 18px;">
-        <div class="promo-modal-img-wrap" style="background: #ffffff;">
-          <img src="assets/images/mirrakh.jpeg?v=<?php echo time(); ?>" alt="Mirrikh Group Industrial Plots in Dholera for Sale @ ₹8,950 per sq yd with 1% Assured Return" class="promo-modal-img" loading="eager" style="background: #ffffff;">
-        </div>
-        <div class="promo-modal-actions" style="background: #ffffff;">
-          <a href="https://wa.me/<?php echo $WHATSAPP_NUMBER; ?>?text=<?php echo urlencode('Hi, I saw the Mirrikh Group Industrial Plots offer in Dholera (@ ₹8,950/yd with 1% Assured Return for 36 Months). Please share brochure, layout plan & site visit details.'); ?>" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp btn-promo-action">
-            <i class="fa-brands fa-whatsapp fa-lg"></i> <span>Claim on WhatsApp</span>
+
+      <div class="promo-modal-card">
+        <!-- Left Side: Offer Poster Image -->
+        <div class="promo-modal-poster-col">
+          <div class="promo-poster-badge">
+            <i class="fa-solid fa-fire"></i> Limited Units @ ₹8,950/yd
+          </div>
+          <a href="https://wa.me/<?php echo $WHATSAPP_NUMBER; ?>?text=<?php echo urlencode('Hi, I saw the Mirrikh Group Industrial Plots offer in Dholera (@ ₹8,950/yd with 1% Assured Return for 36 Months). Please share brochure, layout plan & site visit details.'); ?>" target="_blank" rel="noopener noreferrer" class="promo-img-link" title="Click to Chat on WhatsApp">
+            <img src="assets/images/mirrakh.jpeg?v=<?php echo time(); ?>" alt="Mirrikh Group Industrial Plots in Dholera for Sale @ ₹8,950 per sq yd with 1% Assured Return" class="promo-modal-img" loading="eager">
           </a>
-          <a href="<?php echo $PHONE_TEL; ?>" class="btn btn-call btn-promo-action">
-            <i class="fa-solid fa-phone"></i> <span>Call: <?php echo htmlspecialchars($PHONE_RAW); ?></span>
-          </a>
         </div>
-        <button type="button" class="promo-modal-skip-btn" id="promoModalSkipBtn" onclick="var m=document.getElementById('promoOfferModal'); if(m){ m.classList.add('is-hidden'); setTimeout(function(){ m.style.display='none'; }, 220); } document.body.classList.remove('promo-modal-open');" aria-label="Skip Offer and Continue to Website">
-          <span>✕ Close &amp; Continue to Website</span>
-        </button>
+
+        <!-- Right Side: Lead Capture Form -->
+        <div class="promo-modal-form-col">
+          <div class="promo-form-header">
+            <span class="promo-tag"><i class="fa-solid fa-bolt"></i> SPECIAL OFFER @ ₹8,950/YD</span>
+          </div>
+
+          <form id="promoLeadForm" class="promo-lead-form" onsubmit="return handlePromoFormSubmit(event);">
+            <!-- Name Input -->
+            <div class="promo-input-group">
+              <label for="promoName" class="promo-input-label">Your Name</label>
+              <div class="promo-input-box">
+                <i class="fa-solid fa-user promo-input-icon"></i>
+                <input type="text" id="promoName" name="name" class="promo-input-field" placeholder="Enter Full Name" required autocomplete="name">
+              </div>
+            </div>
+
+            <!-- Phone Input -->
+            <div class="promo-input-group">
+              <label for="promoPhone" class="promo-input-label">WhatsApp / Mobile Number</label>
+              <div class="promo-input-box">
+                <span class="promo-phone-prefix">+91</span>
+                <input type="tel" id="promoPhone" name="phone" class="promo-input-field" placeholder="10-digit Mobile Number" pattern="[0-9]{10}" maxlength="10" required autocomplete="tel">
+              </div>
+            </div>
+
+            <!-- Interest Selection (Radio Chips) -->
+            <div class="promo-input-group">
+              <label class="promo-input-label">I'm Interested In</label>
+              <div class="promo-interest-options">
+                <label class="promo-chip active">
+                  <input type="radio" name="plot_interest" value="Mirrikh Industrial Plots @ ₹8,950/yd" checked onchange="document.querySelectorAll('.promo-chip').forEach(c=>c.classList.remove('active')); this.closest('.promo-chip').classList.add('active');">
+                  <span>Industrial Plots (@ ₹8,950/yd)</span>
+                </label>
+                <label class="promo-chip">
+                  <input type="radio" name="plot_interest" value="Residential Plots in Dholera" onchange="document.querySelectorAll('.promo-chip').forEach(c=>c.classList.remove('active')); this.closest('.promo-chip').classList.add('active');">
+                  <span>Residential Plots</span>
+                </label>
+              </div>
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit" class="btn btn-promo-submit" id="promoSubmitBtn">
+              <i class="fa-brands fa-whatsapp fa-lg"></i>
+              <span>Get Offer &amp; Brochure on WhatsApp</span>
+            </button>
+
+            <!-- Success Alert -->
+            <div class="promo-form-success" id="promoFormSuccess" style="display: none;">
+              <i class="fa-solid fa-circle-check"></i>
+              <span>Inquiry Received! Connecting to WhatsApp...</span>
+            </div>
+          </form>
+
+          <!-- Alternative Quick Actions -->
+          <div class="promo-quick-row">
+            <span class="promo-or-text">OR CONNECT DIRECTLY</span>
+            <div class="promo-quick-btns">
+              <a href="<?php echo $PHONE_TEL; ?>" class="btn-quick-call">
+                <i class="fa-solid fa-phone"></i> <span>Call: <?php echo htmlspecialchars($PHONE_RAW); ?></span>
+              </a>
+              <a href="https://wa.me/<?php echo $WHATSAPP_NUMBER; ?>?text=<?php echo urlencode('Hi, I want instant details for Mirrikh Group Industrial Plots @ ₹8,950/yd in Dholera.'); ?>" target="_blank" rel="noopener noreferrer" class="btn-quick-wa">
+                <i class="fa-brands fa-whatsapp"></i> <span>Instant Chat</span>
+              </a>
+            </div>
+          </div>
+
+          <div class="promo-trust-badges">
+            <span><i class="fa-solid fa-shield-halved"></i> 100% Privacy</span>
+            <span><i class="fa-solid fa-handshake"></i> Zero Brokerage</span>
+            <span><i class="fa-solid fa-file-signature"></i> Clear Title</span>
+          </div>
+
+          <button type="button" class="promo-modal-skip-btn" onclick="var m=document.getElementById('promoOfferModal'); if(m){ m.classList.add('is-hidden'); setTimeout(function(){ m.style.display='none'; }, 220); } document.body.classList.remove('promo-modal-open');" aria-label="Close and Continue to Website">
+            ✕ Skip &amp; Continue to Website
+          </button>
+        </div>
       </div>
     </div>
   </div>

@@ -6,6 +6,7 @@
 if (!isset($PHONE_RAW)) {
   require_once __DIR__ . '/../config.php';
 }
+require_once __DIR__ . '/tracker.php';
 
 $PAGE_TITLE       = $PAGE_TITLE ?? "Dholera Smart City Plots | Residential & Industrial Land in Dholera SIR";
 $PAGE_DESCRIPTION = $PAGE_DESCRIPTION ?? ($PAGE_DESC ?? "Explore prime Dholera Smart City plots for sale. Verified Dholera residential plots & industrial plots in Dholera SIR Gujarat.");
@@ -74,7 +75,8 @@ $SHOW_TOPBAR      = $SHOW_TOPBAR ?? true;
       defaultMsg: "<?php echo addslashes($WHATSAPP_MESSAGE); ?>",
       baseUri: "<?php echo $BASE_URI; ?>",
       currentRoute: "<?php echo addslashes($CURRENT_ROUTE ?? ''); ?>",
-      targetSection: "<?php echo addslashes($ACTIVE_SECTION ?? ''); ?>"
+      targetSection: "<?php echo addslashes($ACTIVE_SECTION ?? ''); ?>",
+      leadSource: "<?php echo addslashes($_SESSION['lead_source'] ?? ($_COOKIE['dholera_lead_source'] ?? 'Direct')); ?>"
     };
 
     document.addEventListener('contextmenu', function(e) {

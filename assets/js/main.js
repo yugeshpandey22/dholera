@@ -655,5 +655,112 @@ document.addEventListener('DOMContentLoaded', () => {
         closePromo();
       }
     });
+
+    // Lead Inquiry Form Submission Handler
+    window.handlePromoFormSubmit = function(e) {
+      if (e) e.preventDefault();
+      const nameInput = document.getElementById('promoName');
+      const phoneInput = document.getElementById('promoPhone');
+      const interestInput = document.querySelector('input[name="plot_interest"]:checked');
+
+      const name = nameInput ? nameInput.value.trim() : '';
+      const phone = phoneInput ? phoneInput.value.trim().replace(/\D/g, '') : '';
+      const interest = interestInput ? interestInput.value : 'Mirrikh Industrial Plots @ ₹8,950/yd';
+
+      if (!name) {
+        alert('Please enter your full name.');
+        if (nameInput) nameInput.focus();
+        return false;
+      }
+      if (!phone || phone.length < 10) {
+        alert('Please enter a valid 10-digit mobile number.');
+        if (phoneInput) phoneInput.focus();
+        return false;
+      }
+
+      // Success UI state
+      const successBox = document.getElementById('promoFormSuccess');
+      const submitBtn = document.getElementById('promoSubmitBtn');
+      if (successBox) successBox.style.display = 'flex';
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> <span>Connecting to WhatsApp...</span>';
+      }
+
+      const cleanPhone = phone.slice(-10);
+      const whatsappNum = (window.DHOLERA_CONFIG && window.DHOLERA_CONFIG.whatsapp) || '918950591781';
+      const textMsg = `Hi, My name is ${name} (Mobile: ${cleanPhone}). I am interested in ${interest} with 1% Assured Return in Dholera SIR. Please share brochure, layout plan & site visit details.`;
+      const waUrl = `https://api.whatsapp.com/send?phone=${whatsappNum}&text=${encodeURIComponent(textMsg)}`;
+
+      // Save lead to backend CSV & notify via AJAX
+      const formData = new FormData();
+      formData.append('name', name);
+      formData.append('phone', cleanPhone);
+      formData.append('interest', interest);
+      formData.append('source', 'Mirrikh Offer Popup');
+
+      fetch('save-lead.php', {
+        method: 'POST',
+        body: formData
+      }).catch(() => {}).finally(() => {
+        setTimeout(() => {
+          window.location.href = waUrl;
+          closePromo();
+        }, 400);
+      });
+
+      return false;
+    };
   }
+
+  // 9. Hero Instant Lead Form Submission Handler
+  window.handleHeroLeadSubmit = function(e) {
+    if (e) e.preventDefault();
+    const nameInput = document.getElementById('heroLeadName');
+    const phoneInput = document.getElementById('heroLeadPhone');
+
+    const name = nameInput ? nameInput.value.trim() : '';
+    const phone = phoneInput ? phoneInput.value.trim().replace(/\D/g, '') : '';
+
+    if (!name) {
+      alert('Please enter your name.');
+      if (nameInput) nameInput.focus();
+      return false;
+    }
+    if (!phone || phone.length < 10) {
+      alert('Please enter a valid 10-digit mobile number.');
+      if (phoneInput) phoneInput.focus();
+      return false;
+    }
+
+    const cleanPhone = phone.slice(-10);
+    const successBox = document.getElementById('heroLeadSuccess');
+    const submitBtn = document.getElementById('heroLeadSubmitBtn');
+    if (successBox) successBox.style.display = 'flex';
+    if (submitBtn) {
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> <span>Connecting...</span>';
+    }
+
+    const whatsappNum = (window.DHOLERA_CONFIG && window.DHOLERA_CONFIG.whatsapp) || '918950591781';
+    const textMsg = `Hi, My name is ${name} (Mobile: ${cleanPhone}). I saw your Dholera Smart City plots ad. Please share the 2026 Price Sheet, Brochure and Site Visit details.`;
+    const waUrl = `https://api.whatsapp.com/send?phone=${whatsappNum}&text=${encodeURIComponent(textMsg)}`;
+
+    const formData = new FormData();
+    formData.append('name', name);
+    formData.append('phone', cleanPhone);
+    formData.append('interest', 'Dholera Plots Brochure & Price Sheet');
+    formData.append('source', 'Hero Quick Form');
+
+    fetch('save-lead.php', {
+      method: 'POST',
+      body: formData
+    }).catch(() => {}).finally(() => {
+      setTimeout(() => {
+        window.location.href = waUrl;
+      }, 400);
+    });
+
+    return false;
+  };
 });

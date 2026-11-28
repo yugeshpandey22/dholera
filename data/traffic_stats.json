@@ -1,0 +1,18 @@
+{
+    "2026-11-27": {
+        "views": 4,
+        "unique_visitors": 1,
+        "sources": {
+            "Google Ads": 0,
+            "Instagram Ads": 0,
+            "Facebook \/ Meta Ads": 0,
+            "Google Organic": 0,
+            "Direct": 1,
+            "Other": 0
+        },
+        "devices": {
+            "Mobile": 0,
+            "Desktop": 1
+        }
+    }
+}

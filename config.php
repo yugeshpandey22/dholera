@@ -17,7 +17,7 @@ $PHONE_TEL        = "tel:+918950591781";
 // 💬 WhatsApp Details
 $WHATSAPP_NUMBER  = "918950591781";
 $WHATSAPP_MESSAGE = "Hi, I am interested in Dholera Smart City plots (Residential / Industrial). Please share latest price list, brochure, and site visit details.";
-$WHATSAPP_LINK    = "https://wa.me/" . $WHATSAPP_NUMBER . "?text=" . urlencode($WHATSAPP_MESSAGE);
+$WHATSAPP_LINK    = "https://api.whatsapp.com/send?phone=" . $WHATSAPP_NUMBER . "&text=" . urlencode($WHATSAPP_MESSAGE);
 
 // 🌐 Website & Brand Info
 $SITE_NAME        = "Dholera Smart City Plots | Dholera SIR Gujarat";
@@ -102,3 +102,7 @@ $ALL_IN_START_PRICE      = "₹ 14,950 / sq. yd*";
 $RESIDENTIAL_START_PRICE = "₹ 12,450 / sq. yd*";
 $INDUSTRIAL_START_PRICE  = "₹ 9,750 / sq. yd*";
 $INDUSTRIAL_BASE_RATE    = 9750;
+
+// 🔐 Admin Dashboard Security Credentials (Change anytime here)
+$ADMIN_USERNAME = "admin";
+$ADMIN_PASSWORD = "dholera@2026";
