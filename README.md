@@ -3,7 +3,7 @@
 Official web portal and landing platform for **Dholera Smart City Plots** (Dholera Special Investment Region - SIR, Gujarat).
 
 ## 🚀 Overview
-- **Domain:** [http://dholera.adikka.com/](http://dholera.adikka.com/)
+- **Domain:** [https://dholera.top/](https://dholera.top/)
 - **Tech Stack:** PHP 7.4+ / 8.x, Vanilla CSS3, JavaScript (ES6+), Apache HTTP Server with mod_rewrite.
 - **Key Features:**
   - High-conversion responsive design optimized for mobile and desktop.

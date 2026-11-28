@@ -109,8 +109,8 @@ $body = "New Lead Received from Dholera Smart City Landing Page:\n\n"
       . "--------------------------------------------------\n\n"
       . "📞 Call the customer immediately: +91 " . $phoneClean . "\n"
       . "💬 WhatsApp them: https://api.whatsapp.com/send?phone=91" . $phoneClean . "\n";
-$headers = "From: leads@dholera.adikka.com\r\n"
-         . "Reply-To: leads@dholera.adikka.com\r\n"
+$headers = "From: leads@dholera.top\r\n"
+         . "Reply-To: leads@dholera.top\r\n"
          . "X-Mailer: PHP/" . phpversion();
 @mail($to, $subject, $body, $headers);
 

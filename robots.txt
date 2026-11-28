@@ -1,4 +1,7 @@
 User-agent: *
 Allow: /
+Disallow: /admin.php
+Disallow: /data/
+Disallow: /save-lead.php
 
-Sitemap: https://dholera.adikka.com/sitemap.xml
+Sitemap: https://dholera.top/sitemap.xml
