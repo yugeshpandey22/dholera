@@ -100,7 +100,7 @@ if (!isset($PHONE_RAW)) {
           <span>Designed &amp; Developed by</span>
           <span class="credit-link" style="color: #fbbf24; font-weight: 700;">
             <i class="fa-solid fa-code"></i>
-            <span>Pari</span>
+            <span>Mineib Creative Technology</span>
           </span>
         </div>
       </div>
