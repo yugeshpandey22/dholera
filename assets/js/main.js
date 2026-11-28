@@ -775,16 +775,39 @@ document.addEventListener('DOMContentLoaded', () => {
           if (successBox) successBox.style.display = 'none';
           return;
         }
+
+        // 📥 Trigger Automatic Project PDF Brochure Download
+        if (data.pdf_download_url) {
+          const dl = document.createElement('a');
+          dl.href = data.pdf_download_url;
+          dl.setAttribute('download', data.pdf_name || 'Dholera_Project_Brochure.pdf');
+          dl.style.display = 'none';
+          document.body.appendChild(dl);
+          dl.click();
+          setTimeout(() => { if (dl.parentNode) dl.parentNode.removeChild(dl); }, 1500);
+        }
+
+        if (successBox) {
+          successBox.innerHTML = `
+            <div style="text-align:center; padding:12px 6px;">
+              <i class="fa-solid fa-circle-check" style="font-size:2.2rem; color:#22c55e; margin-bottom:8px;"></i>
+              <h4 style="color:#ffffff; font-size:1.15rem; font-weight:700; margin-bottom:4px;">Brochure Downloading!</h4>
+              <p style="color:#cbd5e1; font-size:0.84rem; margin-bottom:10px;">${data.pdf_title || 'Official Project PDF'} is downloading automatically.</p>
+              <a href="${data.pdf_download_url || 'download.php'}" download class="btn btn-sm btn-gold" style="font-weight:700; font-size:0.82rem; padding:6px 14px;"><i class="fa-solid fa-file-arrow-down"></i> Download Again</a>
+            </div>
+          `;
+        }
+
         setTimeout(() => {
           window.location.href = waUrl;
           closePromo();
-        }, 400);
+        }, 1200);
       })
       .catch(() => {
         setTimeout(() => {
           window.location.href = waUrl;
           closePromo();
-        }, 400);
+        }, 1200);
       });
 
       return false;
@@ -945,14 +968,40 @@ document.addEventListener('DOMContentLoaded', () => {
         if (successBox) successBox.style.display = 'none';
         return;
       }
+
+      // 📥 Trigger Automatic Project PDF Brochure Download
+      if (data.pdf_download_url) {
+        const dl = document.createElement('a');
+        dl.href = data.pdf_download_url;
+        dl.setAttribute('download', data.pdf_name || 'Dholera_Project_Brochure.pdf');
+        dl.style.display = 'none';
+        document.body.appendChild(dl);
+        dl.click();
+        setTimeout(() => { if (dl.parentNode) dl.parentNode.removeChild(dl); }, 1500);
+      }
+
+      if (successBox) {
+        successBox.innerHTML = `
+          <div style="text-align:center; padding:16px 10px;">
+            <i class="fa-solid fa-circle-check" style="font-size:2.4rem; color:#22c55e; margin-bottom:10px;"></i>
+            <h4 style="color:#ffffff; font-size:1.25rem; font-weight:700; margin-bottom:6px;">Thank You ${name}! Brochure Downloading...</h4>
+            <p style="color:#cbd5e1; font-size:0.9rem; margin-bottom:14px;">Your official PDF <strong>${data.pdf_title || 'Project Brochure'}</strong> has been triggered automatically.</p>
+            <div style="display:flex; flex-wrap:wrap; gap:10px; justify-content:center;">
+              <a href="${data.pdf_download_url || 'download.php'}" download class="btn btn-sm btn-gold" style="padding:8px 16px; border-radius:6px; font-weight:700;"><i class="fa-solid fa-file-arrow-down"></i> Download PDF Again</a>
+              <a href="${waUrl}" target="_blank" class="btn btn-sm btn-whatsapp" style="padding:8px 16px; border-radius:6px; font-weight:700;"><i class="fa-brands fa-whatsapp"></i> Chat on WhatsApp</a>
+            </div>
+          </div>
+        `;
+      }
+
       setTimeout(() => {
         window.location.href = waUrl;
-      }, 500);
+      }, 1400);
     })
     .catch(() => {
       setTimeout(() => {
         window.location.href = waUrl;
-      }, 500);
+      }, 1400);
     });
 
     return false;

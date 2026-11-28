@@ -772,6 +772,10 @@ require_once __DIR__ . '/includes/header.php';
                 <span>Inquire for <?php echo htmlspecialchars($PROJECT_NAME); ?></span>
                 <i class="fa-solid fa-arrow-right"></i>
               </a>
+              <a href="download.php?project=mayur-signature-2" class="ref-btn-pdf" download title="Download Mayur Signature 2 Brochure PDF">
+                <i class="fa-solid fa-file-pdf"></i>
+                <span>Download Brochure (PDF)</span>
+              </a>
             </div>
           </div>
         </article>
@@ -836,6 +840,10 @@ require_once __DIR__ . '/includes/header.php';
                 <span>Inquire for <?php echo htmlspecialchars($RES2_PROJECT_NAME); ?></span>
                 <i class="fa-solid fa-arrow-right"></i>
               </a>
+              <a href="download.php?project=mayur-swastik-2" class="ref-btn-pdf" download title="Download Mayur Swastik II Brochure PDF">
+                <i class="fa-solid fa-file-pdf"></i>
+                <span>Download Brochure (PDF)</span>
+              </a>
             </div>
           </div>
         </article>
@@ -899,6 +907,10 @@ require_once __DIR__ . '/includes/header.php';
               <a href="<?php echo $WHATSAPP_MAYUR_BP; ?>" target="_blank" rel="noopener noreferrer" class="ref-btn-gold">
                 <span>Inquire for <?php echo htmlspecialchars($IND_PROJECT_NAME); ?></span>
                 <i class="fa-solid fa-arrow-right"></i>
+              </a>
+              <a href="download.php?project=mayur-business-park" class="ref-btn-pdf" download title="Download Mayur Business Park Brochure PDF">
+                <i class="fa-solid fa-file-pdf"></i>
+                <span>Download Brochure (PDF)</span>
               </a>
             </div>
           </div>

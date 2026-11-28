@@ -213,13 +213,35 @@ $whatsappNum = !empty($WHATSAPP_NUMBER) ? $WHATSAPP_NUMBER : '918950591781';
 $waMessage = "Hi, My name is " . $name . " (Mobile: " . $phoneClean . "). I am interested in " . $interest . " in Dholera SIR. Please share brochure, layout plan & site visit details.";
 $waUrl = "https://api.whatsapp.com/send?phone=" . $whatsappNum . "&text=" . urlencode($waMessage);
 
+// 5. Resolve Project Brochure PDF
+$pdfKey = 'mayur-signature-2';
+$pdfName = 'Mayur_Signature_2_Dholera_Brochure.pdf';
+$pdfTitle = 'Mayur Signature 2 (Residential Plots @ Rojka)';
+
+if (stripos($interest, 'business') !== false || stripos($interest, 'industrial') !== false) {
+    $pdfKey = 'mayur-business-park';
+    $pdfName = 'Mayur_Business_Park_Industrial_Brochure.pdf';
+    $pdfTitle = 'Mayur Business Park (Industrial Plots)';
+} elseif (stripos($interest, 'swastik') !== false || stripos($interest, 'kamiyala') !== false) {
+    $pdfKey = 'mayur-swastik-2';
+    $pdfName = 'Mayur_Swastik_II_Dholera_Brochure.pdf';
+    $pdfTitle = 'Mayur Swastik II (Residential Plots @ Kamiyala)';
+}
+
+$pdfDownloadUrl = 'download.php?project=' . $pdfKey;
+$pdfDirectUrl = 'pdf/' . rawurlencode($pdfKey === 'mayur-business-park' ? 'Mayur Business Park.pdf' : ($pdfKey === 'mayur-swastik-2' ? 'Mayur-Swastik-II-by-Mirrikh-Group_web.pdf' : 'Mayur Signature 2.pdf'));
+
 echo json_encode([
     'success' => true,
-    'message' => 'Lead captured successfully!',
+    'message' => 'Lead captured successfully! Brochure download starting...',
     'lead_id' => $newLead['id'],
     'name' => $name,
     'phone' => $phoneClean,
     'source' => $trafficSource,
-    'whatsapp_url' => $waUrl
+    'whatsapp_url' => $waUrl,
+    'pdf_download_url' => $pdfDownloadUrl,
+    'pdf_direct_url' => $pdfDirectUrl,
+    'pdf_name' => $pdfName,
+    'pdf_title' => $pdfTitle
 ]);
 exit;
