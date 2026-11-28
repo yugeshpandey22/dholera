@@ -42,6 +42,25 @@ if (isset($_GET['action']) && $_GET['action'] === 'export_csv') {
     }
 }
 
+// 3. Handle Delete Lead
+if (isset($_GET['action']) && $_GET['action'] === 'delete_lead' && !empty($_GET['id'])) {
+    if (empty($_SESSION['dholera_admin'])) {
+        header('Location: admin.php');
+        exit;
+    }
+    $leadId = trim($_GET['id']);
+    $leadsFile = __DIR__ . '/data/leads.json';
+    if (file_exists($leadsFile)) {
+        $leadsData = @json_decode(file_get_contents($leadsFile), true) ?: [];
+        $leadsData = array_values(array_filter($leadsData, function($l) use ($leadId) {
+            return ($l['id'] ?? '') !== $leadId;
+        }));
+        @file_put_contents($leadsFile, json_encode($leadsData, JSON_PRETTY_PRINT));
+    }
+    header('Location: admin.php');
+    exit;
+}
+
 // 3. Handle Login Submission
 $loginError = '';
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['login_btn'])) {
@@ -648,6 +667,9 @@ $totalLeads = count($leads);
                       </a>
                       <a href="https://api.whatsapp.com/send?phone=91<?php echo htmlspecialchars($lead['phone'] ?? ''); ?>&text=<?php echo urlencode('Hi ' . ($lead['name'] ?? '') . ', thank you for inquiring about Dholera Smart City plots on our website. How can I help you today?'); ?>" target="_blank" class="btn-act btn-act-wa" title="WhatsApp Customer">
                         <i class="fa-brands fa-whatsapp"></i> Chat
+                      </a>
+                      <a href="admin.php?action=delete_lead&id=<?php echo urlencode($lead['id'] ?? ''); ?>" onclick="return confirm('Are you sure you want to delete this lead?');" class="btn-act" style="background: rgba(239, 68, 68, 0.2); color: #ef4444; border: 1px solid rgba(239, 68, 68, 0.4); padding: 5px 8px;" title="Delete Lead">
+                        <i class="fa-solid fa-trash"></i>
                       </a>
                     </div>
                   </td>
