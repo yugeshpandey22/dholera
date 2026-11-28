@@ -96,6 +96,11 @@ $newLead = [
 
 array_unshift($leads, $newLead);
 @file_put_contents($leadsJsonFile, json_encode($leads, JSON_PRETTY_PRINT));
+@chmod($leadsJsonFile, 0666);
+
+// 2. Save to MySQL Database (if configured)
+require_once __DIR__ . '/includes/db.php';
+DholeraDB::insertLead($newLead);
 
 // 2. Save to data/leads.csv & root leads.csv (for Excel Export)
 $csvFiles = [$dataDir . '/leads.csv', __DIR__ . '/leads.csv'];

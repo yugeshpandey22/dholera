@@ -34,6 +34,13 @@ $CANONICAL_URL    = $SCHEME . '://' . ($IS_LOCAL ? $HTTP_HOST : $LIVE_DOMAIN) . 
 // 🔍 Search Engine Verification (Google Search Console)
 $GOOGLE_SITE_VERIFICATION = "s1C0gj0Ze5CXXgNYeXTxgFlQkbIRil6xjpHYkqpwasY";
 
+// 🗄️ MySQL Database Configuration (Optional - Enter MilesWeb DB credentials)
+$DB_HOST = "localhost";
+$DB_NAME = ""; // MilesWeb Database Name (e.g. dmhealth_dholera)
+$DB_USER = ""; // MilesWeb Database Username
+$DB_PASS = ""; // MilesWeb Database Password
+$DB_PORT = "3306";
+
 // 📍 Location / Office Info
 $OFFICE_LOCATION  = "Dholera Special Investment Region (SIR), TP-1 & TP-2 Activation Zone, Gujarat 382455, India";
 $EMAIL_ADDRESS    = "pram.realtyrangers@gmail.com";

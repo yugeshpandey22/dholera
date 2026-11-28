@@ -10,6 +10,7 @@ if (session_status() === PHP_SESSION_NONE) {
 }
 
 require_once __DIR__ . '/config.php';
+require_once __DIR__ . '/includes/db.php';
 
 $adminUser = $ADMIN_USERNAME ?? 'admin';
 $adminPass = $ADMIN_PASSWORD ?? 'dholera@2026';
@@ -49,6 +50,7 @@ if (isset($_GET['action']) && $_GET['action'] === 'delete_lead' && !empty($_GET[
         exit;
     }
     $leadId = trim($_GET['id']);
+    DholeraDB::deleteLead($leadId);
     $leadsFile = __DIR__ . '/data/leads.json';
     if (file_exists($leadsFile)) {
         $leadsData = @json_decode(file_get_contents($leadsFile), true) ?: [];
@@ -85,10 +87,15 @@ $recentVisitors = [];
 if ($isLoggedIn) {
     $dataDir = __DIR__ . '/data';
 
-    // Load Leads
-    $leadsFile = $dataDir . '/leads.json';
-    if (file_exists($leadsFile)) {
-        $leads = @json_decode(file_get_contents($leadsFile), true) ?: [];
+    // Load Leads (From MySQL DB if connected, fallback to JSON)
+    $dbLeads = DholeraDB::getLeads();
+    if ($dbLeads !== null) {
+        $leads = $dbLeads;
+    } else {
+        $leadsFile = $dataDir . '/leads.json';
+        if (file_exists($leadsFile)) {
+            $leads = @json_decode(file_get_contents($leadsFile), true) ?: [];
+        }
     }
 
     // Load Traffic Stats
