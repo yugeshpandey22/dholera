@@ -278,40 +278,6 @@ require_once __DIR__ . '/includes/header.php';
             <i class="fa-solid fa-map-location-dot"></i> <span>Explore Verified Plots</span>
           </a>
         </div>
-
-        <!-- Instant Hero Lead Capture Card (High Converting for Google & Meta Ads) -->
-        <div class="hero-quick-form-card">
-          <div class="hq-header">
-            <span class="hq-badge"><i class="fa-solid fa-bolt"></i> 2026 UPDATED PRICE SHEET</span>
-            <h3 class="hq-title">Download Dholera Plots Brochure &amp; Rate List</h3>
-            <p class="hq-desc">Enter details to get verified plot availability, payment plans &amp; free guided site visit pass.</p>
-          </div>
-          <form class="hq-form" onsubmit="return handleHeroLeadSubmit(event);">
-            <div class="hq-inputs-row">
-              <div class="hq-input-box">
-                <i class="fa-solid fa-user hq-icon"></i>
-                <input type="text" id="heroLeadName" class="hq-input" placeholder="Your Full Name" required autocomplete="name">
-              </div>
-              <div class="hq-input-box">
-                <span class="hq-prefix">+91</span>
-                <input type="tel" id="heroLeadPhone" class="hq-input" placeholder="10-digit WhatsApp Number" pattern="[0-9]{10}" maxlength="10" required autocomplete="tel">
-              </div>
-              <button type="submit" class="btn btn-hq-submit" id="heroLeadSubmitBtn">
-                <i class="fa-brands fa-whatsapp fa-lg"></i>
-                <span>Get Instant Brochure on WhatsApp</span>
-              </button>
-            </div>
-            <div class="hq-form-success" id="heroLeadSuccess" style="display: none;">
-              <i class="fa-solid fa-circle-check"></i>
-              <span>Connecting to WhatsApp with Price Sheet &amp; Brochure...</span>
-            </div>
-            <div class="hq-trust-row">
-              <span><i class="fa-solid fa-shield-halved"></i> 100% Privacy</span>
-              <span><i class="fa-solid fa-certificate"></i> Govt. NA Clear Titles</span>
-              <span><i class="fa-solid fa-phone"></i> Direct Call: <strong>+91 <?php echo htmlspecialchars($PHONE_RAW); ?></strong></span>
-            </div>
-          </form>
-        </div>
       </div>
     </div>
   </section>
