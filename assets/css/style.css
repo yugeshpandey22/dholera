@@ -1133,20 +1133,29 @@ ul {
 .hero-banner-bg {
   position: absolute;
   inset: 0;
-  background-position: center 30%;
   background-size: cover;
   background-repeat: no-repeat;
-  filter: brightness(1.04) contrast(1.05) saturate(1.08);
+  filter: brightness(1.03) contrast(1.05) saturate(1.08);
   z-index: 0;
 }
 
 .hero-bg-1 {
   background-image: url('../images/dholera-hero-fresh.jpg');
+  background-position: center 42%;
 }
 
 .hero-bg-2 {
   background-image: url('../images/banner2.png');
   background-position: center center;
+}
+
+@media (max-width: 768px) {
+  .hero-bg-1 {
+    background-position: center center;
+  }
+  .hero-bg-2 {
+    background-position: center center;
+  }
 }
 
 .hero-banner-bg::after {
