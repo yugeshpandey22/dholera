@@ -29,3 +29,5 @@ jobs:
             **/README.md
             **/.vscode/**
             **/.idea/**
+            **/data/**
+            **/leads.csv
