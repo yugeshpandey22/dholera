@@ -32,7 +32,7 @@ $SCHEME           = $IS_HTTPS ? 'https' : 'http';
 $CANONICAL_URL    = $SCHEME . '://' . ($IS_LOCAL ? $HTTP_HOST : $LIVE_DOMAIN) . $BASE_URI;
 
 // 🔍 Search Engine Verification (Google Search Console)
-$GOOGLE_SITE_VERIFICATION = "sXxJAVDTb3B3toE9YnR9Ptnr6WUfXb7d9J-xe92MCnU";
+$GOOGLE_SITE_VERIFICATION = "s1C0gj0Ze5CXXgNYeXTxgFlQkbIRil6xjpHYkqpwasY";
 
 // 📍 Location / Office Info
 $OFFICE_LOCATION  = "Dholera Special Investment Region (SIR), TP-1 & TP-2 Activation Zone, Gujarat 382455, India";

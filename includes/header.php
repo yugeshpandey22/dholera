@@ -34,7 +34,7 @@ $SHOW_TOPBAR      = $SHOW_TOPBAR ?? true;
   <link rel="canonical" href="<?php echo htmlspecialchars($PAGE_CANONICAL); ?>">
 
   <!-- Google Search Console Verification -->
-  <meta name="google-site-verification" content="<?php echo htmlspecialchars($GOOGLE_SITE_VERIFICATION ?? 'sXxJAVDTb3B3toE9YnR9Ptnr6WUfXb7d9J-xe92MCnU'); ?>" />
+  <meta name="google-site-verification" content="<?php echo htmlspecialchars($GOOGLE_SITE_VERIFICATION ?? 's1C0gj0Ze5CXXgNYeXTxgFlQkbIRil6xjpHYkqpwasY'); ?>" />
 
   <!-- Open Graph -->
   <meta property="og:locale" content="en_US">
