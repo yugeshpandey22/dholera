@@ -814,83 +814,7 @@ document.addEventListener('DOMContentLoaded', () => {
     };
   }
 
-  // 9. Bottom Contact Page Lead Form Handler with Strict Validation
-  window.handleContactFormSubmit = function(e) {
-    if (e) e.preventDefault();
-    const nameInput = document.getElementById('contactName');
-    const phoneInput = document.getElementById('contactPhone');
-    const interestInput = document.getElementById('contactInterest');
-
-    const name = nameInput ? nameInput.value.trim() : '';
-    let phone = phoneInput ? phoneInput.value.trim().replace(/\D/g, '') : '';
-    const interest = interestInput ? interestInput.value : 'Residential Plots (Mayur Signature 2)';
-
-    if (!name) {
-      alert('Please enter your full name.');
-      if (nameInput) nameInput.focus();
-      return false;
-    }
-
-    if (phone.length > 10 && (phone.startsWith('91') || phone.startsWith('0'))) {
-      phone = phone.slice(-10);
-    }
-
-    const phoneRegex = /^[6-9]\d{9}$/;
-    const isDummy = /^(\d)\1{9}$/.test(phone) || ['1234567890', '0123456789', '9876543210', '9898989898'].includes(phone);
-
-    if (!phoneRegex.test(phone) || isDummy) {
-      alert('Kripya sahi 10-digit Indian mobile number dalein (6, 7, 8 ya 9 se shuru hone wala).\nPlease enter a valid 10-digit mobile number.');
-      if (phoneInput) phoneInput.focus();
-      return false;
-    }
-
-    const successBox = document.getElementById('contactFormSuccess');
-    const submitBtn = document.getElementById('contactSubmitBtn');
-    if (successBox) successBox.style.display = 'flex';
-    if (submitBtn) {
-      submitBtn.disabled = true;
-      submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> <span>Saving &amp; Connecting...</span>';
-    }
-
-    const whatsappNum = (window.DHOLERA_CONFIG && window.DHOLERA_CONFIG.whatsapp) || '918950591781';
-    const textMsg = `Hi, My name is ${name} (Mobile: ${phone}). I am interested in ${interest} in Dholera SIR. Please share 2026 Price List, Brochure and Site Visit details.`;
-    const waUrl = `https://api.whatsapp.com/send?phone=${whatsappNum}&text=${encodeURIComponent(textMsg)}`;
-
-    const formData = new FormData();
-    formData.append('name', name);
-    formData.append('phone', phone);
-    formData.append('interest', interest);
-    formData.append('source', 'Bottom Contact Section Form');
-
-    fetch('save-lead.php', {
-      method: 'POST',
-      body: formData
-    })
-    .then(r => r.json())
-    .then(data => {
-      if (!data.success) {
-        alert(data.message || 'Validation error');
-        if (submitBtn) {
-          submitBtn.disabled = false;
-          submitBtn.innerHTML = '<i class="fa-brands fa-whatsapp"></i> <span>Get Instant Rates on WhatsApp</span>';
-        }
-        if (successBox) successBox.style.display = 'none';
-        return;
-      }
-      setTimeout(() => {
-        window.location.href = waUrl;
-      }, 500);
-    })
-    .catch(() => {
-      setTimeout(() => {
-        window.location.href = waUrl;
-      }, 500);
-    });
-
-    return false;
-  };
-
-  // 10. Dedicated Contact Section Form Handler with Strict Phone Validation
+  // 9. Dedicated Contact Section Form Handler with Strict Phone Validation
   window.handleDedicatedContactSubmit = function(e) {
     if (e) e.preventDefault();
     const nameInput = document.getElementById('dName');
@@ -1010,8 +934,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // Real-time Phone Inputs Sanitizer & Live Validation UI (Strict Indian 10-digits starting 6-9)
   [
     { inputId: 'promoPhone', feedbackId: 'promoPhoneFeedback' },
-    { inputId: 'dPhone', feedbackId: 'dPhoneFeedback' },
-    { inputId: 'contactPhone', feedbackId: 'contactPhoneFeedback' }
+    { inputId: 'dPhone', feedbackId: 'dPhoneFeedback' }
   ].forEach(pair => {
     const el = document.getElementById(pair.inputId);
     const fb = document.getElementById(pair.feedbackId);
