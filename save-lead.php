@@ -15,7 +15,9 @@ require_once __DIR__ . '/config.php';
 
 $name     = trim($_POST['name'] ?? '');
 $phone    = trim($_POST['phone'] ?? '');
-$interest = trim($_POST['interest'] ?? 'Mirrikh Group Industrial Plots @ ₹8,950/yd');
+$email    = trim($_POST['email'] ?? '');
+$interest = trim($_POST['interest'] ?? 'Residential Plots in Dholera');
+$message  = trim($_POST['message'] ?? '');
 $formType = trim($_POST['source'] ?? 'Website Inquiry');
 
 if (empty($name)) {
@@ -84,7 +86,9 @@ $newLead = [
     'id'        => 'LD-' . time() . '-' . rand(100, 999),
     'name'      => $name,
     'phone'     => $phoneClean,
+    'email'     => $email,
     'interest'  => $interest,
+    'message'   => $message,
     'form'      => $formType,
     'source'    => $trafficSource,
     'source_type' => $trafficType,

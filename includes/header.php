@@ -159,6 +159,7 @@ $SHOW_TOPBAR      = $SHOW_TOPBAR ?? true;
           <li><a href="<?php echo $BASE_URI; ?>infrastructure" class="nav-link <?php echo ($ACTIVE_NAV === 'infrastructure') ? 'active' : ''; ?>" data-section="infrastructure">Infrastructure</a></li>
           <li><a href="<?php echo $BASE_URI; ?>gallery" class="nav-link <?php echo ($ACTIVE_NAV === 'gallery') ? 'active' : ''; ?>" data-section="gallery">Gallery</a></li>
           <li><a href="<?php echo $BASE_URI; ?>faqs" class="nav-link <?php echo ($ACTIVE_NAV === 'faqs') ? 'active' : ''; ?>" data-section="faqs">FAQs</a></li>
+          <li><a href="<?php echo $BASE_URI; ?>contact" class="nav-link <?php echo ($ACTIVE_NAV === 'contact') ? 'active' : ''; ?>" data-section="contact">Contact Us</a></li>
         </ul>
 
         <!-- Direct Action Buttons -->
@@ -226,6 +227,10 @@ $SHOW_TOPBAR      = $SHOW_TOPBAR ?? true;
         </a>
         <a href="<?php echo $BASE_URI; ?>faqs" data-section="faqs" class="<?php echo ($ACTIVE_NAV === 'faqs') ? 'active' : ''; ?>">
           <span><i class="fa-solid fa-circle-question link-icon"></i> Frequently Asked Questions</span>
+          <i class="fa-solid fa-chevron-right chevron-icon"></i>
+        </a>
+        <a href="<?php echo $BASE_URI; ?>contact" data-section="contact" class="<?php echo ($ACTIVE_NAV === 'contact') ? 'active' : ''; ?>">
+          <span><i class="fa-solid fa-headset link-icon"></i> Contact Us</span>
           <i class="fa-solid fa-chevron-right chevron-icon"></i>
         </a>
       </div>

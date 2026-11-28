@@ -1947,62 +1947,143 @@ require_once __DIR__ . '/includes/header.php';
   </section>
 
   <!-- ======================================================================
-         15. BOTTOM CTA BANNER (DIRECT CALL & WHATSAPP)
+         15. DEDICATED CONTACT US & INVESTOR DESK SECTION
          ====================================================================== -->
-  <section class="bottom-cta-banner" id="contact">
+  <section class="dedicated-contact-section" id="contact">
     <div class="container">
-      <div class="cta-box-inner">
-        <h2 class="cta-box-title">Don't Miss India’s Biggest Investment Wave</h2>
-        <p class="cta-box-desc">
-          Join thousands of smart investors securing clear-title plots in Dholera SIR. Connect directly with our on-site team for genuine rates, instant site visits, and brochure.
+      <div class="section-header text-center">
+        <span class="section-tag"><i class="fa-solid fa-headset"></i> DIRECT INVESTOR DESK</span>
+        <h2 class="section-title">Connect with Our Dholera SIR Advisory Team</h2>
+        <p class="section-subtitle">
+          Get verified plot availability, latest government NA rate sheets, legal title deed documentation, or book your free guided on-ground site visit directly with our senior property advisors.
         </p>
-        <div class="cta-buttons-row">
-          <a href="<?php echo $PHONE_TEL; ?>" class="btn btn-call btn-lg pulse-animation">
-            <i class="fa-solid fa-phone-volume"></i> <span>Direct Call: <?php echo htmlspecialchars($PHONE_DISPLAY); ?></span>
-          </a>
-          <a href="<?php echo $WHATSAPP_LINK; ?>" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp btn-lg whatsapp-pulse">
-            <i class="fa-brands fa-whatsapp"></i> <span>Chat on WhatsApp</span>
-          </a>
+      </div>
+
+      <div class="contact-section-grid">
+        <!-- Left Column: Direct Contact Info & Office Desk -->
+        <div class="contact-info-column">
+          <div class="contact-info-header">
+            <h3>Direct Contact Channels</h3>
+            <p>Zero brokerage advisory for residential &amp; industrial plots across TP-1 &amp; TP-2 activation areas.</p>
+          </div>
+
+          <div class="contact-cards-list">
+            <!-- Card 1: Phone -->
+            <a href="<?php echo $PHONE_TEL; ?>" class="contact-card-item">
+              <div class="contact-card-icon c-icon-phone"><i class="fa-solid fa-phone-volume"></i></div>
+              <div class="contact-card-text">
+                <span class="c-label">Direct Investor Hotline:</span>
+                <strong class="c-val">+91 <?php echo htmlspecialchars($PHONE_DISPLAY); ?></strong>
+                <span class="c-sub">Mon - Sun: 8:00 AM to 9:00 PM (Instant Response)</span>
+              </div>
+              <div class="contact-card-arrow"><i class="fa-solid fa-chevron-right"></i></div>
+            </a>
+
+            <!-- Card 2: WhatsApp -->
+            <a href="<?php echo $WHATSAPP_LINK; ?>" target="_blank" rel="noopener noreferrer" class="contact-card-item">
+              <div class="contact-card-icon c-icon-wa"><i class="fa-brands fa-whatsapp"></i></div>
+              <div class="contact-card-text">
+                <span class="c-label">Official WhatsApp Desk:</span>
+                <strong class="c-val">Chat on WhatsApp (+91 <?php echo htmlspecialchars($PHONE_RAW); ?>)</strong>
+                <span class="c-sub">Instant brochures, payment plans &amp; layout maps</span>
+              </div>
+              <div class="contact-card-arrow"><i class="fa-solid fa-chevron-right"></i></div>
+            </a>
+
+            <!-- Card 3: Site Office -->
+            <div class="contact-card-item no-click">
+              <div class="contact-card-icon c-icon-loc"><i class="fa-solid fa-location-dot"></i></div>
+              <div class="contact-card-text">
+                <span class="c-label">Site Office Location:</span>
+                <strong class="c-val">TP-1 &amp; TP-2 Activation Zone, Dholera SIR</strong>
+                <span class="c-sub">Near ABCD Building, Dholera, Gujarat 382455</span>
+              </div>
+            </div>
+
+            <!-- Card 4: Site Tour -->
+            <div class="contact-card-item no-click">
+              <div class="contact-card-icon c-icon-tour"><i class="fa-solid fa-car-side"></i></div>
+              <div class="contact-card-text">
+                <span class="c-label">Free Guided Site Visits:</span>
+                <strong class="c-val">Daily Tours from Ahmedabad &amp; Gandhinagar</strong>
+                <span class="c-sub">Complimentary pick-up, physical plot inspection &amp; boundary check</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Trust Badges Strip -->
+          <div class="contact-trust-strip">
+            <div><i class="fa-solid fa-shield-halved"></i> 100% Legal Clear Titles</div>
+            <div><i class="fa-solid fa-file-signature"></i> Instant Registry</div>
+            <div><i class="fa-solid fa-handshake-simple"></i> Zero Brokerage</div>
+          </div>
         </div>
 
-        <!-- High-Converting On-Page Lead Capture Form -->
-        <div class="contact-lead-form-box">
-          <div class="contact-form-title-wrap">
-            <span class="contact-form-badge"><i class="fa-solid fa-bolt"></i> GET DIRECT INVESTOR DESK CALLBACK</span>
-            <h3 class="contact-form-h3">Request Instant Callback &amp; 2026 Price Sheet</h3>
-            <p class="contact-form-sub">Enter your verified details to receive genuine plot rates, payment plans &amp; free guided site visit pass.</p>
+        <!-- Right Column: Dedicated Contact Us Form -->
+        <div class="contact-form-column">
+          <div class="contact-form-container">
+            <div class="contact-form-header">
+              <span class="form-tag"><i class="fa-solid fa-envelope-open-text"></i> QUICK INQUIRY &amp; CALLBACK</span>
+              <h3>Send Inquiry or Book Site Visit</h3>
+              <p>Leave your verified contact details and our senior Dholera consultant will connect within 15 minutes.</p>
+            </div>
+
+            <form id="dedicatedContactForm" class="dedicated-contact-form" onsubmit="return handleDedicatedContactSubmit(event);">
+              <!-- Name & Mobile Row -->
+              <div class="form-row-2">
+                <div class="form-group">
+                  <label for="dName"><i class="fa-solid fa-user"></i> Full Name <span class="req">*</span></label>
+                  <input type="text" id="dName" name="name" class="form-ctrl" placeholder="e.g. Ramesh Patel" required autocomplete="name">
+                </div>
+                <div class="form-group">
+                  <label for="dPhone"><i class="fa-solid fa-phone"></i> WhatsApp Mobile <span class="req">*</span></label>
+                  <div class="phone-input-wrap">
+                    <span class="country-prefix">+91</span>
+                    <input type="tel" id="dPhone" name="phone" class="form-ctrl phone-ctrl" placeholder="10-digit Number (Starts 6-9)" pattern="[6-9][0-9]{9}" maxlength="10" required autocomplete="tel" title="Please enter a valid 10-digit Indian mobile number starting with 6, 7, 8 or 9">
+                  </div>
+                </div>
+              </div>
+
+              <!-- Email & Interest Row -->
+              <div class="form-row-2">
+                <div class="form-group">
+                  <label for="dEmail"><i class="fa-solid fa-envelope"></i> Email Address <span class="opt">(Optional)</span></label>
+                  <input type="email" id="dEmail" name="email" class="form-ctrl" placeholder="name@example.com" autocomplete="email">
+                </div>
+                <div class="form-group">
+                  <label for="dInterest"><i class="fa-solid fa-city"></i> Plot Category <span class="req">*</span></label>
+                  <select id="dInterest" name="interest" class="form-ctrl">
+                    <option value="Residential Plots (Mayur Signature 2 @ Rojka)">Residential Plots (Mayur Signature 2 @ Rojka)</option>
+                    <option value="Residential Plots (Mayur Swastik II @ Kamiyala)">Residential Plots (Mayur Swastik II @ Kamiyala)</option>
+                    <option value="Industrial Manufacturing Plots">Industrial Manufacturing Plots</option>
+                    <option value="Schedule Free Guided Site Visit from Ahmedabad">Schedule Free Guided Site Visit from Ahmedabad</option>
+                    <option value="Request 2026 Price Sheet &amp; Layout Plan">Request 2026 Price Sheet &amp; Layout Plan</option>
+                  </select>
+                </div>
+              </div>
+
+              <!-- Message / Requirement -->
+              <div class="form-group">
+                <label for="dMessage"><i class="fa-solid fa-comment-dots"></i> Specific Requirement / Questions <span class="opt">(Optional)</span></label>
+                <textarea id="dMessage" name="message" class="form-ctrl textarea-ctrl" rows="3" placeholder="Tell us your preferred plot size (e.g. 150 sq.yd), budget, or when you wish to visit Dholera..."></textarea>
+              </div>
+
+              <!-- Submit Button -->
+              <button type="submit" class="btn btn-gold btn-lg w-100 btn-submit-contact" id="dSubmitBtn">
+                <i class="fa-brands fa-whatsapp fa-lg"></i>
+                <span>Send Inquiry &amp; Receive Details on WhatsApp</span>
+              </button>
+
+              <!-- Success Alert -->
+              <div class="contact-success-alert" id="dFormSuccess" style="display: none;">
+                <i class="fa-solid fa-circle-check fa-lg"></i>
+                <div>
+                  <strong>Inquiry Successfully Received &amp; Saved!</strong>
+                  <span>Connecting to our senior Dholera advisory desk on WhatsApp...</span>
+                </div>
+              </div>
+            </form>
           </div>
-          <form id="contactPageForm" class="contact-page-form" onsubmit="return handleContactFormSubmit(event);">
-            <div class="contact-form-grid">
-              <div class="contact-form-field">
-                <label for="contactName"><i class="fa-solid fa-user"></i> Full Name</label>
-                <input type="text" id="contactName" name="name" placeholder="Enter Full Name" required autocomplete="name">
-              </div>
-              <div class="contact-form-field">
-                <label for="contactPhone"><i class="fa-solid fa-phone"></i> Mobile Number (+91)</label>
-                <input type="tel" id="contactPhone" name="phone" placeholder="10-digit Mobile (Starts 6-9)" pattern="[6-9][0-9]{9}" maxlength="10" required autocomplete="tel" title="Please enter a valid 10-digit Indian mobile number starting with 6, 7, 8 or 9">
-              </div>
-              <div class="contact-form-field">
-                <label for="contactInterest"><i class="fa-solid fa-city"></i> Plot Category</label>
-                <select id="contactInterest" name="interest">
-                  <option value="Residential Plots (Mayur Signature 2)">Residential Plots (Mayur Signature 2)</option>
-                  <option value="Residential Plots (Mayur Swastik II)">Residential Plots (Mayur Swastik II)</option>
-                  <option value="Industrial Land / Plots">Industrial Land / Plots</option>
-                  <option value="Free Guided Site Visit Pass">Free Guided Site Visit Pass</option>
-                </select>
-              </div>
-              <div class="contact-form-field contact-submit-col">
-                <label class="d-none d-md-block">&nbsp;</label>
-                <button type="submit" class="btn btn-gold btn-lg w-100" id="contactSubmitBtn">
-                  <i class="fa-brands fa-whatsapp"></i> <span>Get Instant Rates on WhatsApp</span>
-                </button>
-              </div>
-            </div>
-            <div class="contact-form-success" id="contactFormSuccess" style="display: none;">
-              <i class="fa-solid fa-circle-check"></i>
-              <span>Thank You! Your inquiry has been received. Opening WhatsApp...</span>
-            </div>
-          </form>
         </div>
       </div>
     </div>

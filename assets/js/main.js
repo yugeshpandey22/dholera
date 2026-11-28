@@ -813,8 +813,93 @@ document.addEventListener('DOMContentLoaded', () => {
     return false;
   };
 
+  // 10. Dedicated Contact Section Form Handler with Strict Phone Validation
+  window.handleDedicatedContactSubmit = function(e) {
+    if (e) e.preventDefault();
+    const nameInput = document.getElementById('dName');
+    const phoneInput = document.getElementById('dPhone');
+    const emailInput = document.getElementById('dEmail');
+    const interestInput = document.getElementById('dInterest');
+    const messageInput = document.getElementById('dMessage');
+
+    const name = nameInput ? nameInput.value.trim() : '';
+    let phone = phoneInput ? phoneInput.value.trim().replace(/\D/g, '') : '';
+    const email = emailInput ? emailInput.value.trim() : '';
+    const interest = interestInput ? interestInput.value : 'Residential Plots (Mayur Signature 2 @ Rojka)';
+    const message = messageInput ? messageInput.value.trim() : '';
+
+    if (!name) {
+      alert('Please enter your full name.');
+      if (nameInput) nameInput.focus();
+      return false;
+    }
+
+    if (phone.length > 10 && (phone.startsWith('91') || phone.startsWith('0'))) {
+      phone = phone.slice(-10);
+    }
+
+    const phoneRegex = /^[6-9]\d{9}$/;
+    const isDummy = /^(\d)\1{9}$/.test(phone) || ['1234567890', '0123456789', '9876543210', '9898989898'].includes(phone);
+
+    if (!phoneRegex.test(phone) || isDummy) {
+      alert('Kripya sahi 10-digit Indian mobile number dalein (6, 7, 8 ya 9 se shuru hone wala).\nPlease enter a valid 10-digit mobile number.');
+      if (phoneInput) phoneInput.focus();
+      return false;
+    }
+
+    const successBox = document.getElementById('dFormSuccess');
+    const submitBtn = document.getElementById('dSubmitBtn');
+    if (successBox) successBox.style.display = 'flex';
+    if (submitBtn) {
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> <span>Saving Lead &amp; Connecting...</span>';
+    }
+
+    const whatsappNum = (window.DHOLERA_CONFIG && window.DHOLERA_CONFIG.whatsapp) || '918950591781';
+    let textMsg = `Hi, My name is ${name} (Mobile: ${phone}). I am contacting regarding ${interest} in Dholera SIR.`;
+    if (message) {
+      textMsg += ` Requirement: ${message}`;
+    }
+    const waUrl = `https://api.whatsapp.com/send?phone=${whatsappNum}&text=${encodeURIComponent(textMsg)}`;
+
+    const formData = new FormData();
+    formData.append('name', name);
+    formData.append('phone', phone);
+    formData.append('email', email);
+    formData.append('interest', interest);
+    formData.append('message', message);
+    formData.append('source', 'Dedicated Contact Us Section Form');
+
+    fetch('save-lead.php', {
+      method: 'POST',
+      body: formData
+    })
+    .then(r => r.json())
+    .then(data => {
+      if (!data.success) {
+        alert(data.message || 'Validation error');
+        if (submitBtn) {
+          submitBtn.disabled = false;
+          submitBtn.innerHTML = '<i class="fa-brands fa-whatsapp fa-lg"></i> <span>Send Inquiry &amp; Receive Details on WhatsApp</span>';
+        }
+        if (successBox) successBox.style.display = 'none';
+        return;
+      }
+      setTimeout(() => {
+        window.location.href = waUrl;
+      }, 500);
+    })
+    .catch(() => {
+      setTimeout(() => {
+        window.location.href = waUrl;
+      }, 500);
+    });
+
+    return false;
+  };
+
   // Real-time Phone Inputs Sanitizer (Allows only digits, max 10)
-  ['promoPhone', 'contactPhone'].forEach(id => {
+  ['promoPhone', 'contactPhone', 'dPhone'].forEach(id => {
     const el = document.getElementById(id);
     if (el) {
       el.addEventListener('input', function() {
