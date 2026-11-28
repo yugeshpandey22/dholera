@@ -1,7 +1,7 @@
 <?php
 /**
  * Common Footer Template
- * Dholera Smart City Plots
+ * Dholera Smart City Plots - Mineib Creative Technology
  */
 if (!isset($PHONE_RAW)) {
   require_once __DIR__ . '/../config.php';
