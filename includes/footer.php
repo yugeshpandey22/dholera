@@ -93,15 +93,15 @@ if (!isset($PHONE_RAW)) {
         </div>
       </div>
 
-      <!-- Bottom Bar with Mineib Creative Technology Credit -->
+      <!-- Bottom Bar -->
       <div class="footer-bottom">
         <div>&copy; <?php echo date('Y'); ?> Realty Rangers. All Rights Reserved.</div>
         <div class="footer-credit">
           <span>Designed &amp; Developed by</span>
-          <a href="https://mineib.com/" target="_blank" rel="noopener noreferrer" class="credit-link" title="Mineib Creative Technology - Digital Agency &amp; Web Solutions">
-            <i class="fa-solid fa-laptop-code"></i>
-            <span>Mineib Creative Technology</span>
-          </a>
+          <span class="credit-link" style="color: #fbbf24; font-weight: 700;">
+            <i class="fa-solid fa-code"></i>
+            <span>Yugesh Pandey</span>
+          </span>
         </div>
       </div>
     </div>
