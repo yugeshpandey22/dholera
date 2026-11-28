@@ -409,7 +409,7 @@ require_once __DIR__ . '/includes/header.php';
               <label for="promoPhone" class="promo-input-label">WhatsApp / Mobile Number</label>
               <div class="promo-input-box">
                 <span class="promo-phone-prefix">+91</span>
-                <input type="tel" id="promoPhone" name="phone" class="promo-input-field" placeholder="10-digit Mobile Number" pattern="[0-9]{10}" maxlength="10" required autocomplete="tel">
+                <input type="tel" id="promoPhone" name="phone" class="promo-input-field" placeholder="10-digit Mobile (Starts 6-9)" pattern="[6-9][0-9]{9}" maxlength="10" required autocomplete="tel" title="Please enter a valid 10-digit Indian mobile number starting with 6, 7, 8 or 9">
               </div>
             </div>
 
@@ -1963,6 +1963,46 @@ require_once __DIR__ . '/includes/header.php';
           <a href="<?php echo $WHATSAPP_LINK; ?>" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp btn-lg whatsapp-pulse">
             <i class="fa-brands fa-whatsapp"></i> <span>Chat on WhatsApp</span>
           </a>
+        </div>
+
+        <!-- High-Converting On-Page Lead Capture Form -->
+        <div class="contact-lead-form-box">
+          <div class="contact-form-title-wrap">
+            <span class="contact-form-badge"><i class="fa-solid fa-bolt"></i> GET DIRECT INVESTOR DESK CALLBACK</span>
+            <h3 class="contact-form-h3">Request Instant Callback &amp; 2026 Price Sheet</h3>
+            <p class="contact-form-sub">Enter your verified details to receive genuine plot rates, payment plans &amp; free guided site visit pass.</p>
+          </div>
+          <form id="contactPageForm" class="contact-page-form" onsubmit="return handleContactFormSubmit(event);">
+            <div class="contact-form-grid">
+              <div class="contact-form-field">
+                <label for="contactName"><i class="fa-solid fa-user"></i> Full Name</label>
+                <input type="text" id="contactName" name="name" placeholder="Enter Full Name" required autocomplete="name">
+              </div>
+              <div class="contact-form-field">
+                <label for="contactPhone"><i class="fa-solid fa-phone"></i> Mobile Number (+91)</label>
+                <input type="tel" id="contactPhone" name="phone" placeholder="10-digit Mobile (Starts 6-9)" pattern="[6-9][0-9]{9}" maxlength="10" required autocomplete="tel" title="Please enter a valid 10-digit Indian mobile number starting with 6, 7, 8 or 9">
+              </div>
+              <div class="contact-form-field">
+                <label for="contactInterest"><i class="fa-solid fa-city"></i> Plot Category</label>
+                <select id="contactInterest" name="interest">
+                  <option value="Residential Plots (Mayur Signature 2)">Residential Plots (Mayur Signature 2)</option>
+                  <option value="Residential Plots (Mayur Swastik II)">Residential Plots (Mayur Swastik II)</option>
+                  <option value="Industrial Land / Plots">Industrial Land / Plots</option>
+                  <option value="Free Guided Site Visit Pass">Free Guided Site Visit Pass</option>
+                </select>
+              </div>
+              <div class="contact-form-field contact-submit-col">
+                <label class="d-none d-md-block">&nbsp;</label>
+                <button type="submit" class="btn btn-gold btn-lg w-100" id="contactSubmitBtn">
+                  <i class="fa-brands fa-whatsapp"></i> <span>Get Instant Rates on WhatsApp</span>
+                </button>
+              </div>
+            </div>
+            <div class="contact-form-success" id="contactFormSuccess" style="display: none;">
+              <i class="fa-solid fa-circle-check"></i>
+              <span>Thank You! Your inquiry has been received. Opening WhatsApp...</span>
+            </div>
+          </form>
         </div>
       </div>
     </div>

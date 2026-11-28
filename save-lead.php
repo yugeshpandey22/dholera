@@ -18,17 +18,44 @@ $phone    = trim($_POST['phone'] ?? '');
 $interest = trim($_POST['interest'] ?? 'Mirrikh Group Industrial Plots @ ₹8,950/yd');
 $formType = trim($_POST['source'] ?? 'Website Inquiry');
 
-if (empty($name) || empty($phone)) {
-    echo json_encode(['success' => false, 'message' => 'Name and phone are required.']);
+if (empty($name)) {
+    echo json_encode(['success' => false, 'message' => 'Please enter your full name.']);
     exit;
 }
 
-$phoneClean = preg_replace('/\D/', '', $phone);
-if (strlen($phoneClean) < 10) {
-    echo json_encode(['success' => false, 'message' => 'Valid 10-digit phone number is required.']);
+if (empty($phone)) {
+    echo json_encode(['success' => false, 'message' => 'Please enter your 10-digit mobile number.']);
     exit;
 }
-$phoneClean = substr($phoneClean, -10);
+
+// 📱 STRICT INDIAN MOBILE NUMBER VALIDATION
+$phoneClean = preg_replace('/\D/', '', $phone);
+
+// Handle leading country code 91 or 0
+if (strlen($phoneClean) > 10 && (substr($phoneClean, 0, 2) === '91' || substr($phoneClean, 0, 1) === '0')) {
+    $phoneClean = substr($phoneClean, -10);
+}
+
+// Check exactly 10 digits starting with 6, 7, 8, or 9
+if (!preg_match('/^[6-9]\d{9}$/', $phoneClean)) {
+    echo json_encode([
+        'success' => false,
+        'message' => 'Please enter a valid 10-digit Indian mobile number (must start with 6, 7, 8 or 9).'
+    ]);
+    exit;
+}
+
+// Reject dummy repetitive or sequential numbers
+$isDummy = preg_match('/^(\d)\1{9}$/', $phoneClean) 
+        || in_array($phoneClean, ['1234567890', '0123456789', '9876543210', '9898989898', '9999999999', '8888888888', '7777777777']);
+
+if ($isDummy) {
+    echo json_encode([
+        'success' => false,
+        'message' => 'Please enter your genuine 10-digit mobile number to receive details.'
+    ]);
+    exit;
+}
 
 // Resolve Traffic Source (Google Ads, Meta Ads, Instagram, etc.)
 $trafficSource = $_SESSION['lead_source'] ?? ($_COOKIE['dholera_lead_source'] ?? 'Direct Traffic');

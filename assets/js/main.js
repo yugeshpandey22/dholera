@@ -664,7 +664,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const interestInput = document.querySelector('input[name="plot_interest"]:checked');
 
       const name = nameInput ? nameInput.value.trim() : '';
-      const phone = phoneInput ? phoneInput.value.trim().replace(/\D/g, '') : '';
+      let phone = phoneInput ? phoneInput.value.trim().replace(/\D/g, '') : '';
       const interest = interestInput ? interestInput.value : 'Mirrikh Industrial Plots @ ₹8,950/yd';
 
       if (!name) {
@@ -672,8 +672,16 @@ document.addEventListener('DOMContentLoaded', () => {
         if (nameInput) nameInput.focus();
         return false;
       }
-      if (!phone || phone.length < 10) {
-        alert('Please enter a valid 10-digit mobile number.');
+
+      if (phone.length > 10 && (phone.startsWith('91') || phone.startsWith('0'))) {
+        phone = phone.slice(-10);
+      }
+
+      const phoneRegex = /^[6-9]\d{9}$/;
+      const isDummy = /^(\d)\1{9}$/.test(phone) || ['1234567890', '0123456789', '9876543210', '9898989898'].includes(phone);
+
+      if (!phoneRegex.test(phone) || isDummy) {
+        alert('Kripya sahi 10-digit mobile number dalein (6, 7, 8 ya 9 se shuru hone wala).\nPlease enter a valid 10-digit Indian mobile number.');
         if (phoneInput) phoneInput.focus();
         return false;
       }
@@ -687,22 +695,38 @@ document.addEventListener('DOMContentLoaded', () => {
         submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> <span>Connecting to WhatsApp...</span>';
       }
 
-      const cleanPhone = phone.slice(-10);
       const whatsappNum = (window.DHOLERA_CONFIG && window.DHOLERA_CONFIG.whatsapp) || '918950591781';
-      const textMsg = `Hi, My name is ${name} (Mobile: ${cleanPhone}). I am interested in ${interest} with 1% Assured Return in Dholera SIR. Please share brochure, layout plan & site visit details.`;
+      const textMsg = `Hi, My name is ${name} (Mobile: ${phone}). I am interested in ${interest} with 1% Assured Return in Dholera SIR. Please share brochure, layout plan & site visit details.`;
       const waUrl = `https://api.whatsapp.com/send?phone=${whatsappNum}&text=${encodeURIComponent(textMsg)}`;
 
       // Save lead to backend CSV & notify via AJAX
       const formData = new FormData();
       formData.append('name', name);
-      formData.append('phone', cleanPhone);
+      formData.append('phone', phone);
       formData.append('interest', interest);
       formData.append('source', 'Mirrikh Offer Popup');
 
       fetch('save-lead.php', {
         method: 'POST',
         body: formData
-      }).catch(() => {}).finally(() => {
+      })
+      .then(r => r.json())
+      .then(data => {
+        if (!data.success) {
+          alert(data.message || 'Please check your mobile number.');
+          if (submitBtn) {
+            submitBtn.disabled = false;
+            submitBtn.innerHTML = '<i class="fa-brands fa-whatsapp fa-lg"></i> <span>Get Offer &amp; Brochure on WhatsApp</span>';
+          }
+          if (successBox) successBox.style.display = 'none';
+          return;
+        }
+        setTimeout(() => {
+          window.location.href = waUrl;
+          closePromo();
+        }, 400);
+      })
+      .catch(() => {
         setTimeout(() => {
           window.location.href = waUrl;
           closePromo();
@@ -713,56 +737,91 @@ document.addEventListener('DOMContentLoaded', () => {
     };
   }
 
-  // 9. Hero Instant Lead Form Submission Handler
-  window.handleHeroLeadSubmit = function(e) {
+  // 9. Bottom Contact Page Lead Form Handler with Strict Validation
+  window.handleContactFormSubmit = function(e) {
     if (e) e.preventDefault();
-    const nameInput = document.getElementById('heroLeadName');
-    const phoneInput = document.getElementById('heroLeadPhone');
+    const nameInput = document.getElementById('contactName');
+    const phoneInput = document.getElementById('contactPhone');
+    const interestInput = document.getElementById('contactInterest');
 
     const name = nameInput ? nameInput.value.trim() : '';
-    const phone = phoneInput ? phoneInput.value.trim().replace(/\D/g, '') : '';
+    let phone = phoneInput ? phoneInput.value.trim().replace(/\D/g, '') : '';
+    const interest = interestInput ? interestInput.value : 'Residential Plots (Mayur Signature 2)';
 
     if (!name) {
-      alert('Please enter your name.');
+      alert('Please enter your full name.');
       if (nameInput) nameInput.focus();
       return false;
     }
-    if (!phone || phone.length < 10) {
-      alert('Please enter a valid 10-digit mobile number.');
+
+    if (phone.length > 10 && (phone.startsWith('91') || phone.startsWith('0'))) {
+      phone = phone.slice(-10);
+    }
+
+    const phoneRegex = /^[6-9]\d{9}$/;
+    const isDummy = /^(\d)\1{9}$/.test(phone) || ['1234567890', '0123456789', '9876543210', '9898989898'].includes(phone);
+
+    if (!phoneRegex.test(phone) || isDummy) {
+      alert('Kripya sahi 10-digit Indian mobile number dalein (6, 7, 8 ya 9 se shuru hone wala).\nPlease enter a valid 10-digit mobile number.');
       if (phoneInput) phoneInput.focus();
       return false;
     }
 
-    const cleanPhone = phone.slice(-10);
-    const successBox = document.getElementById('heroLeadSuccess');
-    const submitBtn = document.getElementById('heroLeadSubmitBtn');
+    const successBox = document.getElementById('contactFormSuccess');
+    const submitBtn = document.getElementById('contactSubmitBtn');
     if (successBox) successBox.style.display = 'flex';
     if (submitBtn) {
       submitBtn.disabled = true;
-      submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> <span>Connecting...</span>';
+      submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> <span>Saving &amp; Connecting...</span>';
     }
 
     const whatsappNum = (window.DHOLERA_CONFIG && window.DHOLERA_CONFIG.whatsapp) || '918950591781';
-    const textMsg = `Hi, My name is ${name} (Mobile: ${cleanPhone}). I saw your Dholera Smart City plots ad. Please share the 2026 Price Sheet, Brochure and Site Visit details.`;
+    const textMsg = `Hi, My name is ${name} (Mobile: ${phone}). I am interested in ${interest} in Dholera SIR. Please share 2026 Price List, Brochure and Site Visit details.`;
     const waUrl = `https://api.whatsapp.com/send?phone=${whatsappNum}&text=${encodeURIComponent(textMsg)}`;
 
     const formData = new FormData();
     formData.append('name', name);
-    formData.append('phone', cleanPhone);
-    formData.append('interest', 'Dholera Plots Brochure & Price Sheet');
-    formData.append('source', 'Hero Quick Form');
+    formData.append('phone', phone);
+    formData.append('interest', interest);
+    formData.append('source', 'Bottom Contact Section Form');
 
     fetch('save-lead.php', {
       method: 'POST',
       body: formData
-    }).catch(() => {}).finally(() => {
+    })
+    .then(r => r.json())
+    .then(data => {
+      if (!data.success) {
+        alert(data.message || 'Validation error');
+        if (submitBtn) {
+          submitBtn.disabled = false;
+          submitBtn.innerHTML = '<i class="fa-brands fa-whatsapp"></i> <span>Get Instant Rates on WhatsApp</span>';
+        }
+        if (successBox) successBox.style.display = 'none';
+        return;
+      }
       setTimeout(() => {
         window.location.href = waUrl;
-      }, 400);
+      }, 500);
+    })
+    .catch(() => {
+      setTimeout(() => {
+        window.location.href = waUrl;
+      }, 500);
     });
 
     return false;
   };
+
+  // Real-time Phone Inputs Sanitizer (Allows only digits, max 10)
+  ['promoPhone', 'contactPhone'].forEach(id => {
+    const el = document.getElementById(id);
+    if (el) {
+      el.addEventListener('input', function() {
+        this.value = this.value.replace(/\D/g, '').slice(0, 10);
+      });
+    }
+  });
 
   // 10. Hero Carousel Smooth Auto-Rotation & Touch Swipe
   const heroCarouselEl = document.getElementById('heroCarousel');
