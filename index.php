@@ -1973,7 +1973,7 @@ require_once __DIR__ . '/includes/header.php';
               <div class="contact-card-icon c-icon-phone"><i class="fa-solid fa-phone-volume"></i></div>
               <div class="contact-card-text">
                 <span class="c-label">Direct Investor Hotline:</span>
-                <strong class="c-val">+91 <?php echo htmlspecialchars($PHONE_DISPLAY); ?></strong>
+                <strong class="c-val"><?php echo htmlspecialchars($PHONE_DISPLAY); ?></strong>
                 <span class="c-sub">Mon - Sun: 8:00 AM to 9:00 PM (Instant Response)</span>
               </div>
               <div class="contact-card-arrow"><i class="fa-solid fa-chevron-right"></i></div>
